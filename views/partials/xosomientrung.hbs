@@ -1,0 +1,371 @@
+{{! xổ số miền  }}
+<div class='container_xsmn'>
+    <div class='header-banner_xsmn'>
+        <span class='header-logo_xsmn'>KQXSMN - Xổ Số Miền Trung</span>
+    </div>
+
+    <div class='sub-header_xsmn'>
+        <span class='sub-header-item active'>XSMT</span>
+        <span class='sub-header-separator'>»</span>
+        <span class='sub-header-item'>XSMT ngày {{result.date}}</span>
+        <span class='sub-header-separator'>»</span>
+        <span class='sub-header-item'>XSMT {{result.date}}</span>
+    </div>
+
+    <table class='results_table_xsmn'>
+        <thead>
+            <tr class='table-header-row'>
+                <th class='col_giai'>Giải</th>
+                <th class='col_tinh'>Quảng Bình</th>
+                <th class='col_tinh'>Bình Định</th>
+                <th class='col_tinh'>Quảng Trị</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class='col-giai'>G.8</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G8QB}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G8BDI}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G8QT}}</td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.7</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G7QB}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G7BDI}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G7QT}}</td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.6</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6QB 0}} <br>
+                    {{get result.G6QB 1}} <br>
+                    {{get result.G6QB 2}}
+                    </td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6BDI 0}} <br>
+                    {{get result.G6BDI 1}} <br>
+                    {{get result.G6BDI 2}} 
+                    </td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6QT 0}} <br>
+                    {{get result.G6QT 1}} <br>
+                    {{get result.G6QT 2}} 
+                    </td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.5</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G5QB}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G5BDI}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G5QT}}</td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.4</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G4QB 0}} <br>
+                    {{get result.G4QB 1}} <br>
+                    {{get result.G4QB 2}} <br>
+                    {{get result.G4QB 3}} <br>
+                    {{get result.G4QB 4}} <br>
+                    {{get result.G4QB 5}} <br>
+                    {{get result.G4QB 6}} <br>
+                    {{get result.G4QB 7}} 
+                    </td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G4BDI 0}} <br>
+                    {{get result.G4BDI 1}} <br>
+                    {{get result.G4BDI 2}} <br>
+                    {{get result.G4BDI 3}} <br>
+                    {{get result.G4BDI 4}} <br>
+                    {{get result.G4BDI 5}} <br>
+                    {{get result.G4BDI 6}} <br>
+                    {{get result.G4BDI 7}} 
+                    </td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G4QT 0}} <br>
+                    {{get result.G4QT 1}} <br>
+                    {{get result.G4QT 2}} <br>
+                    {{get result.G4QT 3}} <br>
+                    {{get result.G4QT 4}} <br>
+                    {{get result.G4QT 5}} <br>
+                    {{get result.G4QT 6}} <br>
+                    {{get result.G4QT 7}} 
+                    </td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.3</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G3QB 0}} <br>
+                    {{get result.G3QB 1}} 
+                </td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G3BDI 0}} <br>
+                    {{get result.G3BDI 1}} 
+                </td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G3QT 0}} <br>
+                    {{get result.G3QT 1}} 
+                </td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.2</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2QB}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2BDI}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2QT}}</td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.1</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G1QB}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G1BDI}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G1QT}}</td>
+            </tr>
+            <tr>
+                <td class='col-giai'>G.ĐB</td>
+                <td
+                    class='col_tinh_ket-qua_xsmn giai-dac-biet'
+                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
+                >{{result.GDBQB}}</td>
+                <td
+                    class='col_tinh_ket-qua_xsmn giai-dac-biet'
+                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
+                >{{result.GDBBDI}}</td>
+                <td
+                    class='col_tinh_ket-qua_xsmn giai-dac-biet'
+                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
+                >{{result.GDBQT}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{{! LT - MT  }}
+<div class='loto_container_mn'>
+    <div class='loto_container_mn_tn'>
+        <div class='loto_container_mn_tn_'>
+            <p>Lô tô Quảng Bình ngày {{result.date}}</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau_mn'>Đầu</th>
+                    <th class='header-loto_mn'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>{{result.LT0QB}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>{{result.LT1QB}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{result.LT2QB}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{result.LT3QB}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{result.LT4QB}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{result.LT5QB}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{result.LT6QB}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{result.LT7QB}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>{{result.LT8QB}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>{{result.LT9QB}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class='loto_container_mn_tn'>
+        <div class='loto_container_mn_tn_'>
+            <p>Lô tô Bình Định ngày {{result.date}}</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau_mn'>Đầu</th>
+                    <th class='header-loto_mn'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>{{result.LT0BDI}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>{{result.LT1BDI}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{result.LT2BDI}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{result.LT3BDI}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{result.LT4BDI}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{result.LT5BDI}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{result.LT6BDI}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{result.LT7BDI}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>{{result.LT8BDI}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>{{result.LT9BDI}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class='loto_container_mn_tn'>
+        <div class='loto_container_mn_tn_'>
+            <p>Lô tô Quảng Trị ngày {{result.date}}</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau_mn'>Đầu</th>
+                    <th class='header-loto_mn'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>{{result.LT0QT}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>{{result.LT1QT}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{result.LT2QT}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{result.LT3QT}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{result.LT4QT}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{result.LT5QT}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{result.LT6QT}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{result.LT7QT}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>{{result.LT8QT}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>{{result.LT9QT}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class='footer-links'>
+            <li>Xem thống kê <a href='#'>Loto gan miền Trung</a></li>
+            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Trung</a></li>
+            <li>Tham khảo <a href='#'>Thống kê XSMT</a></li>
+            <li>**KQXS** miền Trung
+                {{result.date}}
+                siêu tốc - chính xác, trực tiếp
+                <a href='#'>**XSMT**</a>
+                lúc 18h15 mỗi ngày</li>
+        </ul>
+    </div>
+</div>
+
+
+
+{{!-- //keno --}}
+<div class="keno">
+   
+  <div class='keno1'>
+       <p>Keno - Trực tiếp xổ số keno Viettlot<p>
+    </div>
+        <div class='keno2'>
+       <a>{{result.pad_012}}</a>
+    </div>
+     <table>
+        <tr>
+            <td>{{get result.keno 0}}</td>
+            <td>{{get result.keno 1}}</td>
+            <td>{{get result.keno 2}}</td>
+            <td>{{get result.keno 3}}</td>
+            <td>{{get result.keno 4}}</td>
+            <td>{{get result.keno 5}}</td>
+            <td>{{get result.keno 6}}</td>
+            <td>{{get result.keno 7}}</td>
+            <td>{{get result.keno 8}}</td>
+            <td>{{get result.keno 9}}</td>
+             
+        </tr>
+        <tr>
+            <td>{{get result.keno 10}}</td>
+            <td>{{get result.keno 11}}</td>
+            <td>{{get result.keno 12}}</td>
+            <td>{{get result.keno 13}}</td>
+            <td>{{get result.keno 14}}</td>
+            <td>{{get result.keno 15}}</td>
+            <td>{{get result.keno 16}}</td>
+            <td>{{get result.keno 17}}</td>
+            <td>{{get result.keno 18}}</td>
+            <td>{{get result.keno 19}}</td>
+
+            
+        </tr>
+        
+    </table>
+    <table>
+        <tr>
+            <td class = "kn_lon">Lớn</td>
+            <td class = "kn_be">Bé</td>
+            <td class="so1_kn">{{get result.td_text16 0}}</td>
+            <td class="kn_hoachan">Hòa : <br> Chẵn - Lẻ</td>
+             <td class="so2_kn">{{get result.td_text16 1}}</td>
+        </tr>
+    </table>
+</div>
