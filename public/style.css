@@ -1,5 +1,5 @@
 :root {
-    --color-primary: #dc0000; 
+    --color-primary: #dc0000;
     --color-text-dark: #333;
     --color-text-light: #fff;
     --font-family-sans: Arial, sans-serif;
@@ -22,13 +22,13 @@ a {
 }
 
 .container {
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
 .top-bar-wrapper {
-    background-color: #fff; 
+    background-color: #fff;
     padding: 10px 0;
 }
 
@@ -42,7 +42,7 @@ a {
     display: flex;
     flex-direction: column;
     line-height: 1;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
 
 .logo-link {
@@ -60,7 +60,7 @@ a {
 
 .logo-xs {
     font-size: 24px;
-    color: var(--color-primary); 
+    color: var(--color-primary);
     font-style: italic;
     transform: rotate(-5deg);
     margin-right: 5px;
@@ -68,7 +68,7 @@ a {
 
 .logo-daiphat {
     font-size: 36px;
-    color: var(--color-primary); 
+    color: var(--color-primary);
 }
 
 .logo-slogan {
@@ -78,16 +78,16 @@ a {
 }
 
 .ad-banner {
-    flex-grow: 1; 
+    flex-grow: 1;
     display: flex;
     align-items: stretch;
     position: relative;
-    max-width: 780px; 
-    height: 100px; 
+    max-width: 780px;
+    height: 100px;
 }
 
 .ad-label {
-    writing-mode: vertical-rl; 
+    writing-mode: vertical-rl;
     text-orientation: mixed;
     background-color: #ddd;
     color: #333;
@@ -140,7 +140,7 @@ a {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary);
     color: var(--color-text-light);
     padding: 10px 20px;
     font-weight: bold;
@@ -171,7 +171,7 @@ a {
 }
 
 .main-nav {
-    background-color: var(--color-primary); 
+    background-color: var(--color-primary);
     height: 50px;
     display: flex;
     align-items: center;
@@ -202,7 +202,7 @@ a {
 }
 
 .nav-item:hover {
-    background-color: #c90000; 
+    background-color: #c90000;
 }
 
 .home-icon {
@@ -215,7 +215,7 @@ a {
 }
 
 .nav-item:last-child {
-    padding-right: 0; 
+    padding-right: 0;
 }
 
 :root {
@@ -235,7 +235,7 @@ body {
 
 .xoso-container {
     margin-right: 40px;
-    max-width: 800px; 
+    max-width: 800px;
     border: 1px solid var(--color-border);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
@@ -245,13 +245,12 @@ a {
     color: inherit;
 }
 
-
 .page-title {
     font-size: 16px;
     font-weight: normal;
     color: white;
     padding: 10px 15px;
-    background-color:#c00;
+    background-color: #c00;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -276,7 +275,7 @@ a {
 }
 
 .breadcrumb span {
-    color: #007bff; 
+    color: #007bff;
 }
 
 .breadcrumb .date {
@@ -340,7 +339,7 @@ a {
 .multi-result,
 .multi-result-four,
 .multi-result-three {
-    padding: 0; 
+    padding: 0;
 }
 
 .multi-result {
@@ -377,7 +376,7 @@ a {
 .multi-result-four .result-item {
     font-size: 15px;
     font-weight: bold;
-    width: 25%; 
+    width: 25%;
     border-right: 1px solid var(--color-border);
 }
 
@@ -394,7 +393,7 @@ a {
 .multi-result-three .result-item {
     font-size: 15px;
     font-weight: bold;
-    width: 33.33%; 
+    width: 33.33%;
     border-right: 1px solid var(--color-border);
 }
 
@@ -402,9 +401,9 @@ a {
     border-right: none;
 }
 
-.prize-row:not(.special-prize) td:not(.label-col) {
-    font-weight: bold; 
-}
+/* .prize-row:not(.special-prize) td:not(.label-col) {
+    font-weight: bold;
+} */
 
 .ad-placeholder {
     text-align: center;
@@ -444,15 +443,14 @@ h1 {
     font-weight: bold;
 }
 
-
 table {
     width: 100%;
-    border-collapse: collapse; 
-    border: 1px solid #ccc; 
+    border-collapse: collapse;
+    border: 1px solid #ccc;
 }
 
 thead tr {
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
 }
 
 th,
@@ -464,13 +462,13 @@ td {
 }
 
 th {
-    font-weight: normal; 
-    color: #a00; 
+    font-weight: normal;
+    color: #a00;
 }
 
 .header-dau,
 tbody td:first-child {
-    width: 15%; 
+    width: 15%;
     text-align: center;
     font-weight: bold;
 }
@@ -492,8 +490,8 @@ tbody td:last-child {
 }
 
 .footer-links a {
-    color: #0080ff; 
-    text-decoration: none; 
+    color: #0080ff;
+    text-decoration: none;
 }
 
 .footer-links a:hover {
@@ -501,7 +499,7 @@ tbody td:last-child {
 }
 
 .footer-links li:last-child {
-    font-weight: normal; 
+    font-weight: normal;
 }
 
 body {
@@ -517,8 +515,8 @@ body {
     border: 1px solid #e0e0e0;
     margin-bottom: 15px;
     font-size: 0.9em;
-    padding: 0; 
-    overflow: hidden; 
+    padding: 0;
+    overflow: hidden;
 }
 
 .menu-block h3,
@@ -526,7 +524,7 @@ body {
 .doveso-block h3 {
     margin: 0;
     padding: 8px 10px;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     color: #333;
     font-size: 1.1em;
     font-weight: bold;
@@ -534,23 +532,23 @@ body {
 }
 
 .menu-block.highlighted h3 {
-    background-color: #f7e0e0; 
+    background-color: #f7e0e0;
     color: #a00;
     border-bottom: 1px solid #e0c8c8;
 }
 
 .column-left {
-    flex: 0 0 50%; 
+    flex: 0 0 50%;
     max-width: 50%;
 }
 
 .column-right {
-    flex: 0 0 50%; 
+    flex: 0 0 50%;
     max-width: 50%;
 }
 
 ul {
-    list-style-type: none; 
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
@@ -563,7 +561,7 @@ ul {
 .menu-block ul ul,
 .info-block ul ul {
     list-style-type: none;
-    padding-left: 20px; 
+    padding-left: 20px;
     margin: 0;
 }
 
@@ -576,12 +574,12 @@ ul {
 .info-block li a {
     text-decoration: none;
     color: #000;
-    display: block; 
+    display: block;
 }
 
 .menu-block li:not(:has(ul)) a::before {
-    content: '■'; 
-    color: #a00; 
+    content: '■';
+    color: #a00;
     margin-right: 5px;
     font-size: 0.8em;
 }
@@ -599,7 +597,7 @@ ul {
 }
 
 .menu-block li:has(ul) a {
-    font-weight: normal; 
+    font-weight: normal;
     padding-left: 0;
 }
 
@@ -628,7 +626,7 @@ ul {
     padding: 6px;
     border: 1px solid #ccc;
     border-radius: 3px;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
 .doveso-block .input-row {
     margin-top: 15px;
@@ -672,7 +670,6 @@ ul {
 }
 
 .main-container {
-
     display: flex;
     gap: 15px;
     width: 610px;
@@ -712,7 +709,7 @@ body {
 }
 
 .statistic-item {
-    border-bottom: 1px solid #eee; 
+    border-bottom: 1px solid #eee;
     padding: 15px;
 }
 
@@ -727,14 +724,14 @@ body {
 }
 
 .item-title a {
-    color: #0000a0; 
+    color: #0000a0;
     text-decoration: none;
     font-size: 14px;
 }
 
 .item-title a:hover {
     text-decoration: underline;
-    color: #a00; 
+    color: #a00;
 }
 
 .has-image {
@@ -743,12 +740,12 @@ body {
 
 .item-content {
     display: flex;
-    gap: 10px; 
+    gap: 10px;
     margin-top: 10px;
 }
 
 .content-image {
-    width: 100px; 
+    width: 100px;
     height: auto;
     flex-shrink: 0;
 }
@@ -766,15 +763,17 @@ body {
     padding: 5px;
     width: 600px;
     margin-right: 70px;
-    background-color: #f5f5f5;
+    border: none;
+    /* background-color: #f5f5f5; */
 }
 
 .header-banner_xsmn {
+    margin-left: -20px;
+    width: 600px;
     text-align: center;
     padding: 10px 0;
     background-color: #c90000;
     color: white;
-    border-radius: 5px 5px 0 0;
 }
 
 .header-logo_xsmn {
@@ -784,8 +783,10 @@ body {
 }
 
 .sub-header_xsmn {
+    margin-left: -20px;
+    width: 600px;
     padding: 8px 5px;
-    background-color: #e9ecef; 
+    background-color: #e9ecef;
     font-size: 0.9em;
     display: flex;
     flex-wrap: wrap;
@@ -801,22 +802,23 @@ body {
 
 .sub-header-item.active {
     font-weight: bold;
-    color: #007bff; 
+    color: #007bff;
 }
 
 .sub-header-separator {
     color: #adb5bd;
 }
 .results_table_xsmn {
-    width: 100%;
+    width: 600px;
+
+    margin-left: -20px;
     border-collapse: collapse;
-    margin-top: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
 .results_table_xsmn thead {
-    background-color: #343a40; 
+    background-color: #343a40;
     color: white;
 }
 
@@ -837,12 +839,12 @@ body {
 .col-giai {
     width: 15%;
     font-weight: bold;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     color: #6c757d;
     font-size: 0.9em;
 }
 .col_tinh {
-    width: 28.33%; 
+    width: 28.33%;
 }
 .col_tinh_ket-qua_xsmn {
     font-weight: bold;
@@ -856,8 +858,8 @@ body {
     background-color: #f2f2f2;
 }
 .giai-dac-biet {
-    background-color: #ffc107; 
-    color: #dc3545; 
+    background-color: #ffc107;
+    color: #dc3545;
     font-size: 1.1em;
     font-weight: bolder;
     padding: 10px 4px;
@@ -873,8 +875,7 @@ body {
     .container_xsmn {
         max-width: 750px;
         padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
+
         margin-top: 20px;
     }
 
@@ -908,40 +909,39 @@ body {
     margin-top: 10px;
 }
 .loto_container_mn_tn_ {
-
     height: 35px;
     border: 0.9px solid #e8e8e8;
 }
-.loto_container_mn_tn_{
-    font-weight: bold; 
+.loto_container_mn_tn_ {
+    font-weight: bold;
     padding: 10px;
     font-size: 14px;
 }
 .loto_container_mn_tn_ p {
     margin-top: -10px;
-    font-weight: bold; 
+    font-weight: bold;
     padding: 10px;
     font-size: 14px;
 }
 .header-dau_mn {
     background-color: #e8e8e8;
-      font-weight: bold; 
-      text-align: center;
+    font-weight: bold;
+    text-align: center;
 }
-.header-loto{
+.header-loto {
     font-weight: bold;
     text-align: center;
 }
 .header-loto_mn {
     text-align: center;
     background-color: #e8e8e8;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 .footer {
     font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f0f0f0; 
+    /* padding: 20px; */
+    /* background-color: #f0f0f0; */
     color: #333;
     font-size: 14px;
     line-height: 1.6;
@@ -963,7 +963,7 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    min-width: 150px; 
+    min-width: 150px;
 }
 
 .menu-col a {
@@ -974,7 +974,7 @@ body {
 }
 
 .menu-col:first-child a:nth-child(-n + 5) {
-    color: #c00; 
+    color: #c00;
     font-weight: bold;
 }
 
@@ -983,13 +983,13 @@ body {
 }
 .footer-line-red1 {
     height: 6px;
-    background-color: #c00; 
+    background-color: #c00;
     margin-bottom: 10px;
 }
 
 .footer-line-red2 {
     height: 3px;
-    background-color: #c00; 
+    background-color: #c00;
     margin-bottom: 10px;
 }
 
@@ -1054,9 +1054,9 @@ body {
 .footer-disclaimer p {
     text-align: justify;
 }
-.footer{
+.footer {
     margin-left: 40px;
-    margin-top: 1700px
+    margin-top: 1150px;
 }
 
 .dmca-logo {
@@ -1075,7 +1075,6 @@ body {
     text-align: center;
     margin-left: -5px;
 }
-
 
 .header h1 {
     color: #c00;
@@ -1190,10 +1189,9 @@ body {
 }
 
 .jackpot-row td {
-    background-color: #fff; 
+    background-color: #fff;
     font-weight: bold;
 }
-
 
 .match-dot {
     display: inline-block;
@@ -1221,7 +1219,7 @@ body {
 }
 
 .link-highlight {
-    color: #00f; 
+    color: #00f;
     text-decoration: underline;
 }
 .footer-note {
@@ -1230,87 +1228,85 @@ body {
     text-align: left;
 }
 
-.max3d-title{
-    background-color: #CC0000;
+.max3d-title {
+    background-color: #cc0000;
     color: white;
     height: 40px;
     width: 600px;
 }
-.max3d-title h4{
+.max3d-title h4 {
     padding: 10px;
     margin-top: 10px;
     /* border: 1px solid #ddd; */
-
 }
-.breadcrumb{
-        /* border: 1px solid #ddd; */
-        background-color: #F9F9F9;
+.breadcrumb {
+    /* border: 1px solid #ddd; */
+    background-color: #f9f9f9;
 }
-.max3d{
-        width: 600px;
+.max3d {
+    width: 600px;
 }
-.breadcrumb1{
+.breadcrumb1 {
     /* border: 1px solid #ddd; */
     height: 30px;
     margin-top: -15px;
-    color: #CC0000;
+    color: #cc0000;
 }
-.breadcrumb1 p{
+.breadcrumb1 p {
     font-weight: bold;
     padding: 7px;
-
 }
-.prize-row{
+.prize-row {
     height: 60px;
 }
 
-.keno{
+.keno {
     width: 600px;
     margin-top: 20px;
 }
-.keno1{
-     border: 1px solid #ddd;
-    background-color:  #CC0000;
+.keno1 {
+    border: 1px solid #ddd;
+    background-color: #cc0000;
     color: white;
     height: 30px;
 }
-.keno2{
-     border: 1px solid #ddd;
+.keno2 {
+    border: 1px solid #ddd;
     height: 30px;
 }
 .keno1 p {
     font-weight: bold;
     padding: 7px;
 }
-.keno2 a{
+.keno2 a {
     padding: 7px;
 }
-.kn_be{
+.kn_be {
     width: 56px;
     background-color: #f5f5f5;
 }
-.kn_lon{
-    background-color: #CC0000;
+.kn_lon {
+    background-color: #cc0000;
     color: white;
 }
-.so1_kn{
+.so1_kn {
     width: 227px;
 }
-.kn_hoachan{
-     background-color: #CC0000;
+.kn_hoachan {
+    background-color: #cc0000;
     color: white;
     width: 113px;
 }
 
 .lottery-container {
     font-family: Arial, sans-serif;
-    width: 600px; 
-    margin: 20px auto; 
+    width: 600px;
+    margin: 20px auto;
     margin-left: 1px;
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
 }
 .header {
-    background-color: #c90000; 
+    background-color: #c90000;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
@@ -1319,8 +1315,8 @@ body {
 }
 .tabs {
     display: flex;
-    background-color: #f0f0f0; 
-    border-bottom: 2px solid #c90000; 
+    background-color: #f0f0f0;
+    border-bottom: 2px solid #c90000;
 }
 
 .tab {
@@ -1329,7 +1325,7 @@ body {
     padding: 8px 0;
     font-size: 0.9em;
     font-weight: bold;
-    border-right: 1px solid #ddd; 
+    border-right: 1px solid #ddd;
     cursor: pointer;
     background-color: #eee;
     color: #333;
@@ -1339,15 +1335,15 @@ body {
     color: #c90000;
     border-top: 3px solid #c90000;
     border-bottom: none;
-    margin-top: -3px; 
-    z-index: 1; 
+    margin-top: -3px;
+    z-index: 1;
 }
 
 .tab:first-child {
-    border-left: none; 
+    border-left: none;
 }
 .title {
-    color: #c90000; 
+    color: #c90000;
     font-size: 1em;
     font-weight: bold;
     text-align: center;
@@ -1358,7 +1354,7 @@ body {
 .data-table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed; 
+    table-layout: fixed;
 }
 .data-table thead th {
     background-color: #f0f0f0;
@@ -1384,44 +1380,41 @@ body {
 .data-table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-.header_jp{
-    background-color:  #c90000;
+.header_jp {
+    background-color: #c90000;
     width: 599px;
     height: 50px;
     margin-top: -30px;
     margin-left: -20px;
     color: white;
 }
-.header_jp_h1{
+.header_jp_h1 {
     padding: 13px;
 }
-.breadcrumb3d{
+.breadcrumb3d {
     width: 600px;
     height: 30px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
 }
-.breadcrumb13d{
+.breadcrumb13d {
     width: 600px;
     height: 30px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #cccccc;
 }
-.breadcrumb3d p{
+.breadcrumb3d p {
     margin-top: 5px;
     margin-left: 5px;
 }
-.breadcrumb13d p{
+.breadcrumb13d p {
     margin-top: 5px;
     margin-left: 5px;
 }
-.lotogan_daydate{
+.lotogan_daydate {
     width: 600px;
 }
-.p-4.sm{
+.p-4.sm {
     width: 500px;
 }
-
-
-
 
 table {
     width: 100%;
@@ -1432,15 +1425,15 @@ table {
 }
 td {
     border: 1px solid #ddd;
-    padding: 0.5em 0; 
-    height: 1.8em; 
+    padding: 0.5em 0;
+    height: 1.8em;
 }
 
 .loto-numbers td {
     color: #cc0000;
     font-weight: bold;
-    background-color: #ffffff; 
-    width: 4.75%; 
+    background-color: #ffffff;
+    width: 4.75%;
 }
 
 .bet-amounts td {
@@ -1453,30 +1446,28 @@ td {
     font-weight: bold;
     color: #cc0000;
     padding-left: 0.5em;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
-
 
 .loto-numbers td:not(:first-child),
 .bet-amounts td:not(:first-child) {
     width: calc(90% / 20);
 }
-.loto-table-container{
-    border-right: 1px solid #ddd; 
+.loto-table-container {
+    border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
-    border-bottom: 1px solid #ddd; 
-
+    border-bottom: 1px solid #ddd;
 }
 .loto-table-container table > thead > tr:first-child td,
-.loto-table-container table > tbody > tr:nth-child(3n-2) td { 
+.loto-table-container table > tbody > tr:nth-child(3n-2) td {
     border-top: none;
     border-bottom: none;
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
 }
 
 .loto-table-container table > tbody > tr:nth-child(3n) td {
     border-top: none;
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
 }
 
 .loto-numbers td {
@@ -1486,10 +1477,10 @@ td {
 .loto-table-container table > tbody > tr:nth-child(3n-2) td {
     border-left: none;
     border-right: none;
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
 }
 
 .bet-amounts {
     border-top: none;
-    border-bottom: 1px solid #ddd; 
+    border-bottom: 1px solid #ddd;
 }

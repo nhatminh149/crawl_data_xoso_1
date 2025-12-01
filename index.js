@@ -6,10 +6,8 @@ const { crawl } = require('./src/web');
 const XosoResult = require('./models/XosoResult');
 const handlebars = require('handlebars');
 
-
-handlebars.registerHelper('get', function(array, index) {
+handlebars.registerHelper('get', function (array, index) {
     return array[index];
-
 });
 
 const app = express();
@@ -37,13 +35,11 @@ async function saveIfNew(data) {
         const newResult = new XosoResult(data);
         await newResult.save();
 
-        console.log(
-            `ĐÃ ÉP CẬP NHẬT THÀNH CÔNG NGÀY ${data.date} `,
-        );
-        return newResult.toObject(); 
+        console.log(`ĐÃ ÉP CẬP NHẬT THÀNH CÔNG NGÀY ${data.date} `);
+        return newResult.toObject();
     } catch (err) {
         console.error('Lỗi ép cập nhật:', err.message);
-        return null; 
+        return null;
     }
 }
 
@@ -56,7 +52,7 @@ async function getLatestResult() {
         result = await saveIfNew(fresh); // Lưu và lấy object
 
         if (result && result._id) {
-            return result; 
+            return result;
         } else {
             return null; // Không cào được
         }
@@ -64,6 +60,7 @@ async function getLatestResult() {
     return result;
 }
 
+//router
 app.get('/partials/thong-ke-tong-hop-xsmb', async (req, res) => {
     // Nếu URL gốc có chứa /partials/partials → redirect về đúng đường
     if (req.originalUrl.includes('/partials/partials/')) {
@@ -71,8 +68,21 @@ app.get('/partials/thong-ke-tong-hop-xsmb', async (req, res) => {
     }
 
     const result = await getLatestResult(); // Gọi hàm đã định nghĩa
-    
+
     res.render('partials/thong-ke-tong-hop-xsmb', {
+        title: 'Thống Kê Tổng Hợp XSMB',
+        result,
+    });
+});
+
+app.get('/partials/tklotogancv', async (req, res) => {
+    if (req.originalUrl.includes('/partials/partials/')) {
+        return res.redirect('/partials/tklotogancv');
+    }
+
+    const result = await getLatestResult();
+
+    res.render('partials/tklotogancv', {
         title: 'Thống Kê Tổng Hợp XSMB',
         result,
     });
@@ -82,9 +92,9 @@ app.get('/partials/tklotogan', async (req, res) => {
     if (req.originalUrl.includes('/partials/partials/')) {
         return res.redirect('/partials/tklotogan');
     }
-    
-    const result = await getLatestResult(); 
-    
+
+    const result = await getLatestResult();
+
     res.render('partials/tklotogan', {
         title: 'Thống Kê Tổng Hợp XSMB',
         result,
@@ -93,7 +103,7 @@ app.get('/partials/tklotogan', async (req, res) => {
 
 app.get('/', async (req, res) => {
     try {
-        const result = await getLatestResult(); 
+        const result = await getLatestResult();
 
         if (!result) {
             return res.send(
@@ -140,6 +150,5 @@ async function start() {
         console.log(`Server chạy tại http://localhost:${PORT}`);
     });
 }
-
 
 start();

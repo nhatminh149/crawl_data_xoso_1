@@ -6,27 +6,51 @@ async function crawlLoGan(page) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
         await page.goto('https://xosodaiphat.com/thong-ke-lo-gan.html', {
-            waitUntil: 'networkidle2', 
+            waitUntil: 'networkidle2',
             timeout: 60000,
         });
 
-        const result = await page.evaluate(() => {   
+        const result = await page.evaluate(() => {
             const getClasstd = (cl) => {
                 return Array.from(document.querySelectorAll(`td.${cl}`))
                     .map((el) => el.innerText.trim())
-                    .filter(Boolean); 
-            }; 
-            return {
-                daylotogan : getClasstd('col-xs-4'),
-                daylotogan2 : getClasstd('col-xs-6'),
-                lotogan : getClasstd('col-xs-2.text-bold'),
-                loto : getClasstd('pd5'),
-
+                    .filter(Boolean);
             };
-        });  
+            return {
+                daylotogan: getClasstd('col-xs-4'),
+                daylotogan2: getClasstd('col-xs-6'),
+                lotogan: getClasstd('col-xs-2.text-bold'),
+                loto: getClasstd('pd5'),
+            };
+        });
         console.log('Cào dữ liệu Lô Gan thành công.');
         return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
 
+async function crawlLoGanCV(page1) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page1.goto('https://xosodaiphat.com/thong-ke-lo-xien.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page1.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                boso2: getClasstd('col-xs-2.text-bold.text-center'),
+                boso2_ngayve: getClasstd('col-xs-7'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
     } catch (error) {
         console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
     }
@@ -35,9 +59,10 @@ async function crawlLoGan(page) {
 async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
+    const page1 = await browser.newPage();
 
     console.log('Đang cào dữ liệu chính...');
-    
+
     // Điều hướng đến trang chính
     await page.goto('https://xosodaiphat.com/', {
         waitUntil: 'networkidle2',
@@ -48,7 +73,7 @@ async function crawl() {
     const data = await page.evaluate(() => {
         // Lấy ngày từ tiêu đề
         const titleEl = document.querySelector('.ketqua_title h1, h1, .title');
-        let date = new Date().toLocaleDateString('vi-VN'); 
+        let date = new Date().toLocaleDateString('vi-VN');
         if (titleEl) {
             const match = titleEl.innerText.match(/\d{2}\/\d{2}\/\d{4}/);
             if (match) date = match[0];
@@ -86,7 +111,6 @@ async function crawl() {
                 .filter(Boolean);
         };
 
-        
         const getClassp = (cl) => {
             return Array.from(document.querySelectorAll(`p.${cl}`))
                 .map((el) => el.innerText.trim())
@@ -378,7 +402,6 @@ async function crawl() {
             LT8CM: getLoto('mnloto_CM_8'),
             LT9CM: getLoto('mnloto_CM_9'),
 
-
             //MT
             GDBPY:
                 document
@@ -392,7 +415,7 @@ async function crawl() {
             G6PY: getNumbers('PY_prize_6_item'),
             G7PY: getNumbers('PY_prize_7_item'),
             G8PY: getNumbers('PY_prize_8_item'),
-            
+
             GDBTTH:
                 document
                     .querySelector('#TTH_prize_Db_item_0')
@@ -406,6 +429,31 @@ async function crawl() {
             G7TTH: getNumbers('TTH_prize_7_item'),
             G8TTH: getNumbers('TTH_prize_8_item'),
 
+            GDBKT:
+                document
+                    .querySelector('#KT_prize_Db_item_0')
+                    ?.innerText.trim() || '---',
+            G1KT: getNumbers('KT_prize_1_item'),
+            G2KT: getNumbers('KT_prize_2_item'),
+            G3KT: getNumbers('KT_prize_3_item'),
+            G4KT: getNumbers('KT_prize_4_item'),
+            G5KT: getNumbers('KT_prize_5_item'),
+            G6KT: getNumbers('KT_prize_6_item'),
+            G7KT: getNumbers('KT_prize_7_item'),
+            G8KT: getNumbers('KT_prize_8_item'),
+
+            GDBKH:
+                document
+                    .querySelector('#KH_prize_Db_item_0')
+                    ?.innerText.trim() || '---',
+            G1KH: getNumbers('KH_prize_1_item'),
+            G2KH: getNumbers('KH_prize_2_item'),
+            G3KH: getNumbers('KH_prize_3_item'),
+            G4KH: getNumbers('KH_prize_4_item'),
+            G5KH: getNumbers('KH_prize_5_item'),
+            G6KH: getNumbers('KH_prize_6_item'),
+            G7KH: getNumbers('KH_prize_7_item'),
+            G8KH: getNumbers('KH_prize_8_item'),
 
             GDBDNA:
                 document
@@ -520,6 +568,28 @@ async function crawl() {
             LT8KH: getLoto('mtloto_KH_8'),
             LT9KH: getLoto('mtloto_KH_9'),
 
+            LT0KT: getLoto('mtloto_KT_0'),
+            LT1KT: getLoto('mtloto_KT_1'),
+            LT2KT: getLoto('mtloto_KT_2'),
+            LT3KT: getLoto('mtloto_KT_3'),
+            LT4KT: getLoto('mtloto_KT_4'),
+            LT5KT: getLoto('mtloto_KT_5'),
+            LT6KT: getLoto('mtloto_KT_6'),
+            LT7KT: getLoto('mtloto_KT_7'),
+            LT8KT: getLoto('mtloto_KT_8'),
+            LT9KT: getLoto('mtloto_KH_9'),
+
+            LT0TTH: getLoto('mtloto_TTH_0'),
+            LT1TTH: getLoto('mtloto_TTH_1'),
+            LT2TTH: getLoto('mtloto_TTH_2'),
+            LT3TTH: getLoto('mtloto_TTH_3'),
+            LT4TTH: getLoto('mtloto_TTH_4'),
+            LT5TTH: getLoto('mtloto_TTH_5'),
+            LT6TTH: getLoto('mtloto_TTH_6'),
+            LT7TTH: getLoto('mtloto_TTH_7'),
+            LT8TTH: getLoto('mtloto_TTH_8'),
+            LT9TTH: getLoto('mtloto_TTH_9'),
+
             LT0QB: getLoto('mtloto_QB_0'),
             LT1QB: getLoto('mtloto_QB_1'),
             LT2QB: getLoto('mtloto_QB_2'),
@@ -554,32 +624,31 @@ async function crawl() {
             LT9QT: getLoto('mtloto_QT_9'),
 
             //keno
-            keno : getClasstd('kn-number'),
-            pad_012 : getClassspan('pad-012'),
-            td_text16 : getClasstd('td-text16.clred'),
-            
-            //Jack pot
-            para_open_next : getClassp('open-next'),
-            number_ball : getClass('mega-detail'),
-            text_right : getClasstd('text-right'),
-            para_text_black_bold : getClassp('text-black-bold'),
-            jackpot: getClassspan('result-jackpot'),
-            xsmega : getClass('block-main-heading'),
+            keno: getClasstd('kn-number'),
+            pad_012: getClassspan('pad-012'),
+            td_text16: getClasstd('td-text16.clred'),
 
+            //Jack pot
+            para_open_next: getClassp('open-next'),
+            number_ball: getClass('mega-detail'),
+            text_right: getClasstd('text-right'),
+            para_text_black_bold: getClassp('text-black-bold'),
+            jackpot: getClassspan('result-jackpot'),
+            xsmega: getClass('block-main-heading'),
 
             //max3d
-            max3dg1 : getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
-            max3dg24 : getClassspan('col-xs-3.number-black-bold.div-horizontal'),
-            max3dg3 : getClassspan('col-xs-4.number-black-bold.div-horizontal'),
-            titlemax3d : getClass('titlemax3d'),
+            max3dg1: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+            max3dg24: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+            max3dg3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            titlemax3d: getClass('titlemax3d'),
         };
     });
 
-
     const loGanResult = await crawlLoGan(page);
+    const loGanCVResult = await crawlLoGanCV(page1);
 
     await browser.close();
-    const finalData = { ...data, ...loGanResult };
+    const finalData = { ...data, ...loGanResult, ...loGanCVResult };
 
     const dir = path.join(__dirname, '..', 'data', 'infos');
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -590,7 +659,7 @@ async function crawl() {
     );
 
     console.log(`Đã cào xong kết quả ngày ${finalData.date}`);
-    return finalData; 
+    return finalData;
 }
 
-module.exports = { crawl, crawlLoGan };
+module.exports = { crawl, crawlLoGan, crawlLoGanCV };
