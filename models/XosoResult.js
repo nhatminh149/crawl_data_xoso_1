@@ -456,6 +456,10 @@ const xosoResultSchema = new mongoose.Schema({
     //lotogancv
     boso2: [String],
     boso2_ngayve: [String],
+
+    //tklogandau
+    tklogandau : [String],
+    tklogandauso:[String],
 });
 
 xosoResultSchema.index({ date: 1 }, { unique: true });

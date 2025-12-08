@@ -401,9 +401,9 @@ a {
     border-right: none;
 }
 
-/* .prize-row:not(.special-prize) td:not(.label-col) {
+.prize-row:not(.special-prize) td:not(.label-col) {
     font-weight: bold;
-} */
+}
 
 .ad-placeholder {
     text-align: center;
@@ -763,12 +763,10 @@ body {
     padding: 5px;
     width: 600px;
     margin-right: 70px;
-    border: none;
-    /* background-color: #f5f5f5; */
 }
 
 .header-banner_xsmn {
-    margin-left: -20px;
+    margin-left: -15px;
     width: 600px;
     text-align: center;
     padding: 10px 0;
@@ -783,8 +781,8 @@ body {
 }
 
 .sub-header_xsmn {
-    margin-left: -20px;
     width: 600px;
+    margin-left: -15px;
     padding: 8px 5px;
     background-color: #e9ecef;
     font-size: 0.9em;
@@ -810,8 +808,7 @@ body {
 }
 .results_table_xsmn {
     width: 600px;
-
-    margin-left: -20px;
+    margin-left: -15px;
     border-collapse: collapse;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
@@ -873,9 +870,8 @@ body {
 
 @media (min-width: 768px) {
     .container_xsmn {
-        max-width: 750px;
+        max-width: 800px;
         padding: 15px;
-
         margin-top: 20px;
     }
 
@@ -912,15 +908,7 @@ body {
     height: 35px;
     border: 0.9px solid #e8e8e8;
 }
-.loto_container_mn_tn_ {
-    font-weight: bold;
-    padding: 10px;
-    font-size: 14px;
-}
 .loto_container_mn_tn_ p {
-    margin-top: -10px;
-    font-weight: bold;
-    padding: 10px;
     font-size: 14px;
 }
 .header-dau_mn {
@@ -940,8 +928,8 @@ body {
 
 .footer {
     font-family: Arial, sans-serif;
-    /* padding: 20px; */
-    /* background-color: #f0f0f0; */
+    padding: 20px;
+    background-color: #f0f0f0;
     color: #333;
     font-size: 14px;
     line-height: 1.6;
@@ -1056,7 +1044,7 @@ body {
 }
 .footer {
     margin-left: 40px;
-    margin-top: 1150px;
+    margin-top: 1700px;
 }
 
 .dmca-logo {

@@ -30,6 +30,37 @@ async function crawlLoGan(page) {
     }
 }
 
+async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
+    console.log('Đang cào dữ liệu TK Lô Gan Đầu...');
+    try {
+        await page_crawlTKLoGanDau.goto('https://xosodaiphat.com/thong-ke-dau.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKLoGanDau.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const gettd = (cl) => {
+                return Array.from(document.querySelectorAll(`td`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+               tklogandau : getClasstd('col-md-2'),
+               tklogandauso : gettd(''),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
 async function crawlLoGanCV(page1) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
@@ -60,6 +91,7 @@ async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     const page1 = await browser.newPage();
+    const page_crawlTKLoGanDau = await browser.newPage();
 
     console.log('Đang cào dữ liệu chính...');
 
@@ -641,14 +673,15 @@ async function crawl() {
             max3dg24: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
             max3dg3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             titlemax3d: getClass('titlemax3d'),
+            
         };
     });
-
+    const crawlTKLoGanDauResult = await crawlTKLoGanDau(page_crawlTKLoGanDau);
     const loGanResult = await crawlLoGan(page);
     const loGanCVResult = await crawlLoGanCV(page1);
 
     await browser.close();
-    const finalData = { ...data, ...loGanResult, ...loGanCVResult };
+    const finalData = { ...data, ...loGanResult, ...loGanCVResult, ...crawlTKLoGanDauResult };
 
     const dir = path.join(__dirname, '..', 'data', 'infos');
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -662,4 +695,4 @@ async function crawl() {
     return finalData;
 }
 
-module.exports = { crawl, crawlLoGan, crawlLoGanCV };
+module.exports = { crawl, crawlLoGan, crawlLoGanCV ,crawlTKLoGanDau};

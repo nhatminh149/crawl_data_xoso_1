@@ -16,26 +16,16 @@
         <span class='next-draw-date'>{{get result.para_open_next 0}}</span>
     </div>
 
-    <div class='breadcrumb'>
-        <a href='#'>XS Mega</a>
-        »
-        <a href='#'>XS Mega Thứ Tư</a>
-        »
-        <a href='#'>XS Mega {{result.date}}</a>
-    </div>
-
     <div class='draw-details'>
         {{get result.para_text_black_bold 0}}
     </div>
 
     <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.number_ball 0}}</div>
-        <div class='number-ball'>{{get result.number_ball 1}}</div>
-        <div class='number-ball'>{{get result.number_ball 2}}</div>
-        <div class='number-ball'>{{get result.number_ball 3}}</div>
-        <div class='number-ball'>{{get result.number_ball 4}}</div>
-        <div class='number-ball'>{{get result.number_ball 5}}</div>
-
+        <div class='number-ball'>12</div>
+        <div class='number-ball'>22</div>
+        <div class='number-ball'>32</div>
+        <div class='number-ball'>42</div>
+        <div class='number-ball'>52</div>
     </div>
     <p class='note'>
         Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng
@@ -136,25 +126,17 @@
         <span class='next-draw-date'>{{get result.para_open_next 1}}</span>
     </div>
 
-    <div class='breadcrumb'>
-        <a href='#'>XS Mega</a>
-        »
-        <a href='#'>XS Mega Thứ Tư</a>
-        »
-        <a href='#'>XS Mega {{result.date}}</a>
-    </div>
-
     <div class='draw-details'>
         {{get result.para_text_black_bold 1}}
     </div>
 
     <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.number_ball 0}}</div>
-        <div class='number-ball'>{{get result.number_ball 1}}</div>
-        <div class='number-ball'>{{get result.number_ball 2}}</div>
-        <div class='number-ball'>{{get result.number_ball 3}}</div>
-        <div class='number-ball'>{{get result.number_ball 4}}</div>
-        <div class='number-ball'>{{get result.number_ball 5}}</div>
+        <div class='number-ball'>19</div>
+        <div class='number-ball'>29</div>
+        <div class='number-ball'>39</div>
+        <div class='number-ball'>49</div>
+        <div class='number-ball'>59</div>
+     
 
     </div>
     <p class='note'>
@@ -173,7 +155,7 @@
         </thead>
         <tbody>
             <tr class='jackpot-row'>
-                <td>Jackpot</td>
+                <td>Jackpot 1</td>
                 <td>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
@@ -181,6 +163,20 @@
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
+                </td>
+                <td>{{get result.text_right 8}}</td>
+                <td>{{get result.text_right 9}}</td>
+            </tr>
+            <tr class='jackpot-row'>
+                <td>Jackpot 2</td>
+                <td style="display: flex; border: none;">
+                    <span class='match-dot'></span>
+                    <span class='match-dot'></span>
+                    <span class='match-dot'></span>
+                    <span class='match-dot'></span>
+                    <span class='match-dot'></span>
+                    <span><p class="text-red-1000">|</p></span>
+                    <span class='match-dot1'></span>
                 </td>
                 <td>{{get result.text_right 8}}</td>
                 <td>{{get result.text_right 9}}</td>

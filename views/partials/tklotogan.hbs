@@ -1,3 +1,5 @@
+
+
 <header class='main-header_logan 
     style="width: 1300px;
     margin-top: -29px;
@@ -50,22 +52,10 @@
 </header>
 
 
-<div class="lotogan_menu" style="margin-top: 30px;">
+<div class="lotogan_menu" style="margin-top: 20px;">
 <div class="bosslotogan" style="display: flex;">
-         <div class="lotogan" 
-         style="margin-top: -30px;
-         height: 300px;
-         ">
-        <header class="lotogan_header" 
-         style="background-color: #CC0000;
-                color: white;
-                width: 600px;
-                height: 50px;
-                margin-top: 30px;">
-            <h1 class="lotogan_header_h1" style="font-size: 20px;padding: 15px;">
-                Loto gan - Thống kê gan miền Bắc - {{result.date}}
-            </h1>
-        </header>
+         <div class="lotogan" style="display: flex; height: 300px;">
+
 
         <!-- Phần Tùy chọn Thống kê -->
         {{!-- <div class="lotogan_menu" style="border: none;">
@@ -106,7 +96,17 @@
         </div> --}}
 
         <!-- Bảng Thống kê Lô Gan Chính -->
-        <div class="lotogan_daydate" style="margin-right: 30px;">
+        <div class="lotogan_daydate" style="margin-right: 30px; margin-top: -30px;">
+                    <header class="lotogan_header" 
+         style="background-color: #CC0000;
+                color: white;
+                width: 600px;
+                height: 50px;
+                margin-top: 30px;">
+            <h1 class="lotogan_header_h1" style="font-size: 20px;padding: 15px;">
+                Loto gan - Thống kê gan miền Bắc - {{result.date}}
+            </h1>
+        </header>
             {{!-- <h2 class="lotogan_daydate_header" style="font-size: 15px;color: blue; margin-left: 15px;">
                 TK loto gan miền Bắc {{result.date}}
             </h2> --}}
@@ -181,258 +181,38 @@
                         </tbody>
                 </table>
             </div>
-        </div>
+                    <div class="lotogan_table_container max-w-4xl mx-auto my-8">
+    <h2 style="font-size:20px; padding:20px; border:1px solid #ddd; text-align:center; background:#f9f9f9;">
+        DANH SÁCH LOTO GAN CỰC ĐẠI TỪ 29-10-2025 ĐẾN NAY
+    </h2>
 
-        <div class="lotogan_table_container" 
-             style="width: 600px;
+<div class="max-w-5xl mx-auto my-10 font-sans">
 
-             ">
-             <h2 class="text-lg sm:text-xl font-semibold mb-3 text-gray-800" style="font-size: 20px;padding: 20px;">
-                DANH SÁCH LOTO GAN CỰC ĐẠI TỪ 29-10-2025 ĐẾN NAY
-            </h2>
-            <div class="loto-table-container" style="margin-top: -500px; height: 1px; border: none;">
-        <table class="lotogan_table99" style="margin-top: -170px;">
-        <thead>
-            <tr class="loto-numbers">
-                <td style="width: 10px; text-align:center;">Loto</td>
-                <td style="text-align: center;">00</td>
-                <td style="text-align: center;">01</td>
-                <td style="text-align: center;">02</td>
-                <td style="text-align: center;">03</td>
-                <td style="text-align: center;">04</td>
-                <td style="text-align: center;">05</td>
-                <td style="text-align: center;">06</td>
-                <td style="text-align: center;">07</td>
-                <td style="text-align: center;">08</td>
-                <td style="text-align: center;">09</td>
-                <td style="text-align: center;">10</td>
-                <td style="text-align: center;">11</td>
-                <td style="text-align: center;">12</td>
-                <td style="text-align: center;">13</td>
-                <td style="text-align: center;">14</td>
-                <td style="text-align: center;">15</td>
-                <td style="text-align: center;">16</td>
-                <td style="text-align: center;">17</td>
-                <td style="text-align: center;">18</td>
-                <td style="text-align: center;">19</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bet-amounts">
-                <td class="header-label-row-data" style="width: 10px; text-align: center;">Ngày</td>
-                <td style="text-align: center;">{{get result.loto 20}}</td>
-                <td style="text-align: center;">{{get result.loto 21}}</td>
-                <td style="text-align: center;">{{get result.loto 22}}</td>
-                <td style="text-align: center;">{{get result.loto 23}}</td>
-                <td style="text-align: center;">{{get result.loto 24}}</td>
-                <td style="text-align: center;">{{get result.loto 25}}</td>
-                <td style="text-align: center;">{{get result.loto 26}}</td>
-                <td style="text-align: center;">{{get result.loto 27}}</td>
-                <td style="text-align: center;">{{get result.loto 28}}</td>
-                <td style="text-align: center;">{{get result.loto 29}}</td>
-                <td style="text-align: center;">{{get result.loto 30}}</td>
-                <td style="text-align: center;">{{get result.loto 31}}</td>
-                <td style="text-align: center;">{{get result.loto 32}}</td>
-                <td style="text-align: center;">{{get result.loto 33}}</td>
-                <td style="text-align: center;">{{get result.loto 34}}</td>
-                <td style="text-align: center;">{{get result.loto 35}}</td>
-                <td style="text-align: center;">{{get result.loto 36}}</td>
-                <td style="text-align: center;">{{get result.loto 37}}</td>
-                <td style="text-align: center;">{{get result.loto 38}}</td>
-                <td style="text-align: center;">{{get result.loto 39}}</td>
-            </tr>
+    <div class="overflow-x-auto shadow-2xl rounded-b-lg">
+        <table class="min-w-full border-collapse ">
+            <thead>
+                <tr class="bg-gray-800 text-white text-sm">
+                    <td class="px-2 py-3" style="width:60px;">Loto</td>
+                    <td class="px-3 py-3">00</td><td>01</td><td>02</td><td>03</td><td>04</td>
+                    <td>05</td><td>06</td><td>07</td><td>08</td><td>09</td>
+                    <td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+                    <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td>
+                </tr>
+            </thead>
+            <tbody class="text-lg">
+                {{lotoGanBlock 0  20}}
+                {{lotoGanBlock 20 60}}
+                {{lotoGanBlock 40 100}}
+                {{lotoGanBlock 60 140}}
+                {{lotoGanBlock 80 180}}
+            </tbody>
+        </table>
+    </div>
 
-            <tr class="loto-numbers">
-                <td style="width: 10px; text-align: center;">Loto</td>
-                <td style="text-align: center;">20</td>
-                <td style="text-align: center;">21</td>
-                <td style="text-align: center;">22</td>
-                <td style="text-align: center;">23</td>
-                <td style="text-align: center;">24</td>
-                <td style="text-align: center;">25</td>
-                <td style="text-align: center;">26</td>
-                <td style="text-align: center;">27</td>
-                <td style="text-align: center;">28</td>
-                <td style="text-align: center;">29</td>
-                <td style="text-align: center;">30</td>
-                <td style="text-align: center;">31</td>
-                <td style="text-align: center;">32</td>
-                <td style="text-align: center;">33</td>
-                <td style="text-align: center;">34</td>
-                <td style="text-align: center;">35</td>
-                <td style="text-align: center;">36</td>
-                <td style="text-align: center;">37</td>
-                <td style="text-align: center;">38</td>
-                <td style="text-align: center;">39</td>
-            </tr>
-            <tr class="bet-amounts">
-                <td class="header-label-row-data" style="width: 10px; text-align: center;">Ngày</td>
-                <td style="text-align: center;">{{get result.loto 60}}</td>
-                <td style="text-align: center;">{{get result.loto 61}}</td>
-                <td style="text-align: center;">{{get result.loto 62}}</td>
-                <td style="text-align: center;">{{get result.loto 63}}</td>
-                <td style="text-align: center;">{{get result.loto 64}}</td>
-                <td style="text-align: center;">{{get result.loto 65}}</td>
-                <td style="text-align: center;">{{get result.loto 66}}</td>
-                <td style="text-align: center;">{{get result.loto 67}}</td>
-                <td style="text-align: center;">{{get result.loto 68}}</td>
-                <td style="text-align: center;">{{get result.loto 69}}</td>
-                <td style="text-align: center;">{{get result.loto 70}}</td>
-                <td style="text-align: center;">{{get result.loto 71}}</td>
-                <td style="text-align: center;">{{get result.loto 72}}</td>
-                <td style="text-align: center;">{{get result.loto 73}}</td>
-                <td style="text-align: center;">{{get result.loto 74}}</td>
-                <td style="text-align: center;">{{get result.loto 75}}</td>
-                <td style="text-align: center;">{{get result.loto 76}}</td>
-                <td style="text-align: center;">{{get result.loto 77}}</td>
-                <td style="text-align: center;">{{get result.loto 78}}</td>
-                <td style="text-align: center;">{{get result.loto 79}}</td>
-            </tr>
-
-            <tr class="loto-numbers">
-                <td style="width: 10px; text-align: center;">Loto</td>
-                <td style="text-align: center;">40</td>
-                <td style="text-align: center;">41</td>
-                <td style="text-align: center;">42</td>
-                <td style="text-align: center;">43</td>
-                <td style="text-align: center;">44</td>
-                <td style="text-align: center;">45</td>
-                <td style="text-align: center;">46</td>
-                <td style="text-align: center;">47</td>
-                <td style="text-align: center;">48</td>
-                <td style="text-align: center;">49</td>
-                <td style="text-align: center;">50</td>
-                <td style="text-align: center;">51</td>
-                <td style="text-align: center;">52</td>
-                <td style="text-align: center;">53</td>
-                <td style="text-align: center;">54</td>
-                <td style="text-align: center;">55</td>
-                <td style="text-align: center;">56</td>
-                <td style="text-align: center;">57</td>
-                <td style="text-align: center;">58</td>
-                <td style="text-align: center;">59</td>
-            </tr>
-            <tr class="bet-amounts">
-                <td class="header-label-row-data" style="width: 10px; text-align: center;">Ngày</td>
-                <td style="text-align: center;">{{get result.loto 100}}</td>
-                <td style="text-align: center;">{{get result.loto 101}}</td>
-                <td style="text-align: center;">{{get result.loto 102}}</td>
-                <td style="text-align: center;">{{get result.loto 103}}</td>
-                <td style="text-align: center;">{{get result.loto 104}}</td>
-                <td style="text-align: center;">{{get result.loto 105}}</td>
-                <td style="text-align: center;">{{get result.loto 106}}</td>
-                <td style="text-align: center;">{{get result.loto 107}}</td>
-                <td style="text-align: center;">{{get result.loto 108}}</td>
-                <td style="text-align: center;">{{get result.loto 109}}</td>
-                <td style="text-align: center;">{{get result.loto 110}}</td>
-                <td style="text-align: center;">{{get result.loto 111}}</td>
-                <td style="text-align: center;">{{get result.loto 112}}</td>
-                <td style="text-align: center;">{{get result.loto 113}}</td>
-                <td style="text-align: center;">{{get result.loto 114}}</td>
-                <td style="text-align: center;">{{get result.loto 115}}</td>
-                <td style="text-align: center;">{{get result.loto 116}}</td>
-                <td style="text-align: center;">{{get result.loto 117}}</td>
-                <td style="text-align: center;">{{get result.loto 118}}</td>
-                <td style="text-align: center;">{{get result.loto 119}}</td>
-            </tr>
-
-            <tr class="loto-numbers">
-                <td style="width: 10px; text-align: center;">Loto</td>
-                <td style="text-align: center;">60</td>
-                <td style="text-align: center;">61</td>
-                <td style="text-align: center;">62</td>
-                <td style="text-align: center;">63</td>
-                <td style="text-align: center;">64</td>
-                <td style="text-align: center;">65</td>
-                <td style="text-align: center;">66</td>
-                <td style="text-align: center;">67</td>
-                <td style="text-align: center;">68</td>
-                <td style="text-align: center;">69</td>
-                <td style="text-align: center;">70</td>
-                <td style="text-align: center;">71</td>
-                <td style="text-align: center;">72</td>
-                <td style="text-align: center;">73</td>
-                <td style="text-align: center;">74</td>
-                <td style="text-align: center;">75</td>
-                <td style="text-align: center;">76</td>
-                <td style="text-align: center;">77</td>
-                <td style="text-align: center;">78</td>
-                <td style="text-align: center;">79</td>
-            </tr>
-            <tr class="bet-amounts">
-                <td class="header-label-row-data" style="width:10px; text-align: center;">Ngày</td>
-                <td style="text-align: center;">{{get result.loto 140}}</td>
-                <td style="text-align: center;">{{get result.loto 141}}</td>
-                <td style="text-align: center;">{{get result.loto 142}}</td>
-                <td style="text-align: center;">{{get result.loto 143}}</td>
-                <td style="text-align: center;">{{get result.loto 144}}</td>
-                <td style="text-align: center;">{{get result.loto 145}}</td>
-                <td style="text-align: center;">{{get result.loto 146}}</td>
-                <td style="text-align: center;">{{get result.loto 147}}</td>
-                <td style="text-align: center;">{{get result.loto 148}}</td>
-                <td style="text-align: center;">{{get result.loto 149}}</td>
-                <td style="text-align: center;">{{get result.loto 150}}</td>
-                <td style="text-align: center;">{{get result.loto 151}}</td>
-                <td style="text-align: center;">{{get result.loto 152}}</td>
-                <td style="text-align: center;">{{get result.loto 153}}</td>
-                <td style="text-align: center;">{{get result.loto 154}}</td>
-                <td style="text-align: center;">{{get result.loto 155}}</td>
-                <td style="text-align: center;">{{get result.loto 156}}</td>
-                <td style="text-align: center;">{{get result.loto 157}}</td>
-                <td style="text-align: center;">{{get result.loto 158}}</td>
-                <td style="text-align: center;">{{get result.loto 159}}</td>
-            </tr>
-
-            <tr class="loto-numbers">
-                <td style="width: 10px; text-align: center;">Loto</td>
-                <td style="text-align: center;">80</td>
-                <td style="text-align: center;">81</td>
-                <td style="text-align: center;">82</td>
-                <td style="text-align: center;">83</td>
-                <td style="text-align: center;">84</td>
-                <td style="text-align: center;">85</td>
-                <td style="text-align: center;">86</td>
-                <td style="text-align: center;">87</td>
-                <td style="text-align: center;">88</td>
-                <td style="text-align: center;">89</td>
-                <td style="text-align: center;">90</td>
-                <td style="text-align: center;">91</td>
-                <td style="text-align: center;">92</td>
-                <td style="text-align: center;">93</td>
-                <td style="text-align: center;">94</td>
-                <td style="text-align: center;">95</td>
-                <td style="text-align: center;">96</td>
-                <td style="text-align: center;">97</td>
-                <td style="text-align: center;">98</td>
-                <td style="text-align: center;">99</td>
-            </tr>
-            <tr class="bet-amounts">
-                <td class="header-label-row-data" style="width: 10px; text-align: center;">Ngày</td>
-                <td style="text-align: center;">{{get result.loto 180}}</td>
-                <td style="text-align: center;">{{get result.loto 181}}</td>
-                <td style="text-align: center;">{{get result.loto 182}}</td>
-                <td style="text-align: center;">{{get result.loto 183}}</td>
-                <td style="text-align: center;">{{get result.loto 184}}</td>
-                <td style="text-align: center;">{{get result.loto 185}}</td>
-                <td style="text-align: center;">{{get result.loto 186}}</td>
-                <td style="text-align: center;">{{get result.loto 187}}</td>
-                <td style="text-align: center;">{{get result.loto 188}}</td>
-                <td style="text-align: center;">{{get result.loto 189}}</td>
-                <td style="text-align: center;">{{get result.loto 190}}</td>
-                <td style="text-align: center;">{{get result.loto 191}}</td>
-                <td style="text-align: center;">{{get result.loto 192}}</td>
-                <td style="text-align: center;">{{get result.loto 193}}</td>
-                <td style="text-align: center;">{{get result.loto 194}}</td>
-                <td style="text-align: center;">{{get result.loto 195}}</td>
-                <td style="text-align: center;">{{get result.loto 196}}</td>
-                <td style="text-align: center;">{{get result.loto 197}}</td>
-                <td style="text-align: center;">{{get result.loto 198}}</td>
-                <td style="text-align: center;">{{get result.loto 199}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="text-center mt-4 text-sm text-gray-600">
+        Cập nhật lúc: {{now format="DD/MM/YYYY HH:mm"}}
+    </div>
 </div>
-        </div>
 
         {{!-- <!-- Links Footer -->
         <div class="p-4 sm:p-6 bg-gray-50 text-sm space-y-2 text-gray-600 border-t border-gray-200">
@@ -442,6 +222,9 @@
         </div> --}}
 
     </div>
+        </div>
+
+
 
 {{!-- Thống kê lô tô --}}
     {{> menu}}
@@ -449,7 +232,7 @@
 
 </div>
 </div>
-<footer class='footer_logan' >
+<footer class='footer_logan' style="margin-top: 1200px;" >
      <div class='footer-line-red'></div>
     <div class='footer-menu-container'>
         <div class='footer-menu-row'>
