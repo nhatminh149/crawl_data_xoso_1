@@ -55,84 +55,118 @@
 <div class="flex mt-10" style="margin-top: 20px; " >
     <div class="w-147 border border-solid border-[#E8E8E8] h-110" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
-        Thống kê Loto cùng về
+        TK Loto theo đầu 
      </h1>
+         <div class="m-[600px] h-[130px]">
+    <h2 class="text-xl font-semibold text-gray-800 mb-6">
+        Chọn tỉnh và biên độ cần xem
+    </h2>
 
-    {{!-- <div class="p-4 rounded-lg flex w-147">
-  <label class="flex items-center space-x-3 cursor-pointer p-1 w-70" style="margin-left: 20px;margin-left: 20px;">
-    <input type="radio" name="loto_options" value="2_cap" checked class="form-radio h-5 w-5 text-blue-600 border-gray-400 focus:ring-blue-500">
-    <span class="text-lg text-gray-800">
-      2 cặp loto
-    </span>
-  </label>
-  
-  <label class="flex items-center space-x-3 cursor-pointer p-1 w-70" style="margin-left: 20px;margin-left: 20px;">
-    <input type="radio" name="loto_options" value="3_cap" class="form-radio h-5 w-5 text-blue-600 border-gray-400 focus:ring-blue-500">
-    <span class="text-lg text-gray-800">
-      3 cặp loto
-    </span>
-  </label>
+    <div class="flex w-[600px] h-[100px] " style="margin-top: 30px;">
+        <!-- Thứ (Thứ 2, Thứ 3, ...) -->
 
-  <button class="bg-[#CC0000] text-white w-40 h-10" style="margin-left: 40px;">Kết quả</button>
-</div> --}}
+            <select class="w-[100px] h-[40px] border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white shadow-sm" style="margin-left: 20px;">
+                <option>Thứ 2</option>
+                <option>Thứ 3</option>
+                <option>Thứ 4</option>
+                <option>Thứ 5</option>
+                <option>Thứ 6</option>
+                <option>Thứ 7</option>
+                <option>Chủ Nhật</option>
+            </select>
 
-    <div class="w-147">
-        <p style="margin-left: 20px;">
-            TK 2 cặp loto cùng về MB trong 10 lần quay
-        </p>
-        <table>
-            <tr>
-                <td class="bg-[#E8E8E8] text-[#CC0000]">Bộ số</td>
-                <td class="bg-[#E8E8E8] text-[#CC0000]">Ngày</td>
-                <td class="bg-[#E8E8E8] text-[#CC0000]">Số ngày đã về</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
-            <tr>
-                <td>{{get result.boso2 0}}</td>
-                <td>3 ngày</td>
-                <td>{{get result.boso2_ngayve 0}}</td>
-            </tr>
+
+        <!-- Miền (Miền Bắc, Miền Trung, Miền Nam) -->
+
+
+            <select class="w-[100px] h-[40px] border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white shadow-sm" style="margin-left: 20px;">
+                <option>Miền Bắc</option>
+                <option>Miền Trung</option>
+                <option>Miền Nam</option>
+            </select>
+
+
+        <!-- Biên độ (có thể là số kỳ, số ngày, ...) -->
+
+            <select class="w-[100px] h-[40px] border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white shadow-sm" style="margin-left: 20px;">
+                <option>10 kỳ</option>
+                <option>20 kỳ</option>
+                <option>30 kỳ</option>
+                <option>50 kỳ</option>
+                <option>100 kỳ</option>
+            </select>
+
+
+        <!-- Nút Xem kết quả -->
+        <div>
+            <button class="w-[100px] h-[40px] bg-red-600 text-white ounded-lg hover:bg-red-700 transform hover:scale-105 transition-all duration-200 shadow-lg" style="margin-left: 20px;">
+                Kết quả
+            </button>
+        </div>
+    </div>
+</div>
+        <div class="overflow-x-auto ">
+        <table class="min-w-full">
+            <thead>
+                <tr class="bg-gray-800 ">
+                    <td class="px-2 py-3" style="width:60px;text-align: center; font-weight: bold; color: blue;">Đầu</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">0</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">1</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">2</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">3</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">4</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">5</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">6</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">7</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">8</td>
+                    <td style="width:60px;text-align: center; font-weight: bold; color: blue;">9</td>
+
+                </tr>
+            </thead>
+            <tbody >
+                {{!-- {{lotodau 12  12}} --}}
+                {{lotodau 1 11}}
+                {{lotodau 11 22}}
+                {{lotodau 22 33}}
+                {{lotodau 33 44}}
+                {{lotodau 44 55}}
+                {{lotodau 55 66}}
+                {{lotodau 66 77}}
+                {{lotodau 77 88}}
+                {{lotodau 88 99}}
+                {{lotodau 99 110}}
+                {{lotodau 110 121}}
+                {{lotodau 121 132}}
+                {{lotodau 132 143}}
+                {{lotodau 143 154}}
+                {{lotodau 154 165}}
+                {{lotodau 165 176}}
+                {{lotodau 176 187}}
+                {{lotodau 187 198}}
+                {{lotodau 198 209}}
+                {{lotodau 209 220}}
+                {{lotodau 220 231}}
+                {{lotodau 231 242}}
+                {{lotodau 242 253}}
+                {{lotodau 253 264}}
+                {{lotodau 264 275}}
+                {{lotodau 275 286}}
+                {{lotodau 286 297}}
+                {{lotodau 297 308}}
+                {{lotodau 308 319}}
+                {{lotodau 321 330}}
+
+
+
+                {{!-- {{tklogandauso 40 100}}
+                {{tklogandauso 60 140}}
+                {{tklogandauso 80 180}} --}}
+            </tbody>
         </table>
     </div>
+    
+
+    
     </div>
     {{> menu}}
 </div>
@@ -142,7 +176,7 @@
 
 
 <footer class='footer_logan' >
-     <div class='footer-line-red'></div>
+ <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000; margin-left: 15px;"></div>
     <div class='footer-menu-container'>
         <div class='footer-menu-row'>
             <div class='menu-col'>

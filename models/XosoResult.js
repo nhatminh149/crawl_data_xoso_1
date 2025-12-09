@@ -460,6 +460,28 @@ const xosoResultSchema = new mongoose.Schema({
     //tklogandau
     tklogandau : [String],
     tklogandauso:[String],
+ 
+    tkloganduoiso:[String],
+    
+    TKGDBTH:[String],
+    phantram_TKLXH: [String],
+    luot_TKLXH: [String],
+    boso_TKLXH:[String],
+
+    slxh_TKKCB : [String],
+    boso_TKKCB : [String],
+   top10_TKKCB : [String],
+
+    kyquay_TKKBS : [String],
+    lon_TKKBS :    [String],
+    be_TKKBS :     [String],
+    chan_TKKBS :   [String],
+    le_TKKBS :     [String],
+
+    phantram_TKkdencc: [String],
+    luot_TKkdencc: [String],
+    boso_TKkdencc:[String],
+
 });
 
 xosoResultSchema.index({ date: 1 }, { unique: true });

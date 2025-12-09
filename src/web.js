@@ -61,6 +61,72 @@ async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
     }
 }
 
+//
+
+async function crawlTKLoGanDuoi(page_crawlTKLoGanDuoi) {
+    console.log('Đang cào dữ liệu TK Lô Gan Đuôi...');
+    try {
+        await page_crawlTKLoGanDuoi.goto('https://xosodaiphat.com/thong-ke-duoi.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKLoGanDuoi.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const gettd = (cl) => {
+                return Array.from(document.querySelectorAll(`td`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+               tkloganduoiso : gettd(''),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
+//
+
+async function crawlTKGDB(page_crawlTKGDB) {
+    console.log('Đang cào dữ liệu TK Giải Đặc Biệt...');
+    try {
+        await page_crawlTKGDB.goto('https://xosodaiphat.com/thong-ke-giai-dac-biet.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKGDB.evaluate(() => {
+        const getClass = (cl) => {
+            return Array.from(document.querySelectorAll(`div.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        }; 
+        const getClasstd = (cl) => {
+            return Array.from(document.querySelectorAll(`td.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+            return {
+               TKGDBTH: getClass('fontDB'),
+            };
+        });
+        console.log('Cào dữ liệu Giải Đặc Biệt thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Giải Đặc Biệt', error.message);
+    }
+}
+
+//
+
 async function crawlLoGanCV(page1) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
@@ -87,11 +153,140 @@ async function crawlLoGanCV(page1) {
     }
 }
 
+//
+async function crawlTKLXH(page_crawlTKLXH) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlTKLXH.goto('https://xosodaiphat.com/thong-ke-lan-xuat-hien.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKLXH.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                phantram_TKLXH: getClasstd('col-md-2.col-xs-1'),
+                luot_TKLXH: getClasstd('col-md-2.col-xs-2'),
+                boso_TKLXH: getClasstd('col-md-1.col-xs-2.text-center'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+//
+async function crawlTKKCB(page_crawlTKKCB) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlTKKCB.goto('https://xosodaiphat.com/thong-ke-keno-co-ban.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKKCB.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                slxh_TKKCB : getClasstd('col-td-3'),
+                boso_TKKCB : getClasstd('col-td-1.text-center'),
+                top10_TKKCB : getClasstd('text-bold'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
+//
+async function crawlTKKBS(page_crawlTKKBS) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlTKKBS.goto('https://xosodaiphat.com/thong-ke-keno-bo-sung.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKKBS.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getId = (dau) => {
+            return Array.from(document.querySelectorAll(`td[id^="${dau}"]`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+            };
+            return {
+                kyquay_TKKBS : getClasstd('color-blue'),
+                 lon_TKKBS : getId('big-1'),
+                 be_TKKBS : getId('small-1'),
+                 chan_TKKBS : getId('even-1'),
+                 le_TKKBS : getId('odd-1'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
+//
+async function crawlTKkdencc(page_crawlTKkdencc) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlTKkdencc.goto('https://xosodaiphat.com/thong-ke-00-99.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTKkdencc.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getId = (dau) => {
+            return Array.from(document.querySelectorAll(`td[id^="${dau}"]`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+            };
+            return {
+                phantram_TKkdencc: getClasstd('col-md-2.col-xs-1'),
+                luot_TKkdencc: getClasstd('col-md-2.col-xs-2'),
+                boso_TKkdencc: getClasstd('col-md-1.col-xs-2.text-center'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
 async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     const page1 = await browser.newPage();
     const page_crawlTKLoGanDau = await browser.newPage();
+    const page_crawlTKLoGanDuoi = await browser.newPage();
+    const page_crawlTKGDB = await browser.newPage();
+    const page_crawlTKLXH = await browser.newPage();
+    const page_crawlTKKCB = await browser.newPage();
+    const page_crawlTKKBS = await browser.newPage();
+    const page_crawlTKkdencc = await browser.newPage();
 
     console.log('Đang cào dữ liệu chính...');
 
@@ -679,9 +874,17 @@ async function crawl() {
     const crawlTKLoGanDauResult = await crawlTKLoGanDau(page_crawlTKLoGanDau);
     const loGanResult = await crawlLoGan(page);
     const loGanCVResult = await crawlLoGanCV(page1);
+    const crawlTKLoGanDuoiResult = await crawlTKLoGanDuoi(page_crawlTKLoGanDuoi);
+    const crawlTKGDBResult = await crawlTKGDB(page_crawlTKGDB);
+    const crawlTKLXHResult = await crawlTKLXH(page_crawlTKLXH);
+    const crawlTKKCBResult = await crawlTKKCB(page_crawlTKKCB);
+    const crawlTKKBSResult = await crawlTKKBS(page_crawlTKKBS);
+    const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
 
     await browser.close();
-    const finalData = { ...data, ...loGanResult, ...loGanCVResult, ...crawlTKLoGanDauResult };
+    const finalData = { ...data, ...loGanResult, ...loGanCVResult,
+     ...crawlTKLoGanDauResult ,...crawlTKLoGanDuoiResult,...crawlTKGDBResult,
+     ...crawlTKLXHResult,...crawlTKKCBResult,...crawlTKKBSResult,...crawlTKkdenccResult};
 
     const dir = path.join(__dirname, '..', 'data', 'infos');
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -695,4 +898,5 @@ async function crawl() {
     return finalData;
 }
 
-module.exports = { crawl, crawlLoGan, crawlLoGanCV ,crawlTKLoGanDau};
+module.exports = { crawl, crawlLoGan,crawlTKGDB, crawlLoGanCV 
+    ,crawlTKLoGanDau,crawlTKLoGanDuoi,crawlTKLXH,crawlTKKCB,crawlTKKBS,crawlTKkdencc};
