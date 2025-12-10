@@ -1,0 +1,232 @@
+<div style="margin-top:-29px">
+<header class='main-header_logan 
+    style="width: 1300px;
+    margin-top: -49px;
+    margin-left: 40px;"'>
+    <div class='top-bar-wrapper' href='http://localhost:3000/?'>
+        <div class='top-bar container'>
+            <div class='logo-area'>
+                <a href='/' class='logo-link'>
+                    <div class='logo-text'>
+                        <img
+                            src='https://cdn.xosodaiphat.com/assets/images/logo.svg'
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class='ad-banner'>
+                <div class='ad-label'>QUẢNG CÁO</div>
+                <div class='ad-content'>
+                    <img
+                        src='https://tpc.googlesyndication.com/simgad/1636368975115146746'
+                        alt='Quảng cáo'
+                    />
+                </div>
+            </div>
+            <div class='auth-area'>
+                <a href='#' class='login-button'>
+                    <i class='fas fa-user'></i>
+                    Đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class='main-nav'>
+        <div class='nav-container container'>
+            <a href='/' class='nav-item home-icon'><i
+                    class='fas fa-home'
+                ></i></a>
+            <a href='#' class='nav-item'>XSMB</a>
+            <a href='#' class='nav-item'>XSMN</a>
+            <a href='#' class='nav-item'>XSMT</a>
+            <a href='#' class='nav-item'>Vietlott</a>
+            <a href='#' class='nav-item'>Tra Cứu XS</a>
+            <a href='#' class='nav-item'>TK Loto</a>
+            <a href='#' class='nav-item'>Loto</a>
+            <a href='#' class='nav-item'>Thống Kê Xổ Số</a>
+        </div>
+    </nav>
+</header>
+
+
+
+
+<div class="flex mt-10" style="margin-top: 20px; " >
+    <div class="w-147 border border-solid border-[#E8E8E8] h-100" style="margin-right: 20px;">
+     <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
+        <p style="padding: 10px;">TK Loto theo đầu </p>
+     </h1>
+        <div class="max-w-3xl mx-auto bg-white p-6">
+        
+        <div class="space-y-3 mb-6 h-[70px]" style="margin-left: 25px; margin-top: 20px;">
+            <label class="flex items-center text-gray-700">
+                <input type="radio" name="tk_mode" value="mega_lanxh" checked class="form-radio text-red-600 focus:ring-red-500">
+                <span class="ml-2">Thống kê lần xuất hiện XS Mega</span>
+            </label>
+            <br>
+            <label class="flex items-center text-gray-700">
+                <input type="radio" name="tk_mode" value="mega_theothu" class="form-radio text-red-600 focus:ring-red-500">
+                <span class="ml-2">Thống kê theo thứ XS Mega</span>
+            </label>
+        </div>
+
+        <div class="text-[10px] font-bold text-red-1000 bg-[#E8E8E8] h-[45px]" style="margin-top: -25px;">
+            <p style="margin-left: 20px  ;"><p style="padding: 10px;font-size: 17px; font-weight;color :#990000">Thống kê lần xuất hiện XS Mega</p></p>
+        </div> 
+
+        <div class="mb-6 space-y-4 p-4 bg-white">
+            <div class="space-y-2" style="margin-top: -10px;">
+                <label class="flex items-center text-gray-700 text-sm">
+                    <input type="radio" name="tk_order" value="thu_tu" class="form-radio text-red-600 focus:ring-red-500">
+                    <span class="ml-2 text-[16px]">Theo thứ tự</span>
+                </label>
+                <br>
+                <label class="flex items-center text-gray-700 text-sm">
+                    <input type="radio" name="tk_order" value="luot_ve" checked class="form-radio text-red-600 focus:ring-red-500">
+                    <span class="ml-2 text-[16px]">Theo lượt về nhiều / ít</span>
+                </label>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4" style="margin-top: 10px;">
+                <input type="text" value="09-11-2025" class="px-3 py-2 border border-gray-300 rounded-md text-sm w-32 focus:ring-red-500 focus:border-red-500">
+                <input type="text" value="09-12-2025" class="px-3 py-2 border border-gray-300 rounded-md text-sm w-32 focus:ring-red-500 focus:border-red-500">
+                <button class="px-4 py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition duration-150">
+                    Kết quả
+                </button>
+            </div>
+        </div>
+
+        <p class="text-gray-700 mb-4">
+            TK lần xuất hiện theo lượt về nhiều/ít XS Mega 09/11/2025 - 09/12/2025
+        </p>
+        
+        <div class="grid grid-cols-12 text-sm font-bold text-gray-800 border-b-2 border-gray-400 pb-2 mb-2 bg-[#E8E8E8] h-[40px]">
+            <div class="col-span-1 " style="margin-top: 10px;">Bộ số</div>
+            <div class="col-span-11 pl-4" style="margin-top: 10px;">Lần xuất hiện theo lượt về nhiều/ít XS Mega 6/45</div>
+        </div>
+        
+        </div>
+        <div class="overflow-x-auto ">
+        <table class="min-w-full">
+            <tbody >
+              {{#each statisticsList}}
+
+    <div class="h-[30px] flex items-center space-x-4 p-2 border border-gray-500">
+        <div class="font-bold text-lg w-10 flex-shrink-0">{{this.boso}}</div> 
+
+        <div class="h-[20px] relative flex-grow h-6 bg-gray-200 rounded-sm">
+            <div 
+                class="bg-red-600 h-full rounded-sm" 
+                style="width: {{this.width}};" 
+                title="{{this.phantram}} / Max 7%"
+            >
+            </div>
+        </div>
+
+        <div class="text-base font-semibold flex-shrink-0 w-32 text-right">
+            {{this.phantram}}
+            <span class="ml-2 font-normal text-gray-600">{{this.luot}}</span>
+        </div>
+    </div> 
+
+{{/each}}
+            </tbody>
+        </table>
+    </div>
+    
+
+    
+    </div>
+    {{> trangchu/menu}}
+</div>
+
+
+
+
+
+<footer class='footer_logan' >
+ <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000; margin-left: 15px;margin-top: 50px;"></div>
+    <div class='footer-menu-container'>
+        <div class='footer-menu-row'>
+            <div class='menu-col'>
+                <a href='#'>Trang chủ</a>
+                <a href='#'>XSMB</a>
+                <a href='#'>XSMN</a>
+                <a href='#'>XSMT</a>
+                <a href='#'>Vietlott</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Xổ số hôm qua</a>
+                <a href='#'>XSMB 30 ngày</a>
+                <a href='#'>XSMN 30 ngày</a>
+                <a href='#'>XSMT 30 ngày</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê loto gan</a>
+                <a href='#'>Thống kê tổng hợp</a>
+                <a href='#'>Thống kê giải đặc biệt</a>
+                <a href='#'>Thống kê loto kép</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê tần suất loto</a>
+                <a href='#'>Thống kê tần suất loto cặp</a>
+                <a href='#'>Thống kê XSMB</a>
+                <a href='#'>Thống kê XSMN</a>
+                <a href='#'>Thống kê XSMT</a>
+            </div>
+        </div>
+
+        <div class='footer-divider-container'>
+            <div class='footer-line-red'></div>
+            <div class='footer-title-row'>
+                <h3 class='footer-title'>Xổ Số Đại Phát - Chính Xác Từng Giây</h3>
+                <div class='footer-utility-links'>
+                    <a href='#'>Điều khoản sử dụng</a>
+                    |
+                    <a href='#'>Chính sách bảo mật</a>
+                    |
+                    <a href='#'>Cookies</a>
+                    |
+                    <a href='#'>RSS</a>
+                    |
+                    <a href='#'>Theo dõi Xổ Số Đại Phát</a>
+                    <span class='play-icon'>►</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='footer-info-container'>
+        <div class='footer-info-content'>
+            <p class='copyright'>
+                <strong>Copyright © Since 2009 - xosodaiphat.com, All Rights
+                    Reserved</strong>
+            </p>
+            <p>Đơn vị chủ quản: Công Ty Cổ Phần Dịch Vụ và Viễn Thông Nam Việt.</p>
+            <p>Địa chỉ văn phòng: Tầng 15, 77 Trần Nhân Tôn, Phường An Đông,
+                Thành phố Hồ Chí Minh</p>
+            <p>Địa chỉ: Tầng 3, Tòa nhà An Phú Plaza, 117-119 Lý Chính Thắng,
+                Phường Xuân Hòa, Thành phố Hồ Chí Minh</p>
+            <p>MST: 0305578356</p>
+            <p>Điện thoại: 028.6276.6766</p>
+            <p>Email:
+                <a
+                    href='mailto:contact@xosodaiphat.com'
+                >contact@xosodaiphat.com</a></p>
+        </div>
+
+        <div class='footer-disclaimer'>
+            <p>
+                Thông tin và kết quả xổ số trên xosodaiphat.com được chúng tôi
+                cập nhật từ nguồn công khai và chỉ mang tính chất tham khảo. Vui
+                lòng kiểm tra lại kết quả chính thức được công bố bởi các công
+                ty xổ số kiến thiết.
+            </p>
+            <div class='dmca-logo'>
+                [DMCA PROTECTED Logo Placeholder]
+            </div>
+        </div>
+    </div>
+</footer>
+</div>

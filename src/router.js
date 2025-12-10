@@ -11,43 +11,43 @@ router.get('/', async (req, res) => {
     res.render('xoso', { title: 'XSMB Hôm Nay', result });
 });
 
-router.get('/partials/thong-ke-tong-hop-xsmb', async (req, res) => {
+router.get('/partials/menu/thong-ke-tong-hop-xsmb', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/thong-ke-tong-hop-xsmb', { title: 'Thống kê tổng hợp', result });
+    res.render('partials/menu/thong-ke-tong-hop-xsmb', { title: 'Thống kê tổng hợp', result });
 });
 
-router.get('/partials/tklotogancv', async (req, res) => {
+router.get('/partials/menu/tklotogancv', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/tklotogancv', { title: 'Lô gan cuối', result });
+    res.render('partials/menu/tklotogancv', { title: 'Lô gan cuối', result });
 });
 
-router.get('/partials/tklotogandau', async (req, res) => {
+router.get('/partials/menu/tklotogandau', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/tklotogandau', { title: 'Lô gan đầu', result });
+    res.render('partials/menu/tklotogandau', { title: 'Lô gan đầu', result });
 });
 
-router.get('/partials/tklotoganduoi', async (req, res) => {
+router.get('/partials/menu/tklotoganduoi', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/tklotoganduoi', { title: 'Lô gan đuôi', result });
+    res.render('partials/menu/tklotoganduoi', { title: 'Lô gan đuôi', result });
 });
 
-router.get('/partials/tklotogan', async (req, res) => {
+router.get('/partials/menu/tklotogan', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/tklotogan', { title: 'Lô gan cực đại', result });
+    res.render('partials/menu/tklotogan', { title: 'Lô gan cực đại', result });
 });
 
-router.get('/partials/tkgdb', async (req, res) => {
+router.get('/partials/menu/tkgdb', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/tkgdb', { title: 'Lô gan cực đại', result });
+    res.render('partials/menu/tkgdb', { title: 'Lô gan cực đại', result });
 });
 
-router.get('/partials/xsmb', async (req, res) => {
+router.get('/partials/xscm/xsmb', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/xsmb', { title: 'Lô gan cực đại', result });
+    res.render('partials/xscm/xsmb', { title: 'Lô gan cực đại', result });
 });
 
 //
-router.get('/partials/tklxh', async (req, res) => {
+router.get('/partials/menu/tklxh', async (req, res) => {
     const result = await getLatestResult();
     const bosoArray = result?.boso_TKLXH ?? [];
     const phantramArray = result?.phantram_TKLXH ?? [];
@@ -68,13 +68,13 @@ router.get('/partials/tklxh', async (req, res) => {
         };
     });
 
-    res.render('partials/tklxh', {
+    res.render('partials/menu/tklxh', {
         title: 'Thống kê Lô Xiên Hai',
         statisticsList,
         maxPercentage
     });
 });
-router.get('/partials/tkkcb', async (req, res) => {
+router.get('/partials/menu/tkkcb', async (req, res) => {
     const r = await getLatestResult();
     const max = 100;
 
@@ -89,14 +89,14 @@ router.get('/partials/tkkcb', async (req, res) => {
         };
     });
 
-    res.render('partials/tkkcb', {
+    res.render('partials/menu/tkkcb', {
         title: 'Thống kê Kết Cặp Bộ',
         statisticsList: list,
         maxPeriods: max
     });
 });
 
-router.get('/partials/kdencc', async (req, res) => {
+router.get('/partials/menu/kdencc', async (req, res) => {
     const result = await getLatestResult();
     const bosoArray = result?.boso_TKkdencc ?? [];
     const phantramArray = result?.phantram_TKkdencc ?? [];
@@ -117,10 +117,49 @@ router.get('/partials/kdencc', async (req, res) => {
         };
     });
 
-    res.render('partials/kdencc', {
+    res.render('partials/menu/kdencc', {
         title: 'Thống kê Lô Xiên Hai',
         statisticsList,
         maxPercentage
+    });
+});
+
+
+
+router.get('/partials/menu/tkkbosung', async (req, res) => {
+    const result = await getLatestResult();
+    const rawData = result?.combo_TKKBS ?? [];
+    function parseKBSData(dataArray) {
+        if (!Array.isArray(dataArray) || dataArray.length < 2) {
+            return [];
+        }
+        const tableData = dataArray.slice(1);
+        const parsedData = tableData.map(line => {
+            const parts = line.split('\t').map(item => item.trim());
+            if (parts.length < 5) {
+                return null; 
+            }
+            const [kyQuay, lon, be, chan, le] = parts;
+            const lonNum = parseInt(lon);
+            const beNum = parseInt(be);
+            const chanNum = parseInt(chan);
+            const leNum = parseInt(le);
+            const isColored = (num) => !isNaN(num) && num > 10;
+            return {
+                kyQuay: kyQuay,
+                lon: { value: lon, isColored: isColored(lonNum) },
+                be: { value: be, isColored: isColored(beNum) },
+                chan: { value: chan, isColored: isColored(chanNum) },
+                le: { value: le, isColored: isColored(leNum) },
+            };
+        }).filter(item => item !== null); 
+
+        return parsedData;
+    }
+    const tableRows = parseKBSData(rawData);
+    res.render('partials/menu/tkkbosung', {
+        title: 'Thống kê Lớn/Bé/Chẵn/Lẻ',
+        tableRows: tableRows
     });
 });
 module.exports = router;

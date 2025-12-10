@@ -1,3 +1,4 @@
+<div style="margin-top:-29px">
 <header class='main-header_logan 
     style="width: 1300px;
     margin-top: -29px;
@@ -11,7 +12,6 @@
                             src='https://cdn.xosodaiphat.com/assets/images/logo.svg'
                         />
                     </div>
-                    <span class='logo-slogan'>Chính xác từng giây</span>
                 </a>
             </div>
             <div class='ad-banner'>
@@ -55,7 +55,7 @@
 <div class="flex mt-10" style="margin-top: 20px; " >
     <div class="w-147 border border-solid border-[#E8E8E8] h-100" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
-        TK Loto theo đầu 
+       <p style="padding: 10px;">TK Loto theo đầu </p> 
      </h1>
         <div class="max-w-3xl mx-auto bg-white p-6">
         
@@ -110,26 +110,22 @@
         <div class="overflow-x-auto ">
         <table class="min-w-full">
             <tbody >
-              {{#each statisticsList}}
-
-    <div class="h-[30px] flex items-center space-x-4 p-2 border border-gray-500">
-        <div class="font-bold text-lg w-10 flex-shrink-0">{{this.boso}}</div> 
-
-        <div class="h-[20px] relative flex-grow h-6 bg-gray-200 rounded-sm">
-            <div 
-                class="bg-red-600 h-full rounded-sm" 
-                style="width: {{this.width}};" 
-                title="{{this.phantram}} / Max 7%"
-            >
-            </div>
+{{#each statisticsList}}
+<div class=" h-[30px] flex items-center border border-gray-500 last:border-b-0">
+    <!-- Thanh phần trăm -->        <span class="font-bold text-gray-800">&nbsp; &nbsp;&nbsp; &nbsp;{{this.boso}}</span>
+    <div class="h-[20px] flex-1 h-6 bg-gray-200 rounded border border1-gray-500" style="margin-left: 40px;">
+        <div
+            class="h-full bg-red-600 rounded transition-all duration-500"
+            style="width: {{this.width}}"
+            title="{{this.slxh}} ({{this.currentRate}}) trong {{maxPeriods}} kỳ">
         </div>
+    </div>
 
-        <div class="text-base font-semibold flex-shrink-0 w-32 text-right">
-            {{this.phantram}}
-            <span class="ml-2 font-normal text-gray-600">{{this.luot}}</span>
-        </div>
-    </div> 
-
+    <!-- Số lần xuất hiện + bộ số (thêm boso vào cho đầy đủ thông tin) -->
+    <div class="w-24 text-right ">
+        <span class="block text-xs text-gray-500" style="margin-right: 20px;">{{this.slxh}}</span>
+    </div>
+</div>
 {{/each}}
             </tbody>
         </table>
@@ -138,7 +134,7 @@
 
     
     </div>
-    {{> menu}}
+     {{> trangchu/menu}}
 </div>
 
 
@@ -229,3 +225,4 @@
         </div>
     </div>
 </footer>
+</div>

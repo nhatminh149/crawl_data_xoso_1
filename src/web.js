@@ -114,7 +114,13 @@ async function crawlTKGDB(page_crawlTKGDB) {
                 .map((el) => el.innerText.trim())
                 .filter(Boolean);
         };
+        const getClassspan = (cl) => {
+            return Array.from(document.querySelectorAll(`span.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
             return {
+               haisocuoi : getClassspan('color-reb'),
                TKGDBTH: getClass('fontDB'),
             };
         });
@@ -126,6 +132,44 @@ async function crawlTKGDB(page_crawlTKGDB) {
 }
 
 //
+
+async function crawlAnGiang(page_crawlAnGiang) {
+    console.log('Đang cào dữ liệu TK Giải Đặc Biệt...');
+    try {
+        await page_crawlAnGiang.goto('https://xosodaiphat.com/xsag-xo-so-an-giang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlAnGiang.evaluate(() => {
+        const getClass = (cl) => {
+            return Array.from(document.querySelectorAll(`div.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        }; 
+        const getClasstd = (cl) => {
+            return Array.from(document.querySelectorAll(`td.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+        const getClassspan = (cl) => {
+            return Array.from(document.querySelectorAll(`span.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+            return {
+                G8vGDB_AnGiang : getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG2vG1_AnGiang : getClassspan('number-black-bold.div-horizontal'),
+                G6_AnGiang : getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4vG3_AnGiang : getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Giải Đặc Biệt thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Giải Đặc Biệt', error.message);
+    }
+}
 
 async function crawlLoGanCV(page1) {
     console.log('Đang cào dữ liệu Lô Gan...');
@@ -228,12 +272,18 @@ async function crawlTKKBS(page_crawlTKKBS) {
                 .map((el) => el.innerText.trim())
                 .filter(Boolean);
             };
+            const gettr = (dau) => {
+            return Array.from(document.querySelectorAll(`tr`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+            };
             return {
                 kyquay_TKKBS : getClasstd('color-blue'),
                  lon_TKKBS : getId('big-1'),
                  be_TKKBS : getId('small-1'),
                  chan_TKKBS : getId('even-1'),
                  le_TKKBS : getId('odd-1'),
+                 combo_TKKBS : gettr('tr'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -276,6 +326,36 @@ async function crawlTKkdencc(page_crawlTKkdencc) {
     }
 }
 
+async function crawlDienToan123(page_crawlDienToan123) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlDienToan123.goto('https://xosodaiphat.com/xo-so-dien-toan-123.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlDienToan123.evaluate(() => {
+            const getul = (cl) => {
+                return Array.from(document.querySelectorAll(`li`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+            return Array.from(document.querySelectorAll(`div.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+            return {
+                dt123 : getClass('dientoan-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
 async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -287,6 +367,8 @@ async function crawl() {
     const page_crawlTKKCB = await browser.newPage();
     const page_crawlTKKBS = await browser.newPage();
     const page_crawlTKkdencc = await browser.newPage();
+    const page_crawlAnGiang = await browser.newPage();
+    const page_crawlDienToan123 = await browser.newPage();
 
     console.log('Đang cào dữ liệu chính...');
 
@@ -871,6 +953,8 @@ async function crawl() {
             
         };
     });
+
+
     const crawlTKLoGanDauResult = await crawlTKLoGanDau(page_crawlTKLoGanDau);
     const loGanResult = await crawlLoGan(page);
     const loGanCVResult = await crawlLoGanCV(page1);
@@ -880,11 +964,13 @@ async function crawl() {
     const crawlTKKCBResult = await crawlTKKCB(page_crawlTKKCB);
     const crawlTKKBSResult = await crawlTKKBS(page_crawlTKKBS);
     const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
+    const crawlAnGiangResult = await crawlAnGiang(page_crawlAnGiang);
+    const crawlDienToan123Result = await crawlDienToan123(page_crawlDienToan123)
 
     await browser.close();
     const finalData = { ...data, ...loGanResult, ...loGanCVResult,
      ...crawlTKLoGanDauResult ,...crawlTKLoGanDuoiResult,...crawlTKGDBResult,
-     ...crawlTKLXHResult,...crawlTKKCBResult,...crawlTKKBSResult,...crawlTKkdenccResult};
+     ...crawlTKLXHResult,...crawlTKKCBResult,...crawlTKKBSResult,...crawlTKkdenccResult,...crawlAnGiangResult,...crawlDienToan123Result};
 
     const dir = path.join(__dirname, '..', 'data', 'infos');
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -899,4 +985,5 @@ async function crawl() {
 }
 
 module.exports = { crawl, crawlLoGan,crawlTKGDB, crawlLoGanCV 
-    ,crawlTKLoGanDau,crawlTKLoGanDuoi,crawlTKLXH,crawlTKKCB,crawlTKKBS,crawlTKkdencc};
+    ,crawlTKLoGanDau,crawlTKLoGanDuoi,crawlTKLXH,crawlTKKCB,
+    crawlTKKBS,crawlTKkdencc,crawlAnGiang,crawlDienToan123};

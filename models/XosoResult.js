@@ -477,11 +477,19 @@ const xosoResultSchema = new mongoose.Schema({
     be_TKKBS :     [String],
     chan_TKKBS :   [String],
     le_TKKBS :     [String],
+    combo_TKKBS : [String],
 
     phantram_TKkdencc: [String],
     luot_TKkdencc: [String],
     boso_TKkdencc:[String],
+    haisocuoi : [String],
 
+    G8vGDB_AnGiang : [String],
+    G7vG5vG2vG1_AnGiang : [String],
+    G6_AnGiang : [String],
+    G4vG3_AnGiang : [String],
+
+    dt123 : [String],
 });
 
 xosoResultSchema.index({ date: 1 }, { unique: true });
