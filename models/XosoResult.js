@@ -362,7 +362,7 @@ const xosoResultSchema = new mongoose.Schema({
     LT7DNA: [String],
     LT8DNA: [String],
     LT9DNA: [String],
-    
+
     LT0KT: [String],
     LT1KT: [String],
     LT2KT: [String],
@@ -456,40 +456,51 @@ const xosoResultSchema = new mongoose.Schema({
     //lotogancv
     boso2: [String],
     boso2_ngayve: [String],
+    boso2_ngay: [String],
 
+    kep: [String],
+    kep_ngayve: [String],
+    kep_ngay: [String],
     //tklogandau
-    tklogandau : [String],
-    tklogandauso:[String],
- 
-    tkloganduoiso:[String],
-    
-    TKGDBTH:[String],
+    tklogandau: [String],
+    tklogandauso: [String],
+
+    tkloganduoiso: [String],
+
+    TKGDBTH: [String],
     phantram_TKLXH: [String],
     luot_TKLXH: [String],
-    boso_TKLXH:[String],
+    boso_TKLXH: [String],
 
-    slxh_TKKCB : [String],
-    boso_TKKCB : [String],
-   top10_TKKCB : [String],
+    slxh_TKKCB: [String],
+    boso_TKKCB: [String],
+    top10_TKKCB: [String],
 
-    kyquay_TKKBS : [String],
-    lon_TKKBS :    [String],
-    be_TKKBS :     [String],
-    chan_TKKBS :   [String],
-    le_TKKBS :     [String],
-    combo_TKKBS : [String],
+    kyquay_TKKBS: [String],
+    lon_TKKBS: [String],
+    be_TKKBS: [String],
+    chan_TKKBS: [String],
+    le_TKKBS: [String],
+    combo_TKKBS: [String],
 
     phantram_TKkdencc: [String],
     luot_TKkdencc: [String],
-    boso_TKkdencc:[String],
-    haisocuoi : [String],
+    boso_TKkdencc: [String],
+    haisocuoi: [String],
 
-    G8vGDB_AnGiang : [String],
-    G7vG5vG2vG1_AnGiang : [String],
-    G6_AnGiang : [String],
-    G4vG3_AnGiang : [String],
+    G8vGDB_AnGiang: [String],
+    G7vG5vG2vG1_AnGiang: [String],
+    G6_AnGiang: [String],
+    G4vG3_AnGiang: [String],
 
-    dt123 : [String],
+    dt123: [String],
+
+    boso_theoThu: [String],
+    phantram_theoThu: [String],
+    luot_theoThu: [String],
+
+    bang12_xh: [String],
+    textleft_xh: [String],
 });
 
 xosoResultSchema.index({ date: 1 }, { unique: true });

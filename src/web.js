@@ -33,10 +33,13 @@ async function crawlLoGan(page) {
 async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
     console.log('Đang cào dữ liệu TK Lô Gan Đầu...');
     try {
-        await page_crawlTKLoGanDau.goto('https://xosodaiphat.com/thong-ke-dau.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKLoGanDau.goto(
+            'https://xosodaiphat.com/thong-ke-dau.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKLoGanDau.evaluate(() => {
             const getClasstd = (cl) => {
@@ -50,8 +53,8 @@ async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
                     .filter(Boolean);
             };
             return {
-               tklogandau : getClasstd('col-md-2'),
-               tklogandauso : gettd(''),
+                tklogandau: getClasstd('col-md-2'),
+                tklogandauso: gettd(''),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -66,10 +69,13 @@ async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
 async function crawlTKLoGanDuoi(page_crawlTKLoGanDuoi) {
     console.log('Đang cào dữ liệu TK Lô Gan Đuôi...');
     try {
-        await page_crawlTKLoGanDuoi.goto('https://xosodaiphat.com/thong-ke-duoi.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKLoGanDuoi.goto(
+            'https://xosodaiphat.com/thong-ke-duoi.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKLoGanDuoi.evaluate(() => {
             const getClasstd = (cl) => {
@@ -83,7 +89,7 @@ async function crawlTKLoGanDuoi(page_crawlTKLoGanDuoi) {
                     .filter(Boolean);
             };
             return {
-               tkloganduoiso : gettd(''),
+                tkloganduoiso: gettd(''),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -98,30 +104,33 @@ async function crawlTKLoGanDuoi(page_crawlTKLoGanDuoi) {
 async function crawlTKGDB(page_crawlTKGDB) {
     console.log('Đang cào dữ liệu TK Giải Đặc Biệt...');
     try {
-        await page_crawlTKGDB.goto('https://xosodaiphat.com/thong-ke-giai-dac-biet.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKGDB.goto(
+            'https://xosodaiphat.com/thong-ke-giai-dac-biet.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKGDB.evaluate(() => {
-        const getClass = (cl) => {
-            return Array.from(document.querySelectorAll(`div.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        }; 
-        const getClasstd = (cl) => {
-            return Array.from(document.querySelectorAll(`td.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        };
-        const getClassspan = (cl) => {
-            return Array.from(document.querySelectorAll(`span.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
             return {
-               haisocuoi : getClassspan('color-reb'),
-               TKGDBTH: getClass('fontDB'),
+                haisocuoi: getClassspan('color-reb'),
+                TKGDBTH: getClass('fontDB'),
             };
         });
         console.log('Cào dữ liệu Giải Đặc Biệt thành công.');
@@ -136,32 +145,41 @@ async function crawlTKGDB(page_crawlTKGDB) {
 async function crawlAnGiang(page_crawlAnGiang) {
     console.log('Đang cào dữ liệu TK Giải Đặc Biệt...');
     try {
-        await page_crawlAnGiang.goto('https://xosodaiphat.com/xsag-xo-so-an-giang.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlAnGiang.goto(
+            'https://xosodaiphat.com/xsag-xo-so-an-giang.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlAnGiang.evaluate(() => {
-        const getClass = (cl) => {
-            return Array.from(document.querySelectorAll(`div.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        }; 
-        const getClasstd = (cl) => {
-            return Array.from(document.querySelectorAll(`td.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        };
-        const getClassspan = (cl) => {
-            return Array.from(document.querySelectorAll(`span.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
             return {
-                G8vGDB_AnGiang : getClassspan('special-prize-lg.div-horizontal'),
-                G7vG5vG2vG1_AnGiang : getClassspan('number-black-bold.div-horizontal'),
-                G6_AnGiang : getClassspan('col-xs-4.number-black-bold.div-horizontal'),
-                G4vG3_AnGiang : getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                G8vGDB_AnGiang: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG2vG1_AnGiang: getClassspan(
+                    'number-black-bold.div-horizontal',
+                ),
+                G6_AnGiang: getClassspan(
+                    'col-xs-4.number-black-bold.div-horizontal',
+                ),
+                G4vG3_AnGiang: getClassspan(
+                    'col-sm-3.col-xs-6.number-black-bold.div-horizontal',
+                ),
             };
         });
         console.log('Cào dữ liệu Giải Đặc Biệt thành công.');
@@ -188,6 +206,39 @@ async function crawlLoGanCV(page1) {
             return {
                 boso2: getClasstd('col-xs-2.text-bold.text-center'),
                 boso2_ngayve: getClasstd('col-xs-7'),
+                boso2_ngay: getClasstd('col-xs-3.text-center'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
+//
+
+async function crawlLotoKep(page_crawlLotoKep) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlLotoKep.goto(
+            'https://xosodaiphat.com/thong-ke-lo-kep.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
+
+        const result = await page_crawlLotoKep.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                kep: getClasstd('col-xs-2.text-bold.text-center'),
+                kep_ngayve: getClasstd('col-xs-7'),
+                kep_ngay: getClasstd('col-xs-3.text-center'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -201,10 +252,13 @@ async function crawlLoGanCV(page1) {
 async function crawlTKLXH(page_crawlTKLXH) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
-        await page_crawlTKLXH.goto('https://xosodaiphat.com/thong-ke-lan-xuat-hien.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKLXH.goto(
+            'https://xosodaiphat.com/thong-ke-lan-xuat-hien.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKLXH.evaluate(() => {
             const getClasstd = (cl) => {
@@ -225,13 +279,50 @@ async function crawlTKLXH(page_crawlTKLXH) {
     }
 }
 //
+async function crawlTKLXH1(page_crawlTKLXH1) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlTKLXH1.goto(
+            'https://xosodaiphat.com/thong-ke-tan-suat.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
+
+        const result = await page_crawlTKLXH1.evaluate(() => {
+            const gettr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                bang12_xh: getClasstd('col-xs-2'),
+                textleft_xh: getClasstd('text-left'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+//
 async function crawlTKKCB(page_crawlTKKCB) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
-        await page_crawlTKKCB.goto('https://xosodaiphat.com/thong-ke-keno-co-ban.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKKCB.goto(
+            'https://xosodaiphat.com/thong-ke-keno-co-ban.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKKCB.evaluate(() => {
             const getClasstd = (cl) => {
@@ -240,9 +331,9 @@ async function crawlTKKCB(page_crawlTKKCB) {
                     .filter(Boolean);
             };
             return {
-                slxh_TKKCB : getClasstd('col-td-3'),
-                boso_TKKCB : getClasstd('col-td-1.text-center'),
-                top10_TKKCB : getClasstd('text-bold'),
+                slxh_TKKCB: getClasstd('col-td-3'),
+                boso_TKKCB: getClasstd('col-td-1.text-center'),
+                top10_TKKCB: getClasstd('text-bold'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -256,10 +347,13 @@ async function crawlTKKCB(page_crawlTKKCB) {
 async function crawlTKKBS(page_crawlTKKBS) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
-        await page_crawlTKKBS.goto('https://xosodaiphat.com/thong-ke-keno-bo-sung.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKKBS.goto(
+            'https://xosodaiphat.com/thong-ke-keno-bo-sung.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKKBS.evaluate(() => {
             const getClasstd = (cl) => {
@@ -268,22 +362,22 @@ async function crawlTKKBS(page_crawlTKKBS) {
                     .filter(Boolean);
             };
             const getId = (dau) => {
-            return Array.from(document.querySelectorAll(`td[id^="${dau}"]`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
+                return Array.from(document.querySelectorAll(`td[id^="${dau}"]`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             const gettr = (dau) => {
-            return Array.from(document.querySelectorAll(`tr`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             return {
-                kyquay_TKKBS : getClasstd('color-blue'),
-                 lon_TKKBS : getId('big-1'),
-                 be_TKKBS : getId('small-1'),
-                 chan_TKKBS : getId('even-1'),
-                 le_TKKBS : getId('odd-1'),
-                 combo_TKKBS : gettr('tr'),
+                kyquay_TKKBS: getClasstd('color-blue'),
+                lon_TKKBS: getId('big-1'),
+                be_TKKBS: getId('small-1'),
+                chan_TKKBS: getId('even-1'),
+                le_TKKBS: getId('odd-1'),
+                combo_TKKBS: gettr('tr'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -297,10 +391,13 @@ async function crawlTKKBS(page_crawlTKKBS) {
 async function crawlTKkdencc(page_crawlTKkdencc) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
-        await page_crawlTKkdencc.goto('https://xosodaiphat.com/thong-ke-00-99.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlTKkdencc.goto(
+            'https://xosodaiphat.com/thong-ke-00-99.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlTKkdencc.evaluate(() => {
             const getClasstd = (cl) => {
@@ -309,9 +406,9 @@ async function crawlTKkdencc(page_crawlTKkdencc) {
                     .filter(Boolean);
             };
             const getId = (dau) => {
-            return Array.from(document.querySelectorAll(`td[id^="${dau}"]`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
+                return Array.from(document.querySelectorAll(`td[id^="${dau}"]`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             return {
                 phantram_TKkdencc: getClasstd('col-md-2.col-xs-1'),
@@ -329,10 +426,13 @@ async function crawlTKkdencc(page_crawlTKkdencc) {
 async function crawlDienToan123(page_crawlDienToan123) {
     console.log('Đang cào dữ liệu Lô Gan...');
     try {
-        await page_crawlDienToan123.goto('https://xosodaiphat.com/xo-so-dien-toan-123.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+        await page_crawlDienToan123.goto(
+            'https://xosodaiphat.com/xo-so-dien-toan-123.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
 
         const result = await page_crawlDienToan123.evaluate(() => {
             const getul = (cl) => {
@@ -341,12 +441,42 @@ async function crawlDienToan123(page_crawlDienToan123) {
                     .filter(Boolean);
             };
             const getClass = (cl) => {
-            return Array.from(document.querySelectorAll(`div.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        };
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
             return {
-                dt123 : getClass('dientoan-detail'),
+                dt123: getClass('dientoan-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
+async function crawlTKTheoThu(page_crawlTKTheoThu) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawlTKTheoThu.goto(
+            'https://xosodaiphat.com/thong-ke-theo-thu.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
+
+        const result = await page_crawlTKTheoThu.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                boso_theoThu: getClasstd('col-md-1.col-xs-2.text-center'),
+                phantram_theoThu: getClasstd('col-md-2.col-xs-1'),
+                luot_theoThu: getClasstd('col-md-2.col-xs-2'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -364,11 +494,14 @@ async function crawl() {
     const page_crawlTKLoGanDuoi = await browser.newPage();
     const page_crawlTKGDB = await browser.newPage();
     const page_crawlTKLXH = await browser.newPage();
+    const page_crawlTKLXH1 = await browser.newPage();
     const page_crawlTKKCB = await browser.newPage();
     const page_crawlTKKBS = await browser.newPage();
     const page_crawlTKkdencc = await browser.newPage();
     const page_crawlAnGiang = await browser.newPage();
     const page_crawlDienToan123 = await browser.newPage();
+    const page_crawlTKTheoThu = await browser.newPage();
+    const page_crawlLotoKep = await browser.newPage();
 
     console.log('Đang cào dữ liệu chính...');
 
@@ -950,27 +1083,46 @@ async function crawl() {
             max3dg24: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
             max3dg3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             titlemax3d: getClass('titlemax3d'),
-            
         };
     });
-
 
     const crawlTKLoGanDauResult = await crawlTKLoGanDau(page_crawlTKLoGanDau);
     const loGanResult = await crawlLoGan(page);
     const loGanCVResult = await crawlLoGanCV(page1);
-    const crawlTKLoGanDuoiResult = await crawlTKLoGanDuoi(page_crawlTKLoGanDuoi);
+    const crawlTKLoGanDuoiResult = await crawlTKLoGanDuoi(
+        page_crawlTKLoGanDuoi,
+    );
     const crawlTKGDBResult = await crawlTKGDB(page_crawlTKGDB);
     const crawlTKLXHResult = await crawlTKLXH(page_crawlTKLXH);
+    const crawlTKLXH1Result = await crawlTKLXH1(page_crawlTKLXH1);
     const crawlTKKCBResult = await crawlTKKCB(page_crawlTKKCB);
     const crawlTKKBSResult = await crawlTKKBS(page_crawlTKKBS);
     const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
     const crawlAnGiangResult = await crawlAnGiang(page_crawlAnGiang);
-    const crawlDienToan123Result = await crawlDienToan123(page_crawlDienToan123)
+    const crawlDienToan123Result = await crawlDienToan123(
+        page_crawlDienToan123,
+    );
+    const crawlTKTheoThuResult = await crawlTKTheoThu(page_crawlTKTheoThu);
+    const crawlLotoKepResult = await crawlLotoKep(page_crawlLotoKep);
 
     await browser.close();
-    const finalData = { ...data, ...loGanResult, ...loGanCVResult,
-     ...crawlTKLoGanDauResult ,...crawlTKLoGanDuoiResult,...crawlTKGDBResult,
-     ...crawlTKLXHResult,...crawlTKKCBResult,...crawlTKKBSResult,...crawlTKkdenccResult,...crawlAnGiangResult,...crawlDienToan123Result};
+    const finalData = {
+        ...data,
+        ...loGanResult,
+        ...loGanCVResult,
+        ...crawlTKLoGanDauResult,
+        ...crawlTKLoGanDuoiResult,
+        ...crawlTKGDBResult,
+        ...crawlTKLXHResult,
+        ...crawlTKLXH1Result,
+        ...crawlTKKCBResult,
+        ...crawlTKKBSResult,
+        ...crawlTKkdenccResult,
+        ...crawlAnGiangResult,
+        ...crawlDienToan123Result,
+        ...crawlTKTheoThuResult,
+        ...crawlLotoKepResult,
+    };
 
     const dir = path.join(__dirname, '..', 'data', 'infos');
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
@@ -984,6 +1136,20 @@ async function crawl() {
     return finalData;
 }
 
-module.exports = { crawl, crawlLoGan,crawlTKGDB, crawlLoGanCV 
-    ,crawlTKLoGanDau,crawlTKLoGanDuoi,crawlTKLXH,crawlTKKCB,
-    crawlTKKBS,crawlTKkdencc,crawlAnGiang,crawlDienToan123};
+module.exports = {
+    crawl,
+    crawlLoGan,
+    crawlTKGDB,
+    crawlLoGanCV,
+    crawlTKLoGanDau,
+    crawlTKLoGanDuoi,
+    crawlTKLXH,
+    crawlTKLXH1,
+    crawlTKKCB,
+    crawlTKKBS,
+    crawlTKkdencc,
+    crawlAnGiang,
+    crawlDienToan123,
+    crawlTKTheoThu,
+    crawlLotoKep,
+};

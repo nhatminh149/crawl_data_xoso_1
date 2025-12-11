@@ -1,4 +1,4 @@
-require('./src/helpers');                     
+require('./src/helpers');
 const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
@@ -35,7 +35,6 @@ app.use('/', router);
         app.listen(PORT, () => {
             console.log(`Server đang chạy tại http://localhost:${PORT}`);
         });
-
     } catch (err) {
         console.error('Lỗi khởi động server:', err);
         process.exit(1);

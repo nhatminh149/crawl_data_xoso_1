@@ -1,0 +1,433 @@
+<div style="margin-top:-29px">
+<header class='main-header_logan 
+    style="width: 1300px;
+    margin-top: 49px;
+    margin-left: 40px;"'>
+    <div class='top-bar-wrapper' href='http://localhost:3000/?'>
+        <div class='top-bar container'>
+            <div class='logo-area'>
+                <a href='/' class='logo-link'>
+                    <div class='logo-text'>
+                        <img
+                            src='https://cdn.xosodaiphat.com/assets/images/logo.svg'
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class='ad-banner'>
+                <div class='ad-label'>QUẢNG CÁO</div>
+                <div class='ad-content'>
+                    <img
+                        src='https://tpc.googlesyndication.com/simgad/1636368975115146746'
+                        alt='Quảng cáo'
+                    />
+                </div>
+            </div>
+            <div class='auth-area'>
+                <a href='#' class='login-button'>
+                    <i class='fas fa-user'></i>
+                    Đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class='main-nav'>
+        <div class='nav-container container'>
+            <a href='/' class='nav-item home-icon'><i
+                    class='fas fa-home'
+                ></i></a>
+            <a href='#' class='nav-item'>XSMB</a>
+            <a href='#' class='nav-item'>XSMN</a>
+            <a href='#' class='nav-item'>XSMT</a>
+            <a href='#' class='nav-item'>Vietlott</a>
+            <a href='#' class='nav-item'>Tra Cứu XS</a>
+            <a href='#' class='nav-item'>TK Loto</a>
+            <a href='#' class='nav-item'>Loto</a>
+            <a href='#' class='nav-item'>Thống Kê Xổ Số</a>
+        </div>
+    </nav>
+</header>
+
+
+<div class="flex mt-10" style="margin-top: 20px; " >
+    <div class="w-147 border border-solid border-[#E8E8E8] h-110" style="margin-right: 20px;">
+     <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
+       <p style="padding: 10px;">TK Loto cùng về </p> 
+     </h1>
+
+
+
+    <div class="w-146 mx-auto bg-white" style="margin-top:20px">
+    
+    <div class="  h-[26px]" style="margin-left: 20px;">
+    <!-- Tiêu đề phần chọn -->
+    <h3 class=" font-bold text-gray-800 mb-6" style="font-size: 15px;">
+      <p style="font-weight: bold;margin-top: -10px;">Chọn tỉnh và biên độ cần xem :</p>
+    </h3>
+    </div>
+
+    <!-- Form chọn + nút -->
+    <div class="flex flex-col sm:flex-row gap-4 items-end">
+      <!-- Thứ trong tuần -->
+
+        <select class="w-[100px] h-[40px] rounded-md border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white" style="margin-left: 20px;">
+          <option>Thứ 2</option>
+          <option>Thứ 3</option>
+          <option>Thứ 4</option>
+          <option>Thứ 5</option>
+          <option>Thứ 6</option>
+          <option>Thứ 7</option>
+          <option>Chủ Nhật</option>
+        </select>
+
+      <!-- Miền -->
+
+        <select class="w-[100px] h-[40px] rounded-md border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white">
+          <option>Miền Bắc</option>
+          <option>Miền Trung</option>
+          <option>Miền Nam</option>
+        </select>
+
+      <!-- Biên độ -->
+
+        <select class="w-[100px] h-[40px] rounded-md border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white">
+          <option>10 kỳ</option>
+          <option>20 kỳ</option>
+          <option>30 kỳ</option>
+          <option>50 kỳ</option>
+          <option>100 kỳ</option>
+        </select>
+
+      <!-- Nút Kết quả -->
+      <button class="w-[100px] h-[40px]  bg-red-600 text-white ounded-lg hover:bg-red-700 transform hover:scale-105 transition-all duration-200 shadow-lg">
+        Kết quả
+      </button>
+    </div>
+
+  </div>
+
+    <div class="w-147">
+        <p style="margin-left: 20px;margin-top: 20px;color: blue;font-size: 15px;">
+            TK Loto kép Miền Bắc
+        </p>
+<div>
+        <p style="font-weight: bold;">&nbsp; &nbsp; Các con Loto về nhiều nhất </p>
+        <table>
+            <thead class="bg-blue-600 text-white">
+                <tr>
+                    <th class="px-3 py-2 text-center border border-blue-700">Giải 7</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Xuất hiện</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Giải ĐB</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Xuất hiện</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Loto</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Xuất hiện</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 0}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 1}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 2}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 3}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 4}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 5}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 6}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 7}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 8}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 9}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 10}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 11}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 12}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 13}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 14}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 15}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 16}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 17}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 18}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 19}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 20}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 21}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 22}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 23}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 24}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 25}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 26}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 27}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 28}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 29}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 30}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 31}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 32}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 33}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 34}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 35}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 36}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 37}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 38}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 39}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 40}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 41}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 42}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 43}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 44}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 45}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 46}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 47}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 48}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 49}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 50}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 51}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 52}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 53}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 54}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 55}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 56}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 57}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 58}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 59}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+        <p style="font-weight: bold;">&nbsp; &nbsp; Các con Loto về ít nhất </p>
+        <table class="min-w-full divide-y divide-gray-200 text-sm">
+            <thead class="bg-blue-600 text-white">
+                <tr>
+                    <th class="px-3 py-2 text-center border border-blue-700">Giải 7</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Xuất hiện</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Giải ĐB</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Xuất hiện</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Loto</th>
+                    <th class="px-3 py-2 text-center border border-blue-700">Xuất hiện</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 60}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 61}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 62}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 63}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 64}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 65}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 66}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 67}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 68}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 69}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 70}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 71}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 72}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 73}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 74}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 75}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 76}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 77}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 78}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 79}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 80}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 81}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 82}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 83}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 84}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 85}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 86}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 87}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 88}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 89}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 90}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 91}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 92}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 93}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 94}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 95}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 96}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 97}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 98}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 99}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 100}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 101}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 102}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 103}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 104}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 105}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 106}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 107}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 108}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 109}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 110}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 111}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 112}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 113}}</td>
+                </tr>
+                <tr class="hover:bg-blue-50 bg-gray-50">
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 114}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 115}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 116}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 117}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center loto-number border">{{get result.bang12_xh 118}}</td>
+                    <td class="px-3 py-2 whitespace-nowrap text-center border">{{get result.bang12_xh 119}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+            {{!-- .. --}}
+        <p style="font-weight: bold;">&nbsp; &nbsp; Các con Loto chưa xuất hiện </p>
+        <table>
+<thead class="bg-blue-600 text-white">
+        <tr>
+            <th class="px-11 py-9 w-[50px] text-center border border-blue-700" style="width: 100px;">Giải 7</th>
+            <th class="px-11 py-9 w-[50px] text-center border border-blue-700" style="width: 100px;">Giải ĐB</th>
+            <th class="px-11 py-9 w-[50px] text-center border border-blue-700">Loto</th>
+        </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+        <tr class="hover:bg-blue-50">
+            <td class="px-11 py-9 w-[30px] h-[120px] text-center " style="width: 100px;">{{get result.bang12_xh 120}}</td>
+            
+            <td class="px-11 py-9 w-[50px] h-[150px] text-center border">{{get result.textleft_xh 1}}</td>
+            
+            <td class="px-11 py-9 w-[30px] h-[120px] text-center "></td>
+        </tr>
+    </tbody>
+        </table>
+    <div style="width: 588px; height: 120px; border: 1px solid #E8E8E8;">
+        <div class = "flex" style="margin-left:20px;margin-top:10px;">
+        <p style="font-size:30px;margin-top: -15px;">.</p><p>Xem thống kê&nbsp;</p><p style="color: blue;text-decoration: underline;"> Loto gan Miền Bắc</p>
+        </div>
+        <div class = "flex" style="margin-left:20px;margin-top: -10px;">
+        <p style="font-size:30px;margin-top: -15px;">.</p><p>Xem thống kê&nbsp;</p><p style="color: blue;text-decoration: underline;"> Cặp Loto cùng về Miền Bắc</p>
+        </div>
+        <div class = "flex" style="margin-left:20px;margin-top: -10px;">
+        <p style="font-size:30px;margin-top: -15px;">.</p><p>Tham khảo&nbsp;</p><p style="color: blue;text-decoration: underline;">  Thống kê XSMB</p>
+        </div>
+    </div>
+    <div class="plyr__poster" style="background-image: 
+    url(&quot;https://gnetwork.gliastudios.com/gnetwork/xosodaiphat.com/
+    39edd495b31a367ce64fbaa97ba42c2494c2be4c.jpg?verify=1765421700-9FU0U
+    bw%2B%2FxegErqKCjULkqYC2IyJFjn26m4pIL7q2Z8%3D&quot;);"></div>
+    </div>
+    {{> trangchu/menu}}
+</div>
+
+
+<footer class='footer_logan' >
+ <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000; margin-left: 15px;"></div>
+    <div class='footer-menu-container'>
+        <div class='footer-menu-row'>
+            <div class='menu-col'>
+                <a href='#'>Trang chủ</a>
+                <a href='#'>XSMB</a>
+                <a href='#'>XSMN</a>
+                <a href='#'>XSMT</a>
+                <a href='#'>Vietlott</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Xổ số hôm qua</a>
+                <a href='#'>XSMB 30 ngày</a>
+                <a href='#'>XSMN 30 ngày</a>
+                <a href='#'>XSMT 30 ngày</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê loto gan</a>
+                <a href='#'>Thống kê tổng hợp</a>
+                <a href='#'>Thống kê giải đặc biệt</a>
+                <a href='#'>Thống kê loto kép</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê tần suất loto</a>
+                <a href='#'>Thống kê tần suất loto cặp</a>
+                <a href='#'>Thống kê XSMB</a>
+                <a href='#'>Thống kê XSMN</a>
+                <a href='#'>Thống kê XSMT</a>
+            </div>
+        </div>
+
+        <div class='footer-divider-container'>
+            <div class='footer-line-red'></div>
+            <div class='footer-title-row'>
+                <h3 class='footer-title'>Xổ Số Đại Phát - Chính Xác Từng Giây</h3>
+                <div class='footer-utility-links'>
+                    <a href='#'>Điều khoản sử dụng</a>
+                    |
+                    <a href='#'>Chính sách bảo mật</a>
+                    |
+                    <a href='#'>Cookies</a>
+                    |
+                    <a href='#'>RSS</a>
+                    |
+                    <a href='#'>Theo dõi Xổ Số Đại Phát</a>
+                    <span class='play-icon'>►</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='footer-info-container'>
+        <div class='footer-info-content'>
+            <p class='copyright'>
+                <strong>Copyright © Since 2009 - xosodaiphat.com, All Rights
+                    Reserved</strong>
+            </p>
+            <p>Đơn vị chủ quản: Công Ty Cổ Phần Dịch Vụ và Viễn Thông Nam Việt.</p>
+            <p>Địa chỉ văn phòng: Tầng 15, 77 Trần Nhân Tôn, Phường An Đông,
+                Thành phố Hồ Chí Minh</p>
+            <p>Địa chỉ: Tầng 3, Tòa nhà An Phú Plaza, 117-119 Lý Chính Thắng,
+                Phường Xuân Hòa, Thành phố Hồ Chí Minh</p>
+            <p>MST: 0305578356</p>
+            <p>Điện thoại: 028.6276.6766</p>
+            <p>Email:
+                <a
+                    href='mailto:contact@xosodaiphat.com'
+                >contact@xosodaiphat.com</a></p>
+        </div>
+
+        <div class='footer-disclaimer'>
+            <p>
+                Thông tin và kết quả xổ số trên xosodaiphat.com được chúng tôi
+                cập nhật từ nguồn công khai và chỉ mang tính chất tham khảo. Vui
+                lòng kiểm tra lại kết quả chính thức được công bố bởi các công
+                ty xổ số kiến thiết.
+            </p>
+            <div class='dmca-logo'>
+                [DMCA PROTECTED Logo Placeholder]
+            </div>
+        </div>
+    </div>
+</footer>
+</div>

@@ -1,7 +1,7 @@
 <div style="margin-top:-29px">
 <header class='main-header_logan 
     style="width: 1300px;
-    margin-top: -29px;
+    margin-top: -49px;
     margin-left: 40px;"'>
     <div class='top-bar-wrapper' href='http://localhost:3000/?'>
         <div class='top-bar container'>
@@ -55,7 +55,7 @@
 <div class="flex mt-10" style="margin-top: 20px; " >
     <div class="w-147 border border-solid border-[#E8E8E8] h-100" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
-       <p style="padding: 10px;">TK Loto theo đầu </p> 
+        <p style="padding: 10px;">Thống Kê Xổ Số Mega 6/45 Theo Thứ </p>
      </h1>
         <div class="max-w-3xl mx-auto bg-white p-6">
         
@@ -76,19 +76,7 @@
         </div> 
 
         <div class="mb-6 space-y-4 p-4 bg-white">
-            <div class="space-y-2" style="margin-top: -10px;">
-                <label class="flex items-center text-gray-700 text-sm">
-                    <input type="radio" name="tk_order" value="thu_tu" class="form-radio text-red-600 focus:ring-red-500">
-                    <span class="ml-2">Theo thứ tự</span>
-                </label>
-                <br>
-                <label class="flex items-center text-gray-700 text-sm">
-                    <input type="radio" name="tk_order" value="luot_ve" checked class="form-radio text-red-600 focus:ring-red-500">
-                    <span class="ml-2 font-bold">Theo lượt về nhiều / ít</span>
-                </label>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-4" style="margin-top: 10px;">
+            <div class="flex flex-wrap items-center gap-4" style="margin-top: -10px;">
                 <input type="text" value="09-11-2025" class="px-3 py-2 border border-gray-300 rounded-md text-sm w-32 focus:ring-red-500 focus:border-red-500">
                 <input type="text" value="09-12-2025" class="px-3 py-2 border border-gray-300 rounded-md text-sm w-32 focus:ring-red-500 focus:border-red-500">
                 <button class="px-4 py-2 bg-red-600 text-white font-semibold rounded-md hover:bg-red-700 transition duration-150">
@@ -97,35 +85,39 @@
             </div>
         </div>
 
-        <p class="text-gray-700 font-semibold mb-4">
-            TK lần xuất hiện theo lượt về nhiều/ít XS Mega 09/11/2025 - 09/12/2025
-        </p>
+        <div class="text-gray-700 mb-4">
+            <p style="padding: 10px;margin-top: -20px;">TK theo thứ XS Mega thứ 4</p>
+        </div>
         
-        <div class="grid grid-cols-12 text-sm font-bold text-gray-800 border-b-2 border-gray-400 pb-2 mb-2">
-            <div class="col-span-1">Bộ số</div>
-            <div class="col-span-11 pl-4">Lần xuất hiện theo lượt về nhiều/ít XS Mega 6/45</div>
+        <div class="grid grid-cols-12 text-sm font-bold text-gray-800 border-b-2 border-gray-400 pb-2 mb-2 bg-[#E8E8E8] h-[40px]" style="margin-top: -20px;">
+            <div class="col-span-1 " style="margin-top: 10px;">Bộ số</div>
+            <div class="col-span-11 pl-4" style="margin-top: 10px;">Lần xuất hiện theo lượt về nhiều/ít XS Mega 6/45</div>
         </div>
         
         </div>
-        <div class="overflow-x-auto "style="margin-top: -10px;">
+        <div class="overflow-x-auto "  style="margin-top: -10px;">
         <table class="min-w-full">
             <tbody >
-{{#each statisticsList}}
-<div class=" h-[30px] flex items-center border border-gray-500 last:border-b-0">
-    <!-- Thanh phần trăm -->        <span class="font-bold text-gray-800">&nbsp; &nbsp;&nbsp; &nbsp;{{this.boso}}</span>
-    <div class="h-[20px] flex-1 h-6 bg-gray-200 rounded border border1-gray-500" style="margin-left: 40px;">
-        <div
-            class="h-full bg-red-600 rounded transition-all duration-500"
-            style="width: {{this.width}}"
-            title="{{this.slxh}} ({{this.currentRate}}) trong {{maxPeriods}} kỳ">
-        </div>
-    </div>
+              {{#each statisticsList}}
 
-    <!-- Số lần xuất hiện + bộ số (thêm boso vào cho đầy đủ thông tin) -->
-    <div class="w-24 text-right ">
-        <span class="block text-xs text-gray-500" style="margin-right: 20px;">{{this.slxh}}</span>
-    </div>
-</div>
+    <div class="h-[30px] flex items-center space-x-4 p-2 border border-gray-500">
+        <div class="font-bold text-lg w-10 flex-shrink-0">{{this.boso}}</div> 
+
+        <div class="h-[20px] relative flex-grow h-6 bg-gray-200 rounded-sm">
+            <div 
+                class="bg-red-600 h-full rounded-sm" 
+                style="width: {{this.width}};" 
+                title="{{this.phantram}} / Max 7%"
+            >
+            </div>
+        </div>
+
+        <div class="text-base font-semibold flex-shrink-0 w-32 text-right">
+            {{this.phantram}}
+            <span class="ml-2 font-normal text-gray-600">{{this.luot}}</span>
+        </div>
+    </div> 
+
 {{/each}}
             </tbody>
         </table>
@@ -134,7 +126,7 @@
 
     
     </div>
-     {{> trangchu/menu}}
+    {{> trangchu/menu}}
 </div>
 
 

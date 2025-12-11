@@ -1,0 +1,395 @@
+<div style="margin-top: -29px;">
+<header class='main-header_logan 
+    style="width: 1300px;
+    margin-top: -29px;
+    margin-left: 40px;"'>
+    <div class='top-bar-wrapper' href='http://localhost:3000/?'>
+        <div class='top-bar container'>
+            <div class='logo-area'>
+                <a href='/' class='logo-link'>
+                    <div class='logo-text'>
+                        <img
+                            src='https://cdn.xosodaiphat.com/assets/images/logo.svg'
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class='ad-banner'>
+                <div class='ad-label'>QUẢNG CÁO</div>
+                <div class='ad-content'>
+                    <img
+                        src='https://tpc.googlesyndication.com/simgad/1636368975115146746'
+                        alt='Quảng cáo'
+                    />
+                </div>
+            </div>
+            <div class='auth-area'>
+                <a href='#' class='login-button'>
+                    <i class='fas fa-user'></i>
+                    Đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class='main-nav'>
+        <div class='nav-container container'>
+            <a href='/' class='nav-item home-icon'><i
+                    class='fas fa-home'
+                ></i></a>
+            <a href='#' class='nav-item'>XSMB</a>
+            <a href='#' class='nav-item'>XSMN</a>
+            <a href='#' class='nav-item'>XSMT</a>
+            <a href='#' class='nav-item'>Vietlott</a>
+            <a href='#' class='nav-item'>Tra Cứu XS</a>
+            <a href='#' class='nav-item'>TK Loto</a>
+            <a href='#' class='nav-item'>Loto</a>
+            <a href='#' class='nav-item'>Thống Kê Xổ Số</a>
+        </div>
+    </nav>
+</header>
+{{!-- <header></header> --}}
+
+
+<div class="flex mt-10" style="margin-top: 20px; " >
+    <div class="himb" style="margin-right: 10px; ">
+        <div class='xoso-container_xscm_mb' style="width: 600px;" >
+    <h1 class='page-title'>KQXS - Xổ số Miền Bắc</h1>
+    <div class='breadcrumb' style='background-color:white;border:1px solid #CCCCCC'>
+        XSMB »
+        {{result.date}}
+    </div>
+
+    <table class='xsmb-table'>
+        <tbody>
+            <tr class='prize-row special-prize'>
+                <td class='label-col'>Mã ĐB</td>
+                <td style='font-size:20px;color:blue;background-color: #F5F5F5;font-weight:lighter ;'
+                >{{get result.MDBMB 0}}&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; {{get result.MDBMB 1}} &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;{{get result.MDBMB 2}}&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; {{get result.MDBMB 3}}<br>
+                 {{get result.MDBMB 4}}&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;{{get result.MDBMB 5}}&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {{get result.MDBMB 6}} &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;{{get result.MDBMB 7}}</td>
+            </tr>
+            <tr class='prize-row special-prize'>
+                <td class='label-col' style='background-color:white'>G.ĐB</td>
+                <td
+                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
+                >{{result.GDBMB}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.1</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G1MB 0}}</td>
+            </tr>
+
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.2</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G2MB 0}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2MB 1}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.3</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G3MB 0}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3MB 1}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3MB 2}}<br>
+                    {{get result.G3MB 3}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3MB 4}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3MB 5}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.4</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G4MB 0}} &nbsp; &nbsp; {{get result.G4MB 1}}  &nbsp; &nbsp; {{get result.G4MB 2}} &nbsp; &nbsp; {{get result.G4MB 3}}    
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.5</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G5MB 0}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G5MB 1}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G5MB 2}}<br>
+                    {{get result.G5MB 3}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G5MB 4}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G5MB 5}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.6</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6MB 0}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G6MB 1}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G6MB 2}}<br></td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.7</td>
+                <td style='font-size:30px;color:#d32f2f;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G7MB 0}}&nbsp;&nbsp;  &nbsp; &nbsp; {{get result.G7MB 1}} &nbsp;&nbsp;  &nbsp; &nbsp; {{get result.G7MB 2}} &nbsp; &nbsp;&nbsp; &nbsp; {{get result.G7MB 3}}
+            </tr>
+        </tbody>
+    </table>
+
+    <div class='ad-placeholder'>QUẢNG CÁO</div>
+</div>
+{{! LÔ Tô }}
+<div class='xsmb2'>
+
+    <div class='loto-container'>
+        <h1>Lô tô miền Bắc</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau'>Đầu</th>
+                    <th class='header-loto'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>{{result.LT0MB}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>{{result.LT1MB}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{result.LT2MB}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{result.LT3MB}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{result.LT4MB}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{result.LT5MB}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{result.LT6MB}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{result.LT7MB}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>{{result.LT8MB}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>{{result.LT9MB}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul class='footer-links'>
+            <li>Xem thống kê <a href='#'>Loto gan miền Bắc</a></li>
+            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Bắc</a></li>
+            <li>Tham khảo <a href='#'>Thống kê XSMB</a></li>
+            <li>**KQXS** miền Bắc
+                {{result.date}}
+                siêu tốc - chính xác, trực tiếp
+                <a href='#'>**XSMB**</a>
+                lúc 18h15 mỗi ngày</li>
+        </ul>
+    </div>
+</div>
+
+<div class='statistics-container'>
+
+    <header class='main-header1'>
+        Thống Kê Xổ Số
+    </header>
+
+    <div class='statistic-item has-image'>
+        <h2 class='item-title'>
+            <a href='#'>Thống Kê Giải Đặc Biệt Miền Bắc Hôm Nay Thứ 5 Ngày
+                20/11/2025</a>
+        </h2>
+        <div class='item-content'>
+            <img
+                src='https://static.xosodaiphat.com/uploaded/Images/Thumb/2025/11/19/thong-ke-giai-dac-biet-mien-bac-thu-5-ngay-20-11-2025_1911112455.png'
+                alt='Thống kê giải đặc biệt XSMB'
+                class='content-image'
+            />
+            <p class='content-text'>
+                Thống kê giải đặc biệt miền Bắc hôm nay thứ 5 ngày 20/11/2025
+                dựa trên bảng thống kê tổng hợp giải đặc biệt kết quả XSMB trong
+                các kỳ quay thưởng của các ngày trước, tuần trước, tháng trước,
+                năm trước.
+            </p>
+        </div>
+    </div>
+
+    <div class='statistic-item'>
+        <h2 class='item-title'>
+            <a href='#'>Thống Kê XSMB 20/11/2025 Thứ 5 - Phân Tích Kết Quả Xổ Số
+                Miền Bắc Hôm Nay</a>
+        </h2>
+    </div>
+
+    <div class='statistic-item'>
+        <h2 class='item-title'>
+            <a href='#'>Thống Kê Xổ Số Miền Nam 20/11/2025 - Thống Kê XSMN Thứ 5
+                Ngày 20/11/2025</a>
+        </h2>
+    </div>
+</div>
+<div class="plyr__poster" style="background-image: url("https://gnetwork.gliastudios.com/gnetwork/xosodaiphat.com/39edd495b31a367ce64fbaa97ba42c2494c2be4c.jpg?verify=1764383864-fT481cVmOjwCUtQHxdQcHFSgyCnnKPIu%2Flx0DL2%2BOw8%3D");"></div>
+<div class="lottery-container">
+    <div class="header">TK giải đặc biệt</div>
+    <div class="tabs">
+        <div class="tab selected">TK giải ĐB</div>
+        <div class="tab">Theo tuần</div>
+        <div class="tab">Theo tháng</div>
+        <div class="tab">Theo năm</div>
+        <div class="tab">Theo tổng</div>
+    </div>
+    <div class="content">
+        <div class="title">BẢNG THỐNG KÊ GIẢI ĐẶC BIỆT MIỀN BẮC TRONG 30 KỲ QUAY GẦN NHẤT</div>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Thứ 2</th>
+                    <th>Thứ 3</th>
+                    <th>Thứ 4</th>
+                    <th>Thứ 5</th>
+                    <th>Thứ 6</th>
+                    <th>Thứ 7</th>
+                    <th>Chủ nhật</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td class="highlight">{{get result.TKGDB 0}}</td>
+                    <td class="highlight">{{get result.TKGDB 1}}</td>
+                    <td class="highlight">{{get result.TKGDB 2}}</td>
+                    <td class="highlight">{{get result.TKGDB 3}}</td>
+                    <td class="highlight">{{get result.TKGDB 4}}</td>
+                    <td class="highlight">{{get result.TKGDB 5}}</td>
+                </tr>
+                <tr>
+                    <td class="highlight">{{get result.TKGDB 6}}</td>
+                    <td>{{get result.TKGDB 7}}</td>
+                    <td>{{get result.TKGDB 8}}</td>
+                    <td>{{get result.TKGDB 9}}</td>
+                    <td>{{get result.TKGDB 10}}</td>
+                    <td>{{get result.TKGDB 11}}</td>
+                    <td class="highlight">{{get result.TKGDB 12}}</td>
+                </tr>
+                <tr>
+                    <td class="highlight">{{get result.TKGDB 13}}</td>
+                    <td class="highlight">{{get result.TKGDB 14}}</td>
+                    <td>{{get result.TKGDB 15}}</td>
+                    <td class="highlight">{{get result.TKGDB 16}}</td>
+                    <td class="highlight">{{get result.TKGDB 17}}</td>
+                    <td>{{get result.TKGDB 18}}</td>
+                    <td class="highlight">{{get result.TKGDB 19}}</td>
+                </tr>
+                <tr>
+                    <td class="highlight">{{get result.TKGDB 20}}</td>
+                    <td class="highlight">{{get result.TKGDB 21}}</td>
+                    <td class="highlight">{{get result.TKGDB 22}}</td>
+                    <td class="highlight">{{get result.TKGDB 23}}</td>
+                    <td class="highlight">{{get result.TKGDB 24}}</td>
+                    <td class="highlight">{{get result.TKGDB 25}}</td>
+                    <td>{{get result.TKGDB 26}}</td>
+                </tr>
+                <tr>
+                    <td class="highlight">{{get result.TKGDB 27}}</td>
+                    <td class="highlight">{{get result.TKGDB 28}}</td>
+                    <td class="highlight">{{get result.TKGDB 29}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+    {{> trangchu/menu}}
+</div>
+
+
+
+{{!-- <footer></footer> --}}
+<footer class='footer_logan' style="margin-left:-20px">
+ <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000;margin-left: 20px;"></div>
+    <div class='footer-menu-container'>
+        <div class='footer-menu-row'>
+            <div class='menu-col'>
+                <a href='#'>Trang chủ</a>
+                <a href='#'>XSMB</a>
+                <a href='#'>XSMN</a>
+                <a href='#'>XSMT</a>
+                <a href='#'>Vietlott</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Xổ số hôm qua</a>
+                <a href='#'>XSMB 30 ngày</a>
+                <a href='#'>XSMN 30 ngày</a>
+                <a href='#'>XSMT 30 ngày</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê loto gan</a>
+                <a href='#'>Thống kê tổng hợp</a>
+                <a href='#'>Thống kê giải đặc biệt</a>
+                <a href='#'>Thống kê loto kép</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê tần suất loto</a>
+                <a href='#'>Thống kê tần suất loto cặp</a>
+                <a href='#'>Thống kê XSMB</a>
+                <a href='#'>Thống kê XSMN</a>
+                <a href='#'>Thống kê XSMT</a>
+            </div>
+        </div>
+
+        <div class='footer-divider-container'>
+            <div class='footer-line-red'></div>
+            <div class='footer-title-row'>
+                <h3 class='footer-title'>Xổ Số Đại Phát - Chính Xác Từng Giây</h3>
+                <div class='footer-utility-links'>
+                    <a href='#'>Điều khoản sử dụng</a>
+                    |
+                    <a href='#'>Chính sách bảo mật</a>
+                    |
+                    <a href='#'>Cookies</a>
+                    |
+                    <a href='#'>RSS</a>
+                    |
+                    <a href='#'>Theo dõi Xổ Số Đại Phát</a>
+                    <span class='play-icon'>►</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='footer-info-container'>
+        <div class='footer-info-content'>
+            <p class='copyright'>
+                <strong>Copyright © Since 2009 - xosodaiphat.com, All Rights
+                    Reserved</strong>
+            </p>
+            <p>Đơn vị chủ quản: Công Ty Cổ Phần Dịch Vụ và Viễn Thông Nam Việt.</p>
+            <p>Địa chỉ văn phòng: Tầng 15, 77 Trần Nhân Tôn, Phường An Đông,
+                Thành phố Hồ Chí Minh</p>
+            <p>Địa chỉ: Tầng 3, Tòa nhà An Phú Plaza, 117-119 Lý Chính Thắng,
+                Phường Xuân Hòa, Thành phố Hồ Chí Minh</p>
+            <p>MST: 0305578356</p>
+            <p>Điện thoại: 028.6276.6766</p>
+            <p>Email:
+                <a
+                    href='mailto:contact@xosodaiphat.com'
+                >contact@xosodaiphat.com</a></p>
+        </div>
+
+        <div class='footer-disclaimer'>
+            <p>
+                Thông tin và kết quả xổ số trên xosodaiphat.com được chúng tôi
+                cập nhật từ nguồn công khai và chỉ mang tính chất tham khảo. Vui
+                lòng kiểm tra lại kết quả chính thức được công bố bởi các công
+                ty xổ số kiến thiết.
+            </p>
+            <div class='dmca-logo'>
+                [DMCA PROTECTED Logo Placeholder]
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
