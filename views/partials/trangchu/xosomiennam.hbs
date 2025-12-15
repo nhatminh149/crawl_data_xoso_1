@@ -1,11 +1,10 @@
-{{! xổ số miền nam }}
 <div class='container_xsmn'>
     <div class='header-banner_xsmn'>
         <span class='header-logo_xsmn'>KQXSMN - Xổ Số Miền Nam</span>
     </div>
 
     <div class='sub-header_xsmn'>
-        <span class='sub-header-item aDTive'>XSMN</span>
+        <span class='sub-header-item aAGive'>XSMN</span>
         <span class='sub-header-separator'>»</span>
         <span class='sub-header-item'>XSMN Thứ 5</span>
         <span class='sub-header-separator'>»</span>
@@ -16,307 +15,150 @@
         <thead>
             <tr class='table-header-row'>
                 <th class='col_giai'>Giải</th>
-                <th class='col_tinh'>Hồ Chí Minh</th>
-                <th class='col_tinh'>Cà Mau</th>
-                <th class='col_tinh'>Đồng Tháp</th>
+                <th class='col_tinh'>{{get result.tenTinhMTMN 1}}</th>
+                <th class='col_tinh'>{{get result.tenTinhMTMN 2}}</th>
+                <th class='col_tinh'>{{get result.tenTinhMTMN 3}}</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td class='col-giai'>G.8</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G8HCM}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G8DT}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G8CM}}</td>
+                <td class='col-giai1'>G.8</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giai 1 '8'}}</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giai 2 '8'}}</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giai 3 '8'}}</td>
             </tr>
             <tr>
                 <td class='col-giai'>G.7</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G7HCM}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G7DT}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G7CM}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 1 '7'}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 2 '7'}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 3 '7'}}</td>
             </tr>
             <tr>
-                <td class='col-giai'>G.6</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G6HCM 0}} <br>
-                    {{get result.G6HCM 1}} <br>
-                    {{get result.G6HCM 2}}
-                    </td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G6DT 0}} <br>
-                    {{get result.G6DT 1}} <br>
-                    {{get result.G6DT 2}} 
-                    </td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G6CM 0}} <br>
-                    {{get result.G6CM 1}} <br>
-                    {{get result.G6CM 2}} 
-                    </td>
+                <td class='col-giai1'>G.6</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{giai 1 '6' 0}} <br>
+                    {{giai 1 '6' 1}} <br>
+                    {{giai 1 '6' 2}}
+                </td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{giai 2 '6' 0}} <br>
+                    {{giai 2 '6' 1}} <br>
+                    {{giai 2 '6' 2}}
+                </td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{giai 3 '6' 0}} <br>
+                    {{giai 3 '6' 1}} <br>
+                    {{giai 3 '6' 2}}
+                </td>
             </tr>
             <tr>
                 <td class='col-giai'>G.5</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G5HCM}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G5DT}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G5CM}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 1 '5'}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 2 '5'}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 3 '5'}}</td>
             </tr>
             <tr>
-                <td class='col-giai'>G.4</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G4HCM 0}} <br>
-                    {{get result.G4HCM 1}} <br>
-                    {{get result.G4HCM 2}} <br>
-                    {{get result.G4HCM 3}} <br>
-                    {{get result.G4HCM 4}} <br>
-                    {{get result.G4HCM 5}} <br>
-                    {{get result.G4HCM 6}} <br>
-                    {{get result.G4HCM 7}} 
-                    </td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G4DT 0}} <br>
-                    {{get result.G4DT 1}} <br>
-                    {{get result.G4DT 2}} <br>
-                    {{get result.G4DT 3}} <br>
-                    {{get result.G4DT 4}} <br>
-                    {{get result.G4DT 5}} <br>
-                    {{get result.G4DT 6}} <br>
-                    {{get result.G4DT 7}} 
-                    </td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G4CM 0}} <br>
-                    {{get result.G4CM 1}} <br>
-                    {{get result.G4CM 2}} <br>
-                    {{get result.G4CM 3}} <br>
-                    {{get result.G4CM 4}} <br>
-                    {{get result.G4CM 5}} <br>
-                    {{get result.G4CM 6}} <br>
-                    {{get result.G4CM 7}} 
-                    </td>
+                <td class='col-giai1'>G.4</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{giai 1 '4' 0}} <br>
+                    {{giai 1 '4' 1}} <br>
+                    {{giai 1 '4' 2}} <br>
+                    {{giai 1 '4' 3}} <br>
+                    {{giai 1 '4' 4}} <br>
+                    {{giai 1 '4' 5}} <br>
+                    {{giai 1 '4' 6}} <br>
+                    {{giai 1 '4' 7}}
+                </td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{giai 2 '4' 0}} <br>
+                    {{giai 2 '4' 1}} <br>
+                    {{giai 2 '4' 2}} <br>
+                    {{giai 2 '4' 3}} <br>
+                    {{giai 2 '4' 4}} <br>
+                    {{giai 2 '4' 5}} <br>
+                    {{giai 2 '4' 6}} <br>
+                    {{giai 2 '4' 7}}
+                </td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
+                    {{giai 3 '4' 0}} <br>
+                    {{giai 3 '4' 1}} <br>
+                    {{giai 3 '4' 2}} <br>
+                    {{giai 3 '4' 3}} <br>
+                    {{giai 3 '4' 4}} <br>
+                    {{giai 3 '4' 5}} <br>
+                    {{giai 3 '4' 6}} <br>
+                    {{giai 3 '4' 7}}
+                </td>
             </tr>
             <tr>
                 <td class='col-giai'>G.3</td>
                 <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G3HCM 0}} <br>
-                    {{get result.G3HCM 1}} 
+                    {{giai 1 '3' 0}} <br>
+                    {{giai 1 '3' 1}}
                 </td>
                 <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G3DT 0}} <br>
-                    {{get result.G3DT 1}} 
+                    {{giai 2 '3' 0}} <br>
+                    {{giai 2 '3' 1}}
                 </td>
                 <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{get result.G3CM 0}} <br>
-                    {{get result.G3CM 1}} 
+                    {{giai 3 '3' 0}} <br>
+                    {{giai 3 '3' 1}}
                 </td>
             </tr>
             <tr>
-                <td class='col-giai'>G.2</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2HCM}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2DT}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2CM}}</td>
+                <td class='col-giai1'>G.2</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>{{giai 1 '2'}}</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>{{giai 2 '2'}}</td>
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>{{giai 3 '2'}}</td>
             </tr>
             <tr>
                 <td class='col-giai'>G.1</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G2HCM}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G1DT}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{result.G1CM}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 1 '1'}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 2 '1'}}</td>
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giai 3 '1'}}</td>
             </tr>
             <tr>
-                <td class='col-giai'>G.ĐB</td>
-                <td
-                    class='col_tinh_ket-qua_xsmn giai-dac-biet'
-                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
-                >{{result.GDBHCM}}</td>
-                <td
-                    class='col_tinh_ket-qua_xsmn giai-dac-biet'
-                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
-                >{{result.GDBDT}}</td>
-                <td
-                    class='col_tinh_ket-qua_xsmn giai-dac-biet'
-                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
-                >{{result.GDBCM}}</td>
+                <td class='col-giai1'>G.ĐB</td>
+                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giai 1 'DB'}}</td>
+                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giai 2 'DB'}}</td>
+                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giai 3 'DB'}}</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-{{! LT }}
+{{! Phần Lô Tô }}
 <div class='loto_container_mn'>
-    <div class='loto_container_mn_HCM'>
-        <div class='loto_container_mn_HCM_' style="height: 30px;border: 1px solid #CCCCCC;background-color: #E8E8E8; font-size: bold;color: blue;">
-            <p style="margin-top:5px; margin-left: 10px; font-weight: bold; ">Lô tô Miền Nam >> Lô tô Miền Nam ngày : {{result.date}}<p>
+    <div class='loto_container_mn_TN'>
+        <div class='loto_container_mn_TN_' style="height: 30px;border: 1px solid #CCCCCC;background-color: #E8E8E8;">
+            <p style="margin-top:5px; margin-left: 10px;color:blue;">
+                Lô tô Miền Nam >> Lô tô Miền Nam ngày : {{result.date}}
+            </p>
         </div>
-        <div class='loto_container_mn_HCM_' style="border: 1px solid #CCCCCC;">
-            <p style="margin-top:10px; margin-left: 10px;">Lô tô Hồ Chí Minh ngày {{result.date}}<p>
+        {{#each (array 1 2 3)}}
+        <div class='loto_container_mn_TN' style="{{#if (gt this 1)}}margin-top: -10px;{{/if}}">
+            <div class='loto_container_mn_TN_' style="border: 1px solid #CCCCCC;height: 40px;margin-top: 10px;">
+                <p style="margin-top:10px; margin-left: 10px; font-weight: bold;">
+                    Lô tô {{get ../result.tenTinhMTMN this}} ngày {{../result.date}}
+                </p>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class='header-dau_mn'>Đầu</th>
+                        <th class='header-loto_mn'>Lô tô</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each (array 0 1 2 3 4 5 6 7 8 9)}}
+                    <tr>
+                        <td>{{this}}</td>
+                        <td>&nbsp; &nbsp;{{lotoDau ../this this}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
         </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class='header-dau_mn'>Đầu</th>
-                    <th class='header-loto_mn'>Lô tô</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>{{result.LT0HCM}}</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>{{result.LT1HCM}}</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>{{result.LT2HCM}}</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>{{result.LT3HCM}}</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>{{result.LT4HCM}}</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>{{result.LT5HCM}}</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>{{result.LT6HCM}}</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>{{result.LT7HCM}}</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>{{result.LT8HCM}}</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>{{result.LT9HCM}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class='loto_container_mn_HCM'>
-        <div class='loto_container_mn_HCM_' style="border: 1px solid #CCCCCC">
-            <p style="margin-top:10px; margin-left: 10px;">Lô tô Đồng Tháp ngày {{result.date}}<p>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class='header-dau_mn'>Đầu</th>
-                    <th class='header-loto_mn'>Lô tô</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>{{result.LT0DT}}</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>{{result.LT1DT}}</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>{{result.LT2DT}}</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>{{result.LT3DT}}</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>{{result.LT4DT}}</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>{{result.LT5DT}}</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>{{result.LT6DT}}</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>{{result.LT7DT}}</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>{{result.LT8DT}}</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>{{result.LT9DT}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class='loto_container_mn_HCM'>
-        <div class='loto_container_mn_HCM_' style="border: 1px solid #CCCCCC" >
-            <p style="margin-top:10px; margin-left: 10px;">Lô tô Cà Mau ngày {{result.date}}<p>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th class='header-dau_mn'>Đầu</th>
-                    <th class='header-loto_mn'>Lô tô</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>0</td>
-                    <td>{{result.LT0CM}}</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>{{result.LT1CM}}</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>{{result.LT2CM}}</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>{{result.LT3CM}}</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>{{result.LT4CM}}</td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>{{result.LT5CM}}</td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>{{result.LT6CM}}</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>{{result.LT7CM}}</td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>{{result.LT8CM}}</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>{{result.LT9CM}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <ul class='footer-links'>
-            <li>Xem thống kê <a href='#'>Loto gan miền Nam</a></li>
-            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Nam</a></li>
-            <li>Tham khảo <a href='#'>Thống kê XSMN</a></li>
-            <li>**KQXS** miền Nam
-                {{result.date}}
-                siêu tốc - chính xác, trực tiếp
-                <a href='#'>**XSMN**</a>
-                lúc 18h15 mỗi ngày</li>
-        </ul>
+        {{/each}}
     </div>
 </div>

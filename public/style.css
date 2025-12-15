@@ -236,7 +236,6 @@ body {
 .xoso-container {
     margin-right: 40px;
     max-width: 800px;
-    border: 1px solid var(--color-border);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -271,7 +270,7 @@ a {
     font-size: 13px;
     color: #333;
     background-color: #fff;
-    border-bottom: 1px solid var(--color-border);
+    border: 1px solid #E0E0E0;
 }
 
 .breadcrumb span {
@@ -315,6 +314,7 @@ a {
     background-color: var(--color-light-bg);
     color: #333;
     font-size: 14px;
+    font-weight: 100;
 }
 
 .result {
@@ -469,13 +469,7 @@ th {
 tbody td:first-child {
     width: 15%;
     text-align: center;
-    font-weight: bold;
 }
-
-tbody td:last-child {
-    font-weight: bold;
-}
-
 .footer-links {
     list-style-type: disc;
     padding-left: 20px;
@@ -834,10 +828,17 @@ body {
     border: 1px solid #dee2e6;
 }
 .col_giai,
-.col-giai {
+.col-giai1 {
     width: 15%;
     font-weight: bold;
     background-color: #f8f9fa;
+    color: #6c757d;
+    font-size: 0.9em;
+}
+.col-giai {
+    width: 15%;
+    font-weight: bold;
+    background-color: white;
     color: #6c757d;
     font-size: 0.9em;
 }
@@ -845,6 +846,15 @@ body {
     width: 28.33%;
 }
 .col_tinh_ket-qua_xsmn {
+    background-color: white;
+    font-weight: bold;
+    color: #212529;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+}.col_tinh_ket-qua_xsmn1 {
+    background-color: #F8F9FA;
     font-weight: bold;
     color: #212529;
     overflow-wrap: break-word;
@@ -856,7 +866,7 @@ body {
     background-color: #f2f2f2;
 }
 .giai-dac-biet {
-    background-color: #ffc107;
+    background-color: #F8F9FA;
     color: #dc3545;
     font-size: 1.1em;
     font-weight: bolder;
@@ -1057,12 +1067,11 @@ body {
 .mega-result-container {
     font-family: Arial, sans-serif;
     max-width: 600px;
-    margin: 20px auto;
+    margin: 20px;
     padding: 20px;
     border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-left: -5px;
+    margin-left: -1px;
 }
 
 .header h1 {
@@ -1076,25 +1085,27 @@ body {
 }
 
 .jackpot-title {
-    background-color: #c00;
+    width: 300px;
+    height: 40px;
+    background-color: #DC4A03;
     color: #fff;
     font-weight: bold;
     padding: 5px 10px;
     display: inline-block;
     font-size: 14px;
-    border-radius: 5px 5px 0 0;
+    border-radius: 150px 150px 0 0;
 }
 
 .jackpot-value-box {
-    border: 3px solid #c00;
+    border: 3px solid #DC4A03;
     padding: 15px 10px;
-    border-radius: 5px;
+    border-radius: 25px;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .jackpot-value {
-    font-size: 36px;
+    font-size: 50px;
     font-weight: bold;
     color: #c00;
 }
@@ -1105,7 +1116,8 @@ body {
 }
 
 .next-draw-date {
-    color: #c00;
+    font-size: 23px;
+    color: blue;
     font-weight: bold;
 }
 
@@ -1134,8 +1146,8 @@ body {
 }
 
 .number-ball {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     background-color: #c00;
     color: #fff;
     border-radius: 50%;
@@ -1147,8 +1159,8 @@ body {
     border: 1px solid #800;
 }
 .number-ball1 {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     background-color: white;
     color: black;
     border-radius: 50%;
@@ -1200,6 +1212,15 @@ body {
     width: 15px;
     height: 15px;
     background-color: #c00;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+.match-dot1 {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(246, 211, 14);
     border-radius: 50%;
     margin-right: 3px;
 }
@@ -1487,15 +1508,15 @@ td {
     border-bottom: 1px solid #ddd;
 }
 .number-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid #3b82f6; /* Blue-500 */
-    color: #3b82f6; /* Blue-500 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem; /* text-xl */
-    font-weight: bold;
-    flex-shrink: 0; /* Ngăn co lại trên màn hình nhỏ */
-}
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #3b82f6; 
+            color: #3b82f6; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem; 
+            font-weight: bold;
+            flex-shrink: 0;
+        }

@@ -221,6 +221,22 @@ router.get('/partials/menu_dientoan/xsdientoan123', async (req, res) => {
     });
 });
 
+router.get('/partials/menu_dientoan/keno', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/keno', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/mega', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/mega', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
 router.get('/partials/menu/tklxh1', async (req, res) => {
     const result = await getLatestResult();
     res.render('partials/menu/tklxh1', { title: 'Lô gan cực đại', result });

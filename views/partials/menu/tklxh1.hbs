@@ -112,7 +112,9 @@
             TK Loto kép Miền Bắc
         </p>
 <div>
-        <p style="font-weight: bold;">&nbsp; &nbsp; Các con Loto về nhiều nhất </p>
+        <div style="width: 588px;height: 40px; border: 1px solid #DEE2E6;">
+        <p style="font-weight: bold;padding: 7px;">&nbsp; &nbsp; Các con Loto về nhiều nhất </p>
+        </div>
         <table>
             <thead class="bg-blue-600 text-white">
                 <tr>
@@ -209,7 +211,9 @@
         </table>
         
     </div>
-        <p style="font-weight: bold;">&nbsp; &nbsp; Các con Loto về ít nhất </p>
+        <div style="width: 588px;height: 40px; border: 1px solid #DEE2E6;">
+        <p style="font-weight: bold;padding: 7px;">&nbsp; &nbsp; Các con Loto về ít nhất </p>
+        </div>
         <table class="min-w-full divide-y divide-gray-200 text-sm">
             <thead class="bg-blue-600 text-white">
                 <tr>
@@ -307,8 +311,10 @@
     </div>
     
             {{!-- .. --}}
-        <p style="font-weight: bold;">&nbsp; &nbsp; Các con Loto chưa xuất hiện </p>
-        <table>
+        <div style="width: 588px;height: 40px; border: 1px solid #DEE2E6;">
+        <p style="font-weight: bold;padding: 7px;">&nbsp; &nbsp; Các con Loto chưa xuất hiện </p>
+        </div>
+        <table style="width: 588px;">
 <thead class="bg-blue-600 text-white">
         <tr>
             <th class="px-11 py-9 w-[50px] text-center border border-blue-700" style="width: 100px;">Giải 7</th>
@@ -318,11 +324,11 @@
     </thead>
     <tbody class="divide-y divide-gray-200">
         <tr class="hover:bg-blue-50">
-            <td class="px-11 py-9 w-[30px] h-[120px] text-center " style="width: 100px;">{{get result.bang12_xh 120}}</td>
+            <td class="w-1/3 p-2 h-[120px] align-top " style="width: 100px;">{{get result.bang12_xh 120}}</td>
             
-            <td class="px-11 py-9 w-[50px] h-[150px] text-center border">{{get result.textleft_xh 1}}</td>
+            <td class="w-1/3 p-2 h-[150px] border">{{get result.textleft_xh 1}}</td>
             
-            <td class="px-11 py-9 w-[30px] h-[120px] text-center "></td>
+            <td class="w-1/3 p-2 h-[120px] "></td>
         </tr>
     </tbody>
         </table>

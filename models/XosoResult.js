@@ -143,6 +143,37 @@ const xosoResultSchema = new mongoose.Schema({
     G6TV: [String],
     G7TV: [String],
     G8TV: [String],
+                GDBTG:
+                [String],
+    G2TG:[String],
+    G3TG:[String],
+    G4TG:[String],
+    G5TG:[String],
+    G6TG:[String],
+    G7TG:[String],
+    G8TG:[String],
+
+            GDBKG:
+                [String],
+    G1KG:[String],
+    G2KG:[String],
+    G3KG:[String],
+    G4KG:[String],
+    G5KG:[String],
+    G6KG:[String],
+    G7KG:[String],
+    G8KG:[String],
+
+            GDBDL:
+                [String],
+    G1DL:[String],
+    G2DL:[String],
+    G3DL:[String],
+    G4DL:[String],
+    G5DL:[String],
+    G6DL:[String],
+    G7DL:[String],
+    G8DL:[String],
 
     LT0DN: [String],
     LT1DN: [String],
@@ -196,6 +227,39 @@ const xosoResultSchema = new mongoose.Schema({
     LT7AG: [String],
     LT8AG: [String],
     LT9AG: [String],
+
+    LT0TG: [String],
+    LT1TG: [String],
+    LT2TG: [String],
+    LT3TG: [String],
+    LT4TG: [String],
+    LT5TG: [String],
+    LT6TG: [String],
+    LT7TG: [String],
+    LT8TG: [String],
+    LT9TG: [String],
+
+    LT0KG: [String],
+    LT1KG: [String],
+    LT2KG: [String],
+    LT3KG: [String],
+    LT4KG: [String],
+    LT5KG: [String],
+    LT6KG: [String],
+    LT7KG: [String],
+    LT8KG: [String],
+    LT9KG: [String],
+
+    LT0DL: [String],
+    LT1DL: [String],
+    LT2DL: [String],
+    LT3DL: [String],
+    LT4DL: [String],
+    LT5DL: [String],
+    LT6DL: [String],
+    LT7DL: [String],
+    LT8DL: [String],
+    LT9DL: [String],
 
     LT0BTH: [String],
     LT1BTH: [String],
@@ -501,6 +565,20 @@ const xosoResultSchema = new mongoose.Schema({
 
     bang12_xh: [String],
     textleft_xh: [String],
+
+    keno_dt: [String],
+    text_keno_dt: [String],
+    keno_thoigian: [String],
+
+    mega_para_open_next: [String],
+    mega_number_ball:[String],
+    mega_text_right: [String],
+    mega_para_text_black_bold: [String],
+    mega_jackpot: [String],
+    mega_xsmega: [String],
+    mega_ball : [String],
+
+    tenTinhMTMN : [String],
 });
 
 xosoResultSchema.index({ date: 1 }, { unique: true });

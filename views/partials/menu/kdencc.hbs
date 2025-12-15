@@ -53,6 +53,7 @@
 
 
 <div class="flex mt-10" style="margin-top: 20px; " >
+
     <div class="w-147 border border-solid border-[#E8E8E8] h-100" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
        <p style="padding: 10px;">TK 0 - 99 </p> 
@@ -230,3 +231,79 @@
     </div>
 </footer>
 </div>
+
+
+    {{!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const countdownElement = document.getElementById('countdown-timer');
+            const START_HOUR = 6;
+            const END_HOUR = 21;
+            const END_MINUTE = 55;
+            const INTERVAL_MINUTES = 5;
+
+            function formatTime(minutes, seconds) {
+                const min = String(minutes).padStart(2, '0');
+                const sec = String(seconds).padStart(2, '0');
+                return `${min}:${sec}`;
+            }
+
+            function updateCountdown() {
+                const now = new Date();
+                const currentHour = now.getHours();
+                const currentMinute = now.getMinutes();
+                const isOperatingTime = currentHour >= START_HOUR && 
+                                        (currentHour < END_HOUR || (currentHour === END_HOUR && currentMinute <= END_MINUTE));
+
+                if (!isOperatingTime) {
+                    countdownElement.textContent = "00:00"; 
+                    return; 
+                }
+                const minutesSinceStart = (currentHour - START_HOUR) * 60 + currentMinute;
+                const nextDrawMinuteOffset = Math.ceil((minutesSinceStart + 1) / INTERVAL_MINUTES) * INTERVAL_MINUTES;
+                
+                const targetMinute = (nextDrawMinuteOffset % 60);
+                const targetHour = START_HOUR + Math.floor(nextDrawMinuteOffset / 60);
+
+                let targetDate = new Date();
+                targetDate.setHours(targetHour, targetMinute, 0, 0);
+                if (targetDate.getTime() < now.getTime()) {
+                    targetDate.setMinutes(targetDate.getMinutes() + INTERVAL_MINUTES);
+                }
+                if (targetHour > END_HOUR || (targetHour === END_HOUR && targetMinute > END_MINUTE)) {
+                    countdownElement.textContent = "00:00"; 
+                    return;
+                }
+                const diffTime = targetDate.getTime() - now.getTime();
+                const totalSeconds = Math.floor(diffTime / 1000);
+                const displayMinutes = Math.floor(totalSeconds / 60);
+                const displaySeconds = totalSeconds % 60;
+                countdownElement.textContent = formatTime(displayMinutes, displaySeconds);
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+
+        <div class="w-full max-w-lg bg-white p-6 rounded-lg shadow-xl border border-gray-200 text-center">
+        
+        <p class="text-lg font-normal mb-4 text-gray-800">
+            Kỳ quay số Keno tiếp theo:
+        </p>
+        
+        <div class="flex flex-col items-center justify-center py-4">
+            
+            <p class="text-xl text-blue-600 font-semibold mb-2">
+                Đếm ngược:
+            </p>
+            
+            <div id="countdown-timer" class="text-7xl md:text-8xl font-black text-red-700 leading-none tracking-tight">
+                00:00
+            </div>
+            
+        </div>
+        
+        <p class="text-sm text-gray-600 mt-6 px-4">
+            ( Mỗi kỳ quay thường cách nhau 5' bắt đầu từ 6h00 đến 21h55 hàng ngày )
+        </p>
+
+    </div> --}}

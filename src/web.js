@@ -486,6 +486,96 @@ async function crawlTKTheoThu(page_crawlTKTheoThu) {
     }
 }
 
+async function crawl_Keno(page_crawl_Keno) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawl_Keno.goto(
+            'https://xosodaiphat.com/keno-truc-tiep-xskeno.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
+
+        const result = await page_crawl_Keno.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+            return Array.from(document.querySelectorAll(`span.${cl}`))
+                .map((el) => el.innerText.trim())
+                 .filter(Boolean);
+            };
+            return {
+            keno_dt: getClasstd('kn-number'),
+            text_keno_dt: getClasstd('td-text16.clred'),
+            keno_thoigian: getClassspan('pad-012')
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
+async function crawl_Mega(page_crawl_Mega) {
+    console.log('Đang cào dữ liệu Lô Gan...');
+    try {
+        await page_crawl_Mega.goto(
+            'https://xosodaiphat.com/xs-mega-xo-so-mega-645.html',
+            {
+                waitUntil: 'networkidle2',
+                timeout: 60000,
+            },
+        );
+
+        const result = await page_crawl_Mega.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+            return Array.from(document.querySelectorAll(`span.${cl}`))
+                .map((el) => el.innerText.trim())
+                 .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+            return Array.from(document.querySelectorAll(`p.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+            const getli = (cl) => {
+            return Array.from(document.querySelectorAll(`li`))
+                .map((el) => el.innerText.trim())
+                 .filter(Boolean);
+            };
+            const getClass = (cl) => {
+            return Array.from(document.querySelectorAll(`div.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+            };
+            return {
+            mega_para_open_next: getClassp('open-next'),
+            mega_number_ball: getClass('mega-detail'),
+            mega_text_right: getClasstd('text-right'),
+            mega_para_text_black_bold: getClassp('text-black-bold'),
+            mega_jackpot: getClassspan('result-jackpot'),
+            mega_xsmega: getClass('block-main-heading'),
+            mega_ball : getli('li')
+
+            };
+        });
+        console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Lô Gan:', error.message);
+    }
+}
+
 async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -502,6 +592,8 @@ async function crawl() {
     const page_crawlDienToan123 = await browser.newPage();
     const page_crawlTKTheoThu = await browser.newPage();
     const page_crawlLotoKep = await browser.newPage();
+    const page_crawl_Keno = await browser.newPage();
+    const page_crawl_Mega = await browser.newPage();
 
     console.log('Đang cào dữ liệu chính...');
 
@@ -549,6 +641,12 @@ async function crawl() {
 
         const getClasstd = (cl) => {
             return Array.from(document.querySelectorAll(`td.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+
+        const getClassth = (cl) => {
+            return Array.from(document.querySelectorAll(`th.${cl}`))
                 .map((el) => el.innerText.trim())
                 .filter(Boolean);
         };
@@ -731,6 +829,45 @@ async function crawl() {
             G7AG: getNumbers('AG_prize_7_item'),
             G8AG: getNumbers('AG_prize_8_item'),
 
+            GDBTG:
+                document
+                    .querySelector('#TG_prize_Db_item_0')
+                    ?.innerText.trim() || '---',
+            G1TG: getNumbers('TG_prize_1_item'),
+            G2TG: getNumbers('TG_prize_2_item'),
+            G3TG: getNumbers('TG_prize_3_item'),
+            G4TG: getNumbers('TG_prize_4_item'),
+            G5TG: getNumbers('TG_prize_5_item'),
+            G6TG: getNumbers('TG_prize_6_item'),
+            G7TG: getNumbers('TG_prize_7_item'),
+            G8TG: getNumbers('TG_prize_8_item'),
+
+            GDBKG:
+                document
+                    .querySelector('#KG_prize_Db_item_0')
+                    ?.innerText.trim() || '---',
+            G1KG: getNumbers('KG_prize_1_item'),
+            G2KG: getNumbers('KG_prize_2_item'),
+            G3KG: getNumbers('KG_prize_3_item'),
+            G4KG: getNumbers('KG_prize_4_item'),
+            G5KG: getNumbers('KG_prize_5_item'),
+            G6KG: getNumbers('KG_prize_6_item'),
+            G7KG: getNumbers('KG_prize_7_item'),
+            G8KG: getNumbers('KG_prize_8_item'),
+
+            GDBDL:
+                document
+                    .querySelector('#DL_prize_Db_item_0')
+                    ?.innerText.trim() || '---',
+            G1DL: getNumbers('DL_prize_1_item'),
+            G2DL: getNumbers('DL_prize_2_item'),
+            G3DL: getNumbers('DL_prize_3_item'),
+            G4DL: getNumbers('DL_prize_4_item'),
+            G5DL: getNumbers('DL_prize_5_item'),
+            G6DL: getNumbers('DL_prize_6_item'),
+            G7DL: getNumbers('DL_prize_7_item'),
+            G8DL: getNumbers('DL_prize_8_item'),
+
             GDBBTH:
                 document
                     .querySelector('#BTH_prize_Db_item_0')
@@ -745,6 +882,39 @@ async function crawl() {
             G8BTH: getNumbers('BTH_prize_8_item'),
 
             //Lô tô miền nam
+            LT0TG: getLoto('mnloto_TG_0'),
+            LT1TG: getLoto('mnloto_TG_1'),
+            LT2TG: getLoto('mnloto_TG_2'),
+            LT3TG: getLoto('mnloto_TG_3'),
+            LT4TG: getLoto('mnloto_TG_4'),
+            LT5TG: getLoto('mnloto_TG_5'),
+            LT6TG: getLoto('mnloto_TG_6'),
+            LT7TG: getLoto('mnloto_TG_7'),
+            LT8TG: getLoto('mnloto_TG_8'),
+            LT9TG: getLoto('mnloto_TG_9'),
+
+            LT0KG: getLoto('mnloto_KG_0'),
+            LT1KG: getLoto('mnloto_KG_1'),
+            LT2KG: getLoto('mnloto_KG_2'),
+            LT3KG: getLoto('mnloto_KG_3'),
+            LT4KG: getLoto('mnloto_KG_4'),
+            LT5KG: getLoto('mnloto_KG_5'),
+            LT6KG: getLoto('mnloto_KG_6'),
+            LT7KG: getLoto('mnloto_KG_7'),
+            LT8KG: getLoto('mnloto_KG_8'),
+            LT9KG: getLoto('mnloto_KG_9'),
+
+            LT0DL: getLoto('mnloto_DL_0'),
+            LT1DL: getLoto('mnloto_DL_1'),
+            LT2DL: getLoto('mnloto_DL_2'),
+            LT3DL: getLoto('mnloto_DL_3'),
+            LT4DL: getLoto('mnloto_DL_4'),
+            LT5DL: getLoto('mnloto_DL_5'),
+            LT6DL: getLoto('mnloto_DL_6'),
+            LT7DL: getLoto('mnloto_DL_7'),
+            LT8DL: getLoto('mnloto_DL_8'),
+            LT9DL: getLoto('mnloto_DL_9'),
+
             LT0DN: getLoto('mnloto_DN_0'),
             LT1DN: getLoto('mnloto_DN_1'),
             LT2DN: getLoto('mnloto_DN_2'),
@@ -1083,6 +1253,8 @@ async function crawl() {
             max3dg24: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
             max3dg3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             titlemax3d: getClass('titlemax3d'),
+
+            tenTinhMTMN : getClassth('text-center'),
         };
     });
 
@@ -1104,6 +1276,8 @@ async function crawl() {
     );
     const crawlTKTheoThuResult = await crawlTKTheoThu(page_crawlTKTheoThu);
     const crawlLotoKepResult = await crawlLotoKep(page_crawlLotoKep);
+    const crawl_KenoResult = await crawl_Keno(page_crawl_Keno);
+    const crawl_MegaResult = await crawl_Mega(page_crawl_Mega);
 
     await browser.close();
     const finalData = {
@@ -1122,6 +1296,8 @@ async function crawl() {
         ...crawlDienToan123Result,
         ...crawlTKTheoThuResult,
         ...crawlLotoKepResult,
+        ...crawl_KenoResult,
+        ...crawl_MegaResult,
     };
 
     const dir = path.join(__dirname, '..', 'data', 'infos');
@@ -1152,4 +1328,6 @@ module.exports = {
     crawlDienToan123,
     crawlTKTheoThu,
     crawlLotoKep,
+    crawl_Keno,
+    crawl_Mega,
 };

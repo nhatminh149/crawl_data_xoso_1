@@ -55,15 +55,15 @@ Handlebars.registerHelper(
         let html = '';
         for (let i = 0; i <= 10; i++) {
             const value = tklogandauso[dataStartIndex + i] || 0;
-            let cellClass = ' text-center';
+            let cellClass = 'text-center';
 
-            if (value >= 35) cellClass += 'text-back text-center';
-            else if (value >= 30) cellClass += 'text-back text-center';
-            else if (value >= 25) cellClass += 'text-back text-center';
-            else if (value >= 20) cellClass += 'text-back text-center';
-            else if (value >= 15) cellClass += 'text-black text-center';
-            else if (value >= 10) cellClass += 'text-black text-center';
-            else cellClass += 'text-black text-center';
+            if (value >= 35) cellClass += 'text-center';
+            else if (value >= 30) cellClass += 'text-center';
+            else if (value >= 25) cellClass += 'text-center';
+            else if (value >= 20) cellClass += 'text-center';
+            else if (value >= 15) cellClass += 'text-center';
+            else if (value >= 10) cellClass += 'text-center';
+            else cellClass += 'text-center';
 
             html += `<td class="${cellClass}">${value === 0 ? '-' : value}</td>`;
         }
@@ -131,33 +131,22 @@ const rawData = [
     'Kỳ quay\tLớn\tBé\tChẵn\tLẻ',
     '#262581\t9\t11\t11\t9',
     '#262580\t6\t14\t10\t10',
-    // ... thêm các dòng dữ liệu khác ...
     '#262539\t11\t9\t10\t10',
 ];
 
-// Hàm để phân tích dữ liệu và tô màu
 function parseKBSData(dataArray) {
     if (!dataArray || dataArray.length < 2) return [];
-
-    // Bỏ dòng tiêu đề đầu tiên
     const tableData = dataArray.slice(1);
     const parsedData = tableData.map((line) => {
-        // Tách chuỗi bằng ký tự tab (\t)
         const [kyQuay, lon, be, chan, le] = line
             .split('\t')
             .map((item) => item.trim());
-
-        // Định nghĩa logic tô màu (Dựa trên hình ảnh: số lớn hơn được tô màu)
-        // Trong trường hợp này, tô màu cho giá trị lớn hơn 10 (hoặc nếu là số lớn hơn)
-
-        // Logic tô màu đơn giản (ví dụ: tô đỏ nếu > 10)
         const styleCell = (value) => {
             const num = parseInt(value);
-            // Logic: Tô đỏ nếu số > 10
             const isColored = num > 10;
             return {
                 value: value,
-                isColored: isColored, // Boolean để template sử dụng
+                isColored: isColored,
             };
         };
         const lonNum = parseInt(lon);
@@ -177,3 +166,146 @@ function parseKBSData(dataArray) {
 }
 
 const tableRows = parseKBSData(rawData);
+
+
+
+//
+
+Handlebars.registerHelper('giai', function(indexTinh, giai, indexSo) {
+    if (!this.result || !Array.isArray(this.result.tenTinhMTMN)) {
+        return '';
+    }
+
+    const tenTinh = this.result.tenTinhMTMN[indexTinh] || '';
+    const map = {
+        'Tiền Giang': 'TG',
+        'Kiên Giang': 'KG',
+        'Đà Lạt': 'DL',
+        'An Giang': 'AG',
+        'Bình Thuận': 'BTH',
+        'Vĩnh Long': 'VL',
+        'TP HCM': 'HCM',
+        'Hồ Chí Minh': 'HCM',
+        'TPHCM': 'HCM',
+        'Đồng Tháp': 'DT',
+        'Cà Mau': 'CM',
+        'Bình Dương': 'BD',
+        'Trà Vinh': 'TV',
+        'Đồng Nai': 'DN',
+        'Cần Thơ': 'CT',
+        'Sóc Trăng': 'ST'
+    };
+
+    const prefix = map[tenTinh];
+    if (!prefix) {
+        return '';
+    }
+
+    let fieldName;
+    if (giai === 'DB') {
+        fieldName = 'GDB' + prefix;
+    } else {
+        fieldName = 'G' + giai + prefix;
+    }
+    const value = this.result[fieldName];
+    if (typeof indexSo === 'number' && Array.isArray(value)) {
+        return value[indexSo] || '';
+    }
+
+    return value || '';
+});
+
+Handlebars.registerHelper('lotoDau', function(indexTinh, dau, options) {
+    const root = options.data.root;
+    const result = root.result;
+    if (!result) return '';
+    if (!Array.isArray(result.tenTinhMTMN)) return '';
+
+    const tenTinh = result.tenTinhMTMN[indexTinh];
+    if (tenTinh === undefined) return '';
+
+    const map = {
+        'Tiền Giang': 'TG',
+        'Kiên Giang': 'KG',
+        'Đà Lạt': 'DL',
+        'An Giang': 'AG',
+        'Bình Thuận': 'BTH',
+        'Vĩnh Long': 'VL',
+        'TP HCM': 'HCM',
+        'Hồ Chí Minh': 'HCM',
+        'TPHCM': 'HCM',
+        'Đồng Tháp': 'DT',
+        'Cà Mau': 'CM',
+        'Bình Dương': 'BD',
+        'Trà Vinh': 'TV',
+        'Đồng Nai': 'DN',
+        'Cần Thơ': 'CT',
+        'Sóc Trăng': 'ST'
+    };
+
+    const prefix = map[tenTinh];
+    if (!prefix) return '';
+
+    const fieldName = 'LT' + dau + prefix;
+    return result[fieldName] || '';
+});
+Handlebars.registerHelper('array', function(...args) {
+    args.pop(); 
+    return args;
+});
+Handlebars.registerHelper('gt', function(a, b) {
+    return a > b;
+});
+
+Handlebars.registerHelper('giaiMT', function(indexTinh, giaiMT, indexSo) {
+    if (!this.result || !Array.isArray(this.result.tenTinhMTMN)) {
+        return 'ko';
+    }
+
+    const tenTinh = this.result.tenTinhMTMN[indexTinh] || '';
+    const map = {
+          'Khánh Hòa': 'KH',
+          'Kon Tum': 'KT',
+          'Huế': 'TTH'
+    };
+
+    const prefix = map[tenTinh];
+    if (!prefix) {
+        return '';
+    }
+
+    let fieldName;
+    if (giaiMT === 'DB') {
+        fieldName = 'GDB' + prefix;
+    } else {
+        fieldName = 'G' + giaiMT + prefix;
+    }
+    const value = this.result[fieldName];
+    if (typeof indexSo === 'number' && Array.isArray(value)) {
+        return value[indexSo] || '';
+    }
+
+    return value || '';
+});
+
+Handlebars.registerHelper('lotoDauMT', function(indexTinh, dau, options) {
+    const root = options.data.root;
+    const result = root.result;
+    if (!result) return '';
+    if (!Array.isArray(result.tenTinhMTMN)) return '';
+
+    const tenTinh = result.tenTinhMTMN[indexTinh];
+    if (tenTinh === undefined) return '';
+
+    const map = {
+          'Khánh Hòa': 'KH',
+          'Kon Tum': 'KT',
+          'Huế': 'TTH'
+    };
+
+    const prefix = map[tenTinh];
+    if (!prefix) return '';
+
+    const fieldName = 'LT' + dau + prefix;
+    return result[fieldName] || '';
+});
