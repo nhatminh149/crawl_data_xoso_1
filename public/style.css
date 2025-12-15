@@ -270,7 +270,7 @@ a {
     font-size: 13px;
     color: #333;
     background-color: #fff;
-    border: 1px solid #E0E0E0;
+    border: 1px solid #e0e0e0;
 }
 
 .breadcrumb span {
@@ -853,8 +853,9 @@ body {
     word-break: break-all;
     text-overflow: ellipsis;
     line-height: 1.4;
-}.col_tinh_ket-qua_xsmn1 {
-    background-color: #F8F9FA;
+}
+.col_tinh_ket-qua_xsmn1 {
+    background-color: #f8f9fa;
     font-weight: bold;
     color: #212529;
     overflow-wrap: break-word;
@@ -866,7 +867,7 @@ body {
     background-color: #f2f2f2;
 }
 .giai-dac-biet {
-    background-color: #F8F9FA;
+    background-color: #f8f9fa;
     color: #dc3545;
     font-size: 1.1em;
     font-weight: bolder;
@@ -1087,7 +1088,7 @@ body {
 .jackpot-title {
     width: 300px;
     height: 40px;
-    background-color: #DC4A03;
+    background-color: #dc4a03;
     color: #fff;
     font-weight: bold;
     padding: 5px 10px;
@@ -1097,7 +1098,7 @@ body {
 }
 
 .jackpot-value-box {
-    border: 3px solid #DC4A03;
+    border: 3px solid #dc4a03;
     padding: 15px 10px;
     border-radius: 25px;
     background-color: #fff;
@@ -1179,7 +1180,8 @@ body {
 }
 
 .prize-table {
-    width: 100%;
+    margin-left: -21px;
+    width: 600px;
     border-collapse: collapse;
     margin-bottom: 20px;
     text-align: left;
@@ -1205,12 +1207,13 @@ body {
 .jackpot-row td {
     background-color: #fff;
     font-weight: bold;
+    color: #a00;
 }
 
 .match-dot {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     background-color: #c00;
     border-radius: 50%;
     margin-right: 3px;
@@ -1218,8 +1221,8 @@ body {
 
 .match-dot1 {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     background-color: rgb(246, 211, 14);
     border-radius: 50%;
     margin-right: 3px;
@@ -1508,15 +1511,15 @@ td {
     border-bottom: 1px solid #ddd;
 }
 .number-circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: 2px solid #3b82f6; 
-            color: #3b82f6; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem; 
-            font-weight: bold;
-            flex-shrink: 0;
-        }
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid blue;
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}

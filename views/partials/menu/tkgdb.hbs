@@ -194,8 +194,8 @@
         {{!-- {{> menu}} --}}
         <div class='column-right1'>
 
-            <div class='info-block'>
-                <h3>Tra Cứu Xổ Số</h3>
+            <div class='menu-block'>
+                <h3 style='color: brown;'>Tra Cứu Xổ Số</h3>
                 <ul>
                     <li><a href='#'>XSMB hôm qua</a></li>
                     <li><a href='#'>XSMB 30 ngày</a></li>
@@ -208,46 +208,55 @@
                 </ul>
             </div>
 
-            <div class='info-block'>
-                <h3>Xổ Số Điện Toán</h3>
+            <div class='menu-block'>
+                <h3 style='color: brown;'>Xổ Số Điện Toán</h3>
                 <ul>
-                    <li>Keno</li>
-                    <li>XS Mega 6/45
-                        <ul>
-                            <li>Thứ 4</li>
-                            <li>Thứ 6</li>
-                            <li>Chủ Nhật</li>
-                        </ul>
-                    </li>
-                    <li>XS Power 6/55
-                        <ul>
-                            <li>Thứ 3</li>
-                            <li>Thứ 5</li>
-                            <li>Thứ 7</li>
-                        </ul>
-                    </li>
-                    <li>XS Max 3D
-                        <ul>
-                            <li>Thứ 2</li>
-                            <li>Thứ 4</li>
-                            <li>Thứ 6</li>
-                        </ul>
-                    </li>
-                    <li>XS Max 3D Pro
-                        <ul>
-                            <li>Thứ 3</li>
-                            <li>Thứ 5</li>
-                            <li>Thứ 7</li>
-                        </ul>
-                    </li>
+                    <li style='font-weight: bold;'><a
+                            href='/partials/menu_dientoan/keno'
+                        >Keno</a></li>
+                </ul>
+                <ul>
+                    <li><a href='/partials/menu_dientoan/mega'>XS Mega</a></li>
+                    <ul>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 4</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 6</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Chủ Nhật</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li><a href='/partials/menu_dientoan/mega'>XS Power 6/55</a></li>
+                    <ul>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 3</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 5</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 7</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li><a href='/partials/menu_dientoan/mega'>XS Max 3D</a></li>
+                    <ul>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 2</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 4</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 6</li>
+                    </ul>
+                </ul>
+                <ul>
+                    <li><a href='/partials/menu_dientoan/mega'>XS Max 3D Pro</a></li>
+                    <ul>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 3</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 5</li>
+                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 7</li>
+                    </ul>
+                </ul>
+                <ul>
                     <li><a href='#'>XS Điện toán 6x36</a></li>
-                    <li><a href='#'>XS Điện toán 123</a></li>
+                    <li><a href='/partials/menu_dientoan/xsdientoan123'>XS Điện
+                            toán 123</a></li>
                     <li><a href='#'>XS Thần tài 4</a></li>
                 </ul>
             </div>
 
             <div class='doveso-block'>
-                <h3>Dò Vé Số</h3>
+                <h3 style='color: brown;'>Dò Vé Số</h3>
                 <form>
                     <div class='form-row'>
                         <label for='date'>Chọn ngày:</label>
@@ -266,6 +275,7 @@
                             type='text'
                             placeholder='Nhập dãy số'
                             class='number-input'
+                            style='width: 80px; height: 40px; border: 1px solid #CCCCCC;'
                         />
                         <button type='submit' class='submit-button'>Kết quả</button>
                     </div>

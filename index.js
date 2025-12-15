@@ -1,15 +1,21 @@
-require('./src/helpers');
+const helpers = require('./src/helpers');
 const express = require('express');
 const { engine } = require('express-handlebars');
 const path = require('path');
 const { connect } = require('./db/connect');
 const router = require('./src/router');
-const cron = require('node-cron');                    
+const cron = require('node-cron');
 
 const app = express();
 const PORT = 3000;
 
-app.engine('.hbs', engine({ extname: '.hbs' }));
+app.engine(
+    '.hbs',
+    engine({
+        extname: '.hbs',
+        helpers,
+    }),
+);
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
@@ -24,7 +30,9 @@ async function updateKetQua() {
         if (data && data.date) {
             await XosoResult.deleteOne({ date: data.date });
             await new XosoResult(data).save();
-            console.log(`Cập nhật thành công: ${data.date} - ${new Date().toLocaleString()}`);
+            console.log(
+                `Cập nhật thành công: ${data.date} - ${new Date().toLocaleString()}`,
+            );
         } else {
             console.log('Chưa có kết quả mới hoặc crawl thất bại');
         }
@@ -47,7 +55,6 @@ async function updateKetQua() {
             console.log(`Server chạy tại http://localhost:${PORT}`);
             console.log('Truy cập ngay để xem kết quả mới nhất!');
         });
-
     } catch (err) {
         console.error('Lỗi khởi động server:', err);
         process.exit(1);

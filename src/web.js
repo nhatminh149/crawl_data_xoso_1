@@ -504,14 +504,14 @@ async function crawl_Keno(page_crawl_Keno) {
                     .filter(Boolean);
             };
             const getClassspan = (cl) => {
-            return Array.from(document.querySelectorAll(`span.${cl}`))
-                .map((el) => el.innerText.trim())
-                 .filter(Boolean);
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             return {
-            keno_dt: getClasstd('kn-number'),
-            text_keno_dt: getClasstd('td-text16.clred'),
-            keno_thoigian: getClassspan('pad-012')
+                keno_dt: getClasstd('kn-number'),
+                text_keno_dt: getClasstd('td-text16.clred'),
+                keno_thoigian: getClassspan('pad-012'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -539,34 +539,39 @@ async function crawl_Mega(page_crawl_Mega) {
                     .filter(Boolean);
             };
             const getClassspan = (cl) => {
-            return Array.from(document.querySelectorAll(`span.${cl}`))
-                .map((el) => el.innerText.trim())
-                 .filter(Boolean);
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             const getClassp = (cl) => {
-            return Array.from(document.querySelectorAll(`p.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
-        };
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassh2 = (cl) => {
+                return Array.from(document.querySelectorAll(`h2.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
             const getli = (cl) => {
-            return Array.from(document.querySelectorAll(`li`))
-                .map((el) => el.innerText.trim())
-                 .filter(Boolean);
+                return Array.from(document.querySelectorAll(`li`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             const getClass = (cl) => {
-            return Array.from(document.querySelectorAll(`div.${cl}`))
-                .map((el) => el.innerText.trim())
-                .filter(Boolean);
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
             };
             return {
-            mega_para_open_next: getClassp('open-next'),
-            mega_number_ball: getClass('mega-detail'),
-            mega_text_right: getClasstd('text-right'),
-            mega_para_text_black_bold: getClassp('text-black-bold'),
-            mega_jackpot: getClassspan('result-jackpot'),
-            mega_xsmega: getClass('block-main-heading'),
-            mega_ball : getli('li')
-
+                mega_class_link: getClassh2('class-title-list-link'),
+                mega_para_open_next: getClassp('open-next'),
+                mega_number_ball: getClass('mega-detail'),
+                mega_text_right: getClasstd('text-right'),
+                mega_para_text_black_bold: getClassp('text-black-bold'),
+                mega_jackpot: getClassspan('result-jackpot'),
+                mega_xsmega: getClass('block-main-heading'),
+                mega_ball: getClass('mega-detail'),
             };
         });
         console.log('Cào dữ liệu Lô Gan ngày cùng về thành công.');
@@ -641,6 +646,12 @@ async function crawl() {
 
         const getClasstd = (cl) => {
             return Array.from(document.querySelectorAll(`td.${cl}`))
+                .map((el) => el.innerText.trim())
+                .filter(Boolean);
+        };
+
+        const getClassli = (cl) => {
+            return Array.from(document.querySelectorAll(`li.${cl}`))
                 .map((el) => el.innerText.trim())
                 .filter(Boolean);
         };
@@ -1243,6 +1254,7 @@ async function crawl() {
             //Jack pot
             para_open_next: getClassp('open-next'),
             number_ball: getClass('mega-detail'),
+            number_ball2: getClass('power-detail'),
             text_right: getClasstd('text-right'),
             para_text_black_bold: getClassp('text-black-bold'),
             jackpot: getClassspan('result-jackpot'),
@@ -1254,7 +1266,12 @@ async function crawl() {
             max3dg3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             titlemax3d: getClass('titlemax3d'),
 
-            tenTinhMTMN : getClassth('text-center'),
+            //xsdt
+            xsdt_day: getClass('list-link'),
+            xsdt_ball: getClass('dientoan-detail'),
+            xsdt_number: getClassli('no-border'),
+
+            tenTinhMTMN: getClassth('text-center'),
         };
     });
 

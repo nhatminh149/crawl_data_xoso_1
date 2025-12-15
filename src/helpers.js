@@ -167,11 +167,9 @@ function parseKBSData(dataArray) {
 
 const tableRows = parseKBSData(rawData);
 
-
-
 //
 
-Handlebars.registerHelper('giai', function(indexTinh, giai, indexSo) {
+Handlebars.registerHelper('giai', function (indexTinh, giai, indexSo) {
     if (!this.result || !Array.isArray(this.result.tenTinhMTMN)) {
         return '';
     }
@@ -186,14 +184,14 @@ Handlebars.registerHelper('giai', function(indexTinh, giai, indexSo) {
         'Vĩnh Long': 'VL',
         'TP HCM': 'HCM',
         'Hồ Chí Minh': 'HCM',
-        'TPHCM': 'HCM',
+        TPHCM: 'HCM',
         'Đồng Tháp': 'DT',
         'Cà Mau': 'CM',
         'Bình Dương': 'BD',
         'Trà Vinh': 'TV',
         'Đồng Nai': 'DN',
         'Cần Thơ': 'CT',
-        'Sóc Trăng': 'ST'
+        'Sóc Trăng': 'ST',
     };
 
     const prefix = map[tenTinh];
@@ -215,7 +213,7 @@ Handlebars.registerHelper('giai', function(indexTinh, giai, indexSo) {
     return value || '';
 });
 
-Handlebars.registerHelper('lotoDau', function(indexTinh, dau, options) {
+Handlebars.registerHelper('lotoDau', function (indexTinh, dau, options) {
     const root = options.data.root;
     const result = root.result;
     if (!result) return '';
@@ -233,14 +231,14 @@ Handlebars.registerHelper('lotoDau', function(indexTinh, dau, options) {
         'Vĩnh Long': 'VL',
         'TP HCM': 'HCM',
         'Hồ Chí Minh': 'HCM',
-        'TPHCM': 'HCM',
+        TPHCM: 'HCM',
         'Đồng Tháp': 'DT',
         'Cà Mau': 'CM',
         'Bình Dương': 'BD',
         'Trà Vinh': 'TV',
         'Đồng Nai': 'DN',
         'Cần Thơ': 'CT',
-        'Sóc Trăng': 'ST'
+        'Sóc Trăng': 'ST',
     };
 
     const prefix = map[tenTinh];
@@ -249,24 +247,25 @@ Handlebars.registerHelper('lotoDau', function(indexTinh, dau, options) {
     const fieldName = 'LT' + dau + prefix;
     return result[fieldName] || '';
 });
-Handlebars.registerHelper('array', function(...args) {
-    args.pop(); 
+Handlebars.registerHelper('array', function (...args) {
+    args.pop();
     return args;
 });
-Handlebars.registerHelper('gt', function(a, b) {
+Handlebars.registerHelper('gt', function (a, b) {
     return a > b;
 });
 
-Handlebars.registerHelper('giaiMT', function(indexTinh, giaiMT, indexSo) {
+Handlebars.registerHelper('giaiMT', function (indexTinh, giaiMT, indexSo) {
     if (!this.result || !Array.isArray(this.result.tenTinhMTMN)) {
         return 'ko';
     }
 
     const tenTinh = this.result.tenTinhMTMN[indexTinh] || '';
     const map = {
-          'Khánh Hòa': 'KH',
-          'Kon Tum': 'KT',
-          'Huế': 'TTH'
+        'Khánh Hòa': 'KH',
+        'Kon Tum': 'KT',
+        Huế: 'TTH',
+        'Phú Yên': 'PY',
     };
 
     const prefix = map[tenTinh];
@@ -288,7 +287,7 @@ Handlebars.registerHelper('giaiMT', function(indexTinh, giaiMT, indexSo) {
     return value || '';
 });
 
-Handlebars.registerHelper('lotoDauMT', function(indexTinh, dau, options) {
+Handlebars.registerHelper('lotoDauMT', function (indexTinh, dau, options) {
     const root = options.data.root;
     const result = root.result;
     if (!result) return '';
@@ -298,9 +297,10 @@ Handlebars.registerHelper('lotoDauMT', function(indexTinh, dau, options) {
     if (tenTinh === undefined) return '';
 
     const map = {
-          'Khánh Hòa': 'KH',
-          'Kon Tum': 'KT',
-          'Huế': 'TTH'
+        'Khánh Hòa': 'KH',
+        'Kon Tum': 'KT',
+        'Huế': 'TTH',
+        'Phú Yên': 'PY',
     };
 
     const prefix = map[tenTinh];
@@ -309,3 +309,15 @@ Handlebars.registerHelper('lotoDauMT', function(indexTinh, dau, options) {
     const fieldName = 'LT' + dau + prefix;
     return result[fieldName] || '';
 });
+
+module.exports = {
+    slice(str, start, end) {
+        if (!str) return '';
+        return str.slice(start, end);
+    },
+
+    split2(str) {
+        if (!str) return [];
+        return str.match(/.{2}/g);
+    },
+};

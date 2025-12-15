@@ -91,7 +91,7 @@
         thứ tự
     </p>
 
-    <table class='prize-table'>
+    <table class='prize-table_mega'>
         <thead>
             <tr>
                 <th>Giải thưởng</th>
@@ -166,288 +166,299 @@
 
 {{! jackpot2 }}
 <!-- KỲ 1 (MỚI NHẤT) -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 1}}</span></div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
     <div class='draw-details'>{{get result.mega_para_text_black_bold 1}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  0}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  1}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  2}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  3}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  4}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  5}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  6}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[0] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[0] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[0] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[0] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[0] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[0] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
         <tbody>
             <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 8}}</td><td>{{get result.mega_text_right 9}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 10}}</td><td>{{get result.mega_text_right 11}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 12}}</td><td>{{get result.mega_text_right 13}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 14}}</td><td>{{get result.mega_text_right 15}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 16}}</td><td>{{get result.mega_text_right 17}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 10}}</td><td>{{get result.mega_text_right 11}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 12}}</td><td>{{get result.mega_text_right 13}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 14}}</td><td>{{get result.mega_text_right 15}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 2 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 21}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 21}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  20}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  21}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  22}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  23}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  24}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  25}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  26}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 2}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[1] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[1] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[1] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[1] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[1] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[1] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 28}}</td><td>{{get result.mega_text_right 29}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 30}}</td><td>{{get result.mega_text_right 31}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 32}}</td><td>{{get result.mega_text_right 33}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 34}}</td><td>{{get result.mega_text_right 35}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 36}}</td><td>{{get result.mega_text_right 37}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 16}}</td><td>{{get result.mega_text_right 17}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 18}}</td><td>{{get result.mega_text_right 19}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 20}}</td><td>{{get result.mega_text_right 21}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 22}}</td><td>{{get result.mega_text_right 23}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 3 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 41}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 41}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  40}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  41}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  42}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  43}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  44}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  45}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  46}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 3}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[2] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[2] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[2] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[2] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[2] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[2] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 48}}</td><td>{{get result.mega_text_right 49}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 50}}</td><td>{{get result.mega_text_right 51}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 52}}</td><td>{{get result.mega_text_right 53}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 54}}</td><td>{{get result.mega_text_right 55}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 56}}</td><td>{{get result.mega_text_right 57}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 24}}</td><td>{{get result.mega_text_right 25}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 26}}</td><td>{{get result.mega_text_right 27}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 28}}</td><td>{{get result.mega_text_right 29}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 30}}</td><td>{{get result.mega_text_right 31}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 4 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 61}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 61}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  60}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  61}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball 62}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball 63}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball 64}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball 65}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball 66}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 4}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[3] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[3] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[3] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[3] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[3] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[3] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 68}}</td><td>{{get result.mega_text_right 69}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 70}}</td><td>{{get result.mega_text_right 71}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 72}}</td><td>{{get result.mega_text_right 73}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 74}}</td><td>{{get result.mega_text_right 75}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 76}}</td><td>{{get result.mega_text_right 77}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 32}}</td><td>{{get result.mega_text_right 33}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 34}}</td><td>{{get result.mega_text_right 35}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 36}}</td><td>{{get result.mega_text_right 37}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 38}}</td><td>{{get result.mega_text_right 39}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 5 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 81}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 81}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  80}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  81}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  82}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  83}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  84}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  85}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  86}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 5}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[4] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[4] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[4] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[4] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[4] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[4] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 88}}</td><td>{{get result.mega_text_right 89}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 90}}</td><td>{{get result.mega_text_right 91}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 92}}</td><td>{{get result.mega_text_right 93}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 94}}</td><td>{{get result.mega_text_right 95}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 96}}</td><td>{{get result.mega_text_right 97}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 40}}</td><td>{{get result.mega_text_right 41}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 42}}</td><td>{{get result.mega_text_right 43}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 44}}</td><td>{{get result.mega_text_right 45}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 46}}</td><td>{{get result.mega_text_right 47}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 6 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 101}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 101}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  100}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  101}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  102}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  103}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  104}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  105}}</div>
-        <p>
-        <div class='number-ball1'>{{get result.mega_number_ball  106}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 6}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[5] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[5] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[5] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[5] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[5] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[5] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 108}}</td><td>{{get result.mega_text_right 109}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 110}}</td><td>{{get result.mega_text_right 111}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 112}}</td><td>{{get result.mega_text_right 113}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 114}}</td><td>{{get result.mega_text_right 115}}</td></tr>
-            <tr><td>Giải3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 116}}</td><td>{{get result.mega_text_right 117}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 48}}</td><td>{{get result.mega_text_right 49}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 50}}</td><td>{{get result.mega_text_right 51}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 52}}</td><td>{{get result.mega_text_right 53}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 54}}</td><td>{{get result.mega_text_right 55}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 7 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 121}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 121}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  120}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  121}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  122}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  123}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  124}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  125}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  126}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 7}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[6] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[6] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[6] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[6] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[6] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[6] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 128}}</td><td>{{get result.mega_text_right 129}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 130}}</td><td>{{get result.mega_text_right 131}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 132}}</td><td>{{get result.mega_text_right 133}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 134}}</td><td>{{get result.mega_text_right 135}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 136}}</td><td>{{get result.mega_text_right 137}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 56}}</td><td>{{get result.mega_text_right 57}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 58}}</td><td>{{get result.mega_text_right 59}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 60}}</td><td>{{get result.mega_text_right 61}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 62}}</td><td>{{get result.mega_text_right 63}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 8 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 141}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 141}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  140}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  141}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  142}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  143}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  144}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  145}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  146}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 8}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[7] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[7] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[7] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[7] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[7] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[7] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 148}}</td><td>{{get result.mega_text_right 149}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 150}}</td><td>{{get result.mega_text_right 151}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 152}}</td><td>{{get result.mega_text_right 153}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 154}}</td><td>{{get result.mega_text_right 155}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 156}}</td><td>{{get result.mega_text_right 157}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 64}}</td><td>{{get result.mega_text_right 65}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 66}}</td><td>{{get result.mega_text_right 67}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 68}}</td><td>{{get result.mega_text_right 69}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 70}}</td><td>{{get result.mega_text_right 71}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 9 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 161}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 161}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  160}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  161}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  162}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  163}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  164}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  165}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  166}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 9}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[8] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[8] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[8] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[8] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[8] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[8] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 168}}</td><td>{{get result.mega_text_right 169}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 170}}</td><td>{{get result.mega_text_right 171}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 172}}</td><td>{{get result.mega_text_right 173}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 174}}</td><td>{{get result.mega_text_right 175}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 176}}</td><td>{{get result.mega_text_right 177}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 72}}</td><td>{{get result.mega_text_right 73}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 74}}</td><td>{{get result.mega_text_right 75}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 76}}</td><td>{{get result.mega_text_right 77}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 78}}</td><td>{{get result.mega_text_right 79}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 10 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 181}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 181}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  180}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  181}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  182}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  183}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  184}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  185}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  186}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 10}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[9] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[9] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[9] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[9] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[9] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[9] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 188}}</td><td>{{get result.mega_text_right 189}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 190}}</td><td>{{get result.mega_text_right 191}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 192}}</td><td>{{get result.mega_text_right 193}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 194}}</td><td>{{get result.mega_text_right 195}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 196}}</td><td>{{get result.mega_text_right 197}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 80}}</td><td>{{get result.mega_text_right 81}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 82}}</td><td>{{get result.mega_text_right 83}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 84}}</td><td>{{get result.mega_text_right 85}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 86}}</td><td>{{get result.mega_text_right 87}}</td></tr>
         </tbody>
     </table>
 </div>
 
 <!-- KỲ 11 -->
-<div class='mega-result-container'>
-    <div class='next-draw-info'><span class='next-draw-date'>{{get result.mega_para_open_next 201}}</span></div>
-    <div class='draw-details'>{{get result.mega_para_text_black_bold 201}}</div>
-    <div class='winning-numbers'>
-        <div class='number-ball'>{{get result.mega_number_ball  200}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  201}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  202}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  203}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  204}}</div>
-        <div class='number-ball'>{{get result.mega_number_ball  205}}</div>
-        <p class='linered' style='width:2px;height:44px;background:red;'></p>
-        <div class='number-ball1'>{{get result.mega_number_ball  206}}</div>
+<div class='mega-result-container_mega' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+    <div style="margin-left: 10px; margin-top: 10px;">
+    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.mega_class_link 0}}</p>>
+    <div class='draw-details'>{{get result.mega_para_text_black_bold 11}}</div>
     </div>
-    <p class='note'>Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    <table class='prize-table'>
+    <div class='winning-numbers' style="margin-bottom: 35px;">
+        <div class='number-ball'>{{ slice result.mega_ball.[10] 0 2 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[10] 2 4 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[10] 4 6 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[10] 6 8 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[10] 8 10 }}</div>
+        <div class='number-ball'>{{ slice result.mega_ball.[10] 10 12 }}</div>
+    </div>
+    <div style="width: 590px; height: 30px;">
+        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+    </div>
+    <table class='prize-table_mega'>
         <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 208}}</td><td>{{get result.mega_text_right 209}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display:flex;align-items:center;gap:6px;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span style="color:red;font-weight:bold;">|</span><span class='match-dot1'></span></td><td>{{get result.mega_text_right 210}}</td><td>{{get result.mega_text_right 211}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 212}}</td><td>{{get result.mega_text_right 213}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 214}}</td><td>{{get result.mega_text_right 215}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 216}}</td><td>{{get result.mega_text_right 217}}</td></tr>
+            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 88}}</td><td>{{get result.mega_text_right 89}}</td></tr>
+            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 90}}</td><td>{{get result.mega_text_right 91}}</td></tr>
+            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 92}}</td><td>{{get result.mega_text_right 93}}</td></tr>
+            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.mega_text_right 94}}</td><td>{{get result.mega_text_right 95}}</td></tr>
         </tbody>
     </table>
 </div>

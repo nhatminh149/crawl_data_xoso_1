@@ -6,10 +6,11 @@
     </div>
 
     <div class='jackpot-estimate'>
-        <div class='jackpot-title'><h1 style="margin-top: 10px;">KẾT QUẢ JACKPOT ƯỚC TÍNH</h1></div>
+        <div class='jackpot-title'><h1 style='margin-top: 10px;'>KẾT QUẢ JACKPOT
+                ƯỚC TÍNH</h1></div>
         <div class='jackpot-value-box'>
             <div class='jackpot-value-box2'>
-            <span class='jackpot-value'>{{get result.jackpot 0}}</span>
+                <span class='jackpot-value'>{{get result.jackpot 0}}</span>
             </div>
         </div>
     </div>
@@ -23,12 +24,12 @@
     </div>
 
     <div class='winning-numbers'>
-        <div class='number-ball'>12</div>
-        <div class='number-ball'>22</div>
-        <div class='number-ball'>32</div>
-        <div class='number-ball'>42</div>
-        <div class='number-ball'>52</div>
-        <div class='number-ball'>45</div>
+        <div class='number-ball'>{{slice result.number_ball.[0] 0 2}}</div>
+        <div class='number-ball'>{{slice result.number_ball.[0] 2 4}}</div>
+        <div class='number-ball'>{{slice result.number_ball.[0] 4 6}}</div>
+        <div class='number-ball'>{{slice result.number_ball.[0] 6 8}}</div>
+        <div class='number-ball'>{{slice result.number_ball.[0] 8 10}}</div>
+        <div class='number-ball'>{{slice result.number_ball.[0] 10 12}}</div>
 
     </div>
     <p class='note'>
@@ -118,7 +119,8 @@
     </div>
 
     <div class='jackpot-estimate'>
-        <div class='jackpot-title'><h1 style="margin-top: 10px;">KẾT QUẢ JACKPOT ƯỚC TÍNH</h1></div>
+        <div class='jackpot-title'><h1 style='margin-top: 10px;'>KẾT QUẢ JACKPOT
+                ƯỚC TÍNH</h1></div>
         <div class='jackpot-value-box'>
             <span class='jackpot-value'>{{get result.jackpot 1}}</span>
             <hr />
@@ -135,17 +137,17 @@
     </div>
 
     <div class='winning-numbers'>
-        <div class='number-ball'>19</div>
-        <div class='number-ball'>29</div>
-        <div class='number-ball'>39</div>
-        <div class='number-ball'>49</div>
-        <div class='number-ball'>59</div>
-        <div class='number-ball'>49</div>
+        <div class='number-ball'>{{slice result.number_ball2.[0] 0 2}}</div>
+        <div class='number-ball'>{{slice result.number_ball2.[0] 2 4}}</div>
+        <div class='number-ball'>{{slice result.number_ball2.[0] 4 6}}</div>
+        <div class='number-ball'>{{slice result.number_ball2.[0] 6 8}}</div>
+        <div class='number-ball'>{{slice result.number_ball2.[0] 8 10}}</div>
+        <div class='number-ball'>{{slice result.number_ball2.[0] 10 12}}</div>
         <p
             class='linered'
             style='width: 3px; height: 60px; background-color: red;'
         ></p>
-        <div class='number-ball1'>56</div>
+        <div class='number-ball1'>{{slice result.number_ball2.[0] 12 14}}</div>
 
     </div>
     <p class='note'>
@@ -156,9 +158,9 @@
     <table class='prize-table'>
         <thead>
             <tr>
-                <th>Giải thưởng</th>
-                <th>Trùng khớp</th>
-                <th>Số lượng giải</th>
+                <th style='font-weight: bold;'>Giải thưởng</th>
+                <th style='font-weight: bold;'>Trùng khớp</th>
+                <th style='font-weight: bold;'>Số lượng giải</th>
                 <th>Giá trị giải (đ)</th>
             </tr>
         </thead>
@@ -179,12 +181,15 @@
             <tr class='jackpot-row'>
                 <td>Jackpot 2</td>
                 <td style='display: flex; border: none;'>
-                    <span class='match-dot' style="margin-right: 6px;"></span>
-                    <span class='match-dot' style="margin-right: 6px;"></span>
-                    <span class='match-dot' style="margin-right: 6px;"></span>
-                    <span class='match-dot' style="margin-right: 6px;"></span>
-                    <span class='match-dot' style="margin-right: 6px;"></span>
-                    <span><p class='text-red-1000' style="margin-right: 6px;">|</p></span>
+                    <span class='match-dot' style='margin-right: 6px;'></span>
+                    <span class='match-dot' style='margin-right: 6px;'></span>
+                    <span class='match-dot' style='margin-right: 6px;'></span>
+                    <span class='match-dot' style='margin-right: 6px;'></span>
+                    <span class='match-dot' style='margin-right: 6px;'></span>
+                    <span><p
+                            class='text-red-1000'
+                            style='margin-right: 6px;'
+                        >|</p></span>
                     <span class='match-dot1'></span>
                 </td>
                 <td>{{get result.text_right 10}}</td>
