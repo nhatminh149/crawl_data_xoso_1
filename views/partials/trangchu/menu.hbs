@@ -75,14 +75,58 @@
             </ul>
         </div>
 
-        <div class='menu-block'>
-            <h3 style='color: brown;'>KQXS theo tỉnh</h3>
-            <ul>
-                <li><a href='#'>Miền Bắc</a></li>
-                <li>Miền Trung &nabla;</li>
-                <li>Miền Nam &nabla;</li>
+<div class='menu-block'>
+    <h3>KQXS theo tỉnh</h3>
+    <ul>
+        <li><div class="menu-item">- Miền Bắc</div></li>
+        
+        <li>
+            <div class="menu-item" onclick="toggleMenu('mt')">- Miền Trung ▾</div>
+            <ul class="sub-menu" id="mt">
+                <li><a href="#">Bình Định</a></li>
+                <li><a href="#">Đà Nẵng</a></li>
+                <li><a href="#">Đắk Lắk</a></li>
+                <li><a href="#">Đắk Nông</a></li>
+                <li><a href="#">Gia Lai</a></li>
+                <li><a href="#">Huế</a></li>
+                <li><a href="#">Khánh Hòa</a></li>
+                <li><a href="#">Kon Tum</a></li>
+                <li><a href="#">Ninh Thuận</a></li>
+                <li><a href="#">Phú Yên</a></li>
+                <li><a href="#">Quảng Bình</a></li>
+                <li><a href="#">Quảng Nam</a></li>
+                <li><a href="#">Quảng Ngãi</a></li>
+                <li><a href="#">Quảng Trị</a></li>
             </ul>
-        </div>
+        </li>
+
+        <li>
+            <div class="menu-item" onclick="toggleMenu('mn')">- Miền Nam ▾</div>
+            <ul class="sub-menu" id="mn">
+                <li><a href="#">An Giang</a></li>
+                <li><a href="#">Bạc Liêu</a></li>
+                <li><a href="#">Bến Tre</a></li>
+                <li><a href="#">Bình Dương</a></li>
+                <li><a href="#">Bình Phước</a></li>
+                <li><a href="#">Bình Thuận</a></li>
+                <li><a href="#">Cà Mau</a></li>
+                <li><a href="#">Cần Thơ</a></li>
+                <li><a href="#">Đồng Nai</a></li>
+                <li><a href="#">Đồng Tháp</a></li>
+                <li><a href="#">Hậu Giang</a></li>
+                <li><a href="#">Kiên Giang</a></li>
+                <li><a href="#">Long An</a></li>
+                <li><a href="#">Sóc Trăng</a></li>
+                <li><a href="#">Tây Ninh</a></li>
+                <li><a href="#">Tiền Giang</a></li>
+                <li><a href="#">TP.HCM</a></li>
+                <li><a href="#">Trà Vinh</a></li>
+                <li><a href="#">Vĩnh Long</a></li>
+                <li><a href="#">Vũng Tàu</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
 
     </div>
     <div class='column-right'>
@@ -117,7 +161,7 @@
                 </ul>
             </ul>
             <ul>
-                <li><a href='/partials/menu_dientoan/mega'>XS Power 6/55</a></li>
+                <li><a href='/partials/menu_dientoan/power'>XS Power 6/55</a></li>
                 <ul>
                     <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 3</li>
                     <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 5</li>
@@ -125,7 +169,7 @@
                 </ul>
             </ul>
             <ul>
-                <li><a href='/partials/menu_dientoan/mega'>XS Max 3D</a></li>
+                <li><a href='/partials/menu_dientoan/max3d'>XS Max 3D</a></li>
                 <ul>
                     <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 2</li>
                     <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 4</li>
@@ -133,7 +177,7 @@
                 </ul>
             </ul>
             <ul>
-                <li><a href='/partials/menu_dientoan/mega'>XS Max 3D Pro</a></li>
+                <li><a href='/partials/menu_dientoan/max3dpro'>XS Max 3D Pro</a></li>
                 <ul>
                     <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 3</li>
                     <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 5</li>
@@ -141,10 +185,11 @@
                 </ul>
             </ul>
             <ul>
-                <li><a href='#'>XS Điện toán 6x36</a></li>
+                <li><a href='/partials/menu_dientoan/xsdientoan636'>XS Điện toán
+                        6x36</a></li>
                 <li><a href='/partials/menu_dientoan/xsdientoan123'>XS Điện toán
                         123</a></li>
-                <li><a href='#'>XS Thần tài 4</a></li>
+                <li><a href='/partials/menu_dientoan/thantai4'>XS Thần tài 4</a></li>
             </ul>
         </div>
 
@@ -178,3 +223,14 @@
 
     </div>
 </div>
+
+<script>
+function toggleMenu(id) {
+    var list = document.getElementById(id);
+    if (list.classList.contains("active")) {
+        list.classList.remove("active");
+    } else {
+        list.classList.add("active");
+    }
+}
+</script>

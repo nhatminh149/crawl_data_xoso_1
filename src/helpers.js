@@ -57,13 +57,13 @@ Handlebars.registerHelper(
             const value = tklogandauso[dataStartIndex + i] || 0;
             let cellClass = 'text-center';
 
-            if (value >= 35) cellClass += 'text-center';
-            else if (value >= 30) cellClass += 'text-center';
-            else if (value >= 25) cellClass += 'text-center';
-            else if (value >= 20) cellClass += 'text-center';
-            else if (value >= 15) cellClass += 'text-center';
-            else if (value >= 10) cellClass += 'text-center';
-            else cellClass += 'text-center';
+            if (value >= 35) cellClass += 'text-back text-center';
+            else if (value >= 30) cellClass += 'text-back text-center';
+            else if (value >= 25) cellClass += 'text-back text-center';
+            else if (value >= 20) cellClass += 'text-back text-center';
+            else if (value >= 15) cellClass += 'text-black text-center';
+            else if (value >= 10) cellClass += 'text-black text-center';
+            else cellClass += 'text-black text-center';
 
             html += `<td class="${cellClass}">${value === 0 ? '-' : value}</td>`;
         }
@@ -192,6 +192,9 @@ Handlebars.registerHelper('giai', function (indexTinh, giai, indexSo) {
         'Đồng Nai': 'DN',
         'Cần Thơ': 'CT',
         'Sóc Trăng': 'ST',
+        'Bến Tre': 'BTR',
+        'Vũng Tàu': 'VT',
+        'Bạc Liêu': 'BL',
     };
 
     const prefix = map[tenTinh];
@@ -239,6 +242,9 @@ Handlebars.registerHelper('lotoDau', function (indexTinh, dau, options) {
         'Đồng Nai': 'DN',
         'Cần Thơ': 'CT',
         'Sóc Trăng': 'ST',
+        'Bến Tre': 'BTR',
+        'Vũng Tàu': 'VT',
+        'Bạc Liêu': 'BL',
     };
 
     const prefix = map[tenTinh];
@@ -255,6 +261,10 @@ Handlebars.registerHelper('gt', function (a, b) {
     return a > b;
 });
 
+Handlebars.registerHelper('eq', function (a, b) {
+    return a === b;
+});
+
 Handlebars.registerHelper('giaiMT', function (indexTinh, giaiMT, indexSo) {
     if (!this.result || !Array.isArray(this.result.tenTinhMTMN)) {
         return 'ko';
@@ -266,6 +276,8 @@ Handlebars.registerHelper('giaiMT', function (indexTinh, giaiMT, indexSo) {
         'Kon Tum': 'KT',
         Huế: 'TTH',
         'Phú Yên': 'PY',
+        'Đắk Lắk': 'DLK',
+        'Quảng Nam': 'QNA',
     };
 
     const prefix = map[tenTinh];
@@ -299,8 +311,10 @@ Handlebars.registerHelper('lotoDauMT', function (indexTinh, dau, options) {
     const map = {
         'Khánh Hòa': 'KH',
         'Kon Tum': 'KT',
-        'Huế': 'TTH',
+        Huế: 'TTH',
         'Phú Yên': 'PY',
+        'Đắk Lắk': 'DLK',
+        'Quảng Nam': 'QNA',
     };
 
     const prefix = map[tenTinh];
@@ -310,14 +324,110 @@ Handlebars.registerHelper('lotoDauMT', function (indexTinh, dau, options) {
     return result[fieldName] || '';
 });
 
-module.exports = {
-    slice(str, start, end) {
-        if (!str) return '';
-        return str.slice(start, end);
-    },
+Handlebars.registerHelper('slice', function (str, start, end) {
+    if (!str) return '';
+    return str.slice(start, end);
+});
 
-    split2(str) {
-        if (!str) return [];
-        return str.match(/.{2}/g);
-    },
-};
+Handlebars.registerHelper('split2', function (str) {
+    if (!str) return [];
+    return str.match(/.{2}/g);
+});
+
+Handlebars.registerHelper('powerLoop', function (options) {
+    let html = '';
+    const globalContext = this;
+
+    for (let i = 1; i <= 12; i++) {
+        const iterationData = Object.assign({}, globalContext, {
+            i: i,
+            paraIndex: i,
+            ballIndex: i,
+            specialIndex: i,
+            textRightStart: 10 + (i - 1) * 10,
+        });
+
+        html += options.fn(iterationData);
+    }
+    return html;
+});
+
+Handlebars.registerHelper('max3dLoop', function (options) {
+    let html = '';
+    const context = this;
+    for (let i = 0; i <= 13; i++) {
+        const data = Object.assign({}, context, {
+            titleIndex: i,
+            linkIndex: i,
+            g1Start: i * 2,
+            g2Start: i * 12,
+            g3Start: i * 6,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});
+
+Handlebars.registerHelper('thantai4Loop', function (options) {
+    let html = '';
+    const context = this;
+    for (let i = 0; i <= 13; i++) {
+        const data = Object.assign({}, context, {
+            dayIndex: i,
+            numberIndex: i,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});
+
+Handlebars.registerHelper('max3dLoop_pro', function (options) {
+    let html = '';
+    const context = this;
+    for (let i = 0; i <= 9; i++) {
+        const data = Object.assign({}, context, {
+            titleIndex: i,
+            linkIndex: i,
+            g1Start: i * 2,
+            g2Start: i * 12,
+            g3Start: i * 6,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});
+
+Handlebars.registerHelper('add', function (a, b) {
+    return parseInt(a) + parseInt(b);
+});
+
+Handlebars.registerHelper('dt123Loop', function (options) {
+    let html = '';
+    const context = this;
+    for (let i = 0; i <= 13; i++) {
+        const data = Object.assign({}, context, {
+            titleIndex: i,
+            ballIndex: i,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});
+
+Handlebars.registerHelper('dt636Loop', function (options) {
+    let html = '';
+    const context = this;
+    for (let i = 0; i <= 13; i++) {
+        const data = Object.assign({}, context, {
+            titleIndex: i,
+            ballIndex: i,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});

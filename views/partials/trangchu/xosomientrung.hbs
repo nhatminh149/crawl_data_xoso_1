@@ -11,120 +11,113 @@
         <span class='sub-header-item'>XSMT {{result.date}}</span>
     </div>
 
-    <table class='results_table_xsmn'>
-        <thead>
-            <tr class='table-header-row'>
-                <th class='col_giai'>Giải</th>
-                <th class='col_tinh'>{{get result.tenTinhMTMN 5}}</th>
-                <th class='col_tinh'>{{get result.tenTinhMTMN 6}}</th>
+    <table class='results_table_xsmn' style="width: 600px; border-collapse: collapse;">
+    <thead>
+        <tr class='table-header-row'>
+            <th class='col_giai'>Giải</th>
+            <th class='col_tinh'>{{get result.tenTinhMTMN 5}}</th>
+            <th class='col_tinh'>{{get result.tenTinhMTMN 6}}</th>
+            {{#if (get result.tenTinhMTMN 7)}}
                 <th class='col_tinh'>{{get result.tenTinhMTMN 7}}</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class='col-giai1'>G.8</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giaiMT 5 '8'}}</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giaiMT 6 '8'}}</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giaiMT 7 '8'}}</td>
-            </tr>
-            <tr>
-                <td class='col-giai'>G.7</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 5 '7'}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 6 '7'}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 7 '7'}}</td>
-            </tr>
-            <tr>
-                <td class='col-giai1'>G.6</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 5 '6' 0}} <br>
-                    {{giaiMT 5 '6' 1}} <br>
-                    {{giaiMT 5 '6' 2}}
+            {{/if}}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class='col-giai1'>G.8</td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;text-align:right;'>{{giaiMT 5 '8'}}</td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;text-align:right;'>{{giaiMT 6 '8'}}</td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:40px;color:#d32f2f;font-weight:bold;text-align:right;'>{{giaiMT 7 '8'}}</td>
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai'>G.7</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 5 '7'}}</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 6 '7'}}</td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 7 '7'}}</td>
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai1'>G.6</td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                {{giaiMT 5 '6' 0}} <br> {{giaiMT 5 '6' 1}} <br> {{giaiMT 5 '6' 2}}
+            </td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                {{giaiMT 6 '6' 0}} <br> {{giaiMT 6 '6' 1}} <br> {{giaiMT 6 '6' 2}}
+            </td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                    {{giaiMT 7 '6' 0}} <br> {{giaiMT 7 '6' 1}} <br> {{giaiMT 7 '6' 2}}
                 </td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 6 '6' 0}} <br>
-                    {{giaiMT 6 '6' 1}} <br>
-                    {{giaiMT 6 '6' 2}}
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai'>G.5</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 5 '5'}}</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 6 '5'}}</td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 7 '5'}}</td>
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai1'>G.4</td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                {{giaiMT 5 '4' 0}} <br> {{giaiMT 5 '4' 1}} <br> {{giaiMT 5 '4' 2}} <br> {{giaiMT 5 '4' 3}} <br>
+                {{giaiMT 5 '4' 4}} <br> {{giaiMT 5 '4' 5}} <br> {{giaiMT 5 '4' 6}} <br> {{giaiMT 5 '4' 7}}
+            </td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                {{giaiMT 6 '4' 0}} <br> {{giaiMT 6 '4' 1}} <br> {{giaiMT 6 '4' 2}} <br> {{giaiMT 6 '4' 3}} <br>
+                {{giaiMT 6 '4' 4}} <br> {{giaiMT 6 '4' 5}} <br> {{giaiMT 6 '4' 6}} <br> {{giaiMT 6 '4' 7}}
+            </td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                    {{giaiMT 7 '4' 0}} <br> {{giaiMT 7 '4' 1}} <br> {{giaiMT 7 '4' 2}} <br> {{giaiMT 7 '4' 3}} <br>
+                    {{giaiMT 7 '4' 4}} <br> {{giaiMT 7 '4' 5}} <br> {{giaiMT 7 '4' 6}} <br> {{giaiMT 7 '4' 7}}
                 </td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 7 '6' 0}} <br>
-                    {{giaiMT 7 '6' 1}} <br>
-                    {{giaiMT 7 '6' 2}}
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai'>G.3</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                {{giaiMT 5 '3' 0}} <br> {{giaiMT 5 '3' 1}}
+            </td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                {{giaiMT 6 '3' 0}} <br> {{giaiMT 6 '3' 1}}
+            </td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>
+                    {{giaiMT 7 '3' 0}} <br> {{giaiMT 7 '3' 1}}
                 </td>
-            </tr>
-            <tr>
-                <td class='col-giai'>G.5</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 5 '5'}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 6 '5'}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 7 '5'}}</td>
-            </tr>
-            <tr>
-                <td class='col-giai1'>G.4</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 5 '4' 0}} <br>
-                    {{giaiMT 5 '4' 1}} <br>
-                    {{giaiMT 5 '4' 2}} <br>
-                    {{giaiMT 5 '4' 3}} <br>
-                    {{giaiMT 5 '4' 4}} <br>
-                    {{giaiMT 5 '4' 5}} <br>
-                    {{giaiMT 5 '4' 6}} <br>
-                    {{giaiMT 5 '4' 7}}
-                </td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 6 '4' 0}} <br>
-                    {{giaiMT 6 '4' 1}} <br>
-                    {{giaiMT 6 '4' 2}} <br>
-                    {{giaiMT 6 '4' 3}} <br>
-                    {{giaiMT 6 '4' 4}} <br>
-                    {{giaiMT 6 '4' 5}} <br>
-                    {{giaiMT 6 '4' 6}} <br>
-                    {{giaiMT 6 '4' 7}}
-                </td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 7 '4' 0}} <br>
-                    {{giaiMT 7 '4' 1}} <br>
-                    {{giaiMT 7 '4' 2}} <br>
-                    {{giaiMT 7 '4' 3}} <br>
-                    {{giaiMT 7 '4' 4}} <br>
-                    {{giaiMT 7 '4' 5}} <br>
-                    {{giaiMT 7 '4' 6}} <br>
-                    {{giaiMT 7 '4' 7}}
-                </td>
-            </tr>
-            <tr>
-                <td class='col-giai'>G.3</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 5 '3' 0}} <br>
-                    {{giaiMT 5 '3' 1}}
-                </td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 6 '3' 0}} <br>
-                    {{giaiMT 6 '3' 1}}
-                </td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>
-                    {{giaiMT 7 '3' 0}} <br>
-                    {{giaiMT 7 '3' 1}}
-                </td>
-            </tr>
-            <tr>
-                <td class='col-giai1'>G.2</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 5 '2'}}</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 6 '2'}}</td>
-                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 7 '2'}}</td>
-            </tr>
-            <tr>
-                <td class='col-giai'>G.1</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 5 '1'}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 6 '1'}}</td>
-                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;'>{{giaiMT 7 '1'}}</td>
-            </tr>
-            <tr>
-                <td class='col-giai1'>G.ĐB</td>
-                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giaiMT 1 'DB'}}</td>
-                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giaiMT 6 'DB'}}</td>
-                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;'>{{giaiMT 7 'DB'}}</td>
-            </tr>
-        </tbody>
-    </table>
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai1'>G.2</td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 5 '2'}}</td>
+            <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 6 '2'}}</td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn1' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 7 '2'}}</td>
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai'>G.1</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 5 '1'}}</td>
+            <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 6 '1'}}</td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn' style='font-size:30px;color:black;font-weight:bold;text-align:right;'>{{giaiMT 7 '1'}}</td>
+            {{/if}}
+        </tr>
+        <tr>
+            <td class='col-giai1'>G.ĐB</td>
+            <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;text-align:right;'>{{giaiMT 5 'DB'}}</td>
+            <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;text-align:right;'>{{giaiMT 6 'DB'}}</td>
+            {{#if (get result.tenTinhMTMN 7)}}
+                <td class='col_tinh_ket-qua_xsmn1 giai-dac-biet' style='font-size:40px;color:#d32f2f;font-weight:bold;text-align:right;'>{{giaiMT 7 'DB'}}</td>
+            {{/if}}
+        </tr>
+    </tbody>
+</table>
 </div>
 
 {{! Phần Lô Tô }}

@@ -55,7 +55,7 @@
 <div class="flex mt-10" style="margin-top: 20px; " >
     <div class="w-147 border border-solid border-[#E8E8E8] h-100" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
-       <p style="padding: 10px;">TK Loto theo đầu </p> 
+       <p style="padding: 10px; font-size: 17px; font-weight: bold;">TK Loto theo đầu </p> 
      </h1>
         <div class="max-w-3xl mx-auto bg-white p-6">
         
@@ -129,6 +129,27 @@
 {{/each}}
             </tbody>
         </table>
+        <div class="w-[587px] h-[35px] bg-[#F2F2F2] color-blue"><p class="p-1">10 bộ số về nhiều nhất/ít nhất ngày 17/12/2025</p></div>
+<table class="w-[587px] border-collapse border">
+  <thead class="bg-red-50">
+    <tr>
+      <th colspan="2" scope="col" class="h-[30px] text-center text-xs font-medium text-gray-500 tracking-wider w-1/2 border">
+        10 bộ số về nhiều nhất
+      </th>
+      <th colspan="2" scope="col" class="h-[30px] text-center text-xs font-medium text-gray-600 tracking-wider w-1/2 border">
+        10 bộ số về ít nhất
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="border text-center">{{slice result.top10_TKKCB.[2] 0 2}}</td>
+      <td class="border text-center">{{slice result.top10_TKKCB.[82] 0 2}}</td>
+      <td class="border text-center">{{slice result.top10_TKKCB.[82] 0 2}}</td>
+      <td class="border text-center">{{slice result.top10_TKKCB.[82] 0 2}}</td>
+    </tr>
+  </tbody>
+</table>
     </div>
     
 

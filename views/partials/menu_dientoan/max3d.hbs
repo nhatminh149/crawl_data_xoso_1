@@ -1,0 +1,298 @@
+<div style="margin-top: -29px;">
+<header class='main-header_logan 
+    style="width: 1300px;
+    margin-top: -29px;
+    margin-left: 40px;"'>
+    <div class='top-bar-wrapper' href='http://localhost:3000/?'>
+        <div class='top-bar container'>
+            <div class='logo-area'>
+                <a href='/' class='logo-link'>
+                    <div class='logo-text'>
+                        <img
+                            src='https://cdn.xosodaiphat.com/assets/images/logo.svg'
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class='ad-banner'>
+                <div class='ad-label'>QUẢNG CÁO</div>
+                <div class='ad-content'>
+                    <img
+                        src='https://tpc.googlesyndication.com/simgad/1636368975115146746'
+                        alt='Quảng cáo'
+                    />
+                </div>
+            </div>
+            <div class='auth-area'>
+                <a href='#' class='login-button'>
+                    <i class='fas fa-user'></i>
+                    Đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class='main-nav'>
+        <div class='nav-container container'>
+            <a href='/' class='nav-item home-icon'><i
+                    class='fas fa-home'
+                ></i></a>
+            <a href='#' class='nav-item'>XSMB</a>
+            <a href='#' class='nav-item'>XSMN</a>
+            <a href='#' class='nav-item'>XSMT</a>
+            <a href='#' class='nav-item'>Vietlott</a>
+            <a href='#' class='nav-item'>Tra Cứu XS</a>
+            <a href='#' class='nav-item'>TK Loto</a>
+            <a href='#' class='nav-item'>Loto</a>
+            <a href='#' class='nav-item'>Thống Kê Xổ Số</a>
+        </div>
+    </nav>
+</header>
+{{!-- <header></header> --}}
+
+
+<div class="flex mt-10" style="margin-top: 20px; " >
+        <div class="himb" style="margin-right: 10px; margin-top: -10px;">
+    <div class='max3d-title'>
+        <h4>XS Max 3D - Kết quả xổ số Max 3D</h4>
+    </div>
+{{#max3dLoop}}
+<div class='max3d' style="margin-top: 15px;">
+    <div class='breadcrumb3d' style="background-color: white; border-bottom: none" >
+       <p>{{get result.max3d_title titleIndex}}</p>
+    </div>
+    <div class='breadcrumb13d' style="border-top: none;">
+       <p style="font-weight: bold; color: #F40819;">{{get result.max3d_link linkIndex}}</p>
+    </div>
+    <table class='xs-table3d'>
+        <tbody>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color: #F5F5F5;'>G1</td>
+                <td style='font-size:40px;color:#F40819;font-weight:bold;background-color: #F5F5F5;'>
+                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{get result.G1 g1Start}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G1 (add g1Start 1)}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color: white;'>G.2</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                     &nbsp; &nbsp;{{get result.G2vKK g2Start}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2vKK (add g2Start 1)}} &nbsp; &nbsp; &nbsp; &nbsp;
+                     &nbsp; &nbsp;{{get result.G2vKK (add g2Start 2)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2vKK (add g2Start 3)}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color: #F5F5F5;'>G.3</td>
+                <td style='font-size:30px;color:black;font-weight:bold; background-color: #F5F5F5;'>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{get result.G3 g3Start}}    &nbsp; &nbsp; &nbsp; &nbsp;{{get result.G3 (add g3Start 1)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3 (add g3Start 2)}}<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{get result.G3 (add g3Start 3)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3 (add g3Start 4)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G3 (add g3Start 5)}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color: white;'>KK</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                     &nbsp; &nbsp;{{get result.G2vKK (add g2Start 4)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2vKK (add g2Start 5)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2vKK (add g2Start 6)}} &nbsp; &nbsp; &nbsp; &nbsp;{{get result.G2vKK (add g2Start 7)}}<br>
+                     &nbsp; &nbsp;{{get result.G2vKK (add g2Start 8)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2vKK (add g2Start 9)}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G2vKK (add g2Start 10)}} &nbsp; &nbsp; &nbsp; &nbsp;{{get result.G2vKK (add g2Start 11)}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="width: 600px; height: 40px; border: 1px solid #CCCCCC;background-color: #F5F5F5;">
+        <p style="padding: 5px;">Các chữ số trong số dự thưởng phải trùng khớp với kết quả theo đúng thứ tự</p>
+    </div>
+</div>
+{{/max3dLoop}}
+        <div class="flex items-center my-6 mt-4">
+              <div class="flex-grow border-t border-gray-300"></div>
+                   <span class="flex-shrink mx-4 text-blue-800 font-medium"> Xem Thêm</span>
+             <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+<div class="w-[600px] border-[1px] border-gray-300 text-gray-800 font-sans mt-4">
+    <h1 class="text-xl font-bold text-red-600 mb-4 uppercase p-2">Thông Tin Về Kết Quả Xổ Số Điện Toán Max 3D</h1>
+
+    <section class="mb-6" style="margin-left: 10px;">
+        <p class="font-bold text-lg ">1. Lịch mở thưởng</p>
+        <p class="ml-4">- Thời gian quay số bắt đầu lúc 18h30 các ngày thứ 2, thứ 4 và thứ 6 hàng tuần</p>
+    </section>
+
+    <section class="mb-6" style="margin-left: 10px;">
+        <p class="font-bold text-lg">2. Cơ cấu giải thưởng</p>
+        <p class="ml-4">- Vé số điện toán Max 3D phát hành với mệnh giá 10.000đ (mười nghìn đồng).</p>
+        <p class="ml-4">- Mỗi dãy số tham gia gồm 3 chữ số (từ 0 đến 9) tạo thành bộ số tham gia dự thưởng.</p>
+    </section>
+
+    <section class="mb-8">
+        <p class="font-bold mb-3" style="margin-left: 10px;">a. Cơ cấu giải thưởng của Max 3D cơ bản:</p>
+        <table class="w-full border-collapse border border-gray-200">
+            <thead>
+                <tr class="bg-blue-50 text-blue-700">
+                    <th class="border border-gray-200 p-3 text-center w-1/4">Giải thưởng</th>
+                    <th class="border border-gray-200 p-3 text-center w-1/2">Kết quả</th>
+                    <th class="border border-gray-200 p-3 text-center w-1/4">Giá trị giải thưởng (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Nhất</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 1 trong 2 số quay thưởng giải Nhất theo đúng thứ tự các chữ số</td>
+                    <td class="border border-gray-200 p-3 text-center">1.000.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Nhì</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 1 trong 4 số quay thưởng giải Nhì theo đúng thứ tự của các chữ số</td>
+                    <td class="border border-gray-200 p-3 text-center">350.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Ba</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 1 trong 6 số quay thưởng giải Ba theo đúng thứ tự của các chữ số</td>
+                    <td class="border border-gray-200 p-3 text-center">210.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Khuyến khích</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 1 trong 8 số quay thưởng giải Khuyến Khích theo đúng thứ tự của các chữ số</td>
+                    <td class="border border-gray-200 p-3 text-center">100.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <p class="font-bold mb-3" style="margin-left: 10px;margin-top: 10px;">b. Cơ cấu giải thưởng của Max 3D+:</p>
+        <table class="w-full border-collapse border border-gray-200">
+            <thead>
+                <tr class="bg-blue-50 text-blue-700">
+                    <th class="border border-gray-200 p-3 text-center w-1/4">Giải thưởng</th>
+                    <th class="border border-gray-200 p-3 text-center w-1/2">Kết quả</th>
+                    <th class="border border-gray-200 p-3 text-center w-1/4">Giá trị giải thưởng (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Nhất/ĐB</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng hai số quay thưởng giải Nhất</td>
+                    <td class="border border-gray-200 p-3 text-center font-semibold">1.000.000.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Nhì</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 2 trong 4 số quay thưởng giải Nhì</td>
+                    <td class="border border-gray-200 p-3 text-center">40.000.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Ba</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 2 trong 6 số quay thưởng giải Ba</td>
+                    <td class="border border-gray-200 p-3 text-center">10.000.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Tư</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 2 trong 8 số quay thưởng giải Khuyến Khích</td>
+                    <td class="border border-gray-200 p-3 text-center">5.000.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Năm</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng bất kỳ 2 số quay thưởng của giải Nhất, Nhì, Ba hoặc Khuyến Khích</td>
+                    <td class="border border-gray-200 p-3 text-center">1.000.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Sáu</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng 1 số quay thưởng giải Nhất bất kỳ</td>
+                    <td class="border border-gray-200 p-3 text-center">150.000</td>
+                </tr>
+                <tr>
+                    <td class="border border-gray-200 p-3 text-center">Giải Bảy</td>
+                    <td class="border border-gray-200 p-3 text-left">Trùng 1 số quay thưởng giải Nhì, Ba hoặc Khuyến Khích bất kỳ</td>
+                    <td class="border border-gray-200 p-3 text-center">40.000</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</div>
+    {{> trangchu/menu}}
+</div>
+
+
+
+{{!-- <footer></footer> --}}
+<footer class='footer_logan' style="margin-left:-20px">
+ <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000;margin-left: 20px;"></div>
+    <div class='footer-menu-container'>
+        <div class='footer-menu-row'>
+            <div class='menu-col'>
+                <a href='#'>Trang chủ</a>
+                <a href='#'>XSMB</a>
+                <a href='#'>XSMN</a>
+                <a href='#'>XSMT</a>
+                <a href='#'>Vietlott</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Xổ số hôm qua</a>
+                <a href='#'>XSMB 30 ngày</a>
+                <a href='#'>XSMN 30 ngày</a>
+                <a href='#'>XSMT 30 ngày</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê loto gan</a>
+                <a href='#'>Thống kê tổng hợp</a>
+                <a href='#'>Thống kê giải đặc biệt</a>
+                <a href='#'>Thống kê loto kép</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê tần suất loto</a>
+                <a href='#'>Thống kê tần suất loto cặp</a>
+                <a href='#'>Thống kê XSMB</a>
+                <a href='#'>Thống kê XSMN</a>
+                <a href='#'>Thống kê XSMT</a>
+            </div>
+        </div>
+
+        <div class='footer-divider-container'>
+            <div class='footer-line-red'></div>
+            <div class='footer-title-row'>
+                <h3 class='footer-title'>Xổ Số Đại Phát - Chính Xác Từng Giây</h3>
+                <div class='footer-utility-links'>
+                    <a href='#'>Điều khoản sử dụng</a>
+                    |
+                    <a href='#'>Chính sách bảo mật</a>
+                    |
+                    <a href='#'>Cookies</a>
+                    |
+                    <a href='#'>RSS</a>
+                    |
+                    <a href='#'>Theo dõi Xổ Số Đại Phát</a>
+                    <span class='play-icon'>►</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='footer-info-container'>
+        <div class='footer-info-content'>
+            <p class='copyright'>
+                <strong>Copyright © Since 2009 - xosodaiphat.com, All Rights
+                    Reserved</strong>
+            </p>
+            <p>Đơn vị chủ quản: Công Ty Cổ Phần Dịch Vụ và Viễn Thông Nam Việt.</p>
+            <p>Địa chỉ văn phòng: Tầng 15, 77 Trần Nhân Tôn, Phường An Đông,
+                Thành phố Hồ Chí Minh</p>
+            <p>Địa chỉ: Tầng 3, Tòa nhà An Phú Plaza, 117-119 Lý Chính Thắng,
+                Phường Xuân Hòa, Thành phố Hồ Chí Minh</p>
+            <p>MST: 0305578356</p>
+            <p>Điện thoại: 028.6276.6766</p>
+            <p>Email:
+                <a
+                    href='mailto:contact@xosodaiphat.com'
+                >contact@xosodaiphat.com</a></p>
+        </div>
+
+        <div class='footer-disclaimer'>
+            <p>
+                Thông tin và kết quả xổ số trên xosodaiphat.com được chúng tôi
+                cập nhật từ nguồn công khai và chỉ mang tính chất tham khảo. Vui
+                lòng kiểm tra lại kết quả chính thức được công bố bởi các công
+                ty xổ số kiến thiết.
+            </p>
+            <div class='dmca-logo'>
+                [DMCA PROTECTED Logo Placeholder]
+            </div>
+        </div>
+    </div>
+</footer>
+</div>

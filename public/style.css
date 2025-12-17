@@ -427,24 +427,14 @@ body {
 }
 
 .loto-container {
-    width: 100%;
-    max-width: 600px;
+    width: 600px;
     background-color: #fff;
     padding: 15px;
     border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    font-size: 1.2em;
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: bold;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+    width: 600px;
     border: 1px solid #ccc;
 }
 
@@ -805,7 +795,6 @@ body {
     width: 600px;
     margin-left: -15px;
     border-collapse: collapse;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
@@ -945,7 +934,6 @@ body {
     color: #333;
     font-size: 14px;
     line-height: 1.6;
-    margin-top: -400px;
 }
 
 .footer-menu-container {
@@ -1056,7 +1044,7 @@ body {
 }
 .footer {
     margin-left: 40px;
-    margin-top: 1700px;
+    margin-top: 1590px;
 }
 
 .dmca-logo {
@@ -1088,15 +1076,21 @@ body {
 .jackpot-title {
     width: 300px;
     height: 40px;
-    background-color: #dc4a03;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px 10px;
-    display: inline-block;
-    font-size: 14px;
-    border-radius: 150px 150px 0 0;
+    background: 0 0;
+    border-top: none;
+    border-bottom: 45px solid #dc4a03;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 45px;
+    width: 55%;
+    margin: 0 auto;
 }
-
+.jackpot-title h1 {
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+}
 .jackpot-value-box {
     border: 3px solid #dc4a03;
     padding: 15px 10px;
@@ -1172,7 +1166,19 @@ body {
     font-size: 20px;
     border: 4px solid #c57c02;
 }
-
+.number-ball-yellow {
+    width: 60px;
+    height: 60px;
+    background-color: yellow;
+    color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    border: 4px solid yellow;
+}
 .note {
     font-size: 12px;
     color: #777;
@@ -1215,6 +1221,15 @@ body {
     width: 17px;
     height: 17px;
     background-color: #c00;
+    border-radius: 50%;
+    margin-right: 3px;
+}
+
+.match-dot-yellow {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-color: yellow;
     border-radius: 50%;
     margin-right: 3px;
 }
@@ -1414,6 +1429,11 @@ body {
     margin-left: -20px;
     color: white;
 }
+.header_jp_h1 h1 {
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+}
 .header_jp_h1 {
     padding: 13px;
 }
@@ -1511,15 +1531,67 @@ td {
     border-bottom: 1px solid #ddd;
 }
 .number-circle {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    border: 2px solid blue;
+    border: 3px solid blue;
     color: blue;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
+    font-size: 30px;
     font-weight: bold;
     flex-shrink: 0;
+}
+
+.number-circle_dt {
+    width: 60px;
+    height: 60px;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 50%;
+    border: 3px solid blue;
+    color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+.menu-block {
+    font-family: Arial, sans-serif;
+}
+.menu-block h3 {
+    color: brown;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+.menu-block ul {
+    list-style: none;
+    padding: 0;
+}
+.menu-item {
+    cursor: pointer;
+    padding: 5px 0;
+    font-weight: bold;
+}
+.sub-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    font-weight: normal;
+}
+.sub-menu.active {
+    display: block;
+}
+.sub-menu li {
+    padding: 3px 0;
+}
+.sub-menu li a {
+    text-decoration: none;
+    color: #333;
+}
+.sub-menu li a:hover {
+    color: brown;
 }

@@ -1,0 +1,5 @@
+# Ignore Handlebars templates to avoid Prettier parser issues
+views/**/*.hbs
+partials/**/*.hbs
+**/*.hbs
+node_modules/

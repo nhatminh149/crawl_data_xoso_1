@@ -55,7 +55,7 @@
 <div class="flex mt-10" style="margin-top: 20px; " >
     <div class="w-147 border border-solid border-[#E8E8E8] h-110" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
-       <p style="padding: 10px;">TK Loto theo đầu </p> 
+       <p style="padding: 10px; font-size: 17px; font-weight: bold;">TK Loto theo đầu </p> 
      </h1>
          <div class="m-[600px] h-[130px]">
     <p class="text-[17x] font-semibold text-gray-800 mb-6">
@@ -63,8 +63,6 @@
     </p>
 
     <div class="flex w-[600px] h-[100px] " style="margin-top: -10px;">
-        <!-- Thứ (Thứ 2, Thứ 3, ...) -->
-
             <select class="w-[120px] h-[40px] rounded-md border border-gray-300 " style="margin-left: 20px;">
                 <option>Thứ 2</option>
                 <option>Thứ 3</option>
@@ -126,7 +124,7 @@
 
                 </tr>
             </thead>
-            <tbody style="font-size: 15px;font-weight:100; text-align: center;">
+            <tbody style="font-size: 15px;font-weight:100;">
                 {{!-- {{lotodau 12  12}} --}}
                 {{lotodau 1 11}}
                 {{lotodau 11 22}}
@@ -158,18 +156,21 @@
                 {{lotodau 297 308}}
                 {{lotodau 308 319}}
                 {{lotodau 321 330}}
-
-
-
-                {{!-- {{tklogandauso 40 100}}
-                {{tklogandauso 60 140}}
-                {{tklogandauso 80 180}} --}}
             </tbody>
         </table>
+        <div style="width: 586px; height: 160px;border: 1px solid #DEE2E6 ;">
+                <ul class='footer-links'>
+            <li>Xem thống kê <a href='#'>Loto gan miền Bắc</a></li>
+            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Bắc</a></li>
+            <li>Tham khảo <a href='#'>Thống kê XSMB</a></li>
+            <li>**KQXS** miền Bắc
+                {{result.date}}
+                siêu tốc - chính xác, trực tiếp
+                <a href='#'>**XSMB**</a>
+                lúc 18h15 mỗi ngày</li>
+        </ul>
     </div>
-    
-
-    
+    </div>    
     </div>
     {{> trangchu/menu}}
 </div>

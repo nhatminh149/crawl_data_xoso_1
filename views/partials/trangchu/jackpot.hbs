@@ -18,9 +18,13 @@
     <div class='next-draw-info'>
         <span class='next-draw-date'>{{get result.para_open_next 0}}</span>
     </div>
-
-    <div class='draw-details'>
+    <div class="w-[500px] h-[60px]" style="text-align: left;">
+    <div class='draw-details0' style="color: #CC0000;margin-left: 10px;font-weight: bold;">
+        {{get result.jackpot_day 0}}
+    </div>
+    <div class='draw-details' style="margin-top: 5px;margin-left: 10px;">
         {{get result.para_text_black_bold 0}}
+    </div>
     </div>
 
     <div class='winning-numbers'>
@@ -131,9 +135,13 @@
     <div class='next-draw-info'>
         <span class='next-draw-date'>{{get result.para_open_next 1}}</span>
     </div>
-
-    <div class='draw-details'>
+    <div class="w-[500px] h-[60px]" style="text-align: left;">
+    <div class='draw-details0' style="color: #CC0000;margin-left: 10px;font-weight: bold;">
+        {{get result.jackpot_day 1}}
+    </div>
+    <div class='draw-details' style="margin-top: 5px;margin-left: 10px;">
         {{get result.para_text_black_bold 1}}
+    </div>
     </div>
 
     <div class='winning-numbers'>
@@ -186,10 +194,9 @@
                     <span class='match-dot' style='margin-right: 6px;'></span>
                     <span class='match-dot' style='margin-right: 6px;'></span>
                     <span class='match-dot' style='margin-right: 6px;'></span>
-                    <span><p
-                            class='text-red-1000'
-                            style='margin-right: 6px;'
-                        >|</p></span>
+                    <span><div
+                            style='width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;'
+                        ></div></span>
                     <span class='match-dot1'></span>
                 </td>
                 <td>{{get result.text_right 10}}</td>

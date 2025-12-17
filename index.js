@@ -46,8 +46,8 @@ async function updateKetQua() {
         await connect();
         console.log('MongoDB kết nối thành công');
         await updateKetQua();
-        cron.schedule('*/5 * * * *', () => {
-            console.log('Bắt đầu crawl định kỳ 5 phút...');
+        cron.schedule('*/2 * * * *', () => {
+            console.log('Bắt đầu crawl định kỳ..');
             updateKetQua();
         });
 

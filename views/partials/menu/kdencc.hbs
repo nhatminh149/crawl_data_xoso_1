@@ -56,7 +56,7 @@
 
     <div class="w-147 border border-solid border-[#E8E8E8] h-100" style="margin-right: 20px;">
      <h1 class="bg-[#CC0000] text-white w-147 h-10"> 
-       <p style="padding: 10px;">TK 0 - 99 </p> 
+       <p style="padding: 10px; font-size: 17px; font-weight: bold;">TK 0 - 99 </p> 
      </h1>
         <div class="max-w-3xl mx-auto bg-white p-6">
         
@@ -134,10 +134,18 @@
 {{/each}}
             </tbody>
         </table>
+    <div style="width: 587px; height: 140px; border: 1px solid #E8E8E8;">
+        <div class = "flex" style="margin-left:20px;margin-top:10px;">
+        <p style="font-size:30px;margin-top: -15px;">.</p><p>Xem thống kê&nbsp;</p><p style="color: blue;text-decoration: underline;"> Loto gan Miền Bắc</p>
+        </div>
+        <div class = "flex" style="margin-left:20px;margin-top: -10px;">
+        <p style="font-size:30px;margin-top: -15px;">.</p><p>Xem thống kê&nbsp;</p><p style="color: blue;text-decoration: underline;"> Cặp Loto cùng về Miền Bắc</p>
+        </div>
+        <div class = "flex" style="margin-left:20px;margin-top: -10px;">
+        <p style="font-size:30px;margin-top: -15px;">.</p><p>Tham khảo&nbsp;</p><p style="color: blue;text-decoration: underline;">  Thống kê XSMB</p>
+        </div>
     </div>
-    
-
-    
+    </div>
     </div>
     {{> trangchu/menu}}
 </div>
@@ -233,77 +241,4 @@
 </div>
 
 
-    {{!-- <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const countdownElement = document.getElementById('countdown-timer');
-            const START_HOUR = 6;
-            const END_HOUR = 21;
-            const END_MINUTE = 55;
-            const INTERVAL_MINUTES = 5;
-
-            function formatTime(minutes, seconds) {
-                const min = String(minutes).padStart(2, '0');
-                const sec = String(seconds).padStart(2, '0');
-                return `${min}:${sec}`;
-            }
-
-            function updateCountdown() {
-                const now = new Date();
-                const currentHour = now.getHours();
-                const currentMinute = now.getMinutes();
-                const isOperatingTime = currentHour >= START_HOUR && 
-                                        (currentHour < END_HOUR || (currentHour === END_HOUR && currentMinute <= END_MINUTE));
-
-                if (!isOperatingTime) {
-                    countdownElement.textContent = "00:00"; 
-                    return; 
-                }
-                const minutesSinceStart = (currentHour - START_HOUR) * 60 + currentMinute;
-                const nextDrawMinuteOffset = Math.ceil((minutesSinceStart + 1) / INTERVAL_MINUTES) * INTERVAL_MINUTES;
-                
-                const targetMinute = (nextDrawMinuteOffset % 60);
-                const targetHour = START_HOUR + Math.floor(nextDrawMinuteOffset / 60);
-
-                let targetDate = new Date();
-                targetDate.setHours(targetHour, targetMinute, 0, 0);
-                if (targetDate.getTime() < now.getTime()) {
-                    targetDate.setMinutes(targetDate.getMinutes() + INTERVAL_MINUTES);
-                }
-                if (targetHour > END_HOUR || (targetHour === END_HOUR && targetMinute > END_MINUTE)) {
-                    countdownElement.textContent = "00:00"; 
-                    return;
-                }
-                const diffTime = targetDate.getTime() - now.getTime();
-                const totalSeconds = Math.floor(diffTime / 1000);
-                const displayMinutes = Math.floor(totalSeconds / 60);
-                const displaySeconds = totalSeconds % 60;
-                countdownElement.textContent = formatTime(displayMinutes, displaySeconds);
-            }
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        });
-    </script>
-
-        <div class="w-full max-w-lg bg-white p-6 rounded-lg shadow-xl border border-gray-200 text-center">
-        
-        <p class="text-lg font-normal mb-4 text-gray-800">
-            Kỳ quay số Keno tiếp theo:
-        </p>
-        
-        <div class="flex flex-col items-center justify-center py-4">
-            
-            <p class="text-xl text-blue-600 font-semibold mb-2">
-                Đếm ngược:
-            </p>
-            
-            <div id="countdown-timer" class="text-7xl md:text-8xl font-black text-red-700 leading-none tracking-tight">
-                00:00
-            </div>
-            
-        </div>
-        
-        <p class="text-sm text-gray-600 mt-6 px-4">
-            ( Mỗi kỳ quay thường cách nhau 5' bắt đầu từ 6h00 đến 21h55 hàng ngày )
-        </p>
-
-    </div> --}}
+    
