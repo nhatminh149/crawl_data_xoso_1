@@ -1,0 +1,552 @@
+<div style="margin-top: -29px;">
+<header class='main-header_logan 
+    style="width: 1300px;
+    margin-top: -29px;
+    margin-left: 40px;"'>
+    <div class='top-bar-wrapper' href='http://localhost:3000/?'>
+        <div class='top-bar container'>
+            <div class='logo-area'>
+                <a href='/' class='logo-link'>
+                    <div class='logo-text'>
+                        <img
+                            src='https://cdn.xosodaiphat.com/assets/images/logo.svg'
+                        />
+                    </div>
+                </a>
+            </div>
+            <div class='ad-banner'>
+                <div class='ad-label'>QUẢNG CÁO</div>
+                <div class='ad-content'>
+                    <img
+                        src='https://tpc.googlesyndication.com/simgad/1636368975115146746'
+                        alt='Quảng cáo'
+                    />
+                </div>
+            </div>
+            <div class='auth-area'>
+                <a href='#' class='login-button'>
+                    <i class='fas fa-user'></i>
+                    Đăng nhập
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <nav class='main-nav'>
+        <div class='nav-container container'>
+            <a href='/' class='nav-item home-icon'><i
+                    class='fas fa-home'
+                ></i></a>
+            <a href='#' class='nav-item'>XSMB</a>
+            <a href='#' class='nav-item'>XSMN</a>
+            <a href='#' class='nav-item'>XSMT</a>
+            <a href='#' class='nav-item'>Vietlott</a>
+            <a href='#' class='nav-item'>Tra Cứu XS</a>
+            <a href='#' class='nav-item'>TK Loto</a>
+            <a href='#' class='nav-item'>Loto</a>
+            <a href='#' class='nav-item'>Thống Kê Xổ Số</a>
+        </div>
+    </nav>
+</header>
+{{!-- <header></header> --}}
+
+
+<div class="flex mt-10" style="margin-top: 20px; " >
+    <div class="himb" style="margin-right: 10px; ">
+        <div class='xoso-container_xscm_mb' style="width: 600px;" >
+    <h1 class='page-title'>KQXS - Xổ số Đắk Nông</h1>
+    <div class='breadcrumb' style='background-color:white;border:1px solid #CCCCCC'>
+        &nbsp;&nbsp;{{slice result.LT_DacNong.[0] 5 40}}
+    </div>
+
+    <table class='xsmb-table'>
+        <tbody>
+            <tr class='prize-row special-prize'>
+                <td class='label-col' style='background-color:white'>G.8</td>
+                <td
+                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
+                >{{get result.G8vGDB_DacNong 0}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.7</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 0}}</td>
+            </tr>
+
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.6</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6vG4_DacNong 0}} &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; {{get result.G6vG4_DacNong 1}}&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {{get result.G6vG4_DacNong 1}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.5</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 4}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.4</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G4_DacNong 0}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G4_DacNong 1}} <br>
+                    {{get result.G4_DacNong 2}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G4_DacNong 3}} <br>
+                    {{get result.G6vG4_DacNong 3}} &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; {{get result.G6vG4_DacNong 4}}&nbsp; &nbsp; &nbsp; &nbsp; {{get result.G6vG4_DacNong 5}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.3</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 12}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 13}}
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.2</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 14}}
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.1</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 15}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>ĐB</td>
+                <td style='font-size:30px;color:#d32f2f;font-weight:bold;background-color: white'>
+                    {{get result.G8vGDB_DacNong 1}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+{{! LÔ Tô }}
+<div class='xsmb2'>
+
+    <div class='loto-container' style="margin-bottom: 10px;">
+        <p>Lô tô Đắk Nông</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau'>Đầu</th>
+                    <th class='header-loto'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[11]1 20}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[12] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[13] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[14] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[15] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[16] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[17] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[18] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[19] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[20] 1 20}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul class='footer-links'>
+            <li>Xem thống kê <a href='#'>Loto gan miền Bắc</a></li>
+            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Bắc</a></li>
+            <li>Tham khảo <a href='#'>Thống kê XSMB</a></li>
+            <li>**KQXS** miền Bắc
+                {{result.date}}
+                siêu tốc - chính xác, trực tiếp
+                <a href='#'>**XSMB**</a>
+                lúc 18h15 mỗi ngày</li>
+        </ul>
+    </div>
+</div>
+
+{{!-- Bang2 --}}
+        <div class='xoso-container_xscm_mb' style="width: 600px;" >
+    <h1 class='page-title'>KQXS - Xổ số DacNong</h1>
+    <div class='breadcrumb' style='background-color:white;border:1px solid #CCCCCC'>
+        &nbsp;&nbsp;{{slice result.LT_DacNong.[21] 5 40}}
+    </div>
+
+    <table class='xsmb-table'>
+        <tbody>
+            <tr class='prize-row special-prize'>
+                <td class='label-col' style='background-color:white'>G.8</td>
+                <td
+                    style='font-size:36px;color:#d32f2f;font-weight:bold;'
+                >{{get result.G8vGDB_DacNong 2}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.7</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 16}}</td>
+            </tr>
+
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.6</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6vG4_DacNong 6}} &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; {{get result.G6vG4_DacNong 7}}&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; {{get result.G6vG4_DacNong 8}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.5</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 20}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.4</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G4_DacNong 4}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G4_DacNong 5}} <br>
+                    {{get result.G4_DacNong 6}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G4_DacNong 7}} <br>
+                    {{get result.G6vG4_DacNong 9}} &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; {{get result.G6vG4_DacNong 10}}&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; {{get result.G6vG4_DacNong 11}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.3</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 28}} &nbsp; &nbsp; &nbsp; &nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 29}}
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.2</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 30}}
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.1</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 31}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>ĐB</td>
+                <td style='font-size:30px;color:#d32f2f;font-weight:bold;background-color: white'>
+                    {{get result.G8vGDB_DacNong 3}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+{{! LÔ Tô }}
+<div class='xsmb2'>
+
+    <div class='loto-container' style="margin-bottom: 10px;">
+        <p>Lô tô Đắk Nông</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau'>Đầu</th>
+                    <th class='header-loto'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[32]1 20}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[33] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[34] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[35] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[36] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[37] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[38] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[39] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[40] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[41] 1 20}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul class='footer-links'>
+            <li>Xem thống kê <a href='#'>Loto gan miền Bắc</a></li>
+            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Bắc</a></li>
+            <li>Tham khảo <a href='#'>Thống kê XSMB</a></li>
+            <li>**KQXS** miền Bắc
+                {{result.date}}
+                siêu tốc - chính xác, trực tiếp
+                <a href='#'>**XSMB**</a>
+                lúc 18h15 mỗi ngày</li>
+        </ul>
+    </div>
+</div>
+
+{{!-- Bang3 --}}
+<div class='xoso-container_xscm_mb' style="width: 600px;">
+    <h1 class='page-title'>KQXS - Xổ số Đắk Nông</h1>
+    <div class='breadcrumb' style='background-color:white;border:1px solid #CCCCCC'>
+        &nbsp;&nbsp;{{slice result.LT_DacNong.[42] 5 40}}
+    </div>
+
+    <table class='xsmb-table'>
+        <tbody>
+            <tr class='prize-row special-prize'>
+                <td class='label-col' style='background-color:white'>G.8</td>
+                <td style='font-size:36px;color:#d32f2f;font-weight:bold;'>{{get result.G8vGDB_DacNong 4}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.7</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 32}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.6</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G6vG4_DacNong 12}} &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G6vG4_DacNong 13}} &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G6vG4_DacNong 14}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.5</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 36}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.4</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 37}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 38}} <br>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 39}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 40}} <br>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 41}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 42}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 43}}
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.3</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 44}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{get result.G7vG5vG3vG2vG1_DacNong 45}} 
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>G.2</td>
+                <td style='font-size:30px;color:black;font-weight:bold;'>
+                    {{get result.G7vG5vG3vG2vG1_DacNong 46}} 
+                </td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col'>G.1</td>
+                <td style='font-size:30px;color:black;font-weight:bold;background-color: #F5F5F5;'>{{get result.G7vG5vG3vG2vG1_DacNong 47}}</td>
+            </tr>
+            <tr class='prize-row'>
+                <td class='label-col' style='background-color:white'>ĐB</td>
+                <td style='font-size:36px;color:#d32f2f;font-weight:bold;'>{{get result.G8vGDB_DacNong 5}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class='xsmb2'>
+
+    <div class='loto-container' style="margin-bottom: 10px;">
+        <p>Lô tô Đắk Nông</p>
+        <table>
+            <thead>
+                <tr>
+                    <th class='header-dau'>Đầu</th>
+                    <th class='header-loto'>Lô tô</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[53]1 20}}</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[54] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[55] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[56] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[57] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[58] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[59] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[60] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[61] 1 20}}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>&nbsp;&nbsp;{{slice result.LT_DacNong.[62] 1 20}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <ul class='footer-links'>
+            <li>Xem thống kê <a href='#'>Loto gan miền Bắc</a></li>
+            <li>Xem thống kê <a href='#'>Cặp loto cùng về miền Bắc</a></li>
+            <li>Tham khảo <a href='#'>Thống kê XSMB</a></li>
+            <li>**KQXS** miền Bắc
+                {{result.date}}
+                siêu tốc - chính xác, trực tiếp
+                <a href='#'>**XSMB**</a>
+                lúc 18h15 mỗi ngày</li>
+        </ul>
+    </div>
+</div>
+        <div class="flex items-center my-6 mt-4">
+              <div class="flex-grow border-t border-gray-300"></div>
+                   <span class="flex-shrink mx-4 text-blue-800 font-medium"> Xem Thêm</span>
+             <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+    <div style="width: 600px;height: 200px;border: 1px solid #CCCCCC; margin-top: 20px;margin-bottom: 10px;">
+        <p class="text-[17px] font-bold text-red-600 mb-4 uppercase p-4">Thông Tin Về Kết Quả Xổ Số Đắk Nông</p>
+            <div style="margin-top: -40px;">
+                <p style="margin-top: -10px;">&nbsp; &nbsp; - Kết quả xổ số Đắk Nông mở thưởng lúc 17h10 Thứ 7 hàng tuần.</p>
+                <p style="margin-top: -15px;">&nbsp; &nbsp; - Xem trực tiếp KQXS Đắk Nông nhanh chóng, chính xác tại trang website</p>
+                <p style="margin-top: -15px;">&nbsp; &nbsp;   xosodaiphat.com. Kết quả được cập nhật liên tục từ trường quay.</p>
+                <p style="margin-top: -15px;">&nbsp; &nbsp; - Giá trị các giải thưởng của xổ số Đắk Nông được quy định theo giải thưởng</p>
+                <p style="margin-top: -15px;">&nbsp; &nbsp;   chung của xổ số miền Trung.</p>
+            </div>
+    </div>
+    </div>
+    {{> trangchu/menu}}
+</div>
+
+
+
+{{!-- <footer></footer> --}}
+<footer class='footer_logan' style="margin-left:-20px">
+ <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000;margin-left: 20px;"></div>
+    <div class='footer-menu-container'>
+        <div class='footer-menu-row'>
+            <div class='menu-col'>
+                <a href='#'>Trang chủ</a>
+                <a href='#'>XSMB</a>
+                <a href='#'>XSMN</a>
+                <a href='#'>XSMT</a>
+                <a href='#'>Vietlott</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Xổ số hôm qua</a>
+                <a href='#'>XSMB 30 ngày</a>
+                <a href='#'>XSMN 30 ngày</a>
+                <a href='#'>XSMT 30 ngày</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê loto gan</a>
+                <a href='#'>Thống kê tổng hợp</a>
+                <a href='#'>Thống kê giải đặc biệt</a>
+                <a href='#'>Thống kê loto kép</a>
+            </div>
+            <div class='menu-col'>
+                <a href='#'>Thống kê tần suất loto</a>
+                <a href='#'>Thống kê tần suất loto cặp</a>
+                <a href='#'>Thống kê XSMB</a>
+                <a href='#'>Thống kê XSMN</a>
+                <a href='#'>Thống kê XSMT</a>
+            </div>
+        </div>
+
+        <div class='footer-divider-container'>
+            <div class='footer-line-red'></div>
+            <div class='footer-title-row'>
+                <h3 class='footer-title'>Xổ Số Đại Phát - Chính Xác Từng Giây</h3>
+                <div class='footer-utility-links'>
+                    <a href='#'>Điều khoản sử dụng</a>
+                    |
+                    <a href='#'>Chính sách bảo mật</a>
+                    |
+                    <a href='#'>Cookies</a>
+                    |
+                    <a href='#'>RSS</a>
+                    |
+                    <a href='#'>Theo dõi Xổ Số Đại Phát</a>
+                    <span class='play-icon'>►</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='footer-info-container'>
+        <div class='footer-info-content'>
+            <p class='copyright'>
+                <strong>Copyright © Since 2009 - xosodaiphat.com, All Rights
+                    Reserved</strong>
+            </p>
+            <p>Đơn vị chủ quản: Công Ty Cổ Phần Dịch Vụ và Viễn Thông Nam Việt.</p>
+            <p>Địa chỉ văn phòng: Tầng 15, 77 Trần Nhân Tôn, Phường An Đông,
+                Thành phố Hồ Chí Minh</p>
+            <p>Địa chỉ: Tầng 3, Tòa nhà An Phú Plaza, 117-119 Lý Chính Thắng,
+                Phường Xuân Hòa, Thành phố Hồ Chí Minh</p>
+            <p>MST: 0305578356</p>
+            <p>Điện thoại: 028.6276.6766</p>
+            <p>Email:
+                <a
+                    href='mailto:contact@xosodaiphat.com'
+                >contact@xosodaiphat.com</a></p>
+        </div>
+
+        <div class='footer-disclaimer'>
+            <p>
+                Thông tin và kết quả xổ số trên xosodaiphat.com được chúng tôi
+                cập nhật từ nguồn công khai và chỉ mang tính chất tham khảo. Vui
+                lòng kiểm tra lại kết quả chính thức được công bố bởi các công
+                ty xổ số kiến thiết.
+            </p>
+            <div class='dmca-logo'>
+                [DMCA PROTECTED Logo Placeholder]
+            </div>
+        </div>
+    </div>
+</footer>
+</div>

@@ -56,6 +56,101 @@ router.get('/partials/xscm/xsmb', async (req, res) => {
     res.render('partials/xscm/xsmb', { title: 'Lô gan cực đại', result });
 });
 
+router.get('/partials/xscm/xsAnGiang', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsAnGiang', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsTayNinh', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsTayNinh', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsBinhThuan', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsBinhThuan', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsBinhDinh', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsBinhDinh', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsQuangNam', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsQuangNam', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsQuangTri', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsQuangTri', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsKhanhHoa', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsKhanhHoa', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsDaNang', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsDaNang', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsDongNai', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsDongNai', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsSocTrang', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsSocTrang', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsBenTre', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsBenTre', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsBinhDuong', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsBinhDuong', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsDakLak', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsDakLak', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsDacNong', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsDacNong', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsHue', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsHue', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsGiaLai', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsGiaLai', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsBacLieu', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsBacLieu', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsBinhPhuoc', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsBinhPhuoc', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsCanTho', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsCanTho', { title: 'Lô gan cực đại', result });
+});
+
 //
 router.get('/partials/menu/tklxh', async (req, res) => {
     const result = await getLatestResult();
@@ -65,13 +160,9 @@ router.get('/partials/menu/tklxh', async (req, res) => {
     const maxPercentage = 7;
     const statisticsList = bosoArray.map((boso, index) => {
         const phantramRaw = phantramArray[index] ?? '0%';
-        const phantram =
-            parseFloat(String(phantramRaw).replace('%', '').trim()) || 0;
+        const phantram = parseFloat(String(phantramRaw).replace('%', '').trim()) || 0;
         const width =
-            phantram > 0
-                ? Math.min((phantram / maxPercentage) * 100, 100).toFixed(2) +
-                  '%'
-                : '0%';
+            phantram > 0 ? Math.min((phantram / maxPercentage) * 100, 100).toFixed(2) + '%' : '0%';
 
         return {
             boso,
@@ -97,13 +188,9 @@ router.get('/partials/menu/tktheothu', async (req, res) => {
     const maxPercentage = 13;
     const statisticsList = bosoArray.map((boso, index) => {
         const phantramRaw = phantramArray[index] ?? '0%';
-        const phantram =
-            parseFloat(String(phantramRaw).replace('%', '').trim()) || 0;
+        const phantram = parseFloat(String(phantramRaw).replace('%', '').trim()) || 0;
         const width =
-            phantram > 0
-                ? Math.min((phantram / maxPercentage) * 100, 100).toFixed(2) +
-                  '%'
-                : '0%';
+            phantram > 0 ? Math.min((phantram / maxPercentage) * 100, 100).toFixed(2) + '%' : '0%';
 
         return {
             boso,
@@ -125,8 +212,7 @@ router.get('/partials/menu/tkkcb', async (req, res) => {
     const max = 100;
 
     const list = (r?.boso_TKKCB ?? []).map((boso, i) => {
-        const slxh =
-            parseFloat(String(r?.slxh_TKKCB?.[i] ?? 0).replace('%', '')) || 0;
+        const slxh = parseFloat(String(r?.slxh_TKKCB?.[i] ?? 0).replace('%', '')) || 0;
         const rate = slxh > 0 ? (slxh / max) * 100 : 0;
         return {
             boso,
@@ -151,13 +237,9 @@ router.get('/partials/menu/kdencc', async (req, res) => {
     const maxPercentage = 1.73;
     const statisticsList = bosoArray.map((boso, index) => {
         const phantramRaw = phantramArray[index] ?? '0%';
-        const phantram =
-            parseFloat(String(phantramRaw).replace('%', '').trim()) || 0;
+        const phantram = parseFloat(String(phantramRaw).replace('%', '').trim()) || 0;
         const width =
-            phantram > 0
-                ? Math.min((phantram / maxPercentage) * 100, 100).toFixed(2) +
-                  '%'
-                : '0%';
+            phantram > 0 ? Math.min((phantram / maxPercentage) * 100, 100).toFixed(2) + '%' : '0%';
 
         return {
             boso,

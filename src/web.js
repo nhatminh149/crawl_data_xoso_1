@@ -33,13 +33,10 @@ async function crawlLoGan(page) {
 async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
     console.log('Đang cào dữ liệu TK Lô Gan Đầu...');
     try {
-        await page_crawlTKLoGanDau.goto(
-            'https://xosodaiphat.com/thong-ke-dau.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKLoGanDau.goto('https://xosodaiphat.com/thong-ke-dau.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKLoGanDau.evaluate(() => {
             const getClasstd = (cl) => {
@@ -69,13 +66,10 @@ async function crawlTKLoGanDau(page_crawlTKLoGanDau) {
 async function crawlTKLoGanDuoi(page_crawlTKLoGanDuoi) {
     console.log('Đang cào dữ liệu TK Lô Gan Đuôi...');
     try {
-        await page_crawlTKLoGanDuoi.goto(
-            'https://xosodaiphat.com/thong-ke-duoi.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKLoGanDuoi.goto('https://xosodaiphat.com/thong-ke-duoi.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKLoGanDuoi.evaluate(() => {
             const getClasstd = (cl) => {
@@ -104,13 +98,10 @@ async function crawlTKLoGanDuoi(page_crawlTKLoGanDuoi) {
 async function crawlTKGDB(page_crawlTKGDB) {
     console.log('Đang cào dữ liệu TK Giải Đặc Biệt...');
     try {
-        await page_crawlTKGDB.goto(
-            'https://xosodaiphat.com/thong-ke-giai-dac-biet.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKGDB.goto('https://xosodaiphat.com/thong-ke-giai-dac-biet.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKGDB.evaluate(() => {
             const getClass = (cl) => {
@@ -143,13 +134,10 @@ async function crawlTKGDB(page_crawlTKGDB) {
 async function crawlAnGiang(page_crawlAnGiang) {
     console.log('Đang cào dữ liệu XS An Giang...');
     try {
-        await page_crawlAnGiang.goto(
-            'https://xosodaiphat.com/xsag-xo-so-an-giang.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlAnGiang.goto('https://xosodaiphat.com/xsag-xo-so-an-giang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlAnGiang.evaluate(() => {
             const getClass = (cl) => {
@@ -167,17 +155,627 @@ async function crawlAnGiang(page_crawlAnGiang) {
                     .map((el) => el.innerText.trim())
                     .filter(Boolean);
             };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
             return {
                 G8vGDB_AnGiang: getClassspan('special-prize-lg.div-horizontal'),
-                G7vG5vG2vG1_AnGiang: getClassspan(
-                    'number-black-bold.div-horizontal',
-                ),
-                G6_AnGiang: getClassspan(
-                    'col-xs-4.number-black-bold.div-horizontal',
-                ),
-                G4vG3_AnGiang: getClassspan(
-                    'col-sm-3.col-xs-6.number-black-bold.div-horizontal',
-                ),
+                G7vG5vG3vG2vG1_AnGiang: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_AnGiang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_AnGiang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_AnGiang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlDakLak(page_crawlDakLak) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlDakLak.goto('https://xosodaiphat.com/xsdlk-xo-so-dak-lak.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlDakLak.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_DakLak: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_DakLak: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_DakLak: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_DakLak: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_DakLak: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlDacNong(page_crawlDacNong) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlDacNong.goto('https://xosodaiphat.com/xsdno-xo-so-dak-nong.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlDacNong.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_DacNong: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_DacNong: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_DacNong: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_DacNong: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_DacNong: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlGiaLai(page_crawlGiaLai) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlGiaLai.goto('https://xosodaiphat.com/xsgl-xo-so-gia-lai.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlGiaLai.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_GiaLai: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_GiaLai: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_GiaLai: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_GiaLai: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_GiaLai: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlHue(page_crawlHue) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlHue.goto('https://xosodaiphat.com/xstth-xo-so-hue.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlHue.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_Hue: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_Hue: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_Hue: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_Hue: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_Hue: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlTayNinh(page_crawlTayNinh) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlTayNinh.goto('https://xosodaiphat.com/xstn-xo-so-tay-ninh.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTayNinh.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_TayNinh: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_TayNinh: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_TayNinh: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_TayNinh: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_TayNinh: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlBacLieu(page_crawlBacLieu) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlBacLieu.goto('https://xosodaiphat.com/xsbl-xo-so-bac-lieu.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlBacLieu.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_BacLieu: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_BacLieu: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_BacLieu: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_BacLieu: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_BacLieu: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlBenTre(page_crawlBenTre) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlBenTre.goto('https://xosodaiphat.com/xsbtr-xo-so-ben-tre.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlBenTre.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_BenTre: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_BenTre: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_BenTre: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_BenTre: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_BenTre: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlBinhDuong(page_crawlBinhDuong) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlBinhDuong.goto('https://xosodaiphat.com/xsbd-xo-so-binh-duong.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlBinhDuong.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_BinhDuong: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_BinhDuong: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_BinhDuong: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_BinhDuong: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_BinhDuong: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlBinhPhuoc(page_crawlBinhPhuoc) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlBinhPhuoc.goto('https://xosodaiphat.com/xsbp-xo-so-binh-phuoc.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlBinhPhuoc.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_BinhPhuoc: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_BinhPhuoc: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_BinhPhuoc: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_BinhPhuoc: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_BinhPhuoc: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlKhanhHoa(page_crawlKhanhHoa) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlKhanhHoa.goto('https://xosodaiphat.com/xskh-xo-so-khanh-hoa.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlKhanhHoa.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_KhanhHoa: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_KhanhHoa: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_KhanhHoa: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_KhanhHoa: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_KhanhHoa: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+async function crawlDaNang(page_crawlDaNang) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlDaNang.goto('https://xosodaiphat.com/xsdna-xo-so-da-nang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlDaNang.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_DaNang: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_DaNang: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_DaNang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_DaNang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_DaNang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+async function crawlDongNai(page_crawlDongNai) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlDongNai.goto('https://xosodaiphat.com/xsdn-xo-so-dong-nai.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlDongNai.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_DongNai: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_DongNai: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_DongNai: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_DongNai: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_DongNai: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlCanTho(page_crawlCanTho) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlCanTho.goto('https://xosodaiphat.com/xsct-xo-so-can-tho.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlCanTho.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_CanTho: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_CanTho: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_CanTho: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_CanTho: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_CanTho: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlSocTrang(page_crawlSocTrang) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlSocTrang.goto('https://xosodaiphat.com/xsst-xo-so-soc-trang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlSocTrang.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_SocTrang: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_SocTrang: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_SocTrang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_SocTrang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_SocTrang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlBinhThuan(page_crawlBinhThuan) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlBinhThuan.goto('https://xosodaiphat.com/xsbth-xo-so-binh-thuan.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlBinhThuan.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_BinhThuan: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_BinhThuan: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_BinhThuan: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_BinhThuan: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_BinhThuan: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlQuangNam(page_crawlQuangNam) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlQuangNam.goto('https://xosodaiphat.com/xsqna-xo-so-quang-nam.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlQuangNam.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_QuangNam: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_QuangNam: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_QuangNam: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_QuangNam: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_QuangNam: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlQuangTri(page_crawlQuangTri) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlQuangTri.goto('https://xosodaiphat.com/xsqt-xo-so-quang-tri.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlQuangTri.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_QuangTri: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_QuangTri: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_QuangTri: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_QuangTri: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_QuangTri: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlBinhDinh(page_crawlBinhDinh) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlBinhDinh.goto('http://xosodaiphat.com/xsbdi-xo-so-binh-dinh.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlBinhDinh.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_BinhDinh: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_BinhDinh: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_BinhDinh: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_BinhDinh: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_BinhDinh: getClasstr('tr'),
             };
         });
         console.log('Cào dữ liệu XS An Giang thành công.');
@@ -219,13 +817,10 @@ async function crawlLoGanCV(page1) {
 async function crawlLotoKep(page_crawlLotoKep) {
     console.log('Đang cào dữ liệu Lô tô kép...');
     try {
-        await page_crawlLotoKep.goto(
-            'https://xosodaiphat.com/thong-ke-lo-kep.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlLotoKep.goto('https://xosodaiphat.com/thong-ke-lo-kep.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlLotoKep.evaluate(() => {
             const getClasstd = (cl) => {
@@ -250,13 +845,10 @@ async function crawlLotoKep(page_crawlLotoKep) {
 async function crawlTKLXH(page_crawlTKLXH) {
     console.log('Đang cào dữ liệu TK lần xuất hiện...');
     try {
-        await page_crawlTKLXH.goto(
-            'https://xosodaiphat.com/thong-ke-lan-xuat-hien.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKLXH.goto('https://xosodaiphat.com/thong-ke-lan-xuat-hien.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKLXH.evaluate(() => {
             const getClasstd = (cl) => {
@@ -280,13 +872,10 @@ async function crawlTKLXH(page_crawlTKLXH) {
 async function crawlTKLXH1(page_crawlTKLXH1) {
     console.log('Đang cào dữ liệu TK lần xuất hiện...');
     try {
-        await page_crawlTKLXH1.goto(
-            'https://xosodaiphat.com/thong-ke-tan-suat.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKLXH1.goto('https://xosodaiphat.com/thong-ke-tan-suat.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKLXH1.evaluate(() => {
             const gettr = (cl) => {
@@ -314,13 +903,10 @@ async function crawlTKLXH1(page_crawlTKLXH1) {
 async function crawlTKKCB(page_crawlTKKCB) {
     console.log('Đang cào dữ liệu TK Keno cơ bản...');
     try {
-        await page_crawlTKKCB.goto(
-            'https://xosodaiphat.com/thong-ke-keno-co-ban.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKKCB.goto('https://xosodaiphat.com/thong-ke-keno-co-ban.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKKCB.evaluate(() => {
             const getClasstd = (cl) => {
@@ -350,13 +936,10 @@ async function crawlTKKCB(page_crawlTKKCB) {
 async function crawlTKKBS(page_crawlTKKBS) {
     console.log('Đang cào dữ liệu TK Keno bổ sung...');
     try {
-        await page_crawlTKKBS.goto(
-            'https://xosodaiphat.com/thong-ke-keno-bo-sung.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKKBS.goto('https://xosodaiphat.com/thong-ke-keno-bo-sung.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKKBS.evaluate(() => {
             const getClasstd = (cl) => {
@@ -394,13 +977,10 @@ async function crawlTKKBS(page_crawlTKKBS) {
 async function crawlTKkdencc(page_crawlTKkdencc) {
     console.log('Đang cào dữ liệu 0 đến 99...');
     try {
-        await page_crawlTKkdencc.goto(
-            'https://xosodaiphat.com/thong-ke-00-99.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKkdencc.goto('https://xosodaiphat.com/thong-ke-00-99.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKkdencc.evaluate(() => {
             const getClasstd = (cl) => {
@@ -429,13 +1009,10 @@ async function crawlTKkdencc(page_crawlTKkdencc) {
 async function crawlDienToan123(page_crawlDienToan123) {
     console.log('Đang cào dữ liệu điện toán 123...');
     try {
-        await page_crawlDienToan123.goto(
-            'https://xosodaiphat.com/xo-so-dien-toan-123.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlDienToan123.goto('https://xosodaiphat.com/xo-so-dien-toan-123.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlDienToan123.evaluate(() => {
             const getul = (cl) => {
@@ -463,13 +1040,10 @@ async function crawlDienToan123(page_crawlDienToan123) {
 async function crawlDienToan636(page_crawlDienToan636) {
     console.log('Đang cào dữ liệu điện toán 636...');
     try {
-        await page_crawlDienToan636.goto(
-            'https://xosodaiphat.com/xo-so-dien-toan-6x36.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlDienToan636.goto('https://xosodaiphat.com/xo-so-dien-toan-6x36.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlDienToan636.evaluate(() => {
             const getul = (cl) => {
@@ -497,13 +1071,10 @@ async function crawlDienToan636(page_crawlDienToan636) {
 async function crawlTKTheoThu(page_crawlTKTheoThu) {
     console.log('Đang cào dữ liệu TK theo thứ...');
     try {
-        await page_crawlTKTheoThu.goto(
-            'https://xosodaiphat.com/thong-ke-theo-thu.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawlTKTheoThu.goto('https://xosodaiphat.com/thong-ke-theo-thu.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawlTKTheoThu.evaluate(() => {
             const getClasstd = (cl) => {
@@ -527,13 +1098,10 @@ async function crawlTKTheoThu(page_crawlTKTheoThu) {
 async function crawl_Keno(page_crawl_Keno) {
     console.log('Đang cào dữ liệu Keno...');
     try {
-        await page_crawl_Keno.goto(
-            'https://xosodaiphat.com/keno-truc-tiep-xskeno.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawl_Keno.goto('https://xosodaiphat.com/keno-truc-tiep-xskeno.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawl_Keno.evaluate(() => {
             const getClasstd = (cl) => {
@@ -562,13 +1130,10 @@ async function crawl_Keno(page_crawl_Keno) {
 async function crawl_Power(page_crawl_Power) {
     console.log('Đang cào dữ liệu Power...');
     try {
-        await page_crawl_Power.goto(
-            'https://xosodaiphat.com/xs-power-xo-so-power-655.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawl_Power.goto('https://xosodaiphat.com/xs-power-xo-so-power-655.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawl_Power.evaluate(() => {
             const getClasstd = (cl) => {
@@ -612,13 +1177,10 @@ async function crawl_Power(page_crawl_Power) {
 async function crawl_Max3D(page_crawl_Max3D) {
     console.log('Đang cào dữ liệu Max3D...');
     try {
-        await page_crawl_Max3D.goto(
-            'https://xosodaiphat.com/xo-so-max3d.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawl_Max3D.goto('https://xosodaiphat.com/xo-so-max3d.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawl_Max3D.evaluate(() => {
             const getClassspan = (cl) => {
@@ -635,9 +1197,7 @@ async function crawl_Max3D(page_crawl_Max3D) {
                 max3d_title: getClass('titlemax3d.bold'),
                 max3d_link: getClass('list-link'),
                 G1: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
-                G2vKK: getClassspan(
-                    'col-xs-3.number-black-bold.div-horizontal',
-                ),
+                G2vKK: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
                 G3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             };
         });
@@ -651,13 +1211,10 @@ async function crawl_Max3D(page_crawl_Max3D) {
 async function crawl_Max3DPro(page_crawl_Max3DPro) {
     console.log('Đang cào dữ liệu Max3D...');
     try {
-        await page_crawl_Max3DPro.goto(
-            'https://xosodaiphat.com/xs-max-3d-pro.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawl_Max3DPro.goto('https://xosodaiphat.com/xs-max-3d-pro.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawl_Max3DPro.evaluate(() => {
             const getClassspan = (cl) => {
@@ -673,15 +1230,9 @@ async function crawl_Max3DPro(page_crawl_Max3DPro) {
             return {
                 max3d_title_pro: getClass('titlemax3d.bold'),
                 max3d_link_pro: getClass('list-link'),
-                G1_pro: getClassspan(
-                    'col-xs-6.special-prize-lg.div-horizontal',
-                ),
-                G2vKK_pro: getClassspan(
-                    'col-xs-3.number-black-bold.div-horizontal',
-                ),
-                G3_pro: getClassspan(
-                    'col-xs-4.number-black-bold.div-horizontal',
-                ),
+                G1_pro: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_pro: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_pro: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             };
         });
         console.log('Cào dữ liệu Max3D thành công.');
@@ -694,13 +1245,10 @@ async function crawl_Max3DPro(page_crawl_Max3DPro) {
 async function crawl_ThanTai(page_crawl_ThanTai) {
     console.log('Đang cào dữ liệu Thần Tài 4...');
     try {
-        await page_crawl_ThanTai.goto(
-            'https://xosodaiphat.com/xo-so-than-tai.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawl_ThanTai.goto('https://xosodaiphat.com/xo-so-than-tai.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawl_ThanTai.evaluate(() => {
             const getClassspan = (cl) => {
@@ -714,8 +1262,8 @@ async function crawl_ThanTai(page_crawl_ThanTai) {
                     .filter(Boolean);
             };
             return {
-                tt_day : getClass('list-link'),
-                tt_number : getClass('dientoan-detail')
+                tt_day: getClass('list-link'),
+                tt_number: getClass('dientoan-detail'),
             };
         });
         console.log('Cào dữ liệu Thần Tài thành công.');
@@ -728,13 +1276,10 @@ async function crawl_ThanTai(page_crawl_ThanTai) {
 async function crawl_Mega(page_crawl_Mega) {
     console.log('Đang cào dữ liệu Mega...');
     try {
-        await page_crawl_Mega.goto(
-            'https://xosodaiphat.com/xs-mega-xo-so-mega-645.html',
-            {
-                waitUntil: 'networkidle2',
-                timeout: 60000,
-            },
-        );
+        await page_crawl_Mega.goto('https://xosodaiphat.com/xs-mega-xo-so-mega-645.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
 
         const result = await page_crawl_Mega.evaluate(() => {
             const getClasstd = (cl) => {
@@ -798,6 +1343,24 @@ async function crawl() {
     const page_crawlTKKBS = await browser.newPage();
     const page_crawlTKkdencc = await browser.newPage();
     const page_crawlAnGiang = await browser.newPage();
+    const page_crawlDakLak = await browser.newPage();
+    const page_crawlDacNong = await browser.newPage();
+    const page_crawlGiaLai = await browser.newPage();
+    const page_crawlHue = await browser.newPage();
+    const page_crawlBacLieu = await browser.newPage();
+    const page_crawlBenTre = await browser.newPage();
+    const page_crawlBinhDuong = await browser.newPage();
+    const page_crawlBinhPhuoc = await browser.newPage();
+    const page_crawlTayNinh = await browser.newPage();
+    const page_crawlKhanhHoa = await browser.newPage();
+    const page_crawlDaNang = await browser.newPage();
+    const page_crawlDongNai = await browser.newPage();
+    const page_crawlCanTho = await browser.newPage();
+    const page_crawlSocTrang = await browser.newPage();
+    const page_crawlBinhThuan = await browser.newPage();
+    const page_crawlQuangNam = await browser.newPage();
+    const page_crawlQuangTri = await browser.newPage();
+    const page_crawlBinhDinh = await browser.newPage();
     const page_crawlDienToan123 = await browser.newPage();
     const page_crawlDienToan636 = await browser.newPage();
     const page_crawlTKTheoThu = await browser.newPage();
@@ -827,9 +1390,7 @@ async function crawl() {
         }
 
         const getNumbers = (prefix) => {
-            return Array.from(
-                document.querySelectorAll(`span[id^="${prefix}"]`),
-            )
+            return Array.from(document.querySelectorAll(`span[id^="${prefix}"]`))
                 .map((el) => el.innerText.trim())
                 .filter(Boolean);
         };
@@ -879,10 +1440,7 @@ async function crawl() {
         return {
             MDBMB: getNumbers('mb_prizeCode_item'),
             date,
-            GDBMB:
-                document
-                    .querySelector('#mb_prize_DB_item_0')
-                    ?.innerText.trim() || '---',
+            GDBMB: document.querySelector('#mb_prize_DB_item_0')?.innerText.trim() || '---',
             G1MB: getNumbers('mb_prize_1_item'),
             G2MB: getNumbers('mb_prize_2_item'),
             G3MB: getNumbers('mb_prize_3_item'),
@@ -905,10 +1463,7 @@ async function crawl() {
             TKGDB: getClass('fontDB'),
 
             //MN
-            GDBVL:
-                document
-                    .querySelector('#VL_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBVL: document.querySelector('#VL_prize_Db_item_0')?.innerText.trim() || '---',
             G1VL: getNumbers('VL_prize_1_item'),
             G2VL: getNumbers('VL_prize_2_item'),
             G3VL: getNumbers('VL_prize_3_item'),
@@ -918,10 +1473,7 @@ async function crawl() {
             G7VL: getNumbers('VL_prize_7_item'),
             G8VL: getNumbers('VL_prize_8_item'),
 
-            GDBHCM:
-                document
-                    .querySelector('#HCM_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBHCM: document.querySelector('#HCM_prize_Db_item_0')?.innerText.trim() || '---',
             G1HCM: getNumbers('HCM_prize_1_item'),
             G2HCM: getNumbers('HCM_prize_2_item'),
             G3HCM: getNumbers('HCM_prize_3_item'),
@@ -931,10 +1483,7 @@ async function crawl() {
             G7HCM: getNumbers('HCM_prize_7_item'),
             G8HCM: getNumbers('HCM_prize_8_item'),
 
-            GDBDT:
-                document
-                    .querySelector('#DT_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBDT: document.querySelector('#DT_prize_Db_item_0')?.innerText.trim() || '---',
             G1DT: getNumbers('DT_prize_1_item'),
             G2DT: getNumbers('DT_prize_2_item'),
             G3DT: getNumbers('DT_prize_3_item'),
@@ -944,10 +1493,7 @@ async function crawl() {
             G7DT: getNumbers('DT_prize_7_item'),
             G8DT: getNumbers('DT_prize_8_item'),
 
-            GDBCM:
-                document
-                    .querySelector('#CM_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBCM: document.querySelector('#CM_prize_Db_item_0')?.innerText.trim() || '---',
             G1CM: getNumbers('CM_prize_1_item'),
             G2CM: getNumbers('CM_prize_2_item'),
             G3CM: getNumbers('CM_prize_3_item'),
@@ -957,10 +1503,7 @@ async function crawl() {
             G7CM: getNumbers('CM_prize_7_item'),
             G8CM: getNumbers('CM_prize_8_item'),
 
-            GDBBD:
-                document
-                    .querySelector('#BD_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBBD: document.querySelector('#BD_prize_Db_item_0')?.innerText.trim() || '---',
             G1BD: getNumbers('BD_prize_1_item'),
             G2BD: getNumbers('BD_prize_2_item'),
             G3BD: getNumbers('BD_prize_3_item'),
@@ -970,10 +1513,7 @@ async function crawl() {
             G7BD: getNumbers('BD_prize_7_item'),
             G8BD: getNumbers('BD_prize_8_item'),
 
-            GDBTV:
-                document
-                    .querySelector('#TV_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBTV: document.querySelector('#TV_prize_Db_item_0')?.innerText.trim() || '---',
             G1TV: getNumbers('TV_prize_1_item'),
             G2TV: getNumbers('TV_prize_2_item'),
             G3TV: getNumbers('TV_prize_3_item'),
@@ -983,10 +1523,7 @@ async function crawl() {
             G7TV: getNumbers('TV_prize_7_item'),
             G8TV: getNumbers('TV_prize_8_item'),
 
-            GDBDN:
-                document
-                    .querySelector('#DN_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBDN: document.querySelector('#DN_prize_Db_item_0')?.innerText.trim() || '---',
             G1DN: getNumbers('DN_prize_1_item'),
             G2DN: getNumbers('DN_prize_2_item'),
             G3DN: getNumbers('DN_prize_3_item'),
@@ -996,10 +1533,7 @@ async function crawl() {
             G7DN: getNumbers('DN_prize_7_item'),
             G8DN: getNumbers('DN_prize_8_item'),
 
-            GDBCT:
-                document
-                    .querySelector('#CT_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBCT: document.querySelector('#CT_prize_Db_item_0')?.innerText.trim() || '---',
             G1CT: getNumbers('CT_prize_1_item'),
             G2CT: getNumbers('CT_prize_2_item'),
             G3CT: getNumbers('CT_prize_3_item'),
@@ -1009,10 +1543,7 @@ async function crawl() {
             G7CT: getNumbers('CT_prize_7_item'),
             G8CT: getNumbers('CT_prize_8_item'),
 
-            GDBST:
-                document
-                    .querySelector('#ST_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBST: document.querySelector('#ST_prize_Db_item_0')?.innerText.trim() || '---',
             G1ST: getNumbers('ST_prize_1_item'),
             G2ST: getNumbers('ST_prize_2_item'),
             G3ST: getNumbers('ST_prize_3_item'),
@@ -1022,10 +1553,7 @@ async function crawl() {
             G7ST: getNumbers('ST_prize_7_item'),
             G8ST: getNumbers('ST_prize_8_item'),
 
-            GDBTN:
-                document
-                    .querySelector('#TN_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBTN: document.querySelector('#TN_prize_Db_item_0')?.innerText.trim() || '---',
             G1TN: getNumbers('TN_prize_1_item'),
             G2TN: getNumbers('TN_prize_2_item'),
             G3TN: getNumbers('TN_prize_3_item'),
@@ -1035,10 +1563,7 @@ async function crawl() {
             G7TN: getNumbers('TN_prize_7_item'),
             G8TN: getNumbers('TN_prize_8_item'),
 
-            GDBAG:
-                document
-                    .querySelector('#AG_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBAG: document.querySelector('#AG_prize_Db_item_0')?.innerText.trim() || '---',
             G1AG: getNumbers('AG_prize_1_item'),
             G2AG: getNumbers('AG_prize_2_item'),
             G3AG: getNumbers('AG_prize_3_item'),
@@ -1048,10 +1573,7 @@ async function crawl() {
             G7AG: getNumbers('AG_prize_7_item'),
             G8AG: getNumbers('AG_prize_8_item'),
 
-            GDBTG:
-                document
-                    .querySelector('#TG_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBTG: document.querySelector('#TG_prize_Db_item_0')?.innerText.trim() || '---',
             G1TG: getNumbers('TG_prize_1_item'),
             G2TG: getNumbers('TG_prize_2_item'),
             G3TG: getNumbers('TG_prize_3_item'),
@@ -1061,10 +1583,7 @@ async function crawl() {
             G7TG: getNumbers('TG_prize_7_item'),
             G8TG: getNumbers('TG_prize_8_item'),
 
-            GDBKG:
-                document
-                    .querySelector('#KG_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBKG: document.querySelector('#KG_prize_Db_item_0')?.innerText.trim() || '---',
             G1KG: getNumbers('KG_prize_1_item'),
             G2KG: getNumbers('KG_prize_2_item'),
             G3KG: getNumbers('KG_prize_3_item'),
@@ -1074,10 +1593,7 @@ async function crawl() {
             G7KG: getNumbers('KG_prize_7_item'),
             G8KG: getNumbers('KG_prize_8_item'),
 
-            GDBDL:
-                document
-                    .querySelector('#DL_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBDL: document.querySelector('#DL_prize_Db_item_0')?.innerText.trim() || '---',
             G1DL: getNumbers('DL_prize_1_item'),
             G2DL: getNumbers('DL_prize_2_item'),
             G3DL: getNumbers('DL_prize_3_item'),
@@ -1087,10 +1603,7 @@ async function crawl() {
             G7DL: getNumbers('DL_prize_7_item'),
             G8DL: getNumbers('DL_prize_8_item'),
 
-            GDBBTR:
-                document
-                    .querySelector('#BTR_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBBTR: document.querySelector('#BTR_prize_Db_item_0')?.innerText.trim() || '---',
             G1BTR: getNumbers('BTR_prize_1_item'),
             G2BTR: getNumbers('BTR_prize_2_item'),
             G3BTR: getNumbers('BTR_prize_3_item'),
@@ -1100,10 +1613,7 @@ async function crawl() {
             G7BTR: getNumbers('BTR_prize_7_item'),
             G8BTR: getNumbers('BTR_prize_8_item'),
 
-            GDBVT:
-                document
-                    .querySelector('#VT_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBVT: document.querySelector('#VT_prize_Db_item_0')?.innerText.trim() || '---',
             G1VT: getNumbers('VT_prize_1_item'),
             G2VT: getNumbers('VT_prize_2_item'),
             G3VT: getNumbers('VT_prize_3_item'),
@@ -1113,10 +1623,7 @@ async function crawl() {
             G7VT: getNumbers('VT_prize_7_item'),
             G8VT: getNumbers('VT_prize_8_item'),
 
-            GDBBL:
-                document
-                    .querySelector('#BL_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBBL: document.querySelector('#BL_prize_Db_item_0')?.innerText.trim() || '---',
             G1BL: getNumbers('BL_prize_1_item'),
             G2BL: getNumbers('BL_prize_2_item'),
             G3BL: getNumbers('BL_prize_3_item'),
@@ -1126,10 +1633,7 @@ async function crawl() {
             G7BL: getNumbers('BL_prize_7_item'),
             G8BL: getNumbers('BL_prize_8_item'),
 
-            GDBBTH:
-                document
-                    .querySelector('#BTH_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBBTH: document.querySelector('#BTH_prize_Db_item_0')?.innerText.trim() || '---',
             G1BTH: getNumbers('BTH_prize_1_item'),
             G2BTH: getNumbers('BTH_prize_2_item'),
             G3BTH: getNumbers('BTH_prize_3_item'),
@@ -1306,10 +1810,7 @@ async function crawl() {
             LT9BL: getLoto('mnloto_BL_9'),
 
             //MT
-            GDBPY:
-                document
-                    .querySelector('#PY_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBPY: document.querySelector('#PY_prize_Db_item_0')?.innerText.trim() || '---',
             G1PY: getNumbers('PY_prize_1_item'),
             G2PY: getNumbers('PY_prize_2_item'),
             G3PY: getNumbers('PY_prize_3_item'),
@@ -1319,10 +1820,7 @@ async function crawl() {
             G7PY: getNumbers('PY_prize_7_item'),
             G8PY: getNumbers('PY_prize_8_item'),
 
-            GDBTTH:
-                document
-                    .querySelector('#TTH_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBTTH: document.querySelector('#TTH_prize_Db_item_0')?.innerText.trim() || '---',
             G1TTH: getNumbers('TTH_prize_1_item'),
             G2TTH: getNumbers('TTH_prize_2_item'),
             G3TTH: getNumbers('TTH_prize_3_item'),
@@ -1332,10 +1830,7 @@ async function crawl() {
             G7TTH: getNumbers('TTH_prize_7_item'),
             G8TTH: getNumbers('TTH_prize_8_item'),
 
-            GDBDLK:
-                document
-                    .querySelector('#DLK_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBDLK: document.querySelector('#DLK_prize_Db_item_0')?.innerText.trim() || '---',
             G1DLK: getNumbers('DLK_prize_1_item'),
             G2DLK: getNumbers('DLK_prize_2_item'),
             G3DLK: getNumbers('DLK_prize_3_item'),
@@ -1345,10 +1840,7 @@ async function crawl() {
             G7DLK: getNumbers('DLK_prize_7_item'),
             G8DLK: getNumbers('DLK_prize_8_item'),
 
-            GDBQNA:
-                document
-                    .querySelector('#QNA_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBQNA: document.querySelector('#QNA_prize_Db_item_0')?.innerText.trim() || '---',
             G1QNA: getNumbers('QNA_prize_1_item'),
             G2QNA: getNumbers('QNA_prize_2_item'),
             G3QNA: getNumbers('QNA_prize_3_item'),
@@ -1358,10 +1850,7 @@ async function crawl() {
             G7QNA: getNumbers('QNA_prize_7_item'),
             G8QNA: getNumbers('QNA_prize_8_item'),
 
-            GDBKT:
-                document
-                    .querySelector('#KT_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBKT: document.querySelector('#KT_prize_Db_item_0')?.innerText.trim() || '---',
             G1KT: getNumbers('KT_prize_1_item'),
             G2KT: getNumbers('KT_prize_2_item'),
             G3KT: getNumbers('KT_prize_3_item'),
@@ -1371,10 +1860,7 @@ async function crawl() {
             G7KT: getNumbers('KT_prize_7_item'),
             G8KT: getNumbers('KT_prize_8_item'),
 
-            GDBKH:
-                document
-                    .querySelector('#KH_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBKH: document.querySelector('#KH_prize_Db_item_0')?.innerText.trim() || '---',
             G1KH: getNumbers('KH_prize_1_item'),
             G2KH: getNumbers('KH_prize_2_item'),
             G3KH: getNumbers('KH_prize_3_item'),
@@ -1384,10 +1870,7 @@ async function crawl() {
             G7KH: getNumbers('KH_prize_7_item'),
             G8KH: getNumbers('KH_prize_8_item'),
 
-            GDBDNA:
-                document
-                    .querySelector('#DNA_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBDNA: document.querySelector('#DNA_prize_Db_item_0')?.innerText.trim() || '---',
             G1DNA: getNumbers('DNA_prize_1_item'),
             G2DNA: getNumbers('DNA_prize_2_item'),
             G3DNA: getNumbers('DNA_prize_3_item'),
@@ -1397,10 +1880,7 @@ async function crawl() {
             G7DNA: getNumbers('DNA_prize_7_item'),
             G8DNA: getNumbers('DNA_prize_8_item'),
 
-            GDBKH:
-                document
-                    .querySelector('#KH_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBKH: document.querySelector('#KH_prize_Db_item_0')?.innerText.trim() || '---',
             G1KH: getNumbers('KH_prize_1_item'),
             G2KH: getNumbers('KH_prize_2_item'),
             G3KH: getNumbers('KH_prize_3_item'),
@@ -1410,10 +1890,7 @@ async function crawl() {
             G7KH: getNumbers('KH_prize_7_item'),
             G8KH: getNumbers('KH_prize_8_item'),
 
-            GDBGL:
-                document
-                    .querySelector('#GL_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBGL: document.querySelector('#GL_prize_Db_item_0')?.innerText.trim() || '---',
             G1GL: getNumbers('GL_prize_1_item'),
             G2GL: getNumbers('GL_prize_2_item'),
             G3GL: getNumbers('GL_prize_3_item'),
@@ -1423,10 +1900,7 @@ async function crawl() {
             G7GL: getNumbers('GL_prize_7_item'),
             G8GL: getNumbers('GL_prize_8_item'),
 
-            GDBNT:
-                document
-                    .querySelector('#NT_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBNT: document.querySelector('#NT_prize_Db_item_0')?.innerText.trim() || '---',
             G1NT: getNumbers('NT_prize_1_item'),
             G2NT: getNumbers('NT_prize_2_item'),
             G3NT: getNumbers('NT_prize_3_item'),
@@ -1436,10 +1910,7 @@ async function crawl() {
             G7NT: getNumbers('NT_prize_7_item'),
             G8NT: getNumbers('NT_prize_8_item'),
 
-            GDBQB:
-                document
-                    .querySelector('#QB_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBQB: document.querySelector('#QB_prize_Db_item_0')?.innerText.trim() || '---',
             G1QB: getNumbers('QB_prize_1_item'),
             G2QB: getNumbers('QB_prize_2_item'),
             G3QB: getNumbers('QB_prize_3_item'),
@@ -1449,10 +1920,7 @@ async function crawl() {
             G7QB: getNumbers('QB_prize_7_item'),
             G8QB: getNumbers('QB_prize_8_item'),
 
-            GDBBDI:
-                document
-                    .querySelector('#BDI_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBBDI: document.querySelector('#BDI_prize_Db_item_0')?.innerText.trim() || '---',
             G1BDI: getNumbers('BDI_prize_1_item'),
             G2BDI: getNumbers('BDI_prize_2_item'),
             G3BDI: getNumbers('BDI_prize_3_item'),
@@ -1462,10 +1930,7 @@ async function crawl() {
             G7BDI: getNumbers('BDI_prize_7_item'),
             G8BDI: getNumbers('BDI_prize_8_item'),
 
-            GDBQT:
-                document
-                    .querySelector('#QT_prize_Db_item_0')
-                    ?.innerText.trim() || '---',
+            GDBQT: document.querySelector('#QT_prize_Db_item_0')?.innerText.trim() || '---',
             G1QT: getNumbers('QT_prize_1_item'),
             G2QT: getNumbers('QT_prize_2_item'),
             G3QT: getNumbers('QT_prize_3_item'),
@@ -1607,9 +2072,7 @@ async function crawl() {
     const crawlTKLoGanDauResult = await crawlTKLoGanDau(page_crawlTKLoGanDau);
     const loGanResult = await crawlLoGan(page);
     const loGanCVResult = await crawlLoGanCV(page1);
-    const crawlTKLoGanDuoiResult = await crawlTKLoGanDuoi(
-        page_crawlTKLoGanDuoi,
-    );
+    const crawlTKLoGanDuoiResult = await crawlTKLoGanDuoi(page_crawlTKLoGanDuoi);
     const crawlTKGDBResult = await crawlTKGDB(page_crawlTKGDB);
     const crawlTKLXHResult = await crawlTKLXH(page_crawlTKLXH);
     const crawlTKLXH1Result = await crawlTKLXH1(page_crawlTKLXH1);
@@ -1617,12 +2080,26 @@ async function crawl() {
     const crawlTKKBSResult = await crawlTKKBS(page_crawlTKKBS);
     const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
     const crawlAnGiangResult = await crawlAnGiang(page_crawlAnGiang);
-    const crawlDienToan123Result = await crawlDienToan123(
-        page_crawlDienToan123,
-    );
-    const crawlDienToan636Result = await crawlDienToan636(
-        page_crawlDienToan636,
-    );
+    const crawlDakLakResult = await crawlDakLak(page_crawlDakLak);
+    const crawlDacNongResult = await crawlDacNong(page_crawlDacNong);
+    const crawlGiaLaiResult = await crawlGiaLai(page_crawlGiaLai);
+    const crawlHueResult = await crawlHue(page_crawlHue);
+    const crawlBacLieuResult = await crawlBacLieu(page_crawlBacLieu);
+    const crawlBinhDuongResult = await crawlBinhDuong(page_crawlBinhDuong);
+    const crawlBenTreResult = await crawlBenTre(page_crawlBenTre);
+    const crawlBinhPhuocResult = await crawlBinhPhuoc(page_crawlBinhPhuoc);
+    const crawlTayNinhResult = await crawlTayNinh(page_crawlTayNinh);
+    const crawlKhanhHoaResult = await crawlKhanhHoa(page_crawlKhanhHoa);
+    const crawlDaNangResult = await crawlDaNang(page_crawlDaNang);
+    const crawlDongNaiResult = await crawlDongNai(page_crawlDongNai);
+    const crawlSocTrangResult = await crawlSocTrang(page_crawlSocTrang);
+    const crawlCanThoResult = await crawlCanTho(page_crawlCanTho);
+    const crawlBinhThuanResult = await crawlBinhThuan(page_crawlBinhThuan);
+    const crawlQuangTriResult = await crawlQuangTri(page_crawlQuangTri);
+    const crawlQuangNamResult = await crawlQuangNam(page_crawlQuangNam);
+    const crawlBinhDinhResult = await crawlBinhDinh(page_crawlBinhDinh);
+    const crawlDienToan123Result = await crawlDienToan123(page_crawlDienToan123);
+    const crawlDienToan636Result = await crawlDienToan636(page_crawlDienToan636);
     const crawlTKTheoThuResult = await crawlTKTheoThu(page_crawlTKTheoThu);
     const crawlLotoKepResult = await crawlLotoKep(page_crawlLotoKep);
     const crawl_KenoResult = await crawl_Keno(page_crawl_Keno);
@@ -1646,6 +2123,24 @@ async function crawl() {
         ...crawlTKKBSResult,
         ...crawlTKkdenccResult,
         ...crawlAnGiangResult,
+        ...crawlDakLakResult,
+        ...crawlDacNongResult,
+        ...crawlGiaLaiResult,
+        ...crawlHueResult,
+        ...crawlBacLieuResult,
+        ...crawlBenTreResult,
+        ...crawlBinhDuongResult,
+        ...crawlBinhPhuocResult,
+        ...crawlTayNinhResult,
+        ...crawlKhanhHoaResult,
+        ...crawlDaNangResult,
+        ...crawlDongNaiResult,
+        ...crawlSocTrangResult,
+        ...crawlCanThoResult,
+        ...crawlBinhThuanResult,
+        ...crawlQuangTriResult,
+        ...crawlQuangNamResult,
+        ...crawlBinhDinhResult,
         ...crawlDienToan123Result,
         ...crawlDienToan636Result,
         ...crawlTKTheoThuResult,
@@ -1661,10 +2156,7 @@ async function crawl() {
     const dir = path.join(__dirname, '..', 'data', 'infos');
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-    fs.writeFileSync(
-        path.join(dir, 'infos.json'),
-        JSON.stringify(finalData, null, 2),
-    );
+    fs.writeFileSync(path.join(dir, 'infos.json'), JSON.stringify(finalData, null, 2));
 
     console.log(`Đã cào xong kết quả ngày ${finalData.date}`);
     return finalData;
@@ -1683,6 +2175,24 @@ module.exports = {
     crawlTKKBS,
     crawlTKkdencc,
     crawlAnGiang,
+    crawlDakLak,
+    crawlDacNong,
+    crawlGiaLai,
+    crawlHue,
+    crawlBacLieu,
+    crawlBinhDuong,
+    crawlBinhPhuoc,
+    crawlBenTre,
+    crawlTayNinh,
+   crawlKhanhHoa,
+     crawlDaNang,
+    crawlDongNai,
+   crawlSocTrang,
+     crawlCanTho,
+    crawlBinhThuan,
+    crawlQuangTri,
+    crawlQuangNam,
+    crawlBinhDinh,
     crawlDienToan123,
     crawlDienToan636,
     crawlTKTheoThu,
@@ -1692,5 +2202,5 @@ module.exports = {
     crawl_Power,
     crawl_Max3D,
     crawl_Max3DPro,
-    crawl_ThanTai
+    crawl_ThanTai,
 };

@@ -30,9 +30,7 @@ async function updateKetQua() {
         if (data && data.date) {
             await XosoResult.deleteOne({ date: data.date });
             await new XosoResult(data).save();
-            console.log(
-                `Cập nhật thành công: ${data.date} - ${new Date().toLocaleString()}`,
-            );
+            console.log(`Cập nhật thành công: ${data.date} - ${new Date().toLocaleString()}`);
         } else {
             console.log('Chưa có kết quả mới hoặc crawl thất bại');
         }
@@ -46,7 +44,7 @@ async function updateKetQua() {
         await connect();
         console.log('MongoDB kết nối thành công');
         await updateKetQua();
-        cron.schedule('*/2 * * * *', () => {
+        cron.schedule('*/10 * * * *', () => {
             console.log('Bắt đầu crawl định kỳ..');
             updateKetQua();
         });
