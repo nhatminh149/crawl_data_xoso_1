@@ -265,6 +265,9 @@ Handlebars.registerHelper('giaiMT', function (indexTinh, giaiMT, indexSo) {
         'Phú Yên': 'PY',
         'Đắk Lắk': 'DLK',
         'Quảng Nam': 'QNA',
+        'Quảng Bình': 'QB',
+        'Bình Định': 'BDI',
+        'Quảng Trị': 'QT'
     };
 
     const prefix = map[tenTinh];
@@ -303,6 +306,9 @@ Handlebars.registerHelper('lotoDauMT', function (indexTinh, dau, options) {
         'Phú Yên': 'PY',
         'Đắk Lắk': 'DLK',
         'Quảng Nam': 'QNA',
+        'Quảng Bình': 'QB',
+        'Bình Định': 'BDI',
+        'Quảng Trị': 'QT'
     };
 
     const prefix = map[tenTinh];
@@ -326,9 +332,9 @@ Handlebars.registerHelper('powerLoop', function (options) {
     let html = '';
     const globalContext = this;
 
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 0; i < 12; i++) {
         const iterationData = Object.assign({}, globalContext, {
-            i: i,
+            index: i,
             paraIndex: i,
             ballIndex: i,
             specialIndex: i,
@@ -385,6 +391,48 @@ Handlebars.registerHelper('max3dLoop_pro', function (options) {
 
         html += options.fn(data);
     }
+    return html;
+});
+
+Handlebars.registerHelper('megaLoop', function (options) {
+    let html = '';
+    const root = options.data && options.data.root ? options.data.root : {};
+    const result = root.result || this.result || {};
+    const balls = Array.isArray(result.mega_ball) ? result.mega_ball : [];
+    const count = balls.length > 0 ? balls.length : 12;
+
+    for (let i = 0; i < count; i++) {
+        const data = Object.assign({}, this, {
+            index: i,
+            paraIndex: i,
+            ballIndex: i,
+            textRightStart: 8 + i * 8,
+        });
+
+        html += options.fn(data);
+    }
+
+    return html;
+});
+
+Handlebars.registerHelper('megaLoop_thu4', function (options) {
+    let html = '';
+    const root = options.data && options.data.root ? options.data.root : {};
+    const result = root.result || this.result || {};
+    const balls = Array.isArray(result.mega_thu4_ball) ? result.mega_thu4_ball : [];
+    const count = balls.length > 0 ? balls.length : 12;
+
+    for (let i = 0; i < count; i++) {
+        const data = Object.assign({}, this, {
+            index: i,
+            paraIndex: i,
+            ballIndex: i,
+            textRightStart: 8 + i * 8,
+        });
+
+        html += options.fn(data);
+    }
+
     return html;
 });
 

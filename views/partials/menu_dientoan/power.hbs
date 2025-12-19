@@ -82,11 +82,14 @@
     <div class='next-draw-info'>
         <span class='next-draw-date'>{{get result.power_para_open_next 0}}</span>
     </div>
-
-    <div class='draw-details'>
+    <div class="w-[500px] h-[60px]" style="text-align: left;">
+    <div class='draw-details0' style="color: #990000;margin-left: 10px;font-weight: bold;font-size: 17px;">
+        {{get result.power_class_link 0}}
+    </div>
+    <div class='draw-details' style="margin-top: 5px;margin-left: 10px;">
         {{get result.power_para_text_black_bold 0}}
     </div>
-
+    </div>
     <div class='winning-numbers'>
         <div class='number-ball'>{{slice result.power_number_ball.[0] 0 2}}</div>
         <div class='number-ball'>{{slice result.power_number_ball.[0] 2 4}}</div>
@@ -106,17 +109,17 @@
     <table class='prize-table_power' style="width: 599px; margin-left: -20px;" >
         <thead>
             <tr>
-                <th>Giải thưởng</th>
-                <th>Trùng khớp</th>
-                <th>Số lượng giải</th>
-                <th>Giá trị giải (đ)</th>
+                <th style="font-weight: bold;color: #990000;">Giải thưởng</th>
+                <th style="font-weight: bold;color: #990000;">Trùng khớp</th>
+                <th style="font-weight: bold;color: #990000;">Số lượng giải</th>
+                <th style="font-weight: bold;color: #990000;">Giá trị giải (đ)</th>
             </tr>
         </thead>
         <tbody>
             <tr class='jackpot-row'>
                 <td>Jackpot 1</td>
                 <td>
-                    <span class='match-dot'></span>
+                    &nbsp; &nbsp;<span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
@@ -129,7 +132,7 @@
             <tr class='jackpot-row'>
                 <td>Jackpot 2</td>
                 <td style='display: flex; border: none;'>
-                    <span class='match-dot'></span>
+                    &nbsp; &nbsp;<span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
@@ -143,7 +146,7 @@
             <tr>
                 <td>Giải 1</td>
                 <td>
-                    <span class='match-dot'></span>
+                    &nbsp; &nbsp;<span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
@@ -155,7 +158,7 @@
             <tr>
                 <td>Giải 2</td>
                 <td>
-                    <span class='match-dot'></span>
+                    &nbsp; &nbsp;<span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
@@ -166,7 +169,7 @@
             <tr>
                 <td>Giải 3</td>
                 <td>
-                    <span class='match-dot'></span>
+                    &nbsp; &nbsp;<span class='match-dot'></span>
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                 </td>
@@ -189,380 +192,37 @@
         mở thưởng vào các ngày thứ 4/6/CN hàng tuần lúc 18h30
     </p>
 </div>
-
-{{! jackpot2 }}
-{{! jackpot2 }}
-<!-- KỲ 1 (MỚI NHẤT) -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 0}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 1}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[1] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[1] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[1] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[1] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[1] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[1] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[1] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody >
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 10}}</td><td>{{get result.power_text_right 11}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 12}}</td><td>{{get result.power_text_right 13}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 14}}</td><td>{{get result.power_text_right 15}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 16}}</td><td>{{get result.power_text_right 17}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 18}}</td><td>{{get result.power_text_right 19}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 2 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 1}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 2}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[2] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[2] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[2] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[2] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[2] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[2] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[2] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 20}}</td><td>{{get result.power_text_right 21}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 22}}</td><td>{{get result.power_text_right 23}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 24}}</td><td>{{get result.power_text_right 25}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 26}}</td><td>{{get result.power_text_right 27}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 28}}</td><td>{{get result.power_text_right 29}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 3 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 2}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 3}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[3] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[3] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[3] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[3] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[3] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[3] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[3] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 30}}</td><td>{{get result.power_text_right 31}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 32}}</td><td>{{get result.power_text_right 33}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 34}}</td><td>{{get result.power_text_right 35}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 36}}</td><td>{{get result.power_text_right 37}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 38}}</td><td>{{get result.power_text_right 39}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 4 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 3}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 4}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[4] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[4] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[4] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[4] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[4] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[4] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[4] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 40}}</td><td>{{get result.power_text_right 41}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 42}}</td><td>{{get result.power_text_right 43}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 44}}</td><td>{{get result.power_text_right 45}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 46}}</td><td>{{get result.power_text_right 47}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 48}}</td><td>{{get result.power_text_right 49}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 5 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 4}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 5}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[5] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[5] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[5] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[5] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[5] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[5] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[5] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 50}}</td><td>{{get result.power_text_right 51}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 52}}</td><td>{{get result.power_text_right 53}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 54}}</td><td>{{get result.power_text_right 55}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 56}}</td><td>{{get result.power_text_right 57}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 58}}</td><td>{{get result.power_text_right 59}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 6 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 5}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 6}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[6] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[6] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[6] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[6] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[6] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[6] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[6] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 60}}</td><td>{{get result.power_text_right 61}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 62}}</td><td>{{get result.power_text_right 63}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 64}}</td><td>{{get result.power_text_right 65}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 66}}</td><td>{{get result.power_text_right 67}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 68}}</td><td>{{get result.power_text_right 69}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 7 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 6}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 7}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[7] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[7] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[7] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[7] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[7] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[7] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[7] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 70}}</td><td>{{get result.power_text_right 71}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 72}}</td><td>{{get result.power_text_right 73}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 74}}</td><td>{{get result.power_text_right 75}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 76}}</td><td>{{get result.power_text_right 77}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 78}}</td><td>{{get result.power_text_right 79}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 8 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 7}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 8}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[8] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[8] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[8] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[8] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[8] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[8] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[8] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 80}}</td><td>{{get result.power_text_right 81}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 82}}</td><td>{{get result.power_text_right 83}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 84}}</td><td>{{get result.power_text_right 85}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 86}}</td><td>{{get result.power_text_right 87}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 88}}</td><td>{{get result.power_text_right 89}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 9 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 8}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 9}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[9] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[9] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[9] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[9] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[9] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[9] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[9] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 90}}</td><td>{{get result.power_text_right 91}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 92}}</td><td>{{get result.power_text_right 93}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 94}}</td><td>{{get result.power_text_right 95}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 96}}</td><td>{{get result.power_text_right 97}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 98}}</td><td>{{get result.power_text_right 99}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 10 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 9}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 10}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[10] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[10] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[10] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[10] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[10] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[10] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[10] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 100}}</td><td>{{get result.power_text_right 101}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 102}}</td><td>{{get result.power_text_right 103}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 104}}</td><td>{{get result.power_text_right 105}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 106}}</td><td>{{get result.power_text_right 107}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 108}}</td><td>{{get result.power_text_right 109}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 11 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 10}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 11}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[11] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[11] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[11] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[11] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[11] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[11] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[11] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 110}}</td><td>{{get result.power_text_right 111}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 112}}</td><td>{{get result.power_text_right 113}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 114}}</td><td>{{get result.power_text_right 115}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 116}}</td><td>{{get result.power_text_right 117}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 118}}</td><td>{{get result.power_text_right 119}}</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- KỲ 12 -->
-<div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
-    <div style="margin-left: 10px; margin-top: 10px;">
-    <p style="text-decoration: underline;color: #990000;font-size: 15;font-weight: bold;">{{get result.power_class_link 11}}</p>
-    <div class='draw-details'>{{get result.power_para_text_black_bold 12}}</div>
-    </div>
-    <div class='winning-numbers' style="margin-bottom: 35px;">
-        <div class='number-ball'>{{ slice result.power_ball.[12] 0 2 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[12] 2 4 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[12] 4 6 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[12] 6 8 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[12] 8 10 }}</div>
-        <div class='number-ball'>{{ slice result.power_ball.[12] 10 12 }}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
-        <div class='number-ball-yellow'>{{slice result.power_number_ball.[12] 12 14}}</div>
-    </div>
-    <div style="width: 590px; height: 30px;">
-        <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
-    </div>
-    <table class='prize-table_power'>
-        <thead><tr><th>Giải thưởng</th><th>Trùng khớp</th><th>Số lượng giải</th><th>Giá trị giải (đ)</th></tr></thead>
-        <tbody>
-            <tr class='jackpot-row'><td>Jackpot 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 120}}</td><td>{{get result.power_text_right 121}}</td></tr>
-            <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right 122}}</td><td>{{get result.power_text_right 123}}</td></tr>
-            <tr><td>Giải 1</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 124}}</td><td>{{get result.power_text_right 125}}</td></tr>
-            <tr><td>Giải 2</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 126}}</td><td>{{get result.power_text_right 127}}</td></tr>
-            <tr><td>Giải 3</td><td><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right 128}}</td><td>{{get result.power_text_right 129}}</td></tr>
-        </tbody>
-    </table>
-</div>
+{{#powerLoop}}
+  {{#if (gt index 0)}}
+  <div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
+      <div style="margin-left: 10px; margin-top: 10px;">
+      <p style="text-decoration: underline;color: #990000;font-size: 17px;font-weight: bold;">{{get result.power_class_link index}}</p>
+      <div class='draw-details'>{{get result.power_para_text_black_bold index}}</div>
+      </div>
+      <div class='winning-numbers' style="margin-bottom: 35px;">
+          <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 0 2 }}</div>
+          <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 2 4 }}</div>
+          <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 4 6 }}</div>
+          <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 6 8 }}</div>
+          <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 8 10 }}</div>
+          <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 10 12 }}</div>
+      </div>
+      <div style="width: 590px; height: 30px;">
+          <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+      </div>
+      <table class='prize-table_power'>
+      <thead><tr><th style="font-weight: bold;color: #990000;">Giải thưởng</th><th style="font-weight: bold;color: #990000;">Trùng khớp</th><th style="font-weight: bold;color: #990000;">Số lượng giải</th><th style="font-weight: bold;color: #990000;">Giá trị giải (đ)</th></tr></thead>
+          <tbody>
+              <tr class='jackpot-row'><td>Jackpot 1</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right (add textRightStart 0)}}</td><td>{{get result.power_text_right (add textRightStart 1)}}</td></tr>
+              <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_text_right (add textRightStart 2)}}</td><td>{{get result.power_text_right (add textRightStart 3)}}</td></tr>
+              <tr><td>Giải 1</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right (add textRightStart 2)}}</td><td>{{get result.power_text_right (add textRightStart 3)}}</td></tr>
+              <tr><td>Giải 2</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right (add textRightStart 4)}}</td><td>{{get result.power_text_right (add textRightStart 5)}}</td></tr>
+              <tr><td>Giải 3</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_text_right (add textRightStart 6)}}</td><td>{{get result.power_text_right (add textRightStart 7)}}</td></tr>
+          </tbody>
+      </table>
+  </div>
+  {{/if}}
+{{/powerLoop}}
 {{!-- // --}}
         <div class="flex items-center my-6 mt-4">
               <div class="flex-grow border-t border-gray-300"></div>

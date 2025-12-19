@@ -140,16 +140,6 @@ async function crawlAnGiang(page_crawlAnGiang) {
         });
 
         const result = await page_crawlAnGiang.evaluate(() => {
-            const getClass = (cl) => {
-                return Array.from(document.querySelectorAll(`div.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            const getClasstd = (cl) => {
-                return Array.from(document.querySelectorAll(`td.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
             const getClassspan = (cl) => {
                 return Array.from(document.querySelectorAll(`span.${cl}`))
                     .map((el) => el.innerText.trim())
@@ -166,6 +156,346 @@ async function crawlAnGiang(page_crawlAnGiang) {
                 G6vG4_AnGiang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
                 G4_AnGiang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
                 LT_AnGiang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlCaMau(page_crawlCaMau) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlCaMau.goto('https://xosodaiphat.com/xscm-xo-so-ca-mau.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlCaMau.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_CaMau: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_CaMau: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_CaMau: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_CaMau: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_CaMau: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlDongThap(page_crawlDongThap) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlDongThap.goto('https://xosodaiphat.com/xsdt-xo-so-dong-thap.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlDongThap.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_DongThap: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_DongThap: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_DongThap: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_DongThap: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_DongThap: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlHauGiang(page_crawlHauGiang) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlHauGiang.goto('https://xosodaiphat.com/xshg-xo-so-hau-giang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlHauGiang.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_HauGiang: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_HauGiang: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_HauGiang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_HauGiang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_HauGiang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlKienGiang(page_crawlKienGiang) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlKienGiang.goto('https://xosodaiphat.com/xskg-xo-so-kien-giang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlKienGiang.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_KienGiang: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_KienGiang: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_KienGiang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_KienGiang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_KienGiang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlLongAn(page_crawlLongAn) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlLongAn.goto('https://xosodaiphat.com/xsla-xo-so-long-an.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlLongAn.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_LongAn: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_LongAn: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_LongAn: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_LongAn: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_LongAn: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlKonTum(page_crawlKonTum) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlKonTum.goto('https://xosodaiphat.com/xskt-xo-so-kon-tum.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlKonTum.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_KonTum: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_KonTum: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_KonTum: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_KonTum: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_KonTum: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlNinhThuan(page_crawlNinhThuan) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlNinhThuan.goto('https://xosodaiphat.com/xsnt-xo-so-ninh-thuan.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlNinhThuan.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_NinhThuan: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_NinhThuan: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_NinhThuan: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_NinhThuan: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_NinhThuan: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlPhuYen(page_crawlPhuYen) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlPhuYen.goto('https://xosodaiphat.com/xspy-xo-so-phu-yen.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlPhuYen.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_PhuYen: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_PhuYen: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_PhuYen: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_PhuYen: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_PhuYen: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlQuangBinh(page_crawlQuangBinh) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlQuangBinh.goto('https://xosodaiphat.com/xsqb-xo-so-quang-binh.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlQuangBinh.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_QuangBinh: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_QuangBinh: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_QuangBinh: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_QuangBinh: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_QuangBinh: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlQuangNgai(page_crawlQuangNgai) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlQuangNgai.goto('https://xosodaiphat.com/xsqng-xo-so-quang-ngai.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlQuangNgai.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_QuangNgai: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_QuangNgai: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_QuangNgai: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_QuangNgai: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_QuangNgai: getClasstr('tr'),
             };
         });
         console.log('Cào dữ liệu XS An Giang thành công.');
@@ -606,6 +936,176 @@ async function crawlCanTho(page_crawlCanTho) {
                 G6vG4_CanTho: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
                 G4_CanTho: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
                 LT_CanTho: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlTienGiang(page_crawlTienGiang) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlTienGiang.goto('https://xosodaiphat.com/xstg-xo-so-tien-giang.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTienGiang.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_TienGiang: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_TienGiang: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_TienGiang: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_TienGiang: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_TienGiang: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlHCM(page_crawlHCM) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlHCM.goto('https://xosodaiphat.com/xshcm-xo-so-tphcm.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlHCM.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_HCM: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_HCM: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_HCM: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_HCM: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_HCM: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlTraVinh(page_crawlTraVinh) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlTraVinh.goto('https://xosodaiphat.com/xstv-xo-so-tra-vinh.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlTraVinh.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_TraVinh: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_TraVinh: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_TraVinh: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_TraVinh: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_TraVinh: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlVinhLong(page_crawlVinhLong) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlVinhLong.goto('https://xosodaiphat.com/xsvl-xo-so-vinh-long.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlVinhLong.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_VinhLong: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_VinhLong: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_VinhLong: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_VinhLong: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_VinhLong: getClasstr('tr'),
+            };
+        });
+        console.log('Cào dữ liệu XS An Giang thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+    }
+}
+
+async function crawlVungTau(page_crawlVungTau) {
+    console.log('Đang cào dữ liệu XS An Giang...');
+    try {
+        await page_crawlVungTau.goto('https://xosodaiphat.com/xsvt-xo-so-vung-tau.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlVungTau.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_VungTau: getClassspan('special-prize-lg.div-horizontal'),
+                G7vG5vG3vG2vG1_VungTau: getClassspan('number-black-bold.div-horizontal'),
+                G6vG4_VungTau: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_VungTau: getClassspan('col-sm-3.col-xs-6.number-black-bold.div-horizontal'),
+                LT_VungTau: getClasstr('tr'),
             };
         });
         console.log('Cào dữ liệu XS An Giang thành công.');
@@ -1330,6 +1830,64 @@ async function crawl_Mega(page_crawl_Mega) {
     }
 }
 
+
+async function crawl_Mega_thu4(page_crawl_Mega_thu4) {
+    console.log('Đang cào dữ liệu Mega_thu4...');
+    try {
+        await page_crawl_Mega_thu4.goto('https://xosodaiphat.com/xs-mega-thu-4.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Mega_thu4.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassh2 = (cl) => {
+                return Array.from(document.querySelectorAll(`h2.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getli = (cl) => {
+                return Array.from(document.querySelectorAll(`li`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                mega_thu4_class_link: getClassh2('class-title-list-link'),
+                mega_thu4_para_open_next: getClassp('open-next'),
+                mega_thu4_number_ball: getClass('mega-detail'),
+                mega_thu4_text_right: getClasstd('text-right'),
+                mega_thu4_para_text_black_bold: getClassp('text-black-bold'),
+                mega_thu4_jackpot: getClassspan('result-jackpot'),
+                mega_thu4_xsmega: getClass('block-main-heading'),
+                mega_thu4_ball: getClass('mega-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Mega thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Mega:', error.message);
+    }
+}
+
 async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -1342,7 +1900,19 @@ async function crawl() {
     const page_crawlTKKCB = await browser.newPage();
     const page_crawlTKKBS = await browser.newPage();
     const page_crawlTKkdencc = await browser.newPage();
+    const page_crawlCaMau = await browser.newPage();
+    const page_crawlCanTho = await browser.newPage();
     const page_crawlAnGiang = await browser.newPage();
+    const page_crawlDongNai = await browser.newPage();
+    const page_crawlDongThap = await browser.newPage();
+    const page_crawlHauGiang = await browser.newPage();
+    const page_crawlKienGiang = await browser.newPage();
+    const page_crawlLongAn = await browser.newPage();
+    const page_crawlKonTum = await browser.newPage();
+    const page_crawlNinhThuan = await browser.newPage();
+    const page_crawlPhuYen = await browser.newPage();
+    const page_crawlQuangBinh = await browser.newPage();
+    const page_crawlQuangNgai = await browser.newPage();
     const page_crawlDakLak = await browser.newPage();
     const page_crawlDacNong = await browser.newPage();
     const page_crawlGiaLai = await browser.newPage();
@@ -1354,8 +1924,11 @@ async function crawl() {
     const page_crawlTayNinh = await browser.newPage();
     const page_crawlKhanhHoa = await browser.newPage();
     const page_crawlDaNang = await browser.newPage();
-    const page_crawlDongNai = await browser.newPage();
-    const page_crawlCanTho = await browser.newPage();
+    const page_crawlTienGiang = await browser.newPage();
+    const page_crawlHCM = await browser.newPage();
+    const page_crawlTraVinh = await browser.newPage();
+    const page_crawlVinhLong = await browser.newPage();
+    const page_crawlVungTau = await browser.newPage();
     const page_crawlSocTrang = await browser.newPage();
     const page_crawlBinhThuan = await browser.newPage();
     const page_crawlQuangNam = await browser.newPage();
@@ -1367,6 +1940,7 @@ async function crawl() {
     const page_crawlLotoKep = await browser.newPage();
     const page_crawl_Keno = await browser.newPage();
     const page_crawl_Mega = await browser.newPage();
+    const page_crawl_Mega_thu4 = await browser.newPage();
     const page_crawl_Power = await browser.newPage();
     const page_crawl_Max3D = await browser.newPage();
     const page_crawl_Max3DPro = await browser.newPage();
@@ -2080,6 +2654,16 @@ async function crawl() {
     const crawlTKKBSResult = await crawlTKKBS(page_crawlTKKBS);
     const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
     const crawlAnGiangResult = await crawlAnGiang(page_crawlAnGiang);
+    const crawlCaMauResult = await crawlCaMau(page_crawlCaMau);
+    const crawlDongThapResult = await crawlDongThap(page_crawlDongThap);
+    const crawlHauGiangResult = await crawlHauGiang(page_crawlHauGiang);
+    const crawlKienGiangResult = await crawlKienGiang(page_crawlKienGiang);
+    const crawlLongAnResult = await crawlLongAn(page_crawlLongAn);
+    const crawlKonTumResult = await crawlKonTum(page_crawlKonTum);
+    const crawlNinhThuanResult = await crawlNinhThuan(page_crawlNinhThuan);
+    const crawlPhuYenResult = await crawlPhuYen(page_crawlPhuYen);
+    const crawlQuangBinhResult = await crawlQuangBinh(page_crawlQuangBinh);
+    const crawlQuangNgaiResult = await crawlQuangNgai(page_crawlQuangNgai);
     const crawlDakLakResult = await crawlDakLak(page_crawlDakLak);
     const crawlDacNongResult = await crawlDacNong(page_crawlDacNong);
     const crawlGiaLaiResult = await crawlGiaLai(page_crawlGiaLai);
@@ -2094,6 +2678,11 @@ async function crawl() {
     const crawlDongNaiResult = await crawlDongNai(page_crawlDongNai);
     const crawlSocTrangResult = await crawlSocTrang(page_crawlSocTrang);
     const crawlCanThoResult = await crawlCanTho(page_crawlCanTho);
+    const crawlTienGiangResult = await crawlTienGiang(page_crawlTienGiang);
+    const crawlHCMResult = await crawlHCM(page_crawlHCM);
+    const crawlTraVinhResult = await crawlTraVinh(page_crawlTraVinh);
+    const crawlVinhLongResult = await crawlVinhLong(page_crawlVinhLong);
+    const crawlVungTauResult = await crawlVungTau(page_crawlVungTau);
     const crawlBinhThuanResult = await crawlBinhThuan(page_crawlBinhThuan);
     const crawlQuangTriResult = await crawlQuangTri(page_crawlQuangTri);
     const crawlQuangNamResult = await crawlQuangNam(page_crawlQuangNam);
@@ -2104,6 +2693,7 @@ async function crawl() {
     const crawlLotoKepResult = await crawlLotoKep(page_crawlLotoKep);
     const crawl_KenoResult = await crawl_Keno(page_crawl_Keno);
     const crawl_MegaResult = await crawl_Mega(page_crawl_Mega);
+    const crawl_Mega_thu4Result = await crawl_Mega_thu4(page_crawl_Mega_thu4);
     const crawl_PowerResult = await crawl_Power(page_crawl_Power);
     const crawl_Max3DResult = await crawl_Max3D(page_crawl_Max3D);
     const crawl_Max3DProResult = await crawl_Max3DPro(page_crawl_Max3DPro);
@@ -2123,6 +2713,16 @@ async function crawl() {
         ...crawlTKKBSResult,
         ...crawlTKkdenccResult,
         ...crawlAnGiangResult,
+        ...crawlCaMauResult,
+        ...crawlDongThapResult,
+        ...crawlHauGiangResult,
+        ...crawlKienGiangResult,
+        ...crawlLongAnResult,
+        ...crawlKonTumResult,
+        ...crawlNinhThuanResult,
+        ...crawlPhuYenResult,
+        ...crawlQuangBinhResult,
+        ...crawlQuangNgaiResult,
         ...crawlDakLakResult,
         ...crawlDacNongResult,
         ...crawlGiaLaiResult,
@@ -2137,6 +2737,11 @@ async function crawl() {
         ...crawlDongNaiResult,
         ...crawlSocTrangResult,
         ...crawlCanThoResult,
+        ...crawlTienGiangResult,
+        ...crawlHCMResult,
+        ...crawlTraVinhResult,
+        ...crawlVinhLongResult,
+        ...crawlVungTauResult,
         ...crawlBinhThuanResult,
         ...crawlQuangTriResult,
         ...crawlQuangNamResult,
@@ -2147,6 +2752,7 @@ async function crawl() {
         ...crawlLotoKepResult,
         ...crawl_KenoResult,
         ...crawl_MegaResult,
+        ...crawl_Mega_thu4Result,
         ...crawl_PowerResult,
         ...crawl_Max3DResult,
         ...crawl_Max3DProResult,
@@ -2175,6 +2781,22 @@ module.exports = {
     crawlTKKBS,
     crawlTKkdencc,
     crawlAnGiang,
+    crawlCaMau,
+    crawlDongNai,
+    crawlDongThap,
+    crawlHauGiang,
+    crawlKienGiang,
+    crawlLongAn,
+    crawlKonTum,
+    crawlTienGiang,
+    crawlHCM,
+    crawlTraVinh,
+    crawlVinhLong,
+    crawlVungTau,
+    crawlNinhThuan,
+    crawlPhuYen,
+    crawlQuangBinh,
+    crawlQuangNgai,
     crawlDakLak,
     crawlDacNong,
     crawlGiaLai,
@@ -2186,7 +2808,6 @@ module.exports = {
     crawlTayNinh,
    crawlKhanhHoa,
      crawlDaNang,
-    crawlDongNai,
    crawlSocTrang,
      crawlCanTho,
     crawlBinhThuan,
@@ -2199,6 +2820,7 @@ module.exports = {
     crawlLotoKep,
     crawl_Keno,
     crawl_Mega,
+    crawl_Mega_thu4,
     crawl_Power,
     crawl_Max3D,
     crawl_Max3DPro,

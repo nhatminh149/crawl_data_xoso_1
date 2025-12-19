@@ -61,6 +61,61 @@ router.get('/partials/xscm/xsAnGiang', async (req, res) => {
     res.render('partials/xscm/xsAnGiang', { title: 'Lô gan cực đại', result });
 });
 
+router.get('/partials/xscm/xsKonTum', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsKonTum', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsNinhThuan', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsNinhThuan', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsPhuYen', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsPhuYen', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsCaMau', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsCaMau', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsDongNai', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsDongNai', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsDongThap', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsDongThap', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsHauGiang', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsHauGiang', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsKienGiang', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsKienGiang', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsLongAn', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsLongAn', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsQuangBinh', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsQuangBinh', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsQuangNgai', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsQuangNgai', { title: 'Lô gan cực đại', result });
+});
+
 router.get('/partials/xscm/xsTayNinh', async (req, res) => {
     const result = await getLatestResult();
     res.render('partials/xscm/xsTayNinh', { title: 'Lô gan cực đại', result });
@@ -96,9 +151,29 @@ router.get('/partials/xscm/xsDaNang', async (req, res) => {
     res.render('partials/xscm/xsDaNang', { title: 'Lô gan cực đại', result });
 });
 
-router.get('/partials/xscm/xsDongNai', async (req, res) => {
+router.get('/partials/xscm/xsTienGiang', async (req, res) => {
     const result = await getLatestResult();
-    res.render('partials/xscm/xsDongNai', { title: 'Lô gan cực đại', result });
+    res.render('partials/xscm/xsTienGiang', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsHCM', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsHCM', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsVinhLong', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsVinhLong', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsTraVinh', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsTraVinh', { title: 'Lô gan cực đại', result });
+});
+
+router.get('/partials/xscm/xsVungTau', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/xscm/xsVungTau', { title: 'Lô gan cực đại', result });
 });
 
 router.get('/partials/xscm/xsSocTrang', async (req, res) => {
@@ -346,6 +421,14 @@ router.get('/partials/menu_dientoan/max3dpro', async (req, res) => {
 router.get('/partials/menu_dientoan/mega', async (req, res) => {
     const result = await getLatestResult();
     res.render('partials/menu_dientoan/mega', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/mega_thu4', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/mega_thu4', {
         title: 'Thống kê tổng hợp',
         result,
     });
