@@ -101,7 +101,6 @@ a {
     flex-grow: 1;
     position: relative;
     overflow: hidden;
-    background-color: #111;
 }
 
 .ad-image {
@@ -1092,7 +1091,7 @@ body {
     font-size: 14px;
 }
 .jackpot-value-box {
-    border: 3px solid #dc4a03;
+    border: 10px double #dc4a03;
     padding: 15px 10px;
     border-radius: 25px;
     background-color: #fff;

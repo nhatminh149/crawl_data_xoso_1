@@ -130,9 +130,169 @@ async function crawlTKGDB(page_crawlTKGDB) {
         console.error('Lỗi khi cào dữ liệu Giải Đặc Biệt', error.message);
     }
 }
+//
+async function crawl_XSMB_30ngay(page_crawlXSMB_30ngay) {
+    console.log('Đang cào dữ liệu XS Các Miền...');
+    try {
+        await page_crawlXSMB_30ngay.goto('https://xosodaiphat.com/xsmb-30-ngay.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlXSMB_30ngay.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                MDB_XSMB_30ngay: getClassspan('madb8.special-code.div-horizontal'),
+                GDB_XSMB_30ngay: getClassspan('special-prize-lg.div-horizontal'),
+                G1_XSMB_30ngay: getClassspan('number-black-bold.div-horizontal'),
+                G2_XSMB_30ngay: getClassspan('col-xs-6.number-black-bold.div-horizontal'),
+                G3vG5vG6_XSMB_30ngay: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_XSMB_30ngay: getClassspan('col-xs-6.col-md-3.number-black-bold.div-horizontal'),
+                G7_XSMB_30ngay: getClassspan('col-xs-3.special-prize-sm.div-horizontal'),
+                Day_XSMB_30ngay: getClass('list-link'),
+            };
+        });
+        console.log('Cào dữ liệu XS Các Miền thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
+    }
+}
+
+async function crawl_XSMB_90ngay(page_crawlXSMB_90ngay) {
+    console.log('Đang cào dữ liệu XS Các Miền...');
+    try {
+        await page_crawlXSMB_90ngay.goto('https://xosodaiphat.com/xsmb-90-ngay.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlXSMB_90ngay.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                MDB_XSMB_90ngay: getClassspan('madb8.special-code.div-horizontal'),
+                GDB_XSMB_90ngay: getClassspan('special-prize-lg.div-horizontal'),
+                G1_XSMB_90ngay: getClassspan('number-black-bold.div-horizontal'),
+                G2_XSMB_90ngay: getClassspan('col-xs-6.number-black-bold.div-horizontal'),
+                G3vG5vG6_XSMB_90ngay: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+                G4_XSMB_90ngay: getClassspan('col-xs-6.col-md-3.number-black-bold.div-horizontal'),
+                G7_XSMB_90ngay: getClassspan('col-xs-3.special-prize-sm.div-horizontal'),
+                Day_XSMB_90ngay: getClass('list-link'),
+            };
+        });
+        console.log('Cào dữ liệu XS Các Miền thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
+    }
+}
+
+async function crawl_XSMN_30ngay(page_crawlXSMN_30ngay) {
+    console.log('Đang cào dữ liệu XS Các Miền...');
+    try {
+        await page_crawlXSMN_30ngay.goto('https://xosodaiphat.com/xsmn-30-ngay.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlXSMN_30ngay.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassth = (cl) => {
+                return Array.from(document.querySelectorAll(`th.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                G8vGDB_XSMN_30ngay: getClassspan('special-prize-lg.div-horizontal'),
+                G1vG2vG3vG4vG6_XSMN_30ngay: getClassspan('col-xs-12.number-black-bold.div-horizontal'),
+                G5vG7_XSMN_30ngay: getClassspan('number-black-bold.div-horizontal'),
+                Tinh_XSMN_30ngay: getClassth('text-center'),
+                Day_XSMN_30ngay: getClass('list-link'),
+                XSMN_30ngay:getClasstd('tn_prize'),
+
+            };
+        });
+        console.log('Cào dữ liệu XS Các Miền thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
+    }
+}
+
+async function crawl_XSMN_90ngay(page_crawlXSMN_90ngay) {
+    console.log('Đang cào dữ liệu XS Các Miền...');
+    try {
+        await page_crawlXSMN_90ngay.goto('https://xosodaiphat.com/xsmn-90-ngay.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawlXSMN_90ngay.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassth = (cl) => {
+                return Array.from(document.querySelectorAll(`th.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                GDB_XSMN_90ngay: getClassspan('special-prize-lg.div-horizontal'),
+                G1vG2vG3vG4vG6_XSMN_90ngay: getClassspan('col-xs-12.number-black-bold.div-horizontal'),
+                G5vG7_XSMN_90ngay: getClassspan('number-black-bold div-horizontal'),
+                G8_XSMN_90ngay: getClassspan('special-prize-lg div-horizontal'),
+                Tinh_XSMN_90ngay: getClassth('text-center'),
+                Day_XSMN_90ngay: getClass('list-link'),
+            };
+        });
+        console.log('Cào dữ liệu XS Các Miền thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
+    }
+}
 
 async function crawlAnGiang(page_crawlAnGiang) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlAnGiang.goto('https://xosodaiphat.com/xsag-xo-so-an-giang.html', {
             waitUntil: 'networkidle2',
@@ -158,15 +318,15 @@ async function crawlAnGiang(page_crawlAnGiang) {
                 LT_AnGiang: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlCaMau(page_crawlCaMau) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlCaMau.goto('https://xosodaiphat.com/xscm-xo-so-ca-mau.html', {
             waitUntil: 'networkidle2',
@@ -192,15 +352,15 @@ async function crawlCaMau(page_crawlCaMau) {
                 LT_CaMau: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlDongThap(page_crawlDongThap) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlDongThap.goto('https://xosodaiphat.com/xsdt-xo-so-dong-thap.html', {
             waitUntil: 'networkidle2',
@@ -226,15 +386,15 @@ async function crawlDongThap(page_crawlDongThap) {
                 LT_DongThap: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlHauGiang(page_crawlHauGiang) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlHauGiang.goto('https://xosodaiphat.com/xshg-xo-so-hau-giang.html', {
             waitUntil: 'networkidle2',
@@ -260,15 +420,15 @@ async function crawlHauGiang(page_crawlHauGiang) {
                 LT_HauGiang: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlKienGiang(page_crawlKienGiang) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlKienGiang.goto('https://xosodaiphat.com/xskg-xo-so-kien-giang.html', {
             waitUntil: 'networkidle2',
@@ -294,15 +454,15 @@ async function crawlKienGiang(page_crawlKienGiang) {
                 LT_KienGiang: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlLongAn(page_crawlLongAn) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlLongAn.goto('https://xosodaiphat.com/xsla-xo-so-long-an.html', {
             waitUntil: 'networkidle2',
@@ -328,15 +488,15 @@ async function crawlLongAn(page_crawlLongAn) {
                 LT_LongAn: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlKonTum(page_crawlKonTum) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlKonTum.goto('https://xosodaiphat.com/xskt-xo-so-kon-tum.html', {
             waitUntil: 'networkidle2',
@@ -362,15 +522,15 @@ async function crawlKonTum(page_crawlKonTum) {
                 LT_KonTum: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlNinhThuan(page_crawlNinhThuan) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlNinhThuan.goto('https://xosodaiphat.com/xsnt-xo-so-ninh-thuan.html', {
             waitUntil: 'networkidle2',
@@ -396,15 +556,15 @@ async function crawlNinhThuan(page_crawlNinhThuan) {
                 LT_NinhThuan: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlPhuYen(page_crawlPhuYen) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlPhuYen.goto('https://xosodaiphat.com/xspy-xo-so-phu-yen.html', {
             waitUntil: 'networkidle2',
@@ -430,15 +590,15 @@ async function crawlPhuYen(page_crawlPhuYen) {
                 LT_PhuYen: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlQuangBinh(page_crawlQuangBinh) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlQuangBinh.goto('https://xosodaiphat.com/xsqb-xo-so-quang-binh.html', {
             waitUntil: 'networkidle2',
@@ -464,15 +624,15 @@ async function crawlQuangBinh(page_crawlQuangBinh) {
                 LT_QuangBinh: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlQuangNgai(page_crawlQuangNgai) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlQuangNgai.goto('https://xosodaiphat.com/xsqng-xo-so-quang-ngai.html', {
             waitUntil: 'networkidle2',
@@ -498,15 +658,15 @@ async function crawlQuangNgai(page_crawlQuangNgai) {
                 LT_QuangNgai: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlDakLak(page_crawlDakLak) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlDakLak.goto('https://xosodaiphat.com/xsdlk-xo-so-dak-lak.html', {
             waitUntil: 'networkidle2',
@@ -532,15 +692,15 @@ async function crawlDakLak(page_crawlDakLak) {
                 LT_DakLak: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlDacNong(page_crawlDacNong) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlDacNong.goto('https://xosodaiphat.com/xsdno-xo-so-dak-nong.html', {
             waitUntil: 'networkidle2',
@@ -566,15 +726,15 @@ async function crawlDacNong(page_crawlDacNong) {
                 LT_DacNong: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlGiaLai(page_crawlGiaLai) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlGiaLai.goto('https://xosodaiphat.com/xsgl-xo-so-gia-lai.html', {
             waitUntil: 'networkidle2',
@@ -600,15 +760,15 @@ async function crawlGiaLai(page_crawlGiaLai) {
                 LT_GiaLai: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlHue(page_crawlHue) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlHue.goto('https://xosodaiphat.com/xstth-xo-so-hue.html', {
             waitUntil: 'networkidle2',
@@ -634,15 +794,15 @@ async function crawlHue(page_crawlHue) {
                 LT_Hue: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlTayNinh(page_crawlTayNinh) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlTayNinh.goto('https://xosodaiphat.com/xstn-xo-so-tay-ninh.html', {
             waitUntil: 'networkidle2',
@@ -668,15 +828,15 @@ async function crawlTayNinh(page_crawlTayNinh) {
                 LT_TayNinh: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlBacLieu(page_crawlBacLieu) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlBacLieu.goto('https://xosodaiphat.com/xsbl-xo-so-bac-lieu.html', {
             waitUntil: 'networkidle2',
@@ -702,15 +862,15 @@ async function crawlBacLieu(page_crawlBacLieu) {
                 LT_BacLieu: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlBenTre(page_crawlBenTre) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlBenTre.goto('https://xosodaiphat.com/xsbtr-xo-so-ben-tre.html', {
             waitUntil: 'networkidle2',
@@ -736,15 +896,15 @@ async function crawlBenTre(page_crawlBenTre) {
                 LT_BenTre: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlBinhDuong(page_crawlBinhDuong) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlBinhDuong.goto('https://xosodaiphat.com/xsbd-xo-so-binh-duong.html', {
             waitUntil: 'networkidle2',
@@ -770,15 +930,15 @@ async function crawlBinhDuong(page_crawlBinhDuong) {
                 LT_BinhDuong: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlBinhPhuoc(page_crawlBinhPhuoc) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlBinhPhuoc.goto('https://xosodaiphat.com/xsbp-xo-so-binh-phuoc.html', {
             waitUntil: 'networkidle2',
@@ -804,15 +964,15 @@ async function crawlBinhPhuoc(page_crawlBinhPhuoc) {
                 LT_BinhPhuoc: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlKhanhHoa(page_crawlKhanhHoa) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlKhanhHoa.goto('https://xosodaiphat.com/xskh-xo-so-khanh-hoa.html', {
             waitUntil: 'networkidle2',
@@ -838,14 +998,14 @@ async function crawlKhanhHoa(page_crawlKhanhHoa) {
                 LT_KhanhHoa: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 async function crawlDaNang(page_crawlDaNang) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlDaNang.goto('https://xosodaiphat.com/xsdna-xo-so-da-nang.html', {
             waitUntil: 'networkidle2',
@@ -871,14 +1031,14 @@ async function crawlDaNang(page_crawlDaNang) {
                 LT_DaNang: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 async function crawlDongNai(page_crawlDongNai) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlDongNai.goto('https://xosodaiphat.com/xsdn-xo-so-dong-nai.html', {
             waitUntil: 'networkidle2',
@@ -904,15 +1064,15 @@ async function crawlDongNai(page_crawlDongNai) {
                 LT_DongNai: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlCanTho(page_crawlCanTho) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlCanTho.goto('https://xosodaiphat.com/xsct-xo-so-can-tho.html', {
             waitUntil: 'networkidle2',
@@ -938,15 +1098,15 @@ async function crawlCanTho(page_crawlCanTho) {
                 LT_CanTho: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlTienGiang(page_crawlTienGiang) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlTienGiang.goto('https://xosodaiphat.com/xstg-xo-so-tien-giang.html', {
             waitUntil: 'networkidle2',
@@ -972,15 +1132,15 @@ async function crawlTienGiang(page_crawlTienGiang) {
                 LT_TienGiang: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlHCM(page_crawlHCM) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlHCM.goto('https://xosodaiphat.com/xshcm-xo-so-tphcm.html', {
             waitUntil: 'networkidle2',
@@ -1006,15 +1166,15 @@ async function crawlHCM(page_crawlHCM) {
                 LT_HCM: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlTraVinh(page_crawlTraVinh) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlTraVinh.goto('https://xosodaiphat.com/xstv-xo-so-tra-vinh.html', {
             waitUntil: 'networkidle2',
@@ -1040,15 +1200,15 @@ async function crawlTraVinh(page_crawlTraVinh) {
                 LT_TraVinh: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlVinhLong(page_crawlVinhLong) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlVinhLong.goto('https://xosodaiphat.com/xsvl-xo-so-vinh-long.html', {
             waitUntil: 'networkidle2',
@@ -1074,15 +1234,15 @@ async function crawlVinhLong(page_crawlVinhLong) {
                 LT_VinhLong: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlVungTau(page_crawlVungTau) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlVungTau.goto('https://xosodaiphat.com/xsvt-xo-so-vung-tau.html', {
             waitUntil: 'networkidle2',
@@ -1108,15 +1268,15 @@ async function crawlVungTau(page_crawlVungTau) {
                 LT_VungTau: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlSocTrang(page_crawlSocTrang) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlSocTrang.goto('https://xosodaiphat.com/xsst-xo-so-soc-trang.html', {
             waitUntil: 'networkidle2',
@@ -1142,15 +1302,15 @@ async function crawlSocTrang(page_crawlSocTrang) {
                 LT_SocTrang: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlBinhThuan(page_crawlBinhThuan) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlBinhThuan.goto('https://xosodaiphat.com/xsbth-xo-so-binh-thuan.html', {
             waitUntil: 'networkidle2',
@@ -1176,15 +1336,15 @@ async function crawlBinhThuan(page_crawlBinhThuan) {
                 LT_BinhThuan: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlQuangNam(page_crawlQuangNam) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlQuangNam.goto('https://xosodaiphat.com/xsqna-xo-so-quang-nam.html', {
             waitUntil: 'networkidle2',
@@ -1210,15 +1370,15 @@ async function crawlQuangNam(page_crawlQuangNam) {
                 LT_QuangNam: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlQuangTri(page_crawlQuangTri) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlQuangTri.goto('https://xosodaiphat.com/xsqt-xo-so-quang-tri.html', {
             waitUntil: 'networkidle2',
@@ -1244,15 +1404,15 @@ async function crawlQuangTri(page_crawlQuangTri) {
                 LT_QuangTri: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
 async function crawlBinhDinh(page_crawlBinhDinh) {
-    console.log('Đang cào dữ liệu XS An Giang...');
+    console.log('Đang cào dữ liệu XS Các Miền...');
     try {
         await page_crawlBinhDinh.goto('http://xosodaiphat.com/xsbdi-xo-so-binh-dinh.html', {
             waitUntil: 'networkidle2',
@@ -1278,10 +1438,10 @@ async function crawlBinhDinh(page_crawlBinhDinh) {
                 LT_BinhDinh: getClasstr('tr'),
             };
         });
-        console.log('Cào dữ liệu XS An Giang thành công.');
+        console.log('Cào dữ liệu XS Các Miền thành công.');
         return result;
     } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS An Giang', error.message);
+        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
     }
 }
 
@@ -1674,6 +1834,147 @@ async function crawl_Power(page_crawl_Power) {
     }
 }
 
+async function crawl_Power_thu3(page_crawl_Power_thu3) {
+    console.log('Đang cào dữ liệu Power_thu3...');
+    try {
+        await page_crawl_Power_thu3.goto('https://xosodaiphat.com/xs-power-655-thu-3.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Power_thu3.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                power_thu3_class_link: getClass('list-link.left100'),
+                power_thu3_para_open_next: getClassp('open-next'),
+                power_thu3_number_ball: getClass('power-detail'),
+                power_thu3_text_right: getClasstd('text-right'),
+                power_thu3_para_text_black_bold: getClassp('text-black-bold'),
+                power_thu3_jackpot: getClassspan('result-jackpot'),
+                power_thu3_xspower: getClass('block-main-heading'),
+                power_thu3_ball: getClass('power-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Power thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Power:', error.message);
+    }
+}
+
+async function crawl_Power_thu7(page_crawl_Power_thu7) {
+    console.log('Đang cào dữ liệu Power_thu7...');
+    try {
+        await page_crawl_Power_thu7.goto('https://xosodaiphat.com/max-3d-pro-thu-7.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Power_thu7.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                power_thu7_class_link: getClass('list-link.left100'),
+                power_thu7_para_open_next: getClassp('open-next'),
+                power_thu7_number_ball: getClass('power-detail'),
+                power_thu7_text_right: getClasstd('text-right'),
+                power_thu7_para_text_black_bold: getClassp('text-black-bold'),
+                power_thu7_jackpot: getClassspan('result-jackpot'),
+                power_thu7_xspower: getClass('block-main-heading'),
+                power_thu7_ball: getClass('power-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Power thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Power:', error.message);
+    }
+}
+
+async function crawl_Power_thu5(page_crawl_Power_thu5) {
+    console.log('Đang cào dữ liệu Power_thu5...');
+    try {
+        await page_crawl_Power_thu5.goto('https://xosodaiphat.com/xs-power-655-thu-5.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Power_thu5.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                power_thu5_class_link: getClass('list-link.left100'),
+                power_thu5_para_open_next: getClassp('open-next'),
+                power_thu5_number_ball: getClass('power-detail'),
+                power_thu5_text_right: getClasstd('text-right'),
+                power_thu5_para_text_black_bold: getClassp('text-black-bold'),
+                power_thu5_jackpot: getClassspan('result-jackpot'),
+                power_thu5_xspower: getClass('block-main-heading'),
+                power_thu5_ball: getClass('power-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Power thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Power:', error.message);
+    }
+}
+
 async function crawl_Max3D(page_crawl_Max3D) {
     console.log('Đang cào dữ liệu Max3D...');
     try {
@@ -1708,6 +2009,108 @@ async function crawl_Max3D(page_crawl_Max3D) {
     }
 }
 
+async function crawl_Max3D_thu2(page_crawl_Max3D_thu2) {
+    console.log('Đang cào dữ liệu Max3D_thu2...');
+    try {
+        await page_crawl_Max3D_thu2.goto('https://xosodaiphat.com/xs-max3d-thu-2.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Max3D_thu2.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                max3d_title_thu2: getClass('titlemax3d.bold'),
+                max3d_link_thu2: getClass('list-link'),
+                G1_thu2: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_thu2: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_thu2: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Max3D_thu2 thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Max3D_thu2:', error.message);
+    }
+}
+
+async function crawl_Max3D_thu6(page_crawl_Max3D_thu6) {
+    console.log('Đang cào dữ liệu Max3D_thu6...');
+    try {
+        await page_crawl_Max3D_thu6.goto('https://xosodaiphat.com/xs-max3d-thu-6.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Max3D_thu6.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                max3d_title_thu6: getClass('titlemax3d.bold'),
+                max3d_link_thu6: getClass('list-link'),
+                G1_thu6: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_thu6: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_thu6: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Max3D_thu6 thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Max3D_thu6:', error.message);
+    }
+}
+
+async function crawl_Max3D_thu4(page_crawl_Max3D_thu4) {
+    console.log('Đang cào dữ liệu Max3D_thu4...');
+    try {
+        await page_crawl_Max3D_thu4.goto('https://xosodaiphat.com/xs-max3d-thu-4.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Max3D_thu4.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                max3d_title_thu4: getClass('titlemax3d.bold'),
+                max3d_link_thu4: getClass('list-link'),
+                G1_thu4: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_thu4: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_thu4: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Max3D_thu4 thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Max3D_thu4:', error.message);
+    }
+}
+
 async function crawl_Max3DPro(page_crawl_Max3DPro) {
     console.log('Đang cào dữ liệu Max3D...');
     try {
@@ -1733,6 +2136,108 @@ async function crawl_Max3DPro(page_crawl_Max3DPro) {
                 G1_pro: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
                 G2vKK_pro: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
                 G3_pro: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Max3D thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Max3D:', error.message);
+    }
+}
+
+async function crawl_Max3DPro_thu3(page_crawl_Max3DPro_thu3) {
+    console.log('Đang cào dữ liệu Max3D...');
+    try {
+        await page_crawl_Max3DPro_thu3.goto('https://xosodaiphat.com/max-3d-pro-thu-3.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Max3DPro_thu3.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                max3d_title_pro_thu3: getClass('titlemax3d.bold'),
+                max3d_link_pro_thu3: getClass('list-link'),
+                G1_pro_thu3: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_pro_thu3: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_pro_thu3: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Max3D thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Max3D:', error.message);
+    }
+}
+
+async function crawl_Max3DPro_thu5(page_crawl_Max3DPro_thu5) {
+    console.log('Đang cào dữ liệu Max3D...');
+    try {
+        await page_crawl_Max3DPro_thu5.goto('https://xosodaiphat.com/max-3d-pro-thu-5.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Max3DPro_thu5.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                max3d_title_pro_thu5: getClass('titlemax3d.bold'),
+                max3d_link_pro_thu5: getClass('list-link'),
+                G1_pro_thu5: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_pro_thu5: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_pro_thu5: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
+            };
+        });
+        console.log('Cào dữ liệu Max3D thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Max3D:', error.message);
+    }
+}
+
+async function crawl_Max3DPro_thu7(page_crawl_Max3DPro_thu7) {
+    console.log('Đang cào dữ liệu Max3D...');
+    try {
+        await page_crawl_Max3DPro_thu7.goto('https://xosodaiphat.com/max-3d-pro-thu-7.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Max3DPro_thu7.evaluate(() => {
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                max3d_title_pro_thu7: getClass('titlemax3d.bold'),
+                max3d_link_pro_thu7: getClass('list-link'),
+                G1_pro_thu7: getClassspan('col-xs-6.special-prize-lg.div-horizontal'),
+                G2vKK_pro_thu7: getClassspan('col-xs-3.number-black-bold.div-horizontal'),
+                G3_pro_thu7: getClassspan('col-xs-4.number-black-bold.div-horizontal'),
             };
         });
         console.log('Cào dữ liệu Max3D thành công.');
@@ -1830,7 +2335,6 @@ async function crawl_Mega(page_crawl_Mega) {
     }
 }
 
-
 async function crawl_Mega_thu4(page_crawl_Mega_thu4) {
     console.log('Đang cào dữ liệu Mega_thu4...');
     try {
@@ -1888,6 +2392,120 @@ async function crawl_Mega_thu4(page_crawl_Mega_thu4) {
     }
 }
 
+async function crawl_Mega_cn(page_crawl_Mega_cn) {
+    console.log('Đang cào dữ liệu Mega_cn...');
+    try {
+        await page_crawl_Mega_cn.goto('https://xosodaiphat.com/xs-mega-chu-nhat.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Mega_cn.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassh2 = (cl) => {
+                return Array.from(document.querySelectorAll(`h2.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getli = (cl) => {
+                return Array.from(document.querySelectorAll(`li`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                mega_cn_class_link: getClassh2('class-title-list-link'),
+                mega_cn_para_open_next: getClassp('open-next'),
+                mega_cn_number_ball: getClass('mega-detail'),
+                mega_cn_text_right: getClasstd('text-right'),
+                mega_cn_para_text_black_bold: getClassp('text-black-bold'),
+                mega_cn_jackpot: getClassspan('result-jackpot'),
+                mega_cn_xsmega: getClass('block-main-heading'),
+                mega_cn_ball: getClass('mega-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Mega thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Mega:', error.message);
+    }
+}
+
+async function crawl_Mega_thu6(page_crawl_Mega_thu6) {
+    console.log('Đang cào dữ liệu Mega_thu6...');
+    try {
+        await page_crawl_Mega_thu6.goto('https://xosodaiphat.com/xs-mega-thu-6.html', {
+            waitUntil: 'networkidle2',
+            timeout: 60000,
+        });
+
+        const result = await page_crawl_Mega_thu6.evaluate(() => {
+            const getClasstd = (cl) => {
+                return Array.from(document.querySelectorAll(`td.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassspan = (cl) => {
+                return Array.from(document.querySelectorAll(`span.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassp = (cl) => {
+                return Array.from(document.querySelectorAll(`p.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClassh2 = (cl) => {
+                return Array.from(document.querySelectorAll(`h2.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getli = (cl) => {
+                return Array.from(document.querySelectorAll(`li`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            const getClass = (cl) => {
+                return Array.from(document.querySelectorAll(`div.${cl}`))
+                    .map((el) => el.innerText.trim())
+                    .filter(Boolean);
+            };
+            return {
+                mega_thu6_class_link: getClassh2('class-title-list-link'),
+                mega_thu6_para_open_next: getClassp('open-next'),
+                mega_thu6_number_ball: getClass('mega-detail'),
+                mega_thu6_text_right: getClasstd('text-right'),
+                mega_thu6_para_text_black_bold: getClassp('text-black-bold'),
+                mega_thu6_jackpot: getClassspan('result-jackpot'),
+                mega_thu6_xsmega: getClass('block-main-heading'),
+                mega_thu6_ball: getClass('mega-detail'),
+            };
+        });
+        console.log('Cào dữ liệu Mega thành công.');
+        return result;
+    } catch (error) {
+        console.error('Lỗi khi cào dữ liệu Mega:', error.message);
+    }
+}
+
 async function crawl() {
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
@@ -1903,6 +2521,10 @@ async function crawl() {
     const page_crawlCaMau = await browser.newPage();
     const page_crawlCanTho = await browser.newPage();
     const page_crawlAnGiang = await browser.newPage();
+    const page_crawl_XSMB_30ngay = await browser.newPage();
+    const page_crawl_XSMN_30ngay = await browser.newPage();
+    const page_crawl_XSMN_90ngay = await browser.newPage();
+    const page_crawl_XSMB_90ngay = await browser.newPage();
     const page_crawlDongNai = await browser.newPage();
     const page_crawlDongThap = await browser.newPage();
     const page_crawlHauGiang = await browser.newPage();
@@ -1941,9 +2563,20 @@ async function crawl() {
     const page_crawl_Keno = await browser.newPage();
     const page_crawl_Mega = await browser.newPage();
     const page_crawl_Mega_thu4 = await browser.newPage();
+    const page_crawl_Mega_cn = await browser.newPage();
+    const page_crawl_Mega_thu6 = await browser.newPage();
     const page_crawl_Power = await browser.newPage();
+    const page_crawl_Power_thu3 = await browser.newPage();
+    const page_crawl_Power_thu5 = await browser.newPage();
+    const page_crawl_Power_thu7 = await browser.newPage();
     const page_crawl_Max3D = await browser.newPage();
+    const page_crawl_Max3D_thu2 = await browser.newPage();
+    const page_crawl_Max3D_thu4 = await browser.newPage();
+    const page_crawl_Max3D_thu6 = await browser.newPage();
     const page_crawl_Max3DPro = await browser.newPage();
+    const page_crawl_Max3DPro_thu3 = await browser.newPage();
+    const page_crawl_Max3DPro_thu5 = await browser.newPage();
+    const page_crawl_Max3DPro_thu7 = await browser.newPage();
     const page_crawl_ThanTai = await browser.newPage();
     console.log('Đang cào dữ liệu chính...');
 
@@ -2383,6 +3016,39 @@ async function crawl() {
             LT8BL: getLoto('mnloto_BL_8'),
             LT9BL: getLoto('mnloto_BL_9'),
 
+            LT0BD: getLoto('mnloto_BD_0'),
+            LT1BD: getLoto('mnloto_BD_1'),
+            LT2BD: getLoto('mnloto_BD_2'),
+            LT3BD: getLoto('mnloto_BD_3'),
+            LT4BD: getLoto('mnloto_BD_4'),
+            LT5BD: getLoto('mnloto_BD_5'),
+            LT6BD: getLoto('mnloto_BD_6'),
+            LT7BD: getLoto('mnloto_BD_7'),
+            LT8BD: getLoto('mnloto_BD_8'),
+            LT9BD: getLoto('mnloto_BD_9'),
+
+            LT0VL: getLoto('mnloto_VL_0'),
+            LT1VL: getLoto('mnloto_VL_1'),
+            LT2VL: getLoto('mnloto_VL_2'),
+            LT3VL: getLoto('mnloto_VL_3'),
+            LT4VL: getLoto('mnloto_VL_4'),
+            LT5VL: getLoto('mnloto_VL_5'),
+            LT6VL: getLoto('mnloto_VL_6'),
+            LT7VL: getLoto('mnloto_VL_7'),
+            LT8VL: getLoto('mnloto_VL_8'),
+            LT9VL: getLoto('mnloto_VL_9'),
+
+            LT0TV: getLoto('mnloto_TV_0'),
+            LT1TV: getLoto('mnloto_TV_1'),
+            LT2TV: getLoto('mnloto_TV_2'),
+            LT3TV: getLoto('mnloto_TV_3'),
+            LT4TV: getLoto('mnloto_TV_4'),
+            LT5TV: getLoto('mnloto_TV_5'),
+            LT6TV: getLoto('mnloto_TV_6'),
+            LT7TV: getLoto('mnloto_TV_7'),
+            LT8TV: getLoto('mnloto_TV_8'),
+            LT9TV: getLoto('mnloto_TV_9'),
+
             //MT
             GDBPY: document.querySelector('#PY_prize_Db_item_0')?.innerText.trim() || '---',
             G1PY: getNumbers('PY_prize_1_item'),
@@ -2545,7 +3211,29 @@ async function crawl() {
             LT6KT: getLoto('mtloto_KT_6'),
             LT7KT: getLoto('mtloto_KT_7'),
             LT8KT: getLoto('mtloto_KT_8'),
-            LT9KT: getLoto('mtloto_KH_9'),
+            LT9KT: getLoto('mtloto_KT_9'),
+
+            LT0GL: getLoto('mtloto_GL_0'),
+            LT1GL: getLoto('mtloto_GL_1'),
+            LT2GL: getLoto('mtloto_GL_2'),
+            LT3GL: getLoto('mtloto_GL_3'),
+            LT4GL: getLoto('mtloto_GL_4'),
+            LT5GL: getLoto('mtloto_GL_5'),
+            LT6GL: getLoto('mtloto_GL_6'),
+            LT7GL: getLoto('mtloto_GL_7'),
+            LT8GL: getLoto('mtloto_GL_8'),
+            LT9GL: getLoto('mtloto_GL_9'),
+
+            LT0NT: getLoto('mtloto_NT_0'),
+            LT1NT: getLoto('mtloto_NT_1'),
+            LT2NT: getLoto('mtloto_NT_2'),
+            LT3NT: getLoto('mtloto_NT_3'),
+            LT4NT: getLoto('mtloto_NT_4'),
+            LT5NT: getLoto('mtloto_NT_5'),
+            LT6NT: getLoto('mtloto_NT_6'),
+            LT7NT: getLoto('mtloto_NT_7'),
+            LT8NT: getLoto('mtloto_NT_8'),
+            LT9NT: getLoto('mtloto_NT_9'),
 
             LT0TTH: getLoto('mtloto_TTH_0'),
             LT1TTH: getLoto('mtloto_TTH_1'),
@@ -2654,6 +3342,10 @@ async function crawl() {
     const crawlTKKBSResult = await crawlTKKBS(page_crawlTKKBS);
     const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
     const crawlAnGiangResult = await crawlAnGiang(page_crawlAnGiang);
+    const crawl_XSMB_30ngayResult = await crawl_XSMB_30ngay(page_crawl_XSMB_30ngay);
+    const crawl_XSMN_30ngayResult = await crawl_XSMN_30ngay(page_crawl_XSMN_30ngay);
+    const crawl_XSMN_90ngayResult = await crawl_XSMN_90ngay(page_crawl_XSMN_90ngay);
+    const crawl_XSMB_90ngayResult = await crawl_XSMB_90ngay(page_crawl_XSMB_90ngay);
     const crawlCaMauResult = await crawlCaMau(page_crawlCaMau);
     const crawlDongThapResult = await crawlDongThap(page_crawlDongThap);
     const crawlHauGiangResult = await crawlHauGiang(page_crawlHauGiang);
@@ -2694,9 +3386,20 @@ async function crawl() {
     const crawl_KenoResult = await crawl_Keno(page_crawl_Keno);
     const crawl_MegaResult = await crawl_Mega(page_crawl_Mega);
     const crawl_Mega_thu4Result = await crawl_Mega_thu4(page_crawl_Mega_thu4);
+    const crawl_Mega_cnResult = await crawl_Mega_cn(page_crawl_Mega_cn);
+    const crawl_Mega_thu6Result = await crawl_Mega_thu6(page_crawl_Mega_thu6);
     const crawl_PowerResult = await crawl_Power(page_crawl_Power);
+    const crawl_Power_thu3Result = await crawl_Power_thu3(page_crawl_Power_thu3);
+    const crawl_Power_thu5Result = await crawl_Power_thu5(page_crawl_Power_thu5);
+    const crawl_Power_thu7Result = await crawl_Power_thu7(page_crawl_Power_thu7);
     const crawl_Max3DResult = await crawl_Max3D(page_crawl_Max3D);
+    const crawl_Max3D_thu2Result = await crawl_Max3D_thu2(page_crawl_Max3D_thu2);
+    const crawl_Max3D_thu4Result = await crawl_Max3D_thu4(page_crawl_Max3D_thu4);
+    const crawl_Max3D_thu6Result = await crawl_Max3D_thu6(page_crawl_Max3D_thu6);
     const crawl_Max3DProResult = await crawl_Max3DPro(page_crawl_Max3DPro);
+    const crawl_Max3DPro_thu3Result = await crawl_Max3DPro_thu3(page_crawl_Max3DPro_thu3);
+    const crawl_Max3DPro_thu5Result = await crawl_Max3DPro_thu5(page_crawl_Max3DPro_thu5);
+    const crawl_Max3DPro_thu7Result = await crawl_Max3DPro_thu7(page_crawl_Max3DPro_thu7);
     const crawl_ThanTaiResult = await crawl_ThanTai(page_crawl_ThanTai);
 
     await browser.close();
@@ -2713,6 +3416,10 @@ async function crawl() {
         ...crawlTKKBSResult,
         ...crawlTKkdenccResult,
         ...crawlAnGiangResult,
+        ...crawl_XSMB_30ngayResult,
+        ...crawl_XSMN_30ngayResult,
+        ...crawl_XSMN_90ngayResult,
+        ...crawl_XSMB_90ngayResult,
         ...crawlCaMauResult,
         ...crawlDongThapResult,
         ...crawlHauGiangResult,
@@ -2753,9 +3460,20 @@ async function crawl() {
         ...crawl_KenoResult,
         ...crawl_MegaResult,
         ...crawl_Mega_thu4Result,
+        ...crawl_Mega_cnResult,
+        ...crawl_Mega_thu6Result,
         ...crawl_PowerResult,
+        ...crawl_Power_thu3Result,
+        ...crawl_Power_thu5Result,
+        ...crawl_Power_thu7Result,
         ...crawl_Max3DResult,
+        ...crawl_Max3D_thu2Result,
+        ...crawl_Max3D_thu4Result,
+        ...crawl_Max3D_thu6Result,
         ...crawl_Max3DProResult,
+        ...crawl_Max3DPro_thu3Result,
+        ...crawl_Max3DPro_thu5Result,
+        ...crawl_Max3DPro_thu7Result,
         ...crawl_ThanTaiResult,
     };
 
@@ -2781,6 +3499,10 @@ module.exports = {
     crawlTKKBS,
     crawlTKkdencc,
     crawlAnGiang,
+    crawl_XSMB_30ngay,
+    crawl_XSMN_30ngay,
+    crawl_XSMN_90ngay,
+    crawl_XSMB_90ngay,
     crawlCaMau,
     crawlDongNai,
     crawlDongThap,
@@ -2806,10 +3528,10 @@ module.exports = {
     crawlBinhPhuoc,
     crawlBenTre,
     crawlTayNinh,
-   crawlKhanhHoa,
-     crawlDaNang,
-   crawlSocTrang,
-     crawlCanTho,
+    crawlKhanhHoa,
+    crawlDaNang,
+    crawlSocTrang,
+    crawlCanTho,
     crawlBinhThuan,
     crawlQuangTri,
     crawlQuangNam,
@@ -2821,8 +3543,19 @@ module.exports = {
     crawl_Keno,
     crawl_Mega,
     crawl_Mega_thu4,
+    crawl_Mega_cn,
+    crawl_Mega_thu6,
     crawl_Power,
+    crawl_Power_thu3,
+    crawl_Power_thu5,
+    crawl_Power_thu7,
     crawl_Max3D,
+    crawl_Max3D_thu2,
+    crawl_Max3D_thu4,
+    crawl_Max3D_thu6,
     crawl_Max3DPro,
+    crawl_Max3DPro_thu3,
+    crawl_Max3DPro_thu5,
+    crawl_Max3DPro_thu7,
     crawl_ThanTai,
 };

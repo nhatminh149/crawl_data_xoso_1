@@ -97,7 +97,7 @@
         <div class='number-ball'>{{slice result.power_number_ball.[0] 6 8}}</div>
         <div class='number-ball'>{{slice result.power_number_ball.[0] 8 10}}</div>
         <div class='number-ball'>{{slice result.power_number_ball.[0] 10 12}}</div>
-        <p class='linered' style='width: 3px; height: 60px; background-color: red;'></p>
+        <p class='linered' style='width: 2px; height: 60px; background-color: red;'></p>
         <div class='number-ball-yellow'>{{slice result.power_number_ball.[0] 12 14}}</div>
 
     </div>
@@ -206,6 +206,8 @@
           <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 6 8 }}</div>
           <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 8 10 }}</div>
           <div class='number-ball'>{{ slice (get result.power_ball ballIndex) 10 12 }}</div>
+         <p class='linered' style='width: 2px; height: 60px; background-color: red;'></p>
+          <div class='number-ball-yellow'>{{ slice (get result.power_ball ballIndex) 12 14 }}</div>
       </div>
       <div style="width: 590px; height: 30px;">
           <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>

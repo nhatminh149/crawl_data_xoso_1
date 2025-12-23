@@ -10,7 +10,39 @@ router.get('/', async (req, res) => {
             '<h1 style="text-align:center;padding:100px">Đang cập nhật dữ liệu, vui lòng đợi 1 phút...</h1>',
         );
     }
-    res.render('xoso', { title: 'XSMB Hôm Nay', result });
+    // prepare an array of 30 day-index objects for the template
+    const days30 = [];
+    for (let d = 0; d < 30; d++) {
+        const lt = d * 21;
+        const g8Base = d * 2;
+        const g7Base = d * 16;
+        const g6Base = d * 6;
+        const g4Base = d * 4;
+
+        days30.push({
+            lt,
+            g8_0: g8Base,
+            g8_1: g8Base + 1,
+            g7_g7: g7Base + 0,
+            g7_g5: g7Base + 4,
+            g7_g3_a: g7Base + 12,
+            g7_g3_b: g7Base + 13,
+            g7_g2: g7Base + 14,
+            g7_g1: g7Base + 15,
+            g6_0: g6Base + 0,
+            g6_1: g6Base + 1,
+            g6_2: g6Base + 2,
+            g6_3: g6Base + 3,
+            g6_4: g6Base + 4,
+            g6_5: g6Base + 5,
+            g4_0: g4Base + 0,
+            g4_1: g4Base + 1,
+            g4_2: g4Base + 2,
+            g4_3: g4Base + 3,
+        });
+    }
+
+    res.render('xoso', { title: 'XSMB Hôm Nay', result, days30 });
 });
 
 router.get('/partials/menu/thong-ke-tong-hop-xsmb', async (req, res) => {
@@ -410,9 +442,57 @@ router.get('/partials/menu_dientoan/max3d', async (req, res) => {
     });
 });
 
+router.get('/partials/menu_dientoan/max3d_thu2', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/max3d_thu2', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/max3d_thu4', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/max3d_thu4', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/max3d_thu6', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/max3d_thu6', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
 router.get('/partials/menu_dientoan/max3dpro', async (req, res) => {
     const result = await getLatestResult();
     res.render('partials/menu_dientoan/max3dpro', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/max3dpro_thu3', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/max3dpro_thu3', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/max3dpro_thu5', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/max3dpro_thu5', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/max3dpro_thu7', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/max3dpro_thu7', {
         title: 'Thống kê tổng hợp',
         result,
     });
@@ -434,9 +514,73 @@ router.get('/partials/menu_dientoan/mega_thu4', async (req, res) => {
     });
 });
 
+router.get('/partials/menu_dientoan/mega_thu6', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/mega_thu6', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/mega_cn', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/mega_cn', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
 router.get('/partials/menu_dientoan/power', async (req, res) => {
     const result = await getLatestResult();
     res.render('partials/menu_dientoan/power', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/power_thu3', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/power_thu3', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/power_thu5', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/power_thu5', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/menu_dientoan/power_thu7', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/menu_dientoan/power_thu7', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/tracuuxs/xsmb_30ngay', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/tracuuxs/xsmb_30ngay', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/tracuuxs/xsmn_30ngay', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/tracuuxs/xsmn_30ngay', {
+        title: 'Thống kê tổng hợp',
+        result,
+    });
+});
+
+router.get('/partials/tracuuxs/xsmb_90ngay', async (req, res) => {
+    const result = await getLatestResult();
+    res.render('partials/tracuuxs/xsmb_90ngay', {
         title: 'Thống kê tổng hợp',
         result,
     });

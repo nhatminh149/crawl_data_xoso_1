@@ -1,7 +1,10 @@
 const Handlebars = require('handlebars');
 
 Handlebars.registerHelper('get', function (array, index) {
-    return array[index];
+    if (!array || (typeof array !== 'object' && typeof array !== 'string')) {
+        return '';
+    }
+    return array[index] !== undefined ? array[index] : '';
 });
 
 // bảng lô gan
@@ -179,7 +182,7 @@ Handlebars.registerHelper('giai', function (indexTinh, giai, indexSo) {
         'Bến Tre': 'BTR',
         'Vũng Tàu': 'VT',
         'Bạc Liêu': 'BL',
-        'Tây Ninh':'TN',
+        'Tây Ninh': 'TN',
     };
 
     const prefix = map[tenTinh];
@@ -230,7 +233,7 @@ Handlebars.registerHelper('lotoDau', function (indexTinh, dau, options) {
         'Bến Tre': 'BTR',
         'Vũng Tàu': 'VT',
         'Bạc Liêu': 'BL',
-        'Tây Ninh':'TN',
+        'Tây Ninh': 'TN',
     };
 
     const prefix = map[tenTinh];
@@ -267,7 +270,9 @@ Handlebars.registerHelper('giaiMT', function (indexTinh, giaiMT, indexSo) {
         'Quảng Nam': 'QNA',
         'Quảng Bình': 'QB',
         'Bình Định': 'BDI',
-        'Quảng Trị': 'QT'
+        'Quảng Trị': 'QT',
+        'Gia Lai': 'GL',
+        'Ninh Thuận': 'NT',
     };
 
     const prefix = map[tenTinh];
@@ -308,7 +313,9 @@ Handlebars.registerHelper('lotoDauMT', function (indexTinh, dau, options) {
         'Quảng Nam': 'QNA',
         'Quảng Bình': 'QB',
         'Bình Định': 'BDI',
-        'Quảng Trị': 'QT'
+        'Quảng Trị': 'QT',
+        'Gia Lai': 'GL',
+        'Ninh Thuận': 'NT',
     };
 
     const prefix = map[tenTinh];
@@ -436,6 +443,9 @@ Handlebars.registerHelper('megaLoop_thu4', function (options) {
     return html;
 });
 
+
+module.exports = Handlebars.helpers;
+
 Handlebars.registerHelper('add', function (a, b) {
     return parseInt(a) + parseInt(b);
 });
@@ -467,3 +477,30 @@ Handlebars.registerHelper('dt636Loop', function (options) {
     }
     return html;
 });
+
+Handlebars.registerHelper('xsmb30ngayLoop', function (count, options) {
+    let html = '';
+    const loopCount = parseInt(count) || 0;
+    const context = this || {};
+
+    for (let i = 0; i < loopCount; i++) {
+        const data = Object.assign({}, context, {
+            blockIndex: i,
+            mdbStart: i * 8,
+            day: i,
+            gdbIndex: i,
+            g1Index: i * 22,
+            g2Start: i * 6,
+            g3Start: i * 15,
+            g5Start: i * 15 + 6,
+            g6Start: i * 15 + 12,
+            g4Start: i * 4,
+            g7Start: i * 4,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});
+
+
