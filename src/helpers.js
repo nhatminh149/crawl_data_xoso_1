@@ -353,10 +353,45 @@ Handlebars.registerHelper('powerLoop', function (options) {
     return html;
 });
 
+Handlebars.registerHelper('powerLoop_thu7', function (options) {
+    let html = '';
+    const globalContext = this;
+
+    for (let i = 0; i < 5; i++) {
+        const iterationData = Object.assign({}, globalContext, {
+            index: i,
+            paraIndex: i,
+            ballIndex: i,
+            specialIndex: i,
+            textRightStart: 10 + (i - 1) * 10,
+        });
+
+        html += options.fn(iterationData);
+    }
+    return html;
+});
+
 Handlebars.registerHelper('max3dLoop', function (options) {
     let html = '';
     const context = this;
     for (let i = 0; i <= 13; i++) {
+        const data = Object.assign({}, context, {
+            titleIndex: i,
+            linkIndex: i,
+            g1Start: i * 2,
+            g2Start: i * 12,
+            g3Start: i * 6,
+        });
+
+        html += options.fn(data);
+    }
+    return html;
+});
+
+Handlebars.registerHelper('max3dLoop_thu', function (options) {
+    let html = '';
+    const context = this;
+    for (let i = 0; i <= 12; i++) {
         const data = Object.assign({}, context, {
             titleIndex: i,
             linkIndex: i,
@@ -502,5 +537,27 @@ Handlebars.registerHelper('xsmb30ngayLoop', function (count, options) {
     }
     return html;
 });
+// helper.js
+Handlebars.registerHelper('renderLotteryRows', function(data) {
+    if (!Array.isArray(data)) return '';
+    
+    return data.map(item => {
+        const giaiDB_dau = item.slice(0, 3);
+        const giaiDB_duoi = item.slice(3, 5);
+        const ngay = item.slice(5, 17);
+        const thu = item.slice(17, 28);
 
-
+        return `
+            <tr class="hover:bg-gray-50">
+                <td class="border border-gray-300 px-6 py-2 text-center font-bold text-lg">
+                    ${giaiDB_dau}<span class="text-red-600">${giaiDB_duoi}</span>
+                </td>
+                <td class="border border-gray-300 px-6 py-2 text-center text-gray-700">
+                    ${ngay}
+                </td>
+                <td class="border border-gray-300 px-6 py-2 text-center text-gray-700">
+                    ${thu}
+                </td>
+            </tr>`;
+    }).join('');
+});

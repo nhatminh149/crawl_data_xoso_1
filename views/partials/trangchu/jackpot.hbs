@@ -18,7 +18,7 @@
     <div class='next-draw-info'>
         <span class='next-draw-date'>{{get result.para_open_next 0}}</span>
     </div>
-    <div class="w-[500px] h-[60px]" style="text-align: left;">
+    <div class="w-[500px] h-[60px]" style="text-align: left; margin-left: -20px;margin-top: -8px;">
     <div class='draw-details0' style="color: #CC0000;margin-left: 10px;font-weight: bold;">
         {{get result.jackpot_day 0}}
     </div>
@@ -44,10 +44,10 @@
     <table class='prize-table'>
         <thead>
             <tr>
-                <th style="font-weight: bold;color: #990000;">Giải thưởng</th>
-                <th style="font-weight: bold;color: #990000;">Trùng khớp</th>
-                <th style="font-weight: bold;color: #990000;">Số lượng giải</th>
-                <th style="font-weight: bold;color: #990000;">Giá trị giải (đ)</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Giải thưởng</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Trùng khớp</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Số lượng giải</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Giá trị giải (đ)</th>
             </tr>
         </thead>
         <tbody>
@@ -126,16 +126,18 @@
         <div class='jackpot-title'><h1 style='margin-top: 10px;'>KẾT QUẢ JACKPOT
                 ƯỚC TÍNH</h1></div>
         <div class='jackpot-value-box'>
-            <span class='jackpot-value'>{{get result.jackpot 1}}</span>
-            <hr />
-            <span class='jackpot-value'>{{get result.jackpot 2}}</span>
+            <p style="font-weight: bold; color: blue; text-align: left;font-size: 20px;">GIÁ TRỊ JACKPOT 1</p>
+            <div class='jackpot-value2'>{{get result.jackpot 1}}</div>
+            <hr/>
+            <p style="font-weight: bold; color: blue; text-align: left;font-size: 20px;">GIÁ TRỊ JACKPOT 1</p>
+            <div class='jackpot-value2'>{{get result.jackpot 2}}</div>
         </div>
     </div>
 
     <div class='next-draw-info'>
         <span class='next-draw-date'>{{get result.para_open_next 1}}</span>
     </div>
-    <div class="w-[500px] h-[60px]" style="text-align: left;">
+    <div class="w-[500px] h-[60px]" style="text-align: left;  margin-left: -20px;margin-top: -8px;">
     <div class='draw-details0' style="color: #CC0000;margin-left: 10px;font-weight: bold;">
         {{get result.jackpot_day 1}}
     </div>
@@ -153,12 +155,12 @@
         <div class='number-ball'>{{slice result.number_ball2.[0] 10 12}}</div>
         <p
             class='linered'
-            style='width: 3px; height: 60px; background-color: red;'
+            style='width: 1px; height: 60px; background-color: red;'
         ></p>
         <div class='number-ball1'>{{slice result.number_ball2.[0] 12 14}}</div>
 
     </div>
-    <p class='note'>
+    <p class='note' style="margin-top: -2px;">
         Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng
         thứ tự
     </p>
@@ -166,10 +168,10 @@
     <table class='prize-table'>
         <thead>
             <tr>
-                <th style="font-weight: bold;color: #990000;">Giải thưởng</th>
-                <th style="font-weight: bold;color: #990000;">Trùng khớp</th>
-                <th style="font-weight: bold;color: #990000;">Số lượng giải</th>
-                <th style="font-weight: bold;color: #990000;">Giá trị giải (đ)</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Giải thưởng</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Trùng khớp</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Số lượng giải</th>
+                <th style="font-weight: bold;color: #990000;font-size: 15px;">Giá trị giải (đ)</th>
             </tr>
         </thead>
         <tbody>
@@ -195,7 +197,7 @@
                     <span class='match-dot' style='margin-right: 6px;'></span>
                     <span class='match-dot' style='margin-right: 6px;'></span>
                     <span><div
-                            style='width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;'
+                            style='width:1px;height: 18px; background-color: #CC0000; margin-right: 3px;'
                         ></div></span>
                     <span class='match-dot1'></span>
                 </td>

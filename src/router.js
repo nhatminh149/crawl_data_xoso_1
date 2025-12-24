@@ -570,13 +570,13 @@ router.get('/partials/tracuuxs/xsmb_30ngay', async (req, res) => {
     });
 });
 
-router.get('/partials/tracuuxs/xsmn_30ngay', async (req, res) => {
-    const result = await getLatestResult();
-    res.render('partials/tracuuxs/xsmn_30ngay', {
-        title: 'Thống kê tổng hợp',
-        result,
-    });
-});
+// router.get('/partials/tracuuxs/xsmn_30ngay', async (req, res) => {
+//     const result = await getLatestResult();
+//     res.render('partials/tracuuxs/xsmn_30ngay', {
+//         title: 'Thống kê tổng hợp',
+//         result,
+//     });
+// });
 
 router.get('/partials/tracuuxs/xsmb_90ngay', async (req, res) => {
     const result = await getLatestResult();

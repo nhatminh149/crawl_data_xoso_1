@@ -109,19 +109,20 @@ async function crawlTKGDB(page_crawlTKGDB) {
                     .map((el) => el.innerText.trim())
                     .filter(Boolean);
             };
-            const getClasstd = (cl) => {
-                return Array.from(document.querySelectorAll(`td.${cl}`))
+            const getClasstr = (cl) => {
+                return Array.from(document.querySelectorAll(`tr.${cl}`))
                     .map((el) => el.innerText.trim())
                     .filter(Boolean);
             };
-            const getClassspan = (cl) => {
-                return Array.from(document.querySelectorAll(`span.${cl}`))
+            const getClassh3 = (cl) => {
+                return Array.from(document.querySelectorAll(`h3.${cl}`))
                     .map((el) => el.innerText.trim())
                     .filter(Boolean);
             };
             return {
-                haisocuoi: getClassspan('color-reb'),
+                haisocuoi: getClassh3('sub-title-bg.color-blue'),
                 TKGDBTH: getClass('fontDB'),
+                day_haisocuoi: getClasstr('color_prize_tr'),
             };
         });
         console.log('Cào dữ liệu Giải Đặc Biệt thành công.');
@@ -205,91 +206,97 @@ async function crawl_XSMB_90ngay(page_crawlXSMB_90ngay) {
     }
 }
 
-async function crawl_XSMN_30ngay(page_crawlXSMN_30ngay) {
-    console.log('Đang cào dữ liệu XS Các Miền...');
-    try {
-        await page_crawlXSMN_30ngay.goto('https://xosodaiphat.com/xsmn-30-ngay.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+// async function crawl_XSMN_30ngay(page_crawlXSMN_30ngay) {
+//     console.log('Đang cào dữ liệu XS Các Miền...');
+//     try {
+//         await page_crawlXSMN_30ngay.goto('https://xosodaiphat.com/xsmn-30-ngay.html', {
+//             waitUntil: 'networkidle2',
+//             timeout: 60000,
+//         });
 
-        const result = await page_crawlXSMN_30ngay.evaluate(() => {
-            const getClassspan = (cl) => {
-                return Array.from(document.querySelectorAll(`span.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            const getClass = (cl) => {
-                return Array.from(document.querySelectorAll(`div.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            const getClassth = (cl) => {
-                return Array.from(document.querySelectorAll(`th.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            const getClasstd = (cl) => {
-                return Array.from(document.querySelectorAll(`td.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            return {
-                G8vGDB_XSMN_30ngay: getClassspan('special-prize-lg.div-horizontal'),
-                G1vG2vG3vG4vG6_XSMN_30ngay: getClassspan('col-xs-12.number-black-bold.div-horizontal'),
-                G5vG7_XSMN_30ngay: getClassspan('number-black-bold.div-horizontal'),
-                Tinh_XSMN_30ngay: getClassth('text-center'),
-                Day_XSMN_30ngay: getClass('list-link'),
-                XSMN_30ngay:getClasstd('tn_prize'),
+//         const result = await page_crawlXSMN_30ngay.evaluate(() => {
+//             const getClassspan = (cl) => {
+//                 return Array.from(document.querySelectorAll(`span.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             const getClass = (cl) => {
+//                 return Array.from(document.querySelectorAll(`div.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             const getClassth = (cl) => {
+//                 return Array.from(document.querySelectorAll(`th.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             const getClasstd = (cl) => {
+//                 return Array.from(document.querySelectorAll(`td.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             const getthead = (cl) => {
+//                 return Array.from(document.querySelectorAll(`thead`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             return {
+//                 G8vGDB_XSMN_30ngay: getClassspan('special-prize-lg.div-horizontal'),
+//                 G1vG2vG3vG4vG6_XSMN_30ngay: getClassspan('col-xs-12.number-black-bold.div-horizontal'),
+//                 G5vG7_XSMN_30ngay: getClassspan('number-black-bold.div-horizontal'),
+//                 Tinh_XSMN_30ngay: getClassth('text-center'),
+//                 Tinh_XSMN_30ngay_thead: getthead('thead'),
+//                 Day_XSMN_30ngay: getClass('list-link'),
+//                 XSMN_30ngay:getClasstd('tn_prize'),
 
-            };
-        });
-        console.log('Cào dữ liệu XS Các Miền thành công.');
-        return result;
-    } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
-    }
-}
+//             };
+//         });
+//         console.log('Cào dữ liệu XS Các Miền thành công.');
+//         return result;
+//     } catch (error) {
+//         console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
+//     }
+// }
 
-async function crawl_XSMN_90ngay(page_crawlXSMN_90ngay) {
-    console.log('Đang cào dữ liệu XS Các Miền...');
-    try {
-        await page_crawlXSMN_90ngay.goto('https://xosodaiphat.com/xsmn-90-ngay.html', {
-            waitUntil: 'networkidle2',
-            timeout: 60000,
-        });
+// async function crawl_XSMN_90ngay(page_crawlXSMN_90ngay) {
+//     console.log('Đang cào dữ liệu XS Các Miền...');
+//     try {
+//         await page_crawlXSMN_90ngay.goto('https://xosodaiphat.com/xsmn-90-ngay.html', {
+//             waitUntil: 'networkidle2',
+//             timeout: 60000,
+//         });
 
-        const result = await page_crawlXSMN_90ngay.evaluate(() => {
-            const getClassspan = (cl) => {
-                return Array.from(document.querySelectorAll(`span.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            const getClass = (cl) => {
-                return Array.from(document.querySelectorAll(`div.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            const getClassth = (cl) => {
-                return Array.from(document.querySelectorAll(`th.${cl}`))
-                    .map((el) => el.innerText.trim())
-                    .filter(Boolean);
-            };
-            return {
-                GDB_XSMN_90ngay: getClassspan('special-prize-lg.div-horizontal'),
-                G1vG2vG3vG4vG6_XSMN_90ngay: getClassspan('col-xs-12.number-black-bold.div-horizontal'),
-                G5vG7_XSMN_90ngay: getClassspan('number-black-bold div-horizontal'),
-                G8_XSMN_90ngay: getClassspan('special-prize-lg div-horizontal'),
-                Tinh_XSMN_90ngay: getClassth('text-center'),
-                Day_XSMN_90ngay: getClass('list-link'),
-            };
-        });
-        console.log('Cào dữ liệu XS Các Miền thành công.');
-        return result;
-    } catch (error) {
-        console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
-    }
-}
+//         const result = await page_crawlXSMN_90ngay.evaluate(() => {
+//             const getClassspan = (cl) => {
+//                 return Array.from(document.querySelectorAll(`span.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             const getClass = (cl) => {
+//                 return Array.from(document.querySelectorAll(`div.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             const getClassth = (cl) => {
+//                 return Array.from(document.querySelectorAll(`th.${cl}`))
+//                     .map((el) => el.innerText.trim())
+//                     .filter(Boolean);
+//             };
+//             return {
+//                 GDB_XSMN_90ngay: getClassspan('special-prize-lg.div-horizontal'),
+//                 G1vG2vG3vG4vG6_XSMN_90ngay: getClassspan('col-xs-12.number-black-bold.div-horizontal'),
+//                 G5vG7_XSMN_90ngay: getClassspan('number-black-bold div-horizontal'),
+//                 G8_XSMN_90ngay: getClassspan('special-prize-lg div-horizontal'),
+//                 Tinh_XSMN_90ngay: getClassth('text-center'),
+//                 Day_XSMN_90ngay: getClass('list-link'),
+//             };
+//         });
+//         console.log('Cào dữ liệu XS Các Miền thành công.');
+//         return result;
+//     } catch (error) {
+//         console.error('Lỗi khi cào dữ liệu XS Các Miền', error.message);
+//     }
+// }
 
 async function crawlAnGiang(page_crawlAnGiang) {
     console.log('Đang cào dữ liệu XS Các Miền...');
@@ -1884,7 +1891,7 @@ async function crawl_Power_thu3(page_crawl_Power_thu3) {
 async function crawl_Power_thu7(page_crawl_Power_thu7) {
     console.log('Đang cào dữ liệu Power_thu7...');
     try {
-        await page_crawl_Power_thu7.goto('https://xosodaiphat.com/max-3d-pro-thu-7.html', {
+        await page_crawl_Power_thu7.goto('https://xosodaiphat.com/xs-power-655-thu-7.html', {
             waitUntil: 'networkidle2',
             timeout: 60000,
         });
@@ -2522,8 +2529,8 @@ async function crawl() {
     const page_crawlCanTho = await browser.newPage();
     const page_crawlAnGiang = await browser.newPage();
     const page_crawl_XSMB_30ngay = await browser.newPage();
-    const page_crawl_XSMN_30ngay = await browser.newPage();
-    const page_crawl_XSMN_90ngay = await browser.newPage();
+    // const page_crawl_XSMN_30ngay = await browser.newPage();
+    // const page_crawl_XSMN_90ngay = await browser.newPage();
     const page_crawl_XSMB_90ngay = await browser.newPage();
     const page_crawlDongNai = await browser.newPage();
     const page_crawlDongThap = await browser.newPage();
@@ -3343,8 +3350,8 @@ async function crawl() {
     const crawlTKkdenccResult = await crawlTKkdencc(page_crawlTKkdencc);
     const crawlAnGiangResult = await crawlAnGiang(page_crawlAnGiang);
     const crawl_XSMB_30ngayResult = await crawl_XSMB_30ngay(page_crawl_XSMB_30ngay);
-    const crawl_XSMN_30ngayResult = await crawl_XSMN_30ngay(page_crawl_XSMN_30ngay);
-    const crawl_XSMN_90ngayResult = await crawl_XSMN_90ngay(page_crawl_XSMN_90ngay);
+    // const crawl_XSMN_30ngayResult = await crawl_XSMN_30ngay(page_crawl_XSMN_30ngay);
+    // const crawl_XSMN_90ngayResult = await crawl_XSMN_90ngay(page_crawl_XSMN_90ngay);
     const crawl_XSMB_90ngayResult = await crawl_XSMB_90ngay(page_crawl_XSMB_90ngay);
     const crawlCaMauResult = await crawlCaMau(page_crawlCaMau);
     const crawlDongThapResult = await crawlDongThap(page_crawlDongThap);
@@ -3417,8 +3424,8 @@ async function crawl() {
         ...crawlTKkdenccResult,
         ...crawlAnGiangResult,
         ...crawl_XSMB_30ngayResult,
-        ...crawl_XSMN_30ngayResult,
-        ...crawl_XSMN_90ngayResult,
+        // ...crawl_XSMN_30ngayResult,
+        // ...crawl_XSMN_90ngayResult,
         ...crawl_XSMB_90ngayResult,
         ...crawlCaMauResult,
         ...crawlDongThapResult,
@@ -3500,8 +3507,8 @@ module.exports = {
     crawlTKkdencc,
     crawlAnGiang,
     crawl_XSMB_30ngay,
-    crawl_XSMN_30ngay,
-    crawl_XSMN_90ngay,
+    // crawl_XSMN_30ngay,
+    // crawl_XSMN_90ngay,
     crawl_XSMB_90ngay,
     crawlCaMau,
     crawlDongNai,

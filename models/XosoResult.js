@@ -1083,20 +1083,7 @@ const xosoResultSchema = new mongoose.Schema({
     power_thu7_xspower: [String],
     power_thu7_ball: [String],
 
-                G8vGDB_XSMN_30ngay: [String],
-                G1vG2vG3vG4vG6_XSMN_30ngay: [String],
-                G5vG7_XSMN_30ngay: [String],
-                G8_XSMN_30ngay: [String],
-                Tinh_XSMN_30ngay: [String],
-                Day_XSMN_30ngay: [String],
-                XSMN_30ngay: [String],
-
-                GDB_XSMN_90ngay: [String],
-                G1vG2vG3vG4vG6_XSMN_90ngay: [String],
-                G5vG7_XSMN_90ngay: [String],
-                G8_XSMN_90ngay: [String],
-                Tinh_XSMN_90ngay: [String],
-                Day_XSMN_90ngay: [String],
+    day_haisocuoi:[String],
 });
 
 xosoResultSchema.index({ date: 1 }, { unique: true });

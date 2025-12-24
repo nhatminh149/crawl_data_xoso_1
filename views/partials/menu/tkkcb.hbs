@@ -113,7 +113,7 @@
 {{#each statisticsList}}
 <div class=" h-[30px] flex items-center border border-gray-500 last:border-b-0">
     <!-- Thanh phần trăm -->        <span class="font-bold text-gray-800">&nbsp; &nbsp;&nbsp; &nbsp;{{this.boso}}</span>
-    <div class="h-[20px] flex-1 h-6 bg-gray-200 rounded border border1-gray-500" style="margin-left: 40px;">
+    <div class="h-[20px] flex-1 h-6 bg-gray-200 rounded border border1-gray-500" style="margin-left: 20px;">
         <div
             class="h-full bg-red-600 rounded transition-all duration-500"
             style="width: {{this.width}}"
@@ -123,30 +123,30 @@
 
     <!-- Số lần xuất hiện + bộ số (thêm boso vào cho đầy đủ thông tin) -->
     <div class="w-24 text-right ">
-        <span class="block text-xs text-gray-500" style="margin-right: 20px;">{{this.slxh}}</span>
+        <p class="block text-xs text-black text-[14px] mt-4" style="margin-right: 20px;">{{this.slxh}}</p>
     </div>
 </div>
 {{/each}}
             </tbody>
         </table>
-        <div class="w-[587px] h-[35px] bg-[#F2F2F2] color-blue"><p class="p-1">10 bộ số về nhiều nhất/ít nhất ngày 17/12/2025</p></div>
-<table class="w-[587px] border-collapse border">
+        <div class="w-[586px] h-[32px] bg-[#F2F2F2]"><p class="p-1 color-blue">10 bộ số về nhiều nhất/ít nhất ngày 17/12/2025</p></div>
+<table class="w-[585px]">
   <thead class="bg-red-50">
     <tr>
-      <th colspan="2" scope="col" class="h-[30px] text-center text-xs font-medium text-gray-500 tracking-wider w-1/2 border">
+      <th colspan="2" scope="col" class="h-[30px] text-center text-xs font-medium text-gray-500  w-1/2 border">
         10 bộ số về nhiều nhất
       </th>
-      <th colspan="2" scope="col" class="h-[30px] text-center text-xs font-medium text-gray-600 tracking-wider w-1/2 border">
+      <th colspan="2" scope="col" class="h-[30px] text-center text-xs font-medium text-gray-600  w-1/2 border">
         10 bộ số về ít nhất
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="border text-center">{{slice result.top10_TKKCB.[2] 0 2}}</td>
-      <td class="border text-center">{{slice result.top10_TKKCB.[82] 0 2}}</td>
-      <td class="border text-center">{{slice result.top10_TKKCB.[82] 0 2}}</td>
-      <td class="border text-center">{{slice result.top10_TKKCB.[82] 0 2}}</td>
+      <td><p>{{slice result.top10_TKKCB.[5] 3 15}}</p></td>
+      <td>{{slice result.number_ball2.[0] 6 8}}</td>
+      <td></td>
+      <td></td>
     </tr>
   </tbody>
 </table>
@@ -163,7 +163,7 @@
 
 
 <footer class='footer_logan' >
- <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000; margin-left: 15px;margin-top: 50px;"></div>
+      <div class='footer-line-red2'></div>
     <div class='footer-menu-container'>
         <div class='footer-menu-row'>
             <div class='menu-col'>

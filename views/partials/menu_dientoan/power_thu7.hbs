@@ -56,6 +56,7 @@
         <div class='power-result-container' style="    
         font-family: Arial, sans-serif;
         max-width: 600px;
+        height: 820px;
         margin: 20px;
         padding: 20px;
         border: 1px solid #ddd;
@@ -63,7 +64,7 @@
         margin-left: -1px;">
     <div class='header_jp'>
         <div class='header_jp_h1'>
-            <h1>Xổ số Mega 6/45</h1>
+            <h1>Xổ số Power 6/45</h1>
         </div>
     </div>
 
@@ -71,10 +72,11 @@
         <div class='jackpot-title'><h1 style="margin-top: 10px;">KẾT QUẢ JACKPOT ƯỚC TÍNH</h1></div>
         <div class='jackpot-value-box'>
             <div class='jackpot-value-box2'>
-            <span class='jackpot-value'>{{get result.power_thu7_jackpot 0}}</span>
-            <br>
+            <p style="font-weight: bold; color: blue; text-align: left;font-size: 20px;">GIÁ TRỊ JACKPOT 1</p>
+            <div class='jackpot-value2'>{{get result.power_thu7_jackpot 0}}</div>
             <hr>
-            <span class='jackpot-value'>{{get result.power_thu7_jackpot 1}}</span>
+            <p style="font-weight: bold; color: blue; text-align: left;font-size: 20px;">GIÁ TRỊ JACKPOT 1</p>            
+            <div class='jackpot-value2'>{{get result.power_thu7_jackpot 1}}</div>
             </div>
         </div>
     </div>
@@ -82,7 +84,7 @@
     <div class='next-draw-info'>
         <span class='next-draw-date'>{{get result.power_thu7_para_open_next 0}}</span>
     </div>
-    <div class="w-[500px] h-[60px]" style="text-align: left;">
+    <div class="w-[500px] h-[60px]" style="text-align: left; margin-left: -20px;margin-top: -8px;">
     <div class='draw-details0' style="color: #990000;margin-left: 10px;font-weight: bold;font-size: 17px;">
         {{get result.power_thu7_class_link 0}}
     </div>
@@ -101,7 +103,7 @@
         <div class='number-ball-yellow'>{{slice result.power_thu7_number_ball.[0] 12 14}}</div>
 
     </div>
-    <p class='note'>
+    <p class='note' style="margin-top: -5px;">
         Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng
         thứ tự
     </p>
@@ -126,8 +128,8 @@
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                 </td>
-                <td>{{get result.power_thu7_text_right 0}}</td>
-                <td>{{get result.power_thu7_text_right 1}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 0}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 1}}</td>
             </tr>
             <tr class='jackpot-row'>
                 <td>Jackpot 2</td>
@@ -140,8 +142,8 @@
                     <span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span>
                     <span class='match-dot-yellow'></span>
                 </td>
-                <td>{{get result.power_thu7_text_right 2}}</td>
-                <td>{{get result.power_thu7_text_right 3}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 2}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 3}}</td>
             </tr>
             <tr>
                 <td>Giải 1</td>
@@ -152,8 +154,8 @@
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                 </td>
-                <td>{{get result.power_thu7_text_right 4}}</td>
-                <td>{{get result.power_thu7_text_right 5}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 4}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 5}}</td>
             </tr>
             <tr>
                 <td>Giải 2</td>
@@ -163,8 +165,8 @@
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                 </td>
-                <td>{{get result.power_thu7_text_right 6}}</td>
-                <td>{{get result.power_thu7_text_right 7}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 6}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 7}}</td>
             </tr>
             <tr>
                 <td>Giải 3</td>
@@ -173,26 +175,16 @@
                     <span class='match-dot'></span>
                     <span class='match-dot'></span>
                 </td>
-                <td>{{get result.power_thu7_text_right 8}}</td>
-                <td>{{get result.power_thu7_text_right 9}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 8}}</td>
+                <td>&nbsp;{{get result.power_thu7_text_right 9}}</td>
             </tr>
         </tbody>
     </table>
-
     <ul class='stats-links'>
-        <li><a href='#'>Xem thống kê
-                <span class='link-highlight'>Lần xuất hiện xổ số Mega</span></a></li>
-        <li><a href='#'>Xem thống kê
-                <span class='link-highlight'>Theo thứ XS Mega</span></a></li>
+        <li><a href='#'><p class='text-black text-[15px] mt-2'>Kết quả xổ số<span class='link-highlight'> Power </span>mở thưởng vào các ngày thứ 4/6/CN hàng tuần lúc 18h30</p></li>
     </ul>
-
-    <p class='footer-note'>
-        Kết quả xổ số
-        <span class='link-highlight'>Mega</span>
-        mở thưởng vào các ngày thứ 4/6/CN hàng tuần lúc 18h30
-    </p>
 </div>
-{{#powerLoop}}
+{{#powerLoop_thu7}}
   {{#if (gt index 0)}}
   <div class='power-result-container_power' style="width: 600px; border: 1px solid #DDDDDD;margin-top: 10px;" >
       <div style="margin-left: 10px; margin-top: 10px;">
@@ -210,21 +202,21 @@
           <div class='number-ball-yellow'>{{ slice (get result.power_thu7_ball ballIndex) 12 14 }}</div>
       </div>
       <div style="width: 590px; height: 30px;">
-          <p class='note' style="text-align: center;margin-top: -20px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
+          <p class='note' style="text-align: center;margin-top: -40px;">Các con số dự thưởng phải trùng với số kết quả nhưng không cần theo đúng thứ tự</p>
       </div>
       <table class='prize-table_power'>
       <thead><tr><th style="font-weight: bold;color: #990000;">Giải thưởng</th><th style="font-weight: bold;color: #990000;">Trùng khớp</th><th style="font-weight: bold;color: #990000;">Số lượng giải</th><th style="font-weight: bold;color: #990000;">Giá trị giải (đ)</th></tr></thead>
           <tbody>
-              <tr class='jackpot-row'><td>Jackpot 1</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_thu7_text_right (add textRightStart 0)}}</td><td>{{get result.power_thu7_text_right (add textRightStart 1)}}</td></tr>
-              <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>{{get result.power_thu7_text_right (add textRightStart 2)}}</td><td>{{get result.power_thu7_text_right (add textRightStart 3)}}</td></tr>
-              <tr><td>Giải 1</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_thu7_text_right (add textRightStart 2)}}</td><td>{{get result.power_thu7_text_right (add textRightStart 3)}}</td></tr>
-              <tr><td>Giải 2</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_thu7_text_right (add textRightStart 4)}}</td><td>{{get result.power_thu7_text_right (add textRightStart 5)}}</td></tr>
-              <tr><td>Giải 3</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>{{get result.power_thu7_text_right (add textRightStart 6)}}</td><td>{{get result.power_thu7_text_right (add textRightStart 7)}}</td></tr>
+              <tr class='jackpot-row'><td>Jackpot 1</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 0)}}</td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 1)}}</td></tr>
+              <tr class='jackpot-row'><td>Jackpot 2</td><td style='display: flex; border: none;'>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span><div style="width:1.5px;height: 18px; background-color: #CC0000; margin-right: 3px;"></div></span><span class='match-dot-yellow'></span></td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 2)}}</td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 3)}}</td></tr>
+              <tr><td>Giải 1</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 2)}}</td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 3)}}</td></tr>
+              <tr><td>Giải 2</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 4)}}</td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 5)}}</td></tr>
+              <tr><td>Giải 3</td><td>&nbsp; &nbsp;<span class='match-dot'></span><span class='match-dot'></span><span class='match-dot'></span></td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 6)}}</td><td>&nbsp;{{get result.power_thu7_text_right (add textRightStart 7)}}</td></tr>
           </tbody>
       </table>
   </div>
   {{/if}}
-{{/powerLoop}}
+{{/powerLoop_thu7}}
 {{!-- // --}}
         <div class="flex items-center my-6 mt-4">
               <div class="flex-grow border-t border-gray-300"></div>
@@ -233,11 +225,11 @@
         </div>
 
 <div class="w-[600px] h-[390px] border border1-gray-500 mt-3 mb-3">
-     <p style="color: #CC0000; font-size: 16px; font-weight: bold; padding: 20px; margin-top: 10px;">Thông Tin Về Kết Quả Xổ Số Điện Toán Mega 6/45</p>
+     <p style="color: #CC0000; font-size: 16px; font-weight: bold; padding: 20px; margin-top: 10px;">Thông Tin Về Kết Quả Xổ Số Điện Toán Power 6/45</p>
      <p style="color: black;margin-top: -10px; font-size: 14px; font-weight: bold;margin-left: 20px;">1.Lịch mở thưởng</p>
      <p style="color: black;margin-top: -10px; font-size: 14px; margin-left: 20px;">-Thời gian quay số bắt đầu lúc 18h10 các ngày thứ 4, thứ 6 và chủ nhật hàng tuần</p>
      <p style="color: black;margin-top: -10px; font-size: 14px; font-weight: bold;margin-left: 20px;">2.Cơ cấu giải thưởng</p>
-     <p style="color: black;margin-top: -10px; font-size: 14px;margin-left: 20px;">-Vé số điện toán Mega 6/45 phát hành loại vé với mệnh giá 10.000đ (mười nghìn đồng).</p>
+     <p style="color: black;margin-top: -10px; font-size: 14px;margin-left: 20px;">-Vé số điện toán Power 6/45 phát hành loại vé với mệnh giá 10.000đ (mười nghìn đồng).</p>
      <p style="color: black;margin-top: -10px; font-size: 14px;margin-left: 20px;">-Mỗi dãy số tham gia gồm 6 bộ số (từ 01 đến 45), được quay 6 lần trong cùng 1 lồng cầu</p>
     <table class='prize-table_power_title'>
     <thead style="color: blue;"><tr><th>Giải thưởng</th><th>Tiền thưởng(VNĐ)</th><th>Trùng</th><th>Tỷ lệ trả thưởng kế hoạch</th></tr></thead>
@@ -262,7 +254,7 @@ Giải Ba	30.000	3 bộ số	6,73% --}}
 
 {{!-- <footer></footer> --}}
 <footer class='footer_logan' style="margin-top: 70px;">
- <div class='footer-line-red' style="width: 1200px; height: 4px; background-color: #CC0000;margin-left: 20px;"></div>
+ <div class='footer-line-red2'></div>
     <div class='footer-menu-container'>
         <div class='footer-menu-row'>
             <div class='menu-col'>

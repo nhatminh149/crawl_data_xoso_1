@@ -1,6 +1,6 @@
 <div style='margin-top:-29px'>
     <header
-        class='main-header_logan style="width: 1300px; margin-top: -29px; margin-left: 40px;"'
+        class='main-header_logan style="width: 1300px; margin-top: -29px;"'
     >
         <div class='top-bar-wrapper' href='http://localhost:3000/?'>
             <div class='top-bar container'>
@@ -48,8 +48,8 @@
         </nav>
     </header>
 
-    <div class='flex mt-10' style='margin-top: 20px; '>
-        <div class='max-w-4xl mx-auto bg-white p-4 sm:p-6'>
+    <div class='flex mt-10' style='margin-top: 20px; margin-left: 17px'>
+        <div class='max-w-4xl bg-white p-4 sm:p-6'>
             <div
                 class='w-[910px] h-[40px] bg-[#CC0000] text-white'
                 style='margin-top: -25px;margin-left: -40px;'
@@ -164,19 +164,18 @@
                     </thead>
 
                     <tbody style='font-weight: bold; font-size: 20px;'>
-                        {{tkgdb 0 7}}
-                        {{tkgdb 7 14}}
-                        {{tkgdb 14 21}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-                        {{tkgdb 0 7}}
-
+                       {{tkgdb 0 7}}
+                       {{tkgdb 7 14}}
+                       {{tkgdb 14 21}}
+                       {{tkgdb 21 28}}
+                       {{tkgdb 28 35}}
+                       {{tkgdb 35 42}}
+                       {{tkgdb 42 49}}
+                       {{tkgdb 49 56}}
+                       {{tkgdb 56 63}}
+                       {{tkgdb 63 70}}
+                       {{tkgdb 70 77}}
+                       {{tkgdb 77 84}}
                     </tbody>
                 </table>
             </div>
@@ -185,112 +184,120 @@
                 class='w-[910px] mt-6 p-3 bg-blue-50 border border-blue-200 text-blue-800 text-center font-semibold'
                 style='margin-left: -40px;'
             >
-                THỐNG KÊ 2 SỐ CUỐI
-                <span class='text-red-600'>92</span>
-                XUẤT HIỆN Ở GIẢI ĐẶC BIỆT TRONG CÁC KỲ QUAY XSMB
+                <span class='text-red-600'>{{result.haisocuoi}}</span>
             </div>
+<div class="overflow-x-auto w-[910px] " style="margin-left: -40px;">
+  <table class="min-w-full border-collapse border border-gray-300 font-sans text-sm">
+    <thead>
+      <tr class="bg-gray-100">
+        <th class="border border-gray-300 px-6 py-2 text-center font-bold text-gray-800">Giải ĐB</th>
+        <th class="border border-gray-300 px-6 py-2 text-center font-bold text-gray-800">Ngày xuất hiện</th>
+        <th class="border border-gray-300 px-6 py-2 text-center font-bold text-gray-800">Thứ xuất hiện</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{{renderLotteryRows result.day_haisocuoi}}}
+    </tbody>
+  </table>
+</div>
 
         </div>
         {{!-- {{> menu}} --}}
-        <div class='column-right1' style="width:306px; padding-right: 1px">
+        <div class='column-right1' style="width:312px; margin-left: 8px;">
+        <div class='menu-block'>
+            <h3 style='color: brown;'>Tra Cứu Xổ Số</h3>
+            <ul>
+                <li><a href='/partials/xscm/xsmb'>XSMB hôm qua</a></li>
+                <li><a href='/partials/tracuuxs/xsmb_30ngay'>XSMB 30 ngày</a></li>
+                <li><a href='/partials/tracuuxs/xsmb_90ngay'>XSMB 90 ngày</a></li>
+                {{!-- <li><a href='#'>XSMN hôm qua</a></li>
+                <li style='font-weight: bold;'><a href='/partials/tracuuxs/xsmn_30ngay'>XSMN 30 ngày</a></li>
+                <li><a href='#'>XSMN 90 ngày</a></li>
+                <li><a href='#'>XSMT hôm qua</a></li>
+                <li><a href='#'>XSMT 90 ngày</a></li> --}}
+            </ul>
+        </div>
 
-            <div class='menu-block'>
-                <h3 style='color: brown;'>Tra Cứu Xổ Số</h3>
+        <div class='menu-block'>
+            <h3 style='color: brown;'>Xổ Số Điện Toán</h3>
+            <ul>
+                <li style='font-weight: bold;'><a
+                        href='/partials/menu_dientoan/keno'
+                    >Keno</a></li>
+            </ul>
+            <ul>
+                <li style='font-weight: bold;'><a href='/partials/menu_dientoan/mega'>XS Mega</a></li>
                 <ul>
-                    <li><a href='#'>XSMB hôm qua</a></li>
-                    <li><a href='#'>XSMB 30 ngày</a></li>
-                    <li><a href='#'>XSMB 90 ngày</a></li>
-                    <li><a href='#'>XSMN hôm qua</a></li>
-                    <li><a href='#'>XSMN 30 ngày</a></li>
-                    <li><a href='#'>XSMN 90 ngày</a></li>
-                    <li><a href='#'>XSMT hôm qua</a></li>
-                    <li><a href='#'>XSMT 90 ngày</a></li>
+                    <a href='/partials/menu_dientoan/mega_thu4'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 4</a><br>
+                    <a href='/partials/menu_dientoan/mega_thu6'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 6</a><br>
+                    <a href='/partials/menu_dientoan/mega_cn'>&nbsp; &nbsp; &nbsp; &nbsp;- Chủ nhật</a>
                 </ul>
-            </div>
+            </ul>
+            <ul>
+                <li style='font-weight: bold;'><a href='/partials/menu_dientoan/power'>XS Power 6/55</a></li>
+                <ul>
+                    <a href='/partials/menu_dientoan/power_thu3'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 3</a><br>
+                    <a href='/partials/menu_dientoan/power_thu5'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 5</a><br>
+                    <a href='/partials/menu_dientoan/power_thu7'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 7</a><br>
+                </ul>
+            </ul>
+            <ul>
+                <li style='font-weight: bold;'><a href='/partials/menu_dientoan/max3d'>XS Max 3D</a></li>
+                <ul>
+                    <a href='/partials/menu_dientoan/max3d_thu2'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 2</a><br>
+                    <a href='/partials/menu_dientoan/max3d_thu4'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 4</a><br>
+                    <a href='/partials/menu_dientoan/max3d_thu6'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 6</a><br>
+                </ul>
+            </ul>
+            <ul>
+                <li style='font-weight: bold;'style='font-weight: bold;'><a href='/partials/menu_dientoan/max3dpro'>XS Max 3D Pro</a></li>
+                <ul>
+                    <a href='/partials/menu_dientoan/max3dpro_thu3'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 3</a><br>
+                    <a href='/partials/menu_dientoan/max3dpro_thu5'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 5</a><br>
+                    <a href='/partials/menu_dientoan/max3dpro_thu7'>&nbsp; &nbsp; &nbsp; &nbsp;- Thứ 7</a><br>
+                </ul>
+            </ul>
+            <ul>
+                <li style='font-weight: bold;'><a href='/partials/menu_dientoan/xsdientoan636'>XS Điện toán
+                        6x36</a></li>
+                <li style='font-weight: bold;'><a href='/partials/menu_dientoan/xsdientoan123'>XS Điện toán
+                        123</a></li>
+                <li style='font-weight: bold;'><a href='/partials/menu_dientoan/thantai4'>XS Thần tài 4</a></li>
+            </ul>
+        </div>
 
-            <div class='menu-block'>
-                <h3 style='color: brown;'>Xổ Số Điện Toán</h3>
-                <ul>
-                    <li style='font-weight: bold;'><a
-                            href='/partials/menu_dientoan/keno'
-                        >Keno</a></li>
-                </ul>
-                <ul>
-                    <li><a href='/partials/menu_dientoan/mega'>XS Mega</a></li>
-                    <ul>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 4</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 6</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Chủ Nhật</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><a href='/partials/menu_dientoan/mega'>XS Power 6/55</a></li>
-                    <ul>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 3</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 5</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 7</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><a href='/partials/menu_dientoan/mega'>XS Max 3D</a></li>
-                    <ul>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 2</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 4</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 6</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><a href='/partials/menu_dientoan/mega'>XS Max 3D Pro</a></li>
-                    <ul>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 3</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 5</li>
-                        <li style='font-weight: 100;'>&nbsp; &nbsp; - Thứ 7</li>
-                    </ul>
-                </ul>
-                <ul>
-                    <li><a href='#'>XS Điện toán 6x36</a></li>
-                    <li><a href='/partials/menu_dientoan/xsdientoan123'>XS Điện
-                            toán 123</a></li>
-                    <li><a href='#'>XS Thần tài 4</a></li>
-                </ul>
-            </div>
-
-            <div class='doveso-block'>
-                <h3 style='color: brown;'>Dò Vé Số</h3>
-                <form>
-                    <div class='form-row'>
-                        <label for='date'>Chọn ngày:</label>
-                        <input type='date' id='date' value='2025-11-19' />
-                    </div>
-                    <div class='form-row'>
-                        <label for='region'>Chọn tỉnh:</label>
-                        <select id='region'>
-                            <option>Miền Bắc</option>
-                            <option>Miền Nam</option>
-                            <option>Miền Trung</option>
-                        </select>
-                    </div>
-                    <div class='form-row input-row'>
-                        <input
-                            type='text'
-                            placeholder='Nhập dãy số'
-                            class='number-input'
-                            style='width: 80px; height: 40px; border: 1px solid #CCCCCC;'
-                        />
-                        <button type='submit' class='submit-button'>Kết quả</button>
-                    </div>
-                    <p class='note'>( Có thể nhập tối thiểu 2 số, tối đa 17 số )</p>
-                </form>
-            </div>
-
+        <div class='doveso-block'>
+            <h3 style='color: brown;'>Dò Vé Số</h3>
+            <form>
+                <div class='form-row'>
+                    <label for='date'>Chọn ngày:</label>
+                    <input type='date' id='date' value='2025-11-19' />
+                </div>
+                <div class='form-row'>
+                    <label for='region'>Chọn tỉnh:</label>
+                    <select id='region'>
+                        <option>Miền Bắc</option>
+                        <option>Miền Nam</option>
+                        <option>Miền Trung</option>
+                    </select>
+                </div>
+                <div class='form-row input-row'>
+                    <input
+                        type='text'
+                        placeholder='Nhập dãy số'
+                        class='number-input'
+                        style='width: 80px; height: 40px; border: 1px solid #CCCCCC;'
+                    />
+                    <button type='submit' class='submit-button'>Kết quả</button>
+                </div>
+                <p class='note'>( Có thể nhập tối thiểu 2 số, tối đa 17 số )</p>
+            </form>
+        </div>
         </div>
     </div>
 
     <footer class='footer_logan'>
-        <div
-            class='footer-line-red'
-            style='width: 1200px; height: 4px; background-color: #CC0000; margin-left: 15px;'
-        ></div>
+     <div class='footer-line-red2'></div>
         <div class='footer-menu-container'>
             <div class='footer-menu-row'>
                 <div class='menu-col'>
